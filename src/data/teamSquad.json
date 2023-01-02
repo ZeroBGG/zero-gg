@@ -1,0 +1,498 @@
+{
+  "Gen.G": {
+    "teamName": "Gen.G",
+    "logo": "../assets/images/Logo/gen_g.png",
+    "teamSquad": [
+      {
+        "id": 1,
+        "name": "Hyeon Jun Choi",
+        "summoner": "Doran",
+        "position": "TOP",
+        "image": "src/assets/images/gen_g/Doran.png"
+      },
+      {
+        "id": 2,
+        "name": "Wang Ho Han",
+        "summoner": "Peanut",
+        "position": "JGL",
+        "image": "src/assets/images/Team/gen_g/Peanuy.png"
+      },
+      {
+        "id": 3,
+        "name": "Su Hwan Kim",
+        "summoner": "Peyz",
+        "position": "BOT",
+        "image": "src/assets/images/Team/gen_g/Peyz.png"
+      },
+      {
+        "id": 4,
+        "name": "Ji Hun Jung",
+        "summoner": "Chovy",
+        "position": "MID",
+        "image": "/src/assets/images/Team/gen_g/Chovy.png"
+      },
+      {
+        "id": 5,
+        "name": "Hwan Jung Yu",
+        "summoner": "Delight",
+        "position": "SPT",
+        "image": "/src/assets/images/Team/gen_g/Delight.png"
+      },
+      {
+        "id": 6,
+        "name": "Dong Bin Ko",
+        "summoner": "Score",
+        "position": "Head Coach",
+        "image": "src/assets/images/Team/gen_g/Score.webp"
+      }
+    ]
+  },
+  "t1": {
+    "teamName": "SK t1",
+    "logo": "../assets/images/Logo/sk_t1.png",
+    "teamSquad": [
+      {
+        "id": 1,
+        "name": "Sang Hyuk Lee",
+        "summoner": "Faker",
+        "position": "MID",
+        "image": "../assets/images/Team/t1/Faker.png"
+      },
+      {
+        "id": 2,
+        "name": "Woo Je Choi",
+        "summoner": "ZEUS",
+        "position": "TOP",
+        "image": "../assets/images/Team/t1/Zeus.png"
+      },
+      {
+        "id": 3,
+        "name": "Hyun Jun Moon",
+        "summoner": "Oner",
+        "position": "JGL",
+        "image": "../assets/images/Team/t1/Oner.png"
+      },
+      {
+        "id": 4,
+        "name": "Min Hyeong Lee",
+        "summoner": "GUMAYUSI",
+        "position": "BOT",
+        "image": "../assets/images/Team/t1/Gumayusi.png"
+      },
+      {
+        "id": 5,
+        "name": "Min Seok Ryu",
+        "summoner": "Keria",
+        "position": "SPT",
+        "image": "../assets/images/Team/t1/Keria.png"
+      },
+      {
+        "id": 6,
+        "name": "Sung Woong Bae",
+        "summoner": "Bengi",
+        "position": "Head Coach",
+        "image": ""
+      }
+    ]
+  },
+  "Liiv SANDBOX": {
+    "teamName": "Liiv Sandbox",
+    "logo": "../assets/images/Logo/liiv_sbx.png",
+    "teamSquad": [
+      {
+        "id": 1,
+        "name": "Ju Hyoen Lee",
+        "summoner": "Clozer",
+        "position": "MID",
+        "image": "../assets/images/Team/lbs/Clozer.png"
+      },
+      {
+        "id": 2,
+        "name": "Jung Hyeon Kim",
+        "summoner": "Willer",
+        "position": "JGL",
+        "image": "../assets/images/Team/lbs/Willer.png"
+      },
+
+      {
+        "id": 3,
+        "name": "Myeong Jun Lee",
+        "summoner": "Envyy",
+        "position": "BOT",
+        "image": "../assets/images/Team/lbs/Envyy.png"
+      },
+      {
+        "id": 1,
+        "name": "Tae Yoon Noh",
+        "summoner": "Burdol",
+        "position": "TOP",
+        "image": "../assets/images/Team/lbs/Burdol.png"
+      },
+      {
+        "id": 5,
+        "name": "Jin Hong Kim",
+        "summoner": "Kael",
+        "position": "SPT",
+        "image": "../assets/images/Team/lbs/Kael.png"
+      },
+      {
+        "id": 6,
+        "name": "Sang Wook Ryu",
+        "summoner": "Ryu",
+        "position": "Head Coach",
+        "image": "../assets/images/Team/lbs/Ryu.png"
+      }
+    ]
+  },
+  "dwg_kia": {
+    "teamName": "DWG Kia",
+    "logo": "../assets/images/Logo/dwg_kia.png",
+    "teamSquad": [
+      {
+        "id": 1,
+        "name": "Su Heo",
+        "summoner": "ShowMaker",
+        "position": "MID",
+        "image": "../assets/images/Team/showMaker.png"
+      },
+      {
+        "id": 2,
+        "name": "Gun Bu Kim",
+        "summoner": "Canyon",
+        "position": "JGL",
+        "image": "../assets/images/Team/dwg_kia/showMaker.png"
+      },
+
+      {
+        "id": 3,
+        "name": "Hyeok Gyu Kim",
+        "summoner": "Deft",
+        "position": "BOT",
+        "image": "../assets/images/Team/dwg_kia/Deft.png"
+      },
+      {
+        "id": 4,
+        "name": "Chang Dong Kim",
+        "summoner": "Canna",
+        "position": "TOP",
+        "image": "../assets/images/Team/dwg_kia/Canna.png"
+      },
+      {
+        "id": 5,
+        "name": "Hyeong Gyu Kim",
+        "summoner": "Kellin",
+        "position": "SPT",
+        "image": "../assets/images/Team/dwg_kia/Kellin.png"
+      },
+      {
+        "id": 6,
+        "name": "Cheon Ju Choi",
+        "summoner": "Acorn",
+        "position": "Head Coach",
+        "image": "../assets/images/Team/dwg_kia/Arcorn.png"
+      }
+    ]
+  },
+  "kt-rolseter": {
+    "teamName": "KT Rolseter",
+    "logo": "../assets/images/Logo/kt_rolster.png",
+    "teamSquad":[
+      {
+        "id": 1,
+        "name": "Bo Seong Gwak",
+        "summoner": "Bdd",
+        "position": "MID",
+        "image": "../assets/images/Team/kt_rolster/Bdd.png"
+      },
+      {
+        "id": 2,
+        "name": "U-Chan Mun",
+        "summoner": "Cuzz",
+        "position": "JGL",
+        "image": "../assets/images/Team/kt_rolster/showMaker.png"
+      },
+
+      {
+        "id": 3,
+        "name": "Ha Ram Kim",
+        "summoner": "Aiming",
+        "position": "BOT",
+        "image": "../assets/images/Team/kt_rolster/Aiming.png"
+      },
+      {
+        "id": 4,
+        "name": "Ki In Kim",
+        "summoner": "Kiin",
+        "position": "TOP",
+        "image": "../assets/images/Team/kt_rolster/Kiin.png"
+      },
+      {
+        "id": 5,
+        "name": "Si-U Son",
+        "summoner": "Lehends",
+        "position": "SPT",
+        "image": "../assets/images/Team/kt_rolster/Lehends.png"
+      },
+      {
+        "id": 6,
+        "name": "Dong Hoon Kang",
+        "summoner": "KT Hirai",
+        "position": "Head Coach",
+        "image": "../assets/images/Team/kt_rolster/Hirai.png"
+      }
+    ]
+  },
+  "drx": {
+    "teamName": "DRX",
+    "logo": "../assets/images/Logo/drx.png",
+    "teamSquad": [      
+    {
+      "id": 1,
+      "name": "Su Heo",
+      "summoner": "ShowMaker",
+      "position": "MID",
+      "image": "../assets/images/Team/drx/showMaker.png"
+    },
+    {
+      "id": 2,
+      "name": "Gun Bu Kim",
+      "summoner": "Canyon",
+      "position": "JGL",
+      "image": "../assets/images/Team/drx/showMaker.png"
+    },
+
+    {
+      "id": 3,
+      "name": "Hyeok Gyu Kim",
+      "summoner": "Deft",
+      "position": "BOT",
+      "image": "../assets/images/Team/drx/Deft.png"
+    },
+    {
+      "id": 4,
+      "name": "Chang Dong Kim",
+      "summoner": "Canna",
+      "position": "TOP",
+      "image": "../assets/images/Team/drx/Canna.png"
+    },
+    {
+      "id": 5,
+      "name": "Hyeong Gyu Kim",
+      "summoner": "Kellin",
+      "position": "SPT",
+      "image": "../assets/images/Team/drx/Kellin.png"
+    },
+    {
+      "id": 6,
+      "name": "Cheon Ju Choi",
+      "summoner": "Acorn",
+      "position": "Head Coach",
+      "image": "../assets/images/Team/drx/Arcorn.png"
+    }]
+  },
+  "freecs": {
+    "teamName": "Kwangdong Freecs",
+    "logo": "../assets/images/Logo/freecs.png",
+    "teamSquad": [
+      {
+        "id": 1,
+        "name": "Tae Young Lee",
+        "summoner": "BuLLDog",
+        "position": "MID",
+        "image": "../assets/images/Team/freecs/"
+      },
+      {
+        "id": 2,
+        "name": "Young Jae Ko",
+        "summoner": "YoungJae",
+        "position": "JGL",
+        "image": "../assets/images/Team/freecs/Youngjae.png"
+      },
+  
+      {
+        "id": 3,
+        "name": "Tae Yun Kim",
+        "summoner": "Taeyoon",
+        "position": "BOT",
+        "image": "../assets/images/Team/freecs/Taeyoon.png"
+      },
+      {
+        "id": 4,
+        "name": "Dong Ju Lee",
+        "summoner": "DuDu",
+        "position": "TOP",
+        "image": "../assets/images/Team/freecs/Dudu.png"
+      },
+      {
+        "id": 5,
+        "name": "Jae Hun Jeong",
+        "summoner": "Moham",
+        "position": "SPT",
+        "image": "../assets/images/Team/freecs/Moham.png"
+      },
+      {
+        "id": 6,
+        "name": "Se Jun Yoon",
+        "summoner": "Jun",
+        "position": "SPT",
+        "image": "../assets/images/Team/freecs/Jun.png"
+      },
+      {
+        "id": 7,
+        "name": "Cheon Ju Choi",
+        "summoner": "Acorn",
+        "position": "Head Coach",
+        "image": "../assets/images/Team/freecs/Arcorn.png"
+      }
+
+    ]
+  },
+  "ns_redforce": {
+    "teamName": "NS_RedForce",
+    "logo": "../assets/images/Logo/redforce.png",
+    "teamSquad": [
+      {
+        "id": 1,
+        "name": "Hyeon Seo Ahn",
+        "summoner": "Fiesta",
+        "position": "MID",
+        "image": "../assets/images/Team/redforce/Fiesta.png"
+      },
+      {
+        "id": 2,
+        "name": "Seung Bok Lee",
+        "summoner": "Sylvie",
+        "position": "JGL",
+        "image": "../assets/images/Team/redforce/Sylvie.png"
+      },
+  
+      {
+        "id": 3,
+        "name": "Seong In Ha",
+        "summoner": "vital",
+        "position": "BOT",
+        "image": "../assets/images/Team/redforce/"
+      },
+      {
+        "id": 4,
+        "name": "Geun Woo Park",
+        "summoner": "DnDn",
+        "position": "TOP",
+        "image": "../assets/images/Team/redforce/Dndn.png"
+      },
+      {
+        "id": 5,
+        "name": "Yoon Su Jeong",
+        "summoner": "Peter",
+        "position": "SPT",
+        "image": "../assets/images/Team/redforce/Peter.png"
+      },
+      {
+        "id": 6,
+        "name": "Yeong-cheol Heo",
+        "summoner": "irean",
+        "position": "Head Coach",
+        "image": "../assets/images/Team/redforce/irean.png"
+      }
+
+    ]
+  },
+  "brion": {
+    "teamName": "Fredit Brion",
+    "logo": "../assets/images/Logo/brion.png",
+    "teamSquad": [
+      {
+        "id": 1,
+        "name": "Hong Jo Kim",
+        "summoner": "Karis",
+        "position": "MID",
+        "image": "../assets/images/Team/brion/Karis.png"
+      },
+      {
+        "id": 2,
+        "name": "EoJin Jeon",
+        "summoner": "Raptor",
+        "position": "JGL",
+        "image": "../assets/images/Team/brion/"
+      },
+  
+      {
+        "id": 3,
+        "name": "Jeung Hwan Park",
+        "summoner": "Hena",
+        "position": "BOT",
+        "image": "../assets/images/Team/brion/Hena.png"
+      },
+      {
+        "id": 4,
+        "name": "Ki Tae Park",
+        "summoner": "Morgan",
+        "position": "TOP",
+        "image": "../assets/images/Team/brion/Morgan.png"
+      },
+      {
+        "id": 5,
+        "name": "Sang Ho Lee",
+        "summoner": "Effort",
+        "position": "SPT",
+        "image": "../assets/images/Team/brion/Effort.png"
+      },
+      {
+        "id": 6,
+        "name": "Woo Beom Choi",
+        "summoner": "Edgar",
+        "position": "Head Coach",
+        "image": "../assets/images/Team/brion/Edgar.png"
+      }
+    ]
+  },
+  "hanwha": {
+    "teamName": "Hanwha Life Esports",
+    "logo": "../assets/images/Logo/hanwha.png",
+    "teamSquad": [
+      {
+        "id": 1,
+        "name": "Geon Woo Kim",
+        "summoner": "Zeka",
+        "position": "MID",
+        "image": "../assets/images/Team/hanwha/Zeka.png"
+      },
+      {
+        "id": 2,
+        "name": "Tae Min Kim",
+        "summoner": "Clid",
+        "position": "JGL",
+        "image": "../assets/images/Team/hanwha/Clid.png"
+      },
+  
+      {
+        "id": 3,
+        "name": "Do Hyeon Park",
+        "summoner": "Viper",
+        "position": "BOT",
+        "image": "../assets/images/Team/hanwha/Viper.png"
+      },
+      {
+        "id": 4,
+        "name": "Sung Hoon Hwang",
+        "summoner": "Kingen",
+        "position": "TOP",
+        "image": "../assets/images/Team/hanwha/Kingen.png"
+      },
+      {
+        "id": 5,
+        "name": "Jeong Min Kim",
+        "summoner": "Life",
+        "position": "SPT",
+        "image": "../assets/images/Team/hanwha/Life.png"
+      },
+      {
+        "id": 6,
+        "name": "In kyu Choi",
+        "summoner": "Dandy",
+        "position": "Head Coach",
+        "image": "../assets/images/Team/hanwha/"
+      }
+    ]
+  }
+}
