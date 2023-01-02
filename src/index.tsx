@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
+import Header from "@/components/Common/Header/Header";
 import Main from "@/pages/Main";
 import Record from "@/pages/Record";
 import Duo from "@/pages/Duo";
@@ -11,6 +12,7 @@ import NotFound from "@/pages/NotFound";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
+    <Header />
     <Routes>
       <Route path={"/"} element={<Main />} />
       <Route path={"/Record"} element={<Record />} />
