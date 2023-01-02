@@ -347,6 +347,7 @@
 
     ]
   },
+  
   "ns_redforce": {
     "teamName": "NS_RedForce",
     "logo": "../assets/images/Logo/redforce.png",
@@ -446,7 +447,7 @@
       }
     ]
   },
-  
+
   "hanwha": {
     "teamName": "Hanwha Life Esports",
     "logo": "../assets/images/Logo/hanwha.png",
