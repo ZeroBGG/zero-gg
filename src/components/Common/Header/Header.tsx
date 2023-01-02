@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.h1}>Zero.gg</h1>
+      <h1 className={styles.h1}>Zero.GG</h1>
 
       <nav className={styles.nav}>
         <ul className={styles.ul}>
