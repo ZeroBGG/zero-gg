@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app"
-import { getFirestore, addDoc, collection } from "firebase/firestore"
+import { initializeApp } from "firebase/app";
+import { getFirestore, addDoc, collection } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -13,7 +13,7 @@ const {
 	VITE_FIREBASE_SENDER_ID,
 	VITE_FIREBASE_APP_ID,
 	VITE_FIREBASE_DATABASE_URL,
-} = import.meta.env
+} = import.meta.env;
 
 const firebaseConfig = {
 	apiKey: VITE_FIREBASE_API_KEY,
@@ -23,10 +23,10 @@ const firebaseConfig = {
 	messagingSenderId: VITE_FIREBASE_SENDER_ID,
 	appId: VITE_FIREBASE_APP_ID,
 	databaseURL: VITE_FIREBASE_DATABASE_URL,
-}
+};
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig)
-export const dbService = getFirestore()
-export const dbAddDoc = addDoc
-export const dbCollection = collection
+export const app = initializeApp(firebaseConfig);
+export const dbService = getFirestore();
+export const dbAddDoc = addDoc;
+export const dbCollection = collection;
