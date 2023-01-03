@@ -1,8 +1,8 @@
-import React from "react"
-import styles from "./Duo.module.scss"
-import { app, dbService, dbAddDoc, dbCollection } from "src/firebase"
+import React from "react";
+import styles from "./Duo.module.scss";
+import { app, dbService, dbAddDoc, dbCollection } from "src/firebase";
 
-console.log(app)
+console.log(app);
 
 const Duo = () => {
 	return (
@@ -48,7 +48,7 @@ const Duo = () => {
 				</section>
 			</main>
 		</>
-	)
-}
+	);
+};
 
-export default Duo
+export default Duo;
