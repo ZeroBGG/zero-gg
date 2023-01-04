@@ -1,7 +1,8 @@
 node_modules/
 dist/
-prettierrc.js
+.prettierrc.json
 .eslintrc.js
 env.d.ts
 **/*.json
+**/*.md
 .env
