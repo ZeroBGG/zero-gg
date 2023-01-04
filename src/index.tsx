@@ -1,26 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./index.css";
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
 
-import Header from "@/components/Common/Header/Header";
-import Footer from "@/components/Common/Footer/Footer";
-import Main from "@/pages/Main";
-import Record from "@/pages/Record";
-import Duo from "@/pages/Duo";
-import LCK from "@/pages/LCK";
-import NotFound from "@/pages/NotFound";
+import Header from '@/components/Common/Header/Header';
+import Footer from '@/components/Common/Footer/Footer';
+import Route from '@/route';
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <BrowserRouter>
     <Header />
-    <Routes>
-      <Route path={"/"} element={<Main />} />
-      <Route path={"/Record"} element={<Record />} />
-      <Route path={"/Duo"} element={<Duo />} />
-      <Route path={"/LCK"} element={<LCK />} />
-      <Route path={"*"} element={<NotFound />} />
-    </Routes>
+    <Route />
     <Footer />
-  </BrowserRouter>
+  </BrowserRouter>,
 );
