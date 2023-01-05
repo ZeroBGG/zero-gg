@@ -1,19 +1,21 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
-import Main from "@/pages/Main";
-import Record from "@/pages/Record";
-import Duo from "@/pages/Duo";
-import LCK from "@/pages/LCK";
-import NotFound from "@/pages/NotFound";
+import Main from '@/pages/Main';
+import Record from '@/pages/Record';
+import Duo from '@/pages/Duo';
+import LCK from '@/pages/LCK';
+import NotFound from '@/pages/NotFound';
+import WriteDuo from './components/Duo/WriteDuo/WriteDuo';
 
 export default function route() {
   return (
     <Routes>
-      <Route path={"/"} element={<Main />} />
-      <Route path={"/Record"} element={<Record />} />
-      <Route path={"/Duo"} element={<Duo />} />
-      <Route path={"/LCK"} element={<LCK />} />
-      <Route path={"*"} element={<NotFound />} />
+      <Route path={'/'} element={<Main />} />
+      <Route path={'/Record'} element={<Record />} />
+      <Route path={'/Duo'} element={<Duo />} />
+      <Route path={'/Duo/:id'} element={<WriteDuo />} />
+      <Route path={'/LCK'} element={<LCK />} />
+      <Route path={'*'} element={<NotFound />} />
     </Routes>
   );
 }
