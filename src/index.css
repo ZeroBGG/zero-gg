@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 div,
@@ -130,4 +134,17 @@ table {
 
 a {
   text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: scroll;
 }
