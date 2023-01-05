@@ -1,1 +1,64 @@
 /* Duo.Module.scss */
+
+$blue: #1b76d8;
+$black: #141618;
+
+/* 듀오 카드 */
+.section_card {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  margin-bottom: 5vh;
+
+  .div_card {
+    border: 1px solid black;
+    width: 99vw;
+    height: auto;
+
+    .ul_card {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+
+      .li_card {
+        list-style: none;
+        color: $black;
+
+        .list_div_card {
+          width: 400px;
+          height: 400px;
+          border: 1px solid blue;
+
+          .div_time {
+            p {
+              font-size: 10px;
+              color: $blue;
+            }
+          }
+
+          .div_content {
+            padding: 0 auto;
+
+            h2 {
+              font-size: 26px;
+            }
+
+            p {
+              font-size: 18px;
+            }
+          }
+
+          .div_info {
+            padding: 0 auto;
+
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
