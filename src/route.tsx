@@ -5,7 +5,7 @@ import Record from '@/pages/Record';
 import Duo from '@/pages/Duo';
 import LCK from '@/pages/LCK';
 import NotFound from '@/pages/NotFound';
-import WriteDuo from './components/Duo/WriteDuo/WriteDuo';
+import DuoInfo from './components/Duo/DuoInfo/DuoInfo';
 
 export default function route() {
   return (
@@ -13,7 +13,7 @@ export default function route() {
       <Route path={'/'} element={<Main />} />
       <Route path={'/Record'} element={<Record />} />
       <Route path={'/Duo'} element={<Duo />} />
-      <Route path={'/Duo/:id'} element={<WriteDuo />} />
+      <Route path={'/Duo/:id'} element={<DuoInfo />} />
       <Route path={'/LCK'} element={<LCK />} />
       <Route path={'*'} element={<NotFound />} />
     </Routes>

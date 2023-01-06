@@ -2,7 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import styles from './WriteDuo.module.scss';
 import { dbService } from 'src/firebase';
 import { DuoType } from '../utils/DuoType';
-import { addDoc, collection, onSnapshot, query } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 import { queueArr, tierArr, postionArr } from '../utils/DuoArr';
 import useInput from '@/hooks/useInput';
 
@@ -16,20 +16,7 @@ const WriteDuo = () => {
   const inputPosition = useInput('');
   const inputTitle = useInput('');
   const inputMemo = useInput('');
-  const inputNickname = useInput('');
-
-  const [lolInfo, setLolInfo] = useState<any[]>([]);
-
-  useEffect(() => {
-    const q = query(collection(dbService, 'myLOLInfo'));
-    onSnapshot(q, (querySnapshot) => {
-      const myLol = querySnapshot.docs.map((docs) => ({
-        id: docs.id,
-        ...docs.data(),
-      }));
-      setLolInfo(myLol);
-    });
-  }, []);
+  const inputNickName = useInput('');
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -38,12 +25,12 @@ const WriteDuo = () => {
       tier: inputTier.value,
       position: inputPosition.value,
 
-      id: inputId.value,
-      password: inputPass.value,
+      userId: inputId.value,
+      userPassword: inputPass.value,
       timeSet: `${new Date()}`,
       title: inputTitle.value,
       memo: inputMemo.value,
-      nickName: inputNickname.value,
+      nickName: inputNickName.value,
       mostChamp: [''],
     };
 
@@ -51,9 +38,7 @@ const WriteDuo = () => {
     inputId.setValue('');
   };
 
-  const onClick = () => {
-    setWrite((e) => !e);
-  };
+  const onClick = () => setWrite((e) => !e);
 
   return (
     <>
@@ -69,7 +54,8 @@ const WriteDuo = () => {
               <label htmlFor="userpass"> Password : </label>
               <input type="password" name="userpass" id="userpass" {...inputPass} />
               <br />
-              <select name="queue" {...inputQueue}>
+              <label htmlFor="queue"> Queue : </label>
+              <select name="queue" id="queue" {...inputQueue}>
                 {queueArr.map((item, idx) => {
                   return (
                     <>
@@ -80,7 +66,8 @@ const WriteDuo = () => {
                   );
                 })}
               </select>
-              <select name="tier" {...inputTier}>
+              <label htmlFor="tier"> Tier : </label>
+              <select name="tier" id="tier" {...inputTier}>
                 {tierArr.map((item, idx) => {
                   return (
                     <>
@@ -91,7 +78,8 @@ const WriteDuo = () => {
                   );
                 })}
               </select>
-              <select name="position" {...inputPosition}>
+              <label htmlFor="position"> Position : </label>
+              <select name="position" id="position" {...inputPosition}>
                 {postionArr.map((item, idx) => {
                   return (
                     <>
@@ -103,9 +91,12 @@ const WriteDuo = () => {
                 })}
               </select>
               <br />
-              <input type="text" placeholder="title" {...inputTitle} />
-              <input type="text" placeholder="memo" {...inputMemo} />
-              <input type="text" placeholder="nickname" {...inputNickname} />
+              <label htmlFor="title"> Title : </label>
+              <input type="text" id="title" {...inputTitle} />
+              <label htmlFor="memo"> Memo : </label>
+              <input type="text" id="memo" {...inputMemo} />
+              <label htmlFor="nick"> Nickname : </label>
+              <input type="text" id="nick" {...inputNickName} />
               <button type="submit">
                 <span>확인</span>
               </button>
