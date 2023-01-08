@@ -1,22 +1,43 @@
-import React, { useState } from 'react';
-import PlayerList from './components/PlayerList/PlayerList';
-import TeamSlide from './components/TeamSlide/TeamSlide';
 import styles from './LCK.module.scss';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function LCK() {
-  const [teamId, setTeamId] = useState('');
-  const onClick = (e: React.MouseEvent) => {
-    setTeamId(e.currentTarget.id);
-    console.log(teamId);
+  const [isHover, setIsHover] = useState(false);
+  const [isHoverTeam, setIsHoverTeam] = useState(false);
+  const toggleHover = () => {
+    setIsHover((prev) => !prev);
+  };
+  const toggleHoverTeam = () => {
+    setIsHoverTeam((prev) => !prev);
   };
   return (
     <section className={styles.container}>
-      <article className={styles.slide}>
-        <TeamSlide teamClick={onClick} />
-      </article>
-      <article className={styles.player_list}>
-        <PlayerList id={teamId} />
-      </article>
+      <div className={styles.wrapper}>
+        <Link to={'team'} className={styles.go_to_Team} onMouseEnter={toggleHoverTeam} onMouseLeave={toggleHoverTeam}>
+          {!isHoverTeam ? (
+            <div className={styles.lck_logo}>
+              <img src="src/assets/images/Logo/lck_log.png" alt="lck_logo" />
+            </div>
+          ) : (
+            <div className={styles.trophy}>
+              <span>팀 스쿼드</span>
+            </div>
+          )}
+        </Link>
+
+        <Link to={'matches'} className={styles.go_to_Match} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+          {!isHover ? (
+            <div className={styles.lck_logo}>
+              <img src="src/assets/images/Logo/lck_log.png" alt="lck_logo" />
+            </div>
+          ) : (
+            <div className={styles.lck_logo}>
+              <span className={styles.lck_match}>LCK 경기일정</span>
+            </div>
+          )}
+        </Link>
+      </div>
     </section>
   );
 }

@@ -1,19 +1,23 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
-import Main from "@/pages/Main";
-import Record from "@/pages/Record";
-import Duo from "@/pages/Duo";
-import LCK from "@/pages/LCK";
-import NotFound from "@/pages/NotFound";
+import Main from '@/pages/Main';
+import Record from '@/pages/Record';
+import Duo from '@/pages/Duo';
+import LCK from '@/pages/LCK';
+import NotFound from '@/pages/NotFound';
+import Team from '@/components/LCK/components/Team/Team';
+import Match from '@/components/LCK/components/Match/Match';
 
 export default function route() {
   return (
     <Routes>
-      <Route path={"/"} element={<Main />} />
-      <Route path={"/Record"} element={<Record />} />
-      <Route path={"/Duo"} element={<Duo />} />
-      <Route path={"/LCK"} element={<LCK />} />
-      <Route path={"*"} element={<NotFound />} />
+      <Route path={'/'} element={<Main />} />
+      <Route path={'/Record'} element={<Record />} />
+      <Route path={'/Duo'} element={<Duo />} />
+      <Route path={'/LCK/*'} element={<LCK />} />
+      <Route path={'LCK/team'} element={<Team />} />
+      <Route path={'LCK/matches'} element={<Match />} />
+      <Route path={'*'} element={<NotFound />} />
     </Routes>
   );
 }
