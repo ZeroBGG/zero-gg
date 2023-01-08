@@ -53,12 +53,15 @@
 
 @media only screen and (max-width: 800px) {
   .container {
+    overflow-y: scroll;
     .team_info {
-      .player_list {
-        width: 100%;
-        height: 100vh;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+      .wrapper {
+        .player_list {
+          width: 100%;
+          height: 100vh;
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
       }
     }
   }
