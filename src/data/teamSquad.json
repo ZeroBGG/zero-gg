@@ -2,7 +2,7 @@
   {
     "id": "geng",
     "teamName": "Gen.G",
-    "logo": "src/assets/images/Logo/gen_g.png",
+    "logo": "../src/assets/images/Logo/gen_g.png",
     "players": [
       {
         "id": 1,
@@ -10,7 +10,7 @@
         "korName": "최현준",
         "summoner": "Doran",
         "position": "TOP",
-        "image": "src/assets/images/Team/gen_g/Doran.png"
+        "image": "../src/assets/images/Team/gen_g/Doran.png"
       },
       {
         "id": 2,
@@ -18,7 +18,7 @@
         "korName": "한왕호",
         "summoner": "Peanut",
         "position": "JGL",
-        "image": "src/assets/images/Team/gen_g/Peanut.png"
+        "image": "../src/assets/images/Team/gen_g/Peanut.png"
       },
       {
         "id": 3,
@@ -26,7 +26,7 @@
         "korName": "김수환",
         "summoner": "Peyz",
         "position": "BOT",
-        "image": "src/assets/images/Team/gen_g/Peyz.png"
+        "image": "../src/assets/images/Team/gen_g/Peyz.png"
       },
       {
         "id": 4,
@@ -34,7 +34,7 @@
         "korName": "정지훈",
         "summoner": "Chovy",
         "position": "MID",
-        "image": "src/assets/images/Team/gen_g/Chovy.png"
+        "image": "../src/assets/images/Team/gen_g/Chovy.png"
       },
       {
         "id": 5,
@@ -42,7 +42,7 @@
         "korName": "유환중",
         "summoner": "Delight",
         "position": "SPT",
-        "image": "src/assets/images/Team/gen_g/Delight.png"
+        "image": "../src/assets/images/Team/gen_g/Delight.png"
       },
       {
         "id": 6,
@@ -50,14 +50,14 @@
         "korName": "고동빈",
         "summoner": "Score",
         "position": "HeadCoach",
-        "image": "src/assets/images/Team/gen_g/Score.webp"
+        "image": "../src/assets/images/Team/gen_g/Score.webp"
       }
     ]
   },
   {
     "id": "skt1",
     "teamName": "SK T1",
-    "logo": "src/assets/images/Logo/sk_t1.png",
+    "logo": "../src/assets/images/Logo/sk_t1.png",
     "players": [
       {
         "id": 1,
@@ -65,7 +65,7 @@
         "korName": "이수혁",
         "summoner": "Faker",
         "position": "MID",
-        "image": "src/assets/images/Team/t1/Faker.png"
+        "image": "../src/assets/images/Team/t1/Faker.png"
       },
       {
         "id": 2,
@@ -73,7 +73,7 @@
         "korName": "최우재",
         "summoner": "ZEUS",
         "position": "TOP",
-        "image": "src/assets/images/Team/t1/Zeus.png"
+        "image": "../src/assets/images/Team/t1/Zeus.png"
       },
       {
         "id": 3,
@@ -81,7 +81,7 @@
         "korName": "문현준",
         "summoner": "Oner",
         "position": "JGL",
-        "image": "src/assets/images/Team/t1/Oner.png"
+        "image": "../src/assets/images/Team/t1/Oner.png"
       },
       {
         "id": 4,
@@ -89,7 +89,7 @@
         "korName": "이민형",
         "summoner": "GUMAYUSI",
         "position": "BOT",
-        "image": "src/assets/images/Team/t1/Gumayusi.png"
+        "image": "../src/assets/images/Team/t1/Gumayusi.png"
       },
       {
         "id": 5,
@@ -97,7 +97,7 @@
         "korName": "류민석",
         "summoner": "Keria",
         "position": "SPT",
-        "image": "src/assets/images/Team/t1/Keria.png"
+        "image": "../src/assets/images/Team/t1/Keria.png"
       },
       {
         "id": 6,
@@ -112,7 +112,7 @@
   {
     "id": "liivsbx",
     "teamName": "Liiv Sandbox",
-    "logo": "src/assets/images/Logo/liiv_sbx.png",
+    "logo": "../src/assets/images/Logo/liiv_sbx.png",
     "players": [
       {
         "id": 1,
@@ -120,7 +120,7 @@
         "korName": "이주현",
         "summoner": "Clozer'",
         "position": "MID",
-        "image": "src/assets/images/Team/lbs/Clozer.png"
+        "image": "../src/assets/images/Team/lbs/Clozer.png"
       },
       {
         "id": 2,
@@ -128,7 +128,7 @@
         "korName": "김정현",
         "summoner": "Willer'",
         "position": "JGL",
-        "image": "src/assets/images/Team/lbs/Willer.png"
+        "image": "../src/assets/images/Team/lbs/Willer.png"
       },
 
       {
@@ -137,7 +137,7 @@
         "korName": "이명준",
         "summoner": "Envyy'",
         "position": "BOT",
-        "image": "src/assets/images/Team/lbs/Envyy.png"
+        "image": "../src/assets/images/Team/lbs/Envyy.png"
       },
       {
         "id": 1,
@@ -145,7 +145,7 @@
         "korName": "노태윤",
         "summoner": "Burdol'",
         "position": "TOP",
-        "image": "src/assets/images/Team/lbs/Burdol.png"
+        "image": "../src/assets/images/Team/lbs/Burdol.png"
       },
       {
         "id": 5,
@@ -153,7 +153,7 @@
         "korName": "김진홍",
         "summoner": "Kael",
         "position": "SPT",
-        "image": "src/assets/images/Team/lbs/Kael.png"
+        "image": "../src/assets/images/Team/lbs/Kael.png"
       },
       {
         "id": 6,
@@ -161,14 +161,14 @@
         "korName": "류상욱",
         "summoner": "Ryu",
         "position": "HeadCoach",
-        "image": "src/assets/images/Team/lbs/Ryu.png"
+        "image": "../src/assets/images/Team/lbs/Ryu.png"
       }
     ]
   },
   {
     "id": "dwg",
     "teamName": "DWG KIA",
-    "logo": "src/assets/images/Logo/dwg_kia.png",
+    "logo": "../src/assets/images/Logo/dwg_kia.png",
     "players": [
       {
         "id": 1,
@@ -176,7 +176,7 @@
         "korName": "허수",
         "summoner": "ShowMaker",
         "position": "MID",
-        "image": "src/assets/images/Team/dwg_kia/showMaker.png"
+        "image": "../src/assets/images/Team/dwg_kia/showMaker.png"
       },
       {
         "id": 2,
@@ -184,7 +184,7 @@
         "korName": "김건부",
         "summoner": "Canyon",
         "position": "JGL",
-        "image": "src/assets/images/Team/dwg_kia/Canyon.png"
+        "image": "../src/assets/images/Team/dwg_kia/Canyon.png"
       },
 
       {
@@ -193,7 +193,7 @@
         "korName": "김혁규",
         "summoner": "Deft",
         "position": "BOT",
-        "image": "src/assets/images/Team/dwg_kia/Deft.png"
+        "image": "../src/assets/images/Team/dwg_kia/Deft.png"
       },
       {
         "id": 4,
@@ -201,7 +201,7 @@
         "korName": "김창동",
         "summoner": "Canna",
         "position": "TOP",
-        "image": "src/assets/images/Team/dwg_kia/Canna.png"
+        "image": "../src/assets/images/Team/dwg_kia/Canna.png"
       },
       {
         "id": 5,
@@ -209,7 +209,7 @@
         "korName": "기형규",
         "summoner": "Kellin",
         "position": "SPT",
-        "image": "src/assets/images/Team/dwg_kia/Kellin.png"
+        "image": "../src/assets/images/Team/dwg_kia/Kellin.png"
       },
       {
         "id": 6,
@@ -217,14 +217,14 @@
         "korName": "최천주",
         "summoner": "Acorn",
         "position": "HeadCoach",
-        "image": "src/assets/images/Team/dwg_kia/Acorn.png"
+        "image": "../src/assets/images/Team/dwg_kia/Acorn.png"
       }
     ]
   },
   {
     "id": "kt",
     "teamName": "KT Rolseter",
-    "logo": "src/assets/images/Logo/kt_rolster.png",
+    "logo": "../src/assets/images/Logo/kt_rolster.png",
     "players": [
       {
         "id": 1,
@@ -232,7 +232,7 @@
         "korName": "곽보성",
         "summoner": "Bdd",
         "position": "MID",
-        "image": "src/assets/images/Team/kt_rolster/Bdd.png"
+        "image": "../src/assets/images/Team/kt_rolster/Bdd.png"
       },
       {
         "id": 2,
@@ -240,7 +240,7 @@
         "korName": "문우찬",
         "summoner": "Cuzz",
         "position": "JGL",
-        "image": "src/assets/images/Team/kt_rolster/Cuzz.png"
+        "image": "../src/assets/images/Team/kt_rolster/Cuzz.png"
       },
       {
         "id": 3,
@@ -248,7 +248,7 @@
         "korName": "김하람",
         "summoner": "Aiming",
         "position": "BOT",
-        "image": "src/assets/images/Team/kt_rolster/Aiming.png"
+        "image": "../src/assets/images/Team/kt_rolster/Aiming.png"
       },
       {
         "id": 4,
@@ -256,14 +256,14 @@
         "korName": "김기인",
         "summoner": "Kiin",
         "position": "TOP",
-        "image": "src/assets/images/Team/kt_rolster/Kiin.png"
+        "image": "../src/assets/images/Team/kt_rolster/Kiin.png"
       },
       {
         "id": 5,
         "name": "Si-U Son",
         "summoner": "Lehends",
         "position": "SPT",
-        "image": "src/assets/images/Team/kt_rolster/Lehends.png"
+        "image": "../src/assets/images/Team/kt_rolster/Lehends.png"
       },
       {
         "id": 6,
@@ -271,14 +271,14 @@
         "korName": "강동훈",
         "summoner": "KT Hirai",
         "position": "HeadCoach",
-        "image": "src/assets/images/Team/kt_rolster/Hirai.png"
+        "image": "../src/assets/images/Team/kt_rolster/Hirai.png"
       }
     ]
   },
   {
     "id": "drx",
     "teamName": "DRX",
-    "logo": "src/assets/images/Logo/drx.png",
+    "logo": "../src/assets/images/Logo/drx.png",
     "players": [
       {
         "id": 1,
@@ -286,7 +286,7 @@
         "korName": "유수혁",
         "summoner": "Fate",
         "position": "MID",
-        "image": "src/assets/images/Team/drx/Fate.png"
+        "image": "../src/assets/images/Team/drx/Fate.png"
       },
       {
         "id": 2,
@@ -294,7 +294,7 @@
         "korName": "김동범",
         "summoner": "Croco",
         "position": "JGL",
-        "image": "src/assets/images/Team/drx/Croco.png"
+        "image": "../src/assets/images/Team/drx/Croco.png"
       },
 
       {
@@ -303,7 +303,7 @@
         "korName": "서대길",
         "summoner": "deokdam",
         "position": "BOT",
-        "image": "src/assets/images/Team/drx/Deokdam.png"
+        "image": "../src/assets/images/Team/drx/Deokdam.png"
       },
       {
         "id": 4,
@@ -311,7 +311,7 @@
         "korName": "김광희",
         "summoner": "Rascal",
         "position": "TOP",
-        "image": "src/assets/images/Team/drx/Rascal.png"
+        "image": "../src/assets/images/Team/drx/Rascal.png"
       },
       {
         "id": 5,
@@ -319,7 +319,7 @@
         "korName": "조건호",
         "summoner": "BeryL",
         "position": "SPT",
-        "image": "src/assets/images/Team/drx/BeryL.png"
+        "image": "../src/assets/images/Team/drx/BeryL.png"
       },
       {
         "id": 6,
@@ -327,14 +327,14 @@
         "korName": "이주한",
         "summoner": "Juhan",
         "position": "SPT",
-        "image": "src/assets/images/Team/drx/Juhan.png"
+        "image": "../src/assets/images/Team/drx/Juhan.png"
       }
     ]
   },
   {
     "id": "freecs",
     "teamName": "Kwangdong Freecs",
-    "logo": "src/assets/images/Logo/freecs.png",
+    "logo": "../src/assets/images/Logo/freecs.png",
     "players": [
       {
         "id": 1,
@@ -350,7 +350,7 @@
         "korName": "고영재",
         "summoner": "YoungJae",
         "position": "JGL",
-        "image": "src/assets/images/Team/freecs/Youngjae.png"
+        "image": "../src/assets/images/Team/freecs/Youngjae.png"
       },
 
       {
@@ -359,7 +359,7 @@
         "korName": "김태윤",
         "summoner": "Taeyoon",
         "position": "BOT",
-        "image": "src/assets/images/Team/freecs/Taeyoon.png"
+        "image": "../src/assets/images/Team/freecs/Taeyoon.png"
       },
       {
         "id": 4,
@@ -367,7 +367,7 @@
         "korName": "이동주",
         "summoner": "DuDu",
         "position": "TOP",
-        "image": "src/assets/images/Team/freecs/Dudu.png"
+        "image": "../src/assets/images/Team/freecs/Dudu.png"
       },
       {
         "id": 5,
@@ -375,18 +375,10 @@
         "korName": "정재훈",
         "summoner": "Moham",
         "position": "SPT",
-        "image": "src/assets/images/Team/freecs/Moham.png"
+        "image": "../src/assets/images/Team/freecs/Moham.png"
       },
       {
         "id": 6,
-        "name": "Se Jun Yoon",
-        "korName": "윤세준",
-        "summoner": "Jun",
-        "position": "SPT",
-        "image": "src/assets/images/Team/freecs/Jun.png"
-      },
-      {
-        "id": 7,
         "name": "Dae Ho Kim",
         "korName": "김대호",
         "summoner": "cvMax",
@@ -399,7 +391,7 @@
   {
     "id": "redforce",
     "teamName": "NS_RedForce",
-    "logo": "src/assets/images/Logo/redforce.png",
+    "logo": "../src/assets/images/Logo/redforce.png",
     "players": [
       {
         "id": 1,
@@ -407,7 +399,7 @@
         "korName": "안현수",
         "summoner": "Fiesta",
         "position": "MID",
-        "image": "src/assets/images/Team/redforce/Fiesta.png"
+        "image": "../src/assets/images/Team/redforce/Fiesta.png"
       },
       {
         "id": 2,
@@ -415,7 +407,7 @@
         "korName": "이성복",
         "summoner": "Sylvie",
         "position": "JGL",
-        "image": "src/assets/images/Team/redforce/Sylvie.png"
+        "image": "../src/assets/images/Team/redforce/Sylvie.png"
       },
 
       {
@@ -432,7 +424,7 @@
         "korName": "박근우",
         "summoner": "DnDn",
         "position": "TOP",
-        "image": "src/assets/images/Team/redforce/Dndn.png"
+        "image": "../src/assets/images/Team/redforce/Dndn.png"
       },
       {
         "id": 5,
@@ -440,7 +432,7 @@
         "korName": "정윤수",
         "summoner": "Peter",
         "position": "SPT",
-        "image": "src/assets/images/Team/redforce/Peter.png"
+        "image": "../src/assets/images/Team/redforce/Peter.png"
       },
       {
         "id": 6,
@@ -448,14 +440,14 @@
         "korName": "허영철",
         "summoner": "irean",
         "position": "HeadCoach",
-        "image": "src/assets/images/Team/redforce/irean.png"
+        "image": "../src/assets/images/Team/redforce/irean.png"
       }
     ]
   },
   {
     "id": "fredit",
     "teamName": "Fredit Brion",
-    "logo": "src/assets/images/Logo/brion.png",
+    "logo": "../src/assets/images/Logo/brion.png",
     "players": [
       {
         "id": 1,
@@ -463,7 +455,7 @@
         "korName": "김홍주",
         "summoner": "Karis",
         "position": "MID",
-        "image": "src/assets/images/Team/brion/Karis.png"
+        "image": "../src/assets/images/Team/brion/Karis.png"
       },
       {
         "id": 2,
@@ -480,7 +472,7 @@
         "korName": "박정환",
         "summoner": "Hena",
         "position": "BOT",
-        "image": "src/assets/images/Team/brion/Hena.png"
+        "image": "../src/assets/images/Team/brion/Hena.png"
       },
       {
         "id": 4,
@@ -488,7 +480,7 @@
         "korName": "박기태",
         "summoner": "Morgan",
         "position": "TOP",
-        "image": "src/assets/images/Team/brion/Morgan.png"
+        "image": "../src/assets/images/Team/brion/Morgan.png"
       },
       {
         "id": 5,
@@ -496,7 +488,7 @@
         "korName": "이상호",
         "summoner": "Effort",
         "position": "SPT",
-        "image": "src/assets/images/Team/brion/Effort.png"
+        "image": "../src/assets/images/Team/brion/Effort.png"
       },
       {
         "id": 6,
@@ -504,7 +496,7 @@
         "korName": "최우범",
         "summoner": "Edgar",
         "position": "HeadCoach",
-        "image": "src/assets/images/Team/brion/Edgar.png"
+        "image": "../src/assets/images/Team/brion/Edgar.png"
       }
     ]
   },
@@ -512,7 +504,7 @@
   {
     "id": "hanwha",
     "teamName": "Hanwha Life Esports",
-    "logo": "src/assets/images/Logo/hanwha.png",
+    "logo": "../src/assets/images/Logo/hanwha.png",
     "players": [
       {
         "id": 1,
@@ -520,7 +512,7 @@
         "korName": "김근우",
         "summoner": "Zeka",
         "position": "MID",
-        "image": "src/assets/images/Team/hanwha/Zeka.png"
+        "image": "../src/assets/images/Team/hanwha/Zeka.png"
       },
       {
         "id": 2,
@@ -528,7 +520,7 @@
         "korName": "김태민",
         "summoner": "Clid",
         "position": "JGL",
-        "image": "src/assets/images/Team/hanwha/Clid.png"
+        "image": "../src/assets/images/Team/hanwha/Clid.png"
       },
 
       {
@@ -537,7 +529,7 @@
         "korName": "박도현",
         "summoner": "Viper",
         "position": "BOT",
-        "image": "src/assets/images/Team/hanwha/Viper.png"
+        "image": "../src/assets/images/Team/hanwha/Viper.png"
       },
       {
         "id": 4,
@@ -545,7 +537,7 @@
         "korName": "황성훈",
         "summoner": "Kingen",
         "position": "TOP",
-        "image": "src/assets/images/Team/hanwha/Kingen.png"
+        "image": "../src/assets/images/Team/hanwha/Kingen.png"
       },
       {
         "id": 5,
@@ -553,7 +545,7 @@
         "korName": "김정민",
         "summoner": "Life",
         "position": "SPT",
-        "image": "src/assets/images/Team/hanwha/Life.png"
+        "image": "../src/assets/images/Team/hanwha/Life.png"
       },
       {
         "id": 6,

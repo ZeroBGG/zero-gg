@@ -1,13 +1,6 @@
-import React from 'react';
+import { icons } from '@/data/position';
+import { ICON_URL } from './constant';
 
-const ICON_URL = 'src/assets/icons/lane';
-const icons = [
-  { name: 'JGL', url: 'Jungle.svg' },
-  { name: 'BOT', url: 'Bottom.svg' },
-  { name: 'SPT', url: 'Support.svg' },
-  { name: 'TOP', url: 'Top.svg' },
-  { name: 'MID', url: 'Middle.svg' },
-];
 interface PositionType {
   position: string;
 }
