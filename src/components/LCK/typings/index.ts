@@ -17,3 +17,10 @@ export interface PlayerListType {
   image: string;
   logo: string;
 }
+
+export interface ListProps {
+  logo: string;
+  teamName: string;
+  id: string;
+  players: PlayerListType[];
+}

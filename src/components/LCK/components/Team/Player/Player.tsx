@@ -1,17 +1,30 @@
 import LanePositon from '../LanePostion/LanePositon';
 import styles from './Player.module.scss';
 import { PlayersType } from '../../../typings';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 const Player = ({ id, engName, name, position, summoner, image, logo }: PlayersType) => {
-  const [isHoverName, setIsHoverName] = useState(false);
-  const isMobile = useMediaQuery({
-    query: 'min-width: 560px',
-  });
-  const isPC = useMediaQuery({
-    query: '(min-width: 1024px) and (max-width:1920px) ',
-  });
+  const [isHoverName, setIsHoverName] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const imgRef = useRef<HTMLImageElement>(null);
+  const observer = useRef<IntersectionObserver>();
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver(intersectionObserver);
+    imgRef.current && observer.current.observe(imgRef.current);
+  }, []);
+
+  const intersectionObserver = (entries: IntersectionObserverEntry[], io: IntersectionObserver) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        io.unobserve(entry.target);
+        setIsLoading(true);
+      }
+    });
+  };
+
   const toggleName = (event: React.MouseEvent<HTMLDivElement>) => {
     console.log(event.currentTarget);
   };
@@ -42,7 +55,7 @@ const Player = ({ id, engName, name, position, summoner, image, logo }: PlayersT
 
         <div className={styles.player_img}>
           {image !== '' ? (
-            <img src={image} alt="player_img" />
+            <img ref={imgRef} src={isLoading ? image : '../src/assets/images/Team/none.png'} alt="player_img" />
           ) : (
             <img src="../src/assets/images/Team/none.png" alt="nonePlayer" />
           )}
