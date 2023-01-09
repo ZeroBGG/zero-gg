@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ListProps, PlayerListType } from '../../../typings';
 import Player from '../Player/Player';
-import { LeftToRightMotion } from './motion';
+import { LeftToRightMotion } from './varients';
 import styles from './PlayerList.module.scss';
 
 const List = ({ logo, teamName, id, players }: ListProps) => {
@@ -11,10 +11,9 @@ const List = ({ logo, teamName, id, players }: ListProps) => {
         <div className={styles.wrapper}>
           <motion.div
             className={styles.team_name}
+            viewport={{ once: true, amount: 0.5 }}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
             variants={LeftToRightMotion}
           >
             <div className={styles.logo}>
@@ -27,7 +26,6 @@ const List = ({ logo, teamName, id, players }: ListProps) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
             variants={LeftToRightMotion}
           >
             {players.map((player: PlayerListType) => {
