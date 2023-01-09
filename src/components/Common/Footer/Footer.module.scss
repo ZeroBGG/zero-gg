@@ -23,7 +23,7 @@ $white: #ffffff;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      font: normal 0.8rem/1 "aria";
+      font: normal 0.8rem/1 'arial';
       color: $white;
 
       p {
@@ -61,7 +61,7 @@ $white: #ffffff;
       }
 
       .copyright {
-        font: normal 10px/1 "aria";
+        font: normal 10px/1 'arial';
       }
 
       svg {
