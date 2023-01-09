@@ -1,7 +1,6 @@
 import data from '@/data/teamSquad.json';
 import React, { useEffect, useState } from 'react';
 import styles from './TeamSlide.module.scss';
-
 interface Props {
   teamClick: (e: React.MouseEvent) => void;
 }
@@ -13,7 +12,7 @@ const TeamSlide = ({ teamClick }: Props) => {
   });
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.slider_container}>
         <div className={styles.wrapper}>
           <ul className={styles.team_slide}>
             {teams.map((team) => (
