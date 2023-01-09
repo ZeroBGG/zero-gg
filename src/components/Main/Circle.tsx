@@ -1,6 +1,4 @@
 import styles from './Circle.module.scss';
-
-import garen from '@/assets/images/Main/Champion/가렌.png';
 import { useState, useEffect } from 'react';
 import { getChampion, getRotationChampion } from '@/api/championApi';
 
@@ -57,12 +55,13 @@ export default function Circle() {
         return (
           <article className={styles.face} key={data.key}>
             <div className={styles.inner}>
-              <div>
+              <div className={styles.content}>
                 <img
                   src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${data.id}_0.jpg`}
                   alt={data.name}
+                  className={styles.img}
                 />
-                <h2>{data.name}</h2>
+                <h2 className={styles.name}>{data.name}</h2>
               </div>
             </div>
           </article>

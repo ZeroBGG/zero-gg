@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <main className={styles.main}>
       <div className={styles.wrap}>
-        <video src={bg} loop autoPlay muted></video>
+        <video className={styles.video} src={bg} loop autoPlay muted></video>
         <Circle />
       </div>
 
