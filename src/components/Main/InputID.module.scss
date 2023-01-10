@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  min-width: 280px;
+  height: 80px;
+  // justify-content: center;
+  background-color: #fff;
+  border-radius: 40px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    // border: 1px solid black;
+
+    .input {
+      width: 350px;
+      outline: none;
+      border: none;
+    }
+
+    .button {
+      background: inherit;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
+      overflow: visible;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+  }
+}
