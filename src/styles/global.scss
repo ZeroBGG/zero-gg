@@ -3,3 +3,9 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+@media screen and (max-width: 280px) {
+  body {
+    min-width: 280px;
+  }
+}

@@ -1,9 +1,9 @@
 /* Main.Module.scss */
 .main {
-  position: absolute;
+  position: relative;
   display: flex;
   width: 100%;
-  height: calc(100% - 180px);
+  height: calc(100vh - 200px);
   justify-content: center;
   align-items: center;
   background-color: #61616e;
@@ -27,6 +27,21 @@
   }
 
   .article {
-    height: 100%;
+    display: flex;
+    width: 50%;
+    height: 80px;
+    max-width: 480px;
+    min-width: 270px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .main {
+    height: 600px;
   }
 }
