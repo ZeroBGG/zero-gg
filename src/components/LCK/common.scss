@@ -1,0 +1,54 @@
+@mixin container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, #042431, #042432, #323131, #04141d, #04141f);
+  font-family: 'Caudex', serif;
+  text-decoration: none;
+}
+@mixin card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+@mixin card-view {
+  display: flex;
+  width: 450px;
+  max-height: 900px;
+  justify-content: center;
+  border: 3px solid #3c3216;
+  background: inherit;
+  font-size: 2em;
+  color: #5c5944;
+  font-weight: 900;
+  text-align: center;
+  filter: drop-shadow(0 0 1em #02455c);
+}
+
+@mixin category-page {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+}
+@mixin sohwansaImg {
+  opacity: 0.6;
+  width: 100%;
+  height: 550px;
+}
+
+@mixin category-view {
+  padding-top: 20px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.359), rgba(0, 0, 0, 0.2));
+  width: 100%;
+  height: 15%;
+  z-index: 1;
+  margin: 0px auto;
+  vertical-align: middle;
+  color: #c5bb7e;
+}
