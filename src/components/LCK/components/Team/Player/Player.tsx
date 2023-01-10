@@ -2,7 +2,6 @@ import LanePositon from '../LanePostion/LanePositon';
 import styles from './Player.module.scss';
 import { PlayersType } from '../../../typings';
 import { useEffect, useRef, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 const Player = ({ id, engName, name, position, summoner, image, logo }: PlayersType) => {
   const [isHoverName, setIsHoverName] = useState<boolean>(false);
@@ -55,7 +54,12 @@ const Player = ({ id, engName, name, position, summoner, image, logo }: PlayersT
 
         <div className={styles.player_img}>
           {image !== '' ? (
-            <img ref={imgRef} src={isLoading ? image : '../src/assets/images/Team/none.png'} alt="player_img" />
+            <img
+              className={styles.image}
+              ref={imgRef}
+              src={isLoading ? image : '../src/assets/images/Team/none.png'}
+              alt="player_img"
+            />
           ) : (
             <img src="../src/assets/images/Team/none.png" alt="nonePlayer" />
           )}

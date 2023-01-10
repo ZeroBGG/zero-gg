@@ -1,4 +1,4 @@
-@import '../TeamSlide/responsive.module.scss';
+@import '../responsive.module.scss';
 .slider_container {
   .wrapper {
     width: 100%;
@@ -31,5 +31,5 @@
       }
     }
   }
-  @include responsive;
 }
+@include responsive;
