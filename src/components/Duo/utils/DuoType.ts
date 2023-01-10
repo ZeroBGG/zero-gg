@@ -9,7 +9,7 @@ export type DuoType = {
   title: string;
   memo: string;
   nickName: string;
-  mostChamp: string[];
+  mostChamp: string;
 };
 
 export type FindDuoType = Pick<DuoType, 'queue' | 'tier' | 'position'>;

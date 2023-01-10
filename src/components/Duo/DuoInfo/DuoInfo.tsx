@@ -37,7 +37,7 @@ const DuoInfo = () => {
       submitId.setValue('');
       submitPass.setValue('');
     } else {
-      window.alert('틀렸습니다.');
+      window.alert('아이디와 비밀번호가 틀렸습니다.');
       submitId.setValue('');
       submitPass.setValue('');
     }
@@ -48,8 +48,7 @@ const DuoInfo = () => {
   };
 
   // 업데이트 및 삭제에 필요한 클릭이벤트
-  const onUpdateClick = () => setUpdate((e) => !e);
-
+  const toggleUpdateClick = () => setUpdate((e) => !e);
   const onDeleteClick = async () => {
     const ok = window.confirm('지우겠습니까?');
 
@@ -124,7 +123,7 @@ const DuoInfo = () => {
             <input type="text" id="memo" {...inputMemo} />
             <label htmlFor="nick"> Nick name : </label>
             <input type="text" id="nick" {...inputNickName} />
-            <button type="submit" onClick={onUpdateClick}>
+            <button type="submit" onClick={toggleUpdateClick}>
               <span>수정</span>
             </button>
             <button type="submit" onClick={onDeleteClick}>

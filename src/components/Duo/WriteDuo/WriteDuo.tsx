@@ -17,6 +17,7 @@ const WriteDuo = () => {
   const inputTitle = useInput('');
   const inputMemo = useInput('');
   const inputNickName = useInput('');
+  const inputMostChamp = useInput('');
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -31,7 +32,7 @@ const WriteDuo = () => {
       title: inputTitle.value,
       memo: inputMemo.value,
       nickName: inputNickName.value,
-      mostChamp: [''],
+      mostChamp: inputMostChamp.value,
     };
 
     await addDoc(collection(dbService, 'myLOLInfo'), myLOLInfo);
@@ -97,6 +98,8 @@ const WriteDuo = () => {
               <input type="text" id="memo" {...inputMemo} />
               <label htmlFor="nick"> Nickname : </label>
               <input type="text" id="nick" {...inputNickName} />
+              <label htmlFor="most"> MostChamp : </label>
+              <input type="text" id="most" {...inputMostChamp} />
               <button type="submit">
                 <span>확인</span>
               </button>

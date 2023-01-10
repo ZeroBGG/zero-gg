@@ -1,15 +1,15 @@
-export const queueArr = ["All", "Duo", "Free", "Narak"];
+export const queueArr = ['큐 선택', 'Duo', 'Free', 'Narak'];
 
 export const tierArr = [
-	"All",
-	"Iron",
-	"Bronze",
-	"Silver",
-	"Gold",
-	"Platinum",
-	"Diamond",
-	"Master",
-	"GrandMaster",
+  '티어 선택',
+  'Iron',
+  'Bronze',
+  'Silver',
+  'Gold',
+  'Platinum',
+  'Diamond',
+  'Master',
+  'GrandMaster',
 ];
 
-export const postionArr = ["All", "Top", "Jungle", "Mid", "AD", "Supporter"];
+export const postionArr = ['포지션 선택', 'Top', 'Jungle', 'Mid', 'AD', 'Supporter'];
