@@ -1,4 +1,4 @@
-@import '../responsive.module.scss';
+@import '../responsive/responsive.module.scss';
 .slider_container {
   .wrapper {
     width: 100%;
@@ -32,4 +32,4 @@
     }
   }
 }
-@include responsive;
+@include responsive-slider;
