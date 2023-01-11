@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import PlayerList from './PlayerList/PlayerList';
-import TeamSlide from './TeamSlide/TeamSlide';
+import PlayerList from '../PlayerList/PlayerList';
+import TeamSlide from '../TeamSlide/TeamSlide';
 import styles from './Team.module.scss';
 const Team = () => {
   const [teamId, setTeamId] = useState('');

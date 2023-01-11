@@ -166,9 +166,9 @@
     ]
   },
   {
-    "id": "dwg",
-    "teamName": "DWG KIA",
-    "logo": "../src/assets/images/Logo/dwg_kia.png",
+    "id": "dplus",
+    "teamName": "DPlus KIA",
+    "logo": "https://am-a.akamaihd.net/image?resize=200:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1673260049703_DPlusKIALOGO11.png",
     "players": [
       {
         "id": 1,
