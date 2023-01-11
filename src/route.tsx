@@ -11,14 +11,13 @@ import DuoInfo from './components/Duo/DuoInfo/DuoInfo';
 import Team from '@/components/LCK/components/Team/Team';
 import Match from '@/components/LCK/components/Match/Match';
 
-
 export default function route() {
   return (
     <Routes>
       <Route path={'/'} element={<Main />} />
       <Route path={'/Record'} element={<Record />} />
-      <Route path={'/Duo'} element={<Duo />} />
 
+      <Route path={'/Duo'} element={<Duo />} />
       <Route path={'/Duo/:id'} element={<DuoInfo />} />
 
       <Route path={'/LCK/*'} element={<LCK />} />

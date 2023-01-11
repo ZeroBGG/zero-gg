@@ -2,28 +2,155 @@
 
 $blue: #1b76d8;
 $black: #141618;
+$dark: #333;
+$indigo: #4b0082;
+$white: #fff;
+$iron: #696b5e;
+$bronze: #624637;
+$silver: #c0c0c0;
+$gold: #ffd700;
+$platinum: #20b2aa;
+$dia: #4169e1;
+$bgColor-1: #1c1c1f;
+$bgColor-2: #282830;
+
+@mixin radio($color1, $color2) {
+  margin: 5px 10px 0 0;
+  display: inline-block;
+  cursor: pointer;
+  width: 90px;
+  height: 24px;
+  border: 1px solid $color1;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: $color2;
+  color: $color1;
+}
+
+@mixin radio_checked($color1, $color2) {
+  background-color: $color1;
+  color: $color2;
+}
+
+main {
+  background-color: $bgColor-1;
+}
 
 /* 듀오 카드 */
 .section_card {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: auto;
+  height: 100vh;
   margin-bottom: 5vh;
 
   .div_card {
-    border: 1px solid black;
     width: 99vw;
-    height: auto;
+    height: 99vh;
 
     .ul_card {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      flex: 1;
-
-
-
+      border: 1px solid black;
+      background-color: $bgColor-2;
+      padding: 20px 30px;
     }
+  }
+}
+
+.wrapper {
+  width: 44vw;
+  padding: auto;
+  margin: 15px auto;
+  background-color: #f1f5f7;
+  border-radius: 10px;
+}
+
+.select_queue {
+  padding: 15px 10px;
+
+  input[type=radio] {
+    display: none;
+
+  }
+
+  input[type=radio]+label {
+    @include radio($dark, $white)
+  }
+
+  input[type=radio]:checked+label {
+    @include radio_checked($dark, $white)
+  }
+}
+
+.select_tier {
+  padding: 15px 10px;
+
+  input[type=radio] {
+    display: none;
+  }
+
+  .iron+label {
+    @include radio($iron, $white)
+  }
+
+  .iron:checked+label {
+    @include radio_checked($iron, $white)
+  }
+
+  .bronze+label {
+    @include radio($bronze, $white)
+  }
+
+  .bronze:checked+label {
+    @include radio_checked($bronze, $white)
+  }
+
+  .silver+label {
+    @include radio($silver, $white)
+  }
+
+  .silver:checked+label {
+    @include radio_checked($silver, $white)
+  }
+
+  .gold+label {
+    @include radio($gold, $white)
+  }
+
+  .gold:checked+label {
+    @include radio_checked($gold, $black)
+  }
+
+  .platinum+label {
+    @include radio($platinum, $white)
+  }
+
+  .platinum:checked+label {
+    @include radio_checked($platinum, $white)
+  }
+
+  .dia+label {
+    @include radio($dia, $white)
+  }
+
+  .dia:checked+label {
+    @include radio_checked($dia, $white)
+  }
+}
+
+.select_position {
+  padding: 15px 10px;
+
+  input[type=radio] {
+    display: none;
+  }
+
+  input[type=radio]+label {
+    @include radio($indigo, $white)
+  }
+
+  input[type=radio]:checked+label {
+    @include radio_checked($indigo, $white)
   }
 }
