@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
 @import './common.scss';
-@import './components/Team/responsive/responsive.module.scss';
+@import '../LCK/components/Team/responsive.module.scss';
 /* LCK.Module.scss */
 .container {
   @include container;

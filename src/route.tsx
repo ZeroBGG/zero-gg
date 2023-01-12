@@ -10,6 +10,7 @@ import DuoInfo from './components/Duo/DuoInfo/DuoInfo';
 
 import Team from '@/components/LCK/components/Team/team_main/Team';
 import Match from '@/components/LCK/components/Match/Match';
+import Schedule from './components/LCK/components/Match/Schedule/Schedule';
 
 export default function route() {
   return (
@@ -20,9 +21,11 @@ export default function route() {
 
       <Route path={'/Duo/:id'} element={<DuoInfo />} />
 
-      <Route path={'/LCK/*'} element={<LCK />} />
-      <Route path={'LCK/team'} element={<Team />} />
-      <Route path={'LCK/matches'} element={<Match />} />
+      <Route path={'/lck'} element={<LCK />} />
+      <Route path={'lck/team'} element={<Team />} />
+      <Route path={'lck/matches/'} element={<Match />}>
+        <Route path={':month'} element={<Schedule />} />
+      </Route>
 
       <Route path={'*'} element={<NotFound />} />
     </Routes>
