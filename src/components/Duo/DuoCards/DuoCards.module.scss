@@ -15,19 +15,30 @@ $fontColor-2: #c0c0c0;
   margin-top: 10px;
 
   .wrapper {
-    width: 65vw;
+    width: 75vw;
     height: 10vh;
-    border: 1px solid blue;
     display: flex;
     text-align: left;
     line-height: 10vh;
     background-color: $bgColor-3;
 
+    .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 3px;
+      margin: 0 3px;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
     .user {
       width: 100px;
       padding: 0 10px;
       text-align: center;
-
       border-right: 1px solid black;
 
       p {
@@ -39,22 +50,22 @@ $fontColor-2: #c0c0c0;
     .title {
       padding: 0 0 0 5px;
       width: 20vw;
+      text-overflow: ellipsis;
 
       h2 {
         font-size: 23px;
         color: $fontColor-1;
-
       }
     }
 
     .memo {
       padding: 0 1px;
       width: 18vw;
+      text-overflow: ellipsis;
 
       p {
         font-size: 14px;
         color: $fontColor-2;
-
       }
     }
 
@@ -68,8 +79,8 @@ $fontColor-2: #c0c0c0;
     }
 
     .time {
-
       text-align: right;
+      float: right;
 
       p {
         font-size: 11px;

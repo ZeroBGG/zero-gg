@@ -1,0 +1,24 @@
+@mixin radio($color1, $color2) {
+  margin: 5px 10px 0 0;
+  display: inline-block;
+  cursor: pointer;
+  width: 90px;
+  height: 24px;
+  border: 1px solid $color1;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: $color2;
+  color: $color1;
+}
+
+@mixin radio_checked($color1, $color2) {
+  background-color: $color1;
+  color: $color2;
+}
+
+@mixin img_size($width, $height) {
+  width: $width;
+  height: $height;
+}

@@ -1,1 +1,49 @@
+@import '../common.scss';
+
 /* DuoInfo.module.scss */
+
+$bgColor-1: #1c1c1f;
+$bgColor-2: #282830;
+$fontColor: #f0f0f0;
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: $bgColor-1;
+  color: $fontColor;
+
+  .update {
+    width: 99vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+  }
+}
+
+.info {
+  border: 1px solid red;
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .user {
+    display: flex;
+
+    .ti_icons {
+      padding: 4px;
+    }
+
+    .lane_icons {
+      padding: 4px;
+    }
+
+    img {
+      @include img_size(96px, 96px);
+    }
+  }
+}

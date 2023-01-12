@@ -3,8 +3,8 @@
 $white: #f5f5f5;
 $gray: #e7e7e7;
 $fontColor: #f0f0f0;
-$opggColor: #31313c;
-$opggDarkColor: #282830;
+$bgColor-1: #31313c;
+$bgColor-2: #282830;
 
 /* WriteDuo section */
 .section {
@@ -28,7 +28,7 @@ $opggDarkColor: #282830;
   text-decoration: none;
   font-weight: 600;
   transition: 0.25s;
-  background-color: $opggColor;
+  background-color: $bgColor-1;
   color: $fontColor;
 
   margin: 10px 0;
@@ -44,7 +44,7 @@ $opggDarkColor: #282830;
   display: block;
   border-radius: 10px;
   padding: 2px;
-  background-color: $opggColor;
+  background-color: $bgColor-1;
   font-size: 11px;
   color: $fontColor;
 
@@ -75,7 +75,7 @@ $opggDarkColor: #282830;
     border: 1px solid $gray;
     border-radius: 10px;
     outline: none;
-    background-color: $opggDarkColor;
+    background-color: $bgColor-2;
   }
 
   .input_memo {
@@ -88,7 +88,7 @@ $opggDarkColor: #282830;
     border: 1px solid $gray;
     border-radius: 10px;
     outline: none;
-    background-color: $opggDarkColor;
+    background-color: $bgColor-2;
   }
 }
 

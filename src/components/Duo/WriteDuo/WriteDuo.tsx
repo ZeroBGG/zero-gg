@@ -3,7 +3,7 @@ import styles from './WriteDuo.module.scss';
 import { dbService } from 'src/firebase';
 import { DuoType } from '../utils/DuoType';
 import { addDoc, collection } from 'firebase/firestore';
-import { queueArr, tierArr, postionArr } from '../utils/DuoArr';
+import { queueArr, tierArr, positionArr } from '../utils/DuoArr';
 import useInput from '@/hooks/useInput';
 
 const WriteDuo = () => {
@@ -55,6 +55,18 @@ const WriteDuo = () => {
   };
 
   const onClick = () => setWrite((e) => !e);
+
+  const cancleValue = () => {
+    inputId.setValue('');
+    inputPass.setValue('');
+    inputQueue.setValue('');
+    inputTier.setValue('');
+    inputPosition.setValue('');
+    inputTitle.setValue('');
+    inputMemo.setValue('');
+    inputNickName.setValue('');
+    inputMostChamp.setValue('');
+  };
 
   return (
     <>
@@ -122,7 +134,7 @@ const WriteDuo = () => {
                       Position
                     </label>
                     <select name="position" id="position" className={styles.input_select} {...inputPosition}>
-                      {postionArr.map((item, idx) => {
+                      {positionArr.map((item, idx) => {
                         return (
                           <>
                             <option value={item} key={idx}>
@@ -178,8 +190,22 @@ const WriteDuo = () => {
                   </div>
                 </div>
                 <div className={styles.submit}>
-                  <button type="submit">
+                  <button
+                    type="submit"
+                    disabled={
+                      !inputId.value ||
+                      !inputPass.value ||
+                      !inputTier.value ||
+                      !inputQueue.value ||
+                      !inputPosition.value ||
+                      !inputTitle.value ||
+                      !inputNickName.value
+                    }
+                  >
                     <span>확인</span>
+                  </button>
+                  <button type="button" onClick={cancleValue}>
+                    <span>취소</span>
                   </button>
                 </div>
               </form>

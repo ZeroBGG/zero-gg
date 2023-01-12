@@ -1,3 +1,5 @@
+@import "./common.scss";
+
 /* Duo.Module.scss */
 
 $blue: #1b76d8;
@@ -13,26 +15,6 @@ $platinum: #20b2aa;
 $dia: #4169e1;
 $bgColor-1: #1c1c1f;
 $bgColor-2: #282830;
-
-@mixin radio($color1, $color2) {
-  margin: 5px 10px 0 0;
-  display: inline-block;
-  cursor: pointer;
-  width: 90px;
-  height: 24px;
-  border: 1px solid $color1;
-  line-height: 24px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 13px;
-  background-color: $color2;
-  color: $color1;
-}
-
-@mixin radio_checked($color1, $color2) {
-  background-color: $color1;
-  color: $color2;
-}
 
 main {
   background-color: $bgColor-1;
@@ -51,7 +33,6 @@ main {
     height: 99vh;
 
     .ul_card {
-      border: 1px solid black;
       background-color: $bgColor-2;
       padding: 20px 30px;
     }

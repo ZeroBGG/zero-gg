@@ -1,7 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { dbService } from 'src/firebase';
 import { collection, onSnapshot, query } from 'firebase/firestore';
-import { postionArr, queueArr, tierArr } from './utils/DuoArr';
 import DuoCards from './DuoCards/DuoCards';
 import WriteDuo from './WriteDuo/WriteDuo';
 import { DuoType } from './utils/DuoType';
