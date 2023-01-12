@@ -15,6 +15,7 @@ $platinum: #20b2aa;
 $dia: #4169e1;
 $bgColor-1: #1c1c1f;
 $bgColor-2: #282830;
+$bgColor-3: #f1f5f7;
 
 main {
   background-color: $bgColor-1;
@@ -43,8 +44,8 @@ main {
   width: 44vw;
   padding: auto;
   margin: 15px auto;
-  background-color: #f1f5f7;
-  border-radius: 10px;
+  background-color: $bgColor-3;
+
 }
 
 .select_queue {

@@ -70,6 +70,10 @@ const DuoInfo = () => {
     }
   };
 
+  const toggleCancel = () => {
+    setUpdate((e) => !e);
+  };
+
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
@@ -159,6 +163,9 @@ const DuoInfo = () => {
               <button type="submit" onClick={onDeleteClick}>
                 <span>삭제</span>
               </button>
+              <button type="button" onClick={toggleCancel}>
+                <span>취소</span>
+              </button>
             </form>
           </>
         ) : (
@@ -166,15 +173,11 @@ const DuoInfo = () => {
             <div className={styles.info}>
               <div className={styles.user}>
                 <div className={styles.ti_icons}>{ti}</div>
-                <div>
-                  <p>{nickName}</p>
-                </div>
                 <div className={styles.lane_icons}>{lane}</div>
               </div>
-              <div>
-                <span>{queue}</span>
+              <div className={styles.nickname}>
+                <p>{nickName}</p>
               </div>
-              <div>{memo}</div>
             </div>
           </>
         )}

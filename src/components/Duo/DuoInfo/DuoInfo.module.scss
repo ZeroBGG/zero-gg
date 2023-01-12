@@ -23,8 +23,10 @@ $fontColor: #f0f0f0;
 }
 
 .info {
-  border: 1px solid red;
-  width: 600px;
+  border: 1px solid $bgColor-1;
+  background-color: $bgColor-2;
+  color: $fontColor;
+  width: 416px;
   height: 300px;
   position: absolute;
   left: 50%;
@@ -33,6 +35,7 @@ $fontColor: #f0f0f0;
 
   .user {
     display: flex;
+    border-bottom: 1px solid $bgColor-1;
 
     .ti_icons {
       padding: 4px;
@@ -43,7 +46,91 @@ $fontColor: #f0f0f0;
     }
 
     img {
-      @include img_size(96px, 96px);
+      @include img_size(200px, 200px);
     }
+  }
+
+  .nickname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 5rem;
+
+    p {
+      font-size: 40px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .info {
+    width: 408px;
+    height: 300px;
+  }
+
+  .user {
+    display: flex;
+    border-bottom: 1px solid $bgColor-1;
+
+    .ti_icons {
+      padding: 2px;
+    }
+
+    .lane_icons {
+      padding: 2px;
+    }
+
+    img {
+      @include img_size(125px, 125px);
+    }
+  }
+
+  .nickname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 5rem;
+
+    p {
+      font-size: 20px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info {
+    width: 208px;
+    height: 1800px;
+  }
+
+  .user {
+    display: flex;
+    border-bottom: 1px solid $bgColor-1;
+
+    .ti_icons {
+      padding: 2px;
+    }
+
+    .lane_icons {
+      padding: 2px;
+    }
+
+    img {
+      @include img_size(50px, 50px);
+    }
+  }
+
+  .nickname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 5rem;
+
+    p {
+      font-size: 20px;
+    }
+
   }
 }

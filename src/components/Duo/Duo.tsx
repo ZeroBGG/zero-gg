@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { dbService } from 'src/firebase';
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import DuoCards from './DuoCards/DuoCards';
@@ -9,37 +9,7 @@ import styles from './Duo.module.scss';
 
 const Duo = () => {
   const [lolInfo, setLolInfo] = useState<any[]>([]);
-
-  const [filterState, setFilterState] = useState({
-    passingTags: {
-      queue: {
-        Duo: false,
-        Free: false,
-        Narak: false,
-      },
-      tier: {
-        Iron: false,
-        Bronze: false,
-        Silver: false,
-        Gold: false,
-        Platinum: false,
-        Diamond: false,
-        Master: false,
-        GrandMaster: false,
-      },
-      position: {
-        Top: false,
-        Jungle: false,
-        Mid: false,
-        AD: false,
-        Sup: false,
-      },
-    },
-  });
-
-  const [queueFilter, setQueueFilter] = useState('');
-
-  const inputQueue = useInput('');
+  const [values, setValues] = useState('');
 
   useEffect(() => {
     const q = query(collection(dbService, 'myLOLInfo'));
@@ -52,6 +22,13 @@ const Duo = () => {
     });
   }, []);
 
+  const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    const {
+      currentTarget: { value },
+    } = e;
+    setValues(value);
+  }, []);
+
   return (
     <>
       <main>
@@ -60,11 +37,11 @@ const Duo = () => {
           <div className={styles.wrapper}>
             <div className={styles.select_queue}>
               <h2>Queue 선택</h2>
-              <input type="radio" id="Duo" name="Queue" {...inputQueue} value={inputQueue.value} />
+              <input type="radio" id="Duo" name="Queue" value="Duo" onChange={onChange} />
               <label htmlFor="Duo">듀오랭크</label>
-              <input type="radio" id="Free" name="Queue" />
+              <input type="radio" id="Free" name="Queue" value="Free" onChange={onChange} />
               <label htmlFor="Free">자유랭크</label>
-              <input type="radio" id="Narak" name="Queue" />
+              <input type="radio" id="Narak" name="Queue" value="Narak" onChange={onChange} />
               <label htmlFor="Narak">칼바람 나락</label>
             </div>
             <div className={styles.select_tier}>
