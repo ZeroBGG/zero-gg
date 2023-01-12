@@ -3,4 +3,10 @@
   height: 100vh;
   background: linear-gradient(90deg, #042431, #042432, #323131, #04141d, #04141f);
   color: #fff;
+  .header {
+    margin-bottom: 30px;
+    .title {
+      font-size: 3em;
+    }
+  }
 }

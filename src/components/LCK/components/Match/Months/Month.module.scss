@@ -1,0 +1,16 @@
+.month_container {
+  background-color: chocolate;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  .content {
+    width: 100%;
+    .month_list {
+      display: flex;
+      .month {
+        flex: 1;
+      }
+    }
+  }
+}

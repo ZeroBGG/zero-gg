@@ -2,7 +2,7 @@
   {
     "id": "geng",
     "teamName": "Gen.G",
-    "logo": "../src/assets/images/Logo/gen_g.png",
+    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1655210113163_GenG_logo_200407-05.png",
     "players": [
       {
         "id": 1,
@@ -10,7 +10,7 @@
         "korName": "최현준",
         "summoner": "Doran",
         "position": "TOP",
-        "image": "../src/assets/images/Team/gen_g/Doran.png"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455363537_GEN_Doran_784x621.png"
       },
       {
         "id": 2,
@@ -18,7 +18,7 @@
         "korName": "한왕호",
         "summoner": "Peanut",
         "position": "JGL",
-        "image": "../src/assets/images/Team/gen_g/Peanut.png"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455404733_GEN_Peanut_784x621.png"
       },
       {
         "id": 3,
@@ -26,7 +26,7 @@
         "korName": "김수환",
         "summoner": "Peyz",
         "position": "BOT",
-        "image": "../src/assets/images/Team/gen_g/Peyz.png"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641212014509_placeholder.png"
       },
       {
         "id": 4,
@@ -34,7 +34,7 @@
         "korName": "정지훈",
         "summoner": "Chovy",
         "position": "MID",
-        "image": "../src/assets/images/Team/gen_g/Chovy.png"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455344562_GEN_Chovy_784x621.png"
       },
       {
         "id": 5,
@@ -42,7 +42,7 @@
         "korName": "유환중",
         "summoner": "Delight",
         "position": "SPT",
-        "image": "../src/assets/images/Team/gen_g/Delight.png"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655454659718_BRO_Delight_784x621.png"
       },
       {
         "id": 6,
@@ -50,22 +50,22 @@
         "korName": "고동빈",
         "summoner": "Score",
         "position": "HeadCoach",
-        "image": "../src/assets/images/Team/gen_g/Score.webp"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641212014509_placeholder.png"
       }
     ]
   },
   {
     "id": "skt1",
     "teamName": "SK T1",
-    "logo": "../src/assets/images/Logo/sk_t1.png",
+    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1631819523085_t1-2021-worlds.png",
     "players": [
       {
         "id": 1,
         "name": "Sang Hyuk Lee",
-        "korName": "이수혁",
+        "korName": "이상혁",
         "summoner": "Faker",
         "position": "MID",
-        "image": "../src/assets/images/Team/t1/Faker.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457397135_T1_Faker_784x621.png"
       },
       {
         "id": 2,
@@ -73,7 +73,7 @@
         "korName": "최우재",
         "summoner": "ZEUS",
         "position": "TOP",
-        "image": "../src/assets/images/Team/t1/Zeus.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457480889_T1_Zeus_784x621.png"
       },
       {
         "id": 3,
@@ -81,7 +81,7 @@
         "korName": "문현준",
         "summoner": "Oner",
         "position": "JGL",
-        "image": "../src/assets/images/Team/t1/Oner.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457463943_T1_Oner_784x621.png"
       },
       {
         "id": 4,
@@ -89,7 +89,7 @@
         "korName": "이민형",
         "summoner": "GUMAYUSI",
         "position": "BOT",
-        "image": "../src/assets/images/Team/t1/Gumayusi.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457417659_T1_Gumayusi_784x621.png"
       },
       {
         "id": 5,
@@ -97,7 +97,7 @@
         "korName": "류민석",
         "summoner": "Keria",
         "position": "SPT",
-        "image": "../src/assets/images/Team/t1/Keria.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457436104_T1_Keria_784x621.png"
       },
       {
         "id": 6,
@@ -105,14 +105,14 @@
         "korName": "배성웅",
         "summoner": "Bengi",
         "position": "HeadCoach",
-        "image": ""
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641212014509_placeholder.png"
       }
     ]
   },
   {
     "id": "liivsbx",
     "teamName": "Liiv Sandbox",
-    "logo": "../src/assets/images/Logo/liiv_sbx.png",
+    "logo": "https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2Fliiv-sandbox-new.png",
     "players": [
       {
         "id": 1,
@@ -120,7 +120,7 @@
         "korName": "이주현",
         "summoner": "Clozer'",
         "position": "MID",
-        "image": "../src/assets/images/Team/lbs/Clozer.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456995339_LSB_Clozer_784x621.png"
       },
       {
         "id": 2,
@@ -128,7 +128,7 @@
         "korName": "김정현",
         "summoner": "Willer'",
         "position": "JGL",
-        "image": "../src/assets/images/Team/lbs/Willer.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456341526_HLE_willer_784x621.png"
       },
 
       {
@@ -137,7 +137,7 @@
         "korName": "이명준",
         "summoner": "Envyy'",
         "position": "BOT",
-        "image": "../src/assets/images/Team/lbs/Envyy.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457071121_LSB_Envyy_784x621.png"
       },
       {
         "id": 1,
@@ -145,7 +145,7 @@
         "korName": "노태윤",
         "summoner": "Burdol'",
         "position": "TOP",
-        "image": "../src/assets/images/Team/lbs/Burdol.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655454830226_DK_Burdol_784x621.png"
       },
       {
         "id": 5,
@@ -153,7 +153,7 @@
         "korName": "김진홍",
         "summoner": "Kael",
         "position": "SPT",
-        "image": "../src/assets/images/Team/lbs/Kael.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457088223_LSB_Kael_784x621.png"
       },
       {
         "id": 6,
@@ -161,14 +161,14 @@
         "korName": "류상욱",
         "summoner": "Ryu",
         "position": "HeadCoach",
-        "image": "../src/assets/images/Team/lbs/Ryu.png"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641212014509_placeholder.png"
       }
     ]
   },
   {
     "id": "dplus",
-    "teamName": "DPlus KIA",
-    "logo": "https://am-a.akamaihd.net/image?resize=200:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1673260049703_DPlusKIALOGO11.png",
+    "teamName": "Dplus KIA",
+    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1673260049703_DPlusKIALOGO11.png",
     "players": [
       {
         "id": 1,
@@ -176,7 +176,7 @@
         "korName": "허수",
         "summoner": "ShowMaker",
         "position": "MID",
-        "image": "../src/assets/images/Team/dwg_kia/showMaker.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655454929643_DK_Showmaker_784x621.png"
       },
       {
         "id": 2,
@@ -184,7 +184,7 @@
         "korName": "김건부",
         "summoner": "Canyon",
         "position": "JGL",
-        "image": "../src/assets/images/Team/dwg_kia/Canyon.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655454849646_DK_Canyon_784x621.png"
       },
 
       {
@@ -193,7 +193,7 @@
         "korName": "김혁규",
         "summoner": "Deft",
         "position": "BOT",
-        "image": "../src/assets/images/Team/dwg_kia/Deft.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455056599_DRX_Deft_784x621.png"
       },
       {
         "id": 4,
@@ -201,7 +201,7 @@
         "korName": "김창동",
         "summoner": "Canna",
         "position": "TOP",
-        "image": "../src/assets/images/Team/dwg_kia/Canna.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457199900_NS_Canna_784x621.png"
       },
       {
         "id": 5,
@@ -209,7 +209,7 @@
         "korName": "기형규",
         "summoner": "Kellin",
         "position": "SPT",
-        "image": "../src/assets/images/Team/dwg_kia/Kellin.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655454884460_DK_Kellin_784x621.png"
       },
       {
         "id": 6,
@@ -217,14 +217,14 @@
         "korName": "최천주",
         "summoner": "Acorn",
         "position": "HeadCoach",
-        "image": "../src/assets/images/Team/dwg_kia/Acorn.png"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641212014509_placeholder.png"
       }
     ]
   },
   {
     "id": "kt",
     "teamName": "KT Rolseter",
-    "logo": "../src/assets/images/Logo/kt_rolster.png",
+    "logo": "https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2Fkt_darkbackground.png",
     "players": [
       {
         "id": 1,
@@ -232,7 +232,7 @@
         "korName": "곽보성",
         "summoner": "Bdd",
         "position": "MID",
-        "image": "../src/assets/images/Team/kt_rolster/Bdd.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457175660_NS_Bdd_784x621.png"
       },
       {
         "id": 2,
@@ -240,7 +240,7 @@
         "korName": "문우찬",
         "summoner": "Cuzz",
         "position": "JGL",
-        "image": "../src/assets/images/Team/kt_rolster/Cuzz.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456785327_KT_Cuzz_784x621.png"
       },
       {
         "id": 3,
@@ -248,7 +248,7 @@
         "korName": "김하람",
         "summoner": "Aiming",
         "position": "BOT",
-        "image": "../src/assets/images/Team/kt_rolster/Aiming.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456734723_KT_Aiming_784x621.png"
       },
       {
         "id": 4,
@@ -256,14 +256,14 @@
         "korName": "김기인",
         "summoner": "Kiin",
         "position": "TOP",
-        "image": "../src/assets/images/Team/kt_rolster/Kiin.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456548557_KDF_Kiin_784x621.png"
       },
       {
         "id": 5,
         "name": "Si-U Son",
         "summoner": "Lehends",
         "position": "SPT",
-        "image": "../src/assets/images/Team/kt_rolster/Lehends.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455383208_GEN_Lehends_784x621.png"
       },
       {
         "id": 6,
@@ -271,14 +271,14 @@
         "korName": "강동훈",
         "summoner": "KT Hirai",
         "position": "HeadCoach",
-        "image": "../src/assets/images/Team/kt_rolster/Hirai.png"
+        "image": "https://am-a.akamaihd.net/image?resize=375:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641212014509_placeholder.png"
       }
     ]
   },
   {
     "id": "drx",
     "teamName": "DRX",
-    "logo": "../src/assets/images/Logo/drx.png",
+    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1672910733664_01.Basic_W.png",
     "players": [
       {
         "id": 1,
@@ -286,7 +286,7 @@
         "korName": "유수혁",
         "summoner": "Fate",
         "position": "MID",
-        "image": "../src/assets/images/Team/drx/Fate.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456503151_KDF_FATE_784x621.png"
       },
       {
         "id": 2,
@@ -294,7 +294,7 @@
         "korName": "김동범",
         "summoner": "Croco",
         "position": "JGL",
-        "image": "../src/assets/images/Team/drx/Croco.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457012792_LSB_Croco_784x621.png"
       },
 
       {
@@ -303,7 +303,7 @@
         "korName": "서대길",
         "summoner": "deokdam",
         "position": "BOT",
-        "image": "../src/assets/images/Team/drx/Deokdam.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655454865513_DK_deokdam_784x621.png"
       },
       {
         "id": 4,
@@ -311,7 +311,7 @@
         "korName": "김광희",
         "summoner": "Rascal",
         "position": "TOP",
-        "image": "../src/assets/images/Team/drx/Rascal.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456883131_KT_Rascal_784x621.png"
       },
       {
         "id": 5,
@@ -319,7 +319,7 @@
         "korName": "조건호",
         "summoner": "BeryL",
         "position": "SPT",
-        "image": "../src/assets/images/Team/drx/BeryL.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455031274_DRX_BeryL_784x621.png"
       },
       {
         "id": 6,
@@ -327,14 +327,14 @@
         "korName": "이주한",
         "summoner": "Juhan",
         "position": "SPT",
-        "image": "../src/assets/images/Team/drx/Juhan.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1644557297606_PSG_Juhan.png"
       }
     ]
   },
   {
     "id": "freecs",
     "teamName": "Kwangdong Freecs",
-    "logo": "../src/assets/images/Logo/freecs.png",
+    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1641186009897_KDF_KR_logo.png",
     "players": [
       {
         "id": 1,
@@ -342,7 +342,7 @@
         "korName": "이태용",
         "summoner": "BuLLDog",
         "position": "MID",
-        "image": ""
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641204629101_placeholder.png"
       },
       {
         "id": 2,
@@ -350,7 +350,7 @@
         "korName": "고영재",
         "summoner": "YoungJae",
         "position": "JGL",
-        "image": "../src/assets/images/Team/freecs/Youngjae.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455441430_GEN_YoungJae_784x621.png"
       },
 
       {
@@ -359,7 +359,7 @@
         "korName": "김태윤",
         "summoner": "Taeyoon",
         "position": "BOT",
-        "image": "../src/assets/images/Team/freecs/Taeyoon.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455115535_DRX_Taeyoon_784x621.png"
       },
       {
         "id": 4,
@@ -367,7 +367,7 @@
         "korName": "이동주",
         "summoner": "DuDu",
         "position": "TOP",
-        "image": "../src/assets/images/Team/freecs/Dudu.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456109277_HLE_DuDu_784x621.png"
       },
       {
         "id": 5,
@@ -375,15 +375,16 @@
         "korName": "정재훈",
         "summoner": "Moham",
         "position": "SPT",
-        "image": "../src/assets/images/Team/freecs/Moham.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456586315_KDF_Moham_784x621.png"
       },
+
       {
         "id": 6,
         "name": "Dae Ho Kim",
         "korName": "김대호",
         "summoner": "cvMax",
         "position": "HeadCoach",
-        "image": ""
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641204629101_placeholder.png"
       }
     ]
   },
@@ -391,7 +392,7 @@
   {
     "id": "redforce",
     "teamName": "NS_RedForce",
-    "logo": "../src/assets/images/Logo/redforce.png",
+    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1631819523085_t1-2021-worlds.png",
     "players": [
       {
         "id": 1,
@@ -407,7 +408,7 @@
         "korName": "이성복",
         "summoner": "Sylvie",
         "position": "JGL",
-        "image": "../src/assets/images/Team/redforce/Sylvie.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2FNSSylvie.png"
       },
 
       {
@@ -416,7 +417,7 @@
         "korName": "하승인",
         "summoner": "vital",
         "position": "BOT",
-        "image": ""
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641204629101_placeholder.png"
       },
       {
         "id": 4,
@@ -424,7 +425,7 @@
         "korName": "박근우",
         "summoner": "DnDn",
         "position": "TOP",
-        "image": "../src/assets/images/Team/redforce/Dndn.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2FNSDnDn.png"
       },
       {
         "id": 5,
@@ -432,7 +433,7 @@
         "korName": "정윤수",
         "summoner": "Peter",
         "position": "SPT",
-        "image": "../src/assets/images/Team/redforce/Peter.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457288203_NS_Peter_784x621.png"
       },
       {
         "id": 6,
@@ -440,14 +441,14 @@
         "korName": "허영철",
         "summoner": "irean",
         "position": "HeadCoach",
-        "image": "../src/assets/images/Team/redforce/irean.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641204629101_placeholder.png"
       }
     ]
   },
   {
     "id": "fredit",
     "teamName": "Fredit Brion",
-    "logo": "../src/assets/images/Logo/brion.png",
+    "logo": "https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1672911299140_BRIONlogo_profile1.png",
     "players": [
       {
         "id": 1,
@@ -455,7 +456,7 @@
         "korName": "김홍주",
         "summoner": "Karis",
         "position": "MID",
-        "image": "../src/assets/images/Team/brion/Karis.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456234115_HLE_Karis_784x621.png"
       },
       {
         "id": 2,
@@ -463,7 +464,7 @@
         "korName": "전어진",
         "summoner": "Raptor",
         "position": "JGL",
-        "image": ""
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641204629101_placeholder.png"
       },
 
       {
@@ -472,7 +473,7 @@
         "korName": "박정환",
         "summoner": "Hena",
         "position": "BOT",
-        "image": "../src/assets/images/Team/brion/Hena.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655454677880_BRO_Hena_784x621.png"
       },
       {
         "id": 4,
@@ -480,7 +481,7 @@
         "korName": "박기태",
         "summoner": "Morgan",
         "position": "TOP",
-        "image": "../src/assets/images/Team/brion/Morgan.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655454719437_BRO_Morgan_784x621.png"
       },
       {
         "id": 5,
@@ -488,7 +489,7 @@
         "korName": "이상호",
         "summoner": "Effort",
         "position": "SPT",
-        "image": "../src/assets/images/Team/brion/Effort.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655457251843_NS_Effort_784x621.png"
       },
       {
         "id": 6,
@@ -496,7 +497,7 @@
         "korName": "최우범",
         "summoner": "Edgar",
         "position": "HeadCoach",
-        "image": "../src/assets/images/Team/brion/Edgar.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641204629101_placeholder.png"
       }
     ]
   },
@@ -512,7 +513,7 @@
         "korName": "김근우",
         "summoner": "Zeka",
         "position": "MID",
-        "image": "../src/assets/images/Team/hanwha/Zeka.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455135475_DRX_Zeka_784x621.png"
       },
       {
         "id": 2,
@@ -520,7 +521,7 @@
         "korName": "김태민",
         "summoner": "Clid",
         "position": "JGL",
-        "image": "../src/assets/images/Team/hanwha/Clid.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1633424587648_clid.png"
       },
 
       {
@@ -529,7 +530,7 @@
         "korName": "박도현",
         "summoner": "Viper",
         "position": "BOT",
-        "image": "../src/assets/images/Team/hanwha/Viper.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1632953335707_edg-viper-w21.png"
       },
       {
         "id": 4,
@@ -537,7 +538,7 @@
         "korName": "황성훈",
         "summoner": "Kingen",
         "position": "TOP",
-        "image": "../src/assets/images/Team/hanwha/Kingen.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655455076023_DRX_Kingen_784x621.png"
       },
       {
         "id": 5,
@@ -545,7 +546,7 @@
         "korName": "김정민",
         "summoner": "Life",
         "position": "SPT",
-        "image": "../src/assets/images/Team/hanwha/Life.png"
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1655456831648_KT_Life_784x621.png"
       },
       {
         "id": 6,
@@ -553,7 +554,7 @@
         "korName": "최인규",
         "summoner": "Dandy",
         "position": "HeadCoach",
-        "image": ""
+        "image": "https://am-a.akamaihd.net/image?resize=750:&f=http%3A%2F%2Fstatic.lolesports.com%2Fplayers%2F1641204629101_placeholder.png"
       }
     ]
   }

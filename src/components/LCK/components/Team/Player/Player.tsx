@@ -3,7 +3,7 @@ import styles from './Player.module.scss';
 import { PlayersType } from '../../../typings';
 import { useEffect, useRef, useState } from 'react';
 
-const Player = ({ id, engName, name, position, summoner, image, logo }: PlayersType) => {
+const Player = ({ engName, name, position, summoner, image, logo }: PlayersType) => {
   const [isHoverName, setIsHoverName] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 

@@ -1,41 +1,14 @@
-import data from '@/data/matches.json';
-import { useEffect, useState } from 'react';
-import { matchProps } from '../../typings';
+import { useCallback, useEffect, useState } from 'react';
 import styles from './Match.module.scss';
-
+import Months from './Months/Month';
+import { collection, doc, getDoc, onSnapshot, query } from 'firebase/firestore';
 const Match = () => {
-  const [league, setLeague] = useState<matchProps[]>([]);
-
-  useEffect(() => {
-    data.map((lck: any) => {
-      return setLeague(lck);
-    });
-  }, []);
-
-  console.log(league);
   return (
     <section className={styles.container}>
-      <div>
-        <div>
-          {league.map((item) => {
-            return (
-              <div>
-                {item.matches.map((i: any) => {
-                  console.log(i.match1[0].teams.blue.name);
-                  return (
-                    <>
-                      <div>{i.match1[0].date}</div>
-                      <div>{i.match1[0].time}</div>
-                      <div>{i.match1[0].matchName}</div>
-                      <div>{i.match1[0].teams.blue.name}</div>
-                    </>
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <header className={styles.header}>
+        <h1 className={styles.title}>경기 일정</h1>
+      </header>
+      <Months />
     </section>
   );
 };

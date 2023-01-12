@@ -1,0 +1,23 @@
+// ############### LCK 페이지 ###############
+@mixin responsive-main-page {
+  @media only screen and (min-width: 400px) and (max-width: 800px) {
+    .container {
+      .card_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        .team_container {
+          height: 300px;
+          .link_team_page {
+            .lck_team {
+              width: 100%;
+            }
+          }
+        }
+        .match_container {
+          height: 300px;
+        }
+      }
+    }
+  }
+}
