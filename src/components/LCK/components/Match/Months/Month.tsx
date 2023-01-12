@@ -8,14 +8,18 @@ const Month = () => {
     <div className={styles.month_container}>
       <article className={styles.content}>
         <nav className={styles.month_list}>
-          {months.map((item, idx) =>
+          {months.map((item) =>
             item === '전체' ? (
-              <span key={`${item}_${idx}`}>
-                <Link to={'all'}>{item}</Link>
+              <span key={item} className={styles.month}>
+                <Link to={'all'} className={styles.anker}>
+                  {item}
+                </Link>
               </span>
             ) : (
-              <span key={`${item}_${idx}`}>
-                <Link to={`${item}`}>{item}</Link>
+              <span key={item} className={styles.month}>
+                <Link to={`${item}`} className={styles.anker}>
+                  {item}
+                </Link>
               </span>
             ),
           )}

@@ -39,9 +39,18 @@ export interface matchTeamType {
   time: string;
   state: string;
   date: string;
+  first: boolean;
   teams: {
     time: string;
-    blue: { id: string; logoUrl: string; name: string; win: string };
-    red: { id: string; logoUrl: string; name: string; win: string };
+    blue: teamType;
+    red: teamType;
   };
+}
+
+export interface teamType {
+  id: string;
+  logoUrl: string;
+  name: string;
+  initial: string;
+  win: string;
 }

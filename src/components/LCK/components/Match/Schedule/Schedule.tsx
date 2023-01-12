@@ -1,16 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router';
 import { collection, doc, getDoc, onSnapshot, query } from 'firebase/firestore';
 
 import { dbService } from 'src/firebase';
 import { matchProps, matchTeamType } from '@/components/LCK/typings';
 import styles from './Schedule.module.scss';
-interface paramProps {}
+import Item from './Item';
+type paramType = {
+  month?: string | undefined;
+};
 const Schedule = () => {
   const [league, setLeague] = useState<any[]>([]);
-  const param = useParams();
-  const [lckmonth, setLckMonth] = useState<any>();
-  useEffect(() => {
+  const param = useParams<any>();
+  useMemo(() => {
     const lckTeam = query(collection(dbService, 'lck_matches'));
     onSnapshot(lckTeam, (querySnapshot) => {
       try {
@@ -25,44 +27,55 @@ const Schedule = () => {
     });
   }, []);
 
-  console.log('param :' + param.month);
-  let monthMatch = league.find((i) => {
-    if (i.month == param) {
+  const matchMonth = league.filter((i) => {
+    if (i.month == param.month) {
       return true;
     }
   });
-  console.log(league.find((item) => item.month));
+  const nomatch = Number(param.month.split('월')[0]);
   return (
     <section className={styles.schedule_container}>
       <ul className={styles.schedule_list}>
-        {lckmonth ? (
+        {nomatch > 4 ? (
           <li>일정이 없습니다.</li>
         ) : (
-          league.map((item) =>
-            param.month === item.month ? (
-              <li className={styles.schedule_item} key={item.id}>
-                <div className={styles.date_container}>
-                  <span className={styles.matches}>{item.date}</span>
-                  <span className={styles.day}>{item.day}</span>
-                  <div className={styles.match}>
-                    {item.matches.map((match: matchTeamType, idx: number) => (
-                      <div className={styles.team_info} key={`${match.date}_${idx}`}>
-                        <div className={styles.blue}>
-                          <img src={match.teams.blue.logoUrl} alt="blue_logo" />
-                          <span className={styles.blue_name}>{match.teams.blue.name}</span>
-                        </div>
-                        vs
-                        <div className={styles.red}>
-                          <img src={match.teams.red.logoUrl} alt="red_logo" />
-                          <span className={styles.red_name}>{match.teams.red.name}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+          matchMonth.map((item) => (
+            <li className={styles.schedule_item} key={item.id}>
+              <div className={styles.item_container}>
+                <div className={styles.match_day}>
+                  <span className={styles.date}>{item.date.replace('-', '.')}</span>
+                  <span className={styles.day}>({item.day.split('')[0]})</span>
                 </div>
-              </li>
-            ) : null,
-          )
+                <div className={styles.match}>
+                  {item.matches.map((match: matchTeamType, idx: number) =>
+                    match.first === true ? (
+                      <div className={[styles.first, styles.game].join('')} key={`${match.date}_${idx}`}>
+                        <Item
+                          time={match.time}
+                          date={match.date}
+                          blue={match.teams.blue}
+                          red={match.teams.red}
+                          state={match.state}
+                          idx={idx}
+                        />
+                      </div>
+                    ) : (
+                      <div className={[styles.second, styles.game].join('')} key={`${match.date}_${idx}`}>
+                        <Item
+                          time={match.time}
+                          date={match.date}
+                          blue={match.teams.blue}
+                          red={match.teams.red}
+                          state={match.state}
+                          idx={idx}
+                        />
+                      </div>
+                    ),
+                  )}
+                </div>
+              </div>
+            </li>
+          ))
         )}
       </ul>
     </section>
