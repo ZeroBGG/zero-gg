@@ -1,13 +1,21 @@
-import styles from "./Header.module.scss";
-
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import InputID from '@/components/Main/InputID';
+import styles from './Header.module.scss';
 
 export default function Header() {
+  const [url, setUrl] = useState('');
+  const location = useLocation();
+
   const menus = [
-    { title: "홈", src: "/" },
-    { title: "듀오찾기", src: "/Duo" },
-    { title: "LCK", src: "/LCK" },
+    { title: '홈', src: '/' },
+    { title: '듀오찾기', src: '/Duo' },
+    { title: 'LCK', src: '/LCK' },
   ];
+
+  useEffect(() => {
+    setUrl(location.pathname);
+  });
 
   return (
     <header className={styles.header}>
@@ -27,9 +35,13 @@ export default function Header() {
         </ul>
       </nav>
 
-      <div>
-        {/* home이 아니면 전적을 검색할 수 있는 커스텀 input 컴포넌트 들어갈 예정 */}
-      </div>
+      <article className={styles.article}>
+        {url !== '/' && (
+          <div className={styles.inner}>
+            <InputID />
+          </div>
+        )}
+      </article>
     </header>
   );
 }

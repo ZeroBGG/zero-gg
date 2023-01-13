@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap');
-@import '../responsive.module.scss';
+
+@import './responsive.module.scss';
 .player::before {
   content: '';
   position: absolute;
@@ -69,6 +70,7 @@
       position: absolute;
       z-index: 9999;
       bottom: 0;
+      left: 0;
       background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     }
     .player_img {
@@ -79,12 +81,13 @@
       img {
         position: absolute;
         left: 0;
-        width: 200px;
-        height: 150px;
+        bottom: 0;
+        width: 300px;
+        height: 250px;
         opacity: 1;
         z-index: 9998;
       }
     }
   }
 }
-@include playerResponsive;
+@include Responsive-Player;

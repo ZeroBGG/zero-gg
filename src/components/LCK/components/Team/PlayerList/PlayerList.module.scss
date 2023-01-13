@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap');
-@import '../responsive.module.scss';
+@import './responsive.module.scss';
 .list_container {
   font-family: 'IBM Plex Sans KR', sans-serif;
   font-family: 'Roboto', sans-serif;
   width: 100%;
   height: auto;
   overflow: hidden;
-  .team_info {
-    height: 100vh;
+  .list {
     width: 100%;
-    display: flex;
-    justify-content: baseline;
-    .wrapper {
+    margin-left: 50px;
+    .team_info {
+      height: 100%;
+      width: 100%;
       display: flex;
       flex-direction: column;
       color: #fff;
@@ -42,10 +42,10 @@
         display: grid;
         gap: 5px;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 240px);
+        grid-template-rows: repeat(3, 300px);
         .card {
           width: 100%;
-          height: 240px;
+          height: 300px;
         }
       }
     }

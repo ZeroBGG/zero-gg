@@ -45,10 +45,6 @@ export default function Circle() {
     fillterChampionData();
   }, []);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <section id={styles.circle}>
       {data.map((data: any) => {

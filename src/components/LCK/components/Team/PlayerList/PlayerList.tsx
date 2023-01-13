@@ -1,24 +1,37 @@
-import data from '@/data/teamSquad.json';
 import { useEffect, useState } from 'react';
 import styles from './PlayerList.module.scss';
 import List from './List';
+
+import { dbService } from 'src/firebase';
+import { collection, doc, getDoc, onSnapshot, query } from 'firebase/firestore';
 interface Props {
   id: string;
 }
 
 const PlayerList = ({ id }: Props) => {
-  const [teams, setTeams] = useState<any[]>([]);
+  const [teams, setTeam] = useState<any[]>([]);
   useEffect(() => {
-    setTeams(data);
+    const lckTeam = query(collection(dbService, 'lck_teamSquad'));
+    onSnapshot(lckTeam, (querySnapshot) => {
+      const info = querySnapshot.docs.map((docs) => ({
+        id: docs.id,
+        ...docs.data(),
+      }));
+      setTeam(info);
+    });
   }, []);
-
   return (
     <div className={styles.list_container}>
       {teams.map((team) => {
+        console.log(team.id);
         if (id !== team.id) {
           return <></>;
         } else {
-          return <List id={team.id} teamName={team.teamName} logo={team.logo} players={team.players} />;
+          return (
+            <div key={team.id} className={styles.list}>
+              <List id={team.id} teamName={team.teamName} logo={team.logo} players={team.players} />
+            </div>
+          );
         }
       })}
     </div>

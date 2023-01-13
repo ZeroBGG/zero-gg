@@ -1,0 +1,19 @@
+.month_container {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  .content {
+    width: 100%;
+    .month_list {
+      display: flex;
+      .month {
+        text-decoration: none;
+        flex: 0.6;
+        .anker {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

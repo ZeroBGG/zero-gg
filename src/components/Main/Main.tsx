@@ -12,9 +12,9 @@ export default function Main() {
         <Circle />
       </div>
 
-      {/* <article className={styles.article}>
+      <article className={styles.article}>
         <InputID />
-      </article> */}
+      </article>
     </main>
   );
 }
