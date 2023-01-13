@@ -101,7 +101,7 @@ const WriteDuo = () => {
                     <label htmlFor="queue" className={styles.label}>
                       Queue
                     </label>
-                    <select name="queue" id="queue" className={styles.input_select} {...inputQueue}>
+                    <select name="queue" id="queue"{...inputQueue}>
                       {queueArr.map((item, idx) => {
                         return (
                           <>
@@ -117,7 +117,7 @@ const WriteDuo = () => {
                     <label htmlFor="tier" className={styles.label}>
                       Tier
                     </label>
-                    <select name="tier" id="tier" className={styles.input_select} {...inputTier}>
+                    <select name="tier" id="tier" {...inputTier}>
                       {tierArr.map((item, idx) => {
                         return (
                           <>
@@ -133,7 +133,7 @@ const WriteDuo = () => {
                     <label htmlFor="position" className={styles.label}>
                       Position
                     </label>
-                    <select name="position" id="position" className={styles.input_select} {...inputPosition}>
+                    <select name="position" id="position" {...inputPosition}>
                       {positionArr.map((item, idx) => {
                         return (
                           <>

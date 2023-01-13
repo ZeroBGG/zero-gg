@@ -105,67 +105,97 @@ const DuoInfo = () => {
     <>
       <section className={styles.wrapper}>
         <form onSubmit={onSubmit}>
-          <div className={styles.update}>
-            <input type="text" {...submitId} />
-            <input type="password" {...submitPass} />
+          <div className={styles.checkuser}>
+            <input type="text" {...submitId} placeholder="ID" />
+            <input type="password" {...submitPass} placeholder="PASSWORD" />
             <button onClick={onClick}>수정 및 삭제하기</button>
           </div>
         </form>
         {update ? (
           <>
             <form onSubmit={onUpdateSubmit}>
-              <label htmlFor="queue"> Queue : </label>
-              <select name="queue" id="queue" {...inputQueue}>
-                {queueArr.map((item, idx) => {
-                  return (
-                    <>
-                      <option value={item} key={`${item}_${idx}`}>
-                        {item}
-                      </option>
-                    </>
-                  );
-                })}
-              </select>
-              <label htmlFor="tier"> Tier : </label>
-              <select name="tier" id="tier" {...inputTier}>
-                {tierArr.map((item, idx) => {
-                  return (
-                    <>
-                      <option value={item} key={`${item}_${idx}`}>
-                        {item}
-                      </option>
-                    </>
-                  );
-                })}
-              </select>
-              <label htmlFor="position"> Position : </label>
-              <select name="position" id="position" {...inputPosition}>
-                {positionArr.map((item, idx) => {
-                  return (
-                    <>
-                      <option value={item} key={`${item}_${idx}`}>
-                        {item}
-                      </option>
-                    </>
-                  );
-                })}
-              </select>
-              <br />
-              <label htmlFor="title"> Title : </label>
-              <input type="text" id="title" {...inputTitle} />
-              <label htmlFor="memo"> Memo : </label>
-              <input type="text" id="memo" {...inputMemo} />
-              <label htmlFor="nick"> Nick name : </label>
-              <input type="text" id="nick" {...inputNickName} />
-              <button type="submit" onClick={toggleUpdateClick}>
-                <span>수정</span>
-              </button>
-              <button type="submit" onClick={onDeleteClick}>
-                <span>삭제</span>
-              </button>
-              <button type="button" onClick={toggleCancel}>
-                <span>취소</span>
-              </button>
+              <div className={styles.update}>
+                <div className={styles.select_space}>
+                  <div>
+                    <label htmlFor="queue"> Queue : </label>
+                    <select name="queue" id="queue" {...inputQueue}>
+                      {queueArr.map((item, idx) => {
+                        return (
+                          <>
+                            <option value={item} key={`${item}_${idx}`}>
+                              {item}
+                            </option>
+                          </>
+                        );
+                      })}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="tier"> Tier : </label>
+                    <select name="tier" id="tier" {...inputTier}>
+                      {tierArr.map((item, idx) => {
+                        return (
+                          <>
+                            <option value={item} key={`${item}_${idx}`}>
+                              {item}
+                            </option>
+                          </>
+                        );
+                      })}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="position"> Position : </label>
+                    <select name="position" id="position" {...inputPosition}>
+                      {positionArr.map((item, idx) => {
+                        return (
+                          <>
+                            <option value={item} key={`${item}_${idx}`}>
+                              {item}
+                            </option>
+                          </>
+                        );
+                      })}
+                    </select>
+                  </div>
+                </div>
+                <div className={styles.input_space}>
+                  <div>
+                    <label htmlFor="title"> Title </label>
+                    <input type="text" id="title" {...inputTitle} />
+                  </div>
+                  <div>
+                    <label htmlFor="memo"> Memo </label>
+                    <input type="text" id="memo" {...inputMemo} />
+                  </div>
+                  <div>
+                    <label htmlFor="nick"> Nick name </label>
+                    <input type="text" id="nick" {...inputNickName} />
+                  </div>
+                </div>
+                <div className={styles.button_space}>
+                  <button
+                    type="submit"
+                    onClick={toggleUpdateClick}
+                    disabled={
+                      !inputQueue.value ||
+                      !inputTier.value ||
+                      !inputPosition.value ||
+                      !inputMemo.value ||
+                      !inputTitle.value ||
+                      !inputNickName.value
+                    }
+                  >
+                    <span>수정</span>
+                  </button>
+                  <button type="submit" onClick={onDeleteClick}>
+                    <span>삭제</span>
+                  </button>
+                  <button type="button" onClick={toggleCancel}>
+                    <span>취소</span>
+                  </button>
+                </div>
+              </div>
             </form>
           </>
         ) : (

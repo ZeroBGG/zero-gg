@@ -1,3 +1,9 @@
+$white: #f5f5f5;
+$gray: #e7e7e7;
+$fontColor: #f0f0f0;
+$bgColor-1: #31313c;
+$bgColor-2: #282830;
+
 @mixin radio($color1, $color2) {
   margin: 5px 10px 0 0;
   display: inline-block;
@@ -21,4 +27,56 @@
 @mixin img_size($width, $height) {
   width: $width;
   height: $height;
+}
+
+@mixin input($width) {
+  width: $width;
+  height: 35px;
+  margin: 10px 5px 0 0;
+  padding: 12px;
+  font-size: 15px;
+  color: $white;
+  border: 1px solid $gray;
+  border-radius: 10px;
+  outline: none;
+  background-color: $bgColor-2;
+}
+
+@mixin button {
+  border: none;
+  display: inline-block;
+  padding: 15px 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  background-color: $bgColor-1;
+  color: $fontColor;
+  margin: 10px 0;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin select {
+  width: 110px;
+  height: 35px;
+  margin: 10px 5px 0 0;
+
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin wrapper($width, $height) {
+  border: 1px solid $bgColor-1;
+  background-color: $bgColor-2;
+  color: $fontColor;
+  width: $width;
+  height: $height;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
