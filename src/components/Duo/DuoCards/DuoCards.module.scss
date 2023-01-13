@@ -2,41 +2,92 @@
 
 $blue: #1b76d8;
 $black: #141618;
+$bgColor-3: #31313c;
+$fontColor-1: #f5fffa;
+$fontColor-2: #c0c0c0;
 
-.li_card {
+.list {
   list-style: none;
   color: $black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
 
-  .list_div_card {
-    width: 400px;
-    height: 400px;
-    border: 1px solid blue;
+  .wrapper {
+    width: 75vw;
+    height: 10vh;
+    display: flex;
+    text-align: left;
+    line-height: 10vh;
+    background-color: $bgColor-3;
 
-    .div_time {
+    .icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 3px;
+      margin: 0 3px;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .user {
+      width: 100px;
+      padding: 0 10px;
+      text-align: center;
+      border-right: 1px solid black;
+
       p {
-        font-size: 10px;
+        font-size: 14px;
+        color: $fontColor-2;
+      }
+    }
+
+    .title {
+      padding: 0 0 0 5px;
+      width: 20vw;
+      text-overflow: ellipsis;
+
+      h2 {
+        font-size: 23px;
+        color: $fontColor-1;
+      }
+    }
+
+    .memo {
+      padding: 0 1px;
+      width: 18vw;
+      text-overflow: ellipsis;
+
+      p {
+        font-size: 14px;
+        color: $fontColor-2;
+      }
+    }
+
+    .champ {
+      width: 10vw;
+
+      p {
+        font-size: 14px;
+        color: $fontColor-2;
+      }
+    }
+
+    .time {
+      text-align: right;
+      float: right;
+
+      p {
+        font-size: 11px;
         color: $blue;
       }
     }
 
-    .div_content {
-      padding: 0 auto;
 
-      h2 {
-        font-size: 26px;
-      }
-
-      p {
-        font-size: 18px;
-      }
-    }
-
-    .div_info {
-      padding: 0 auto;
-
-      p {
-        font-size: 16px;
-      }
-    }
   }
 }

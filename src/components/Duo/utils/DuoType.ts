@@ -13,5 +13,3 @@ export type DuoType = {
 };
 
 export type FindDuoType = Pick<DuoType, 'queue' | 'tier' | 'position'>;
-
-export type FindUserType = Pick<DuoType, 'userId' | 'userPassword'>;

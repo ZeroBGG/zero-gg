@@ -1,1 +1,192 @@
+@import '../common.scss';
+
 /* DuoInfo.module.scss */
+
+$bgColor-1: #1c1c1f;
+$bgColor-2: #282830;
+$fontColor: #f0f0f0;
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: $bgColor-1;
+  color: $fontColor;
+
+  .checkuser {
+    width: 99vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding: 1rem 0;
+
+    input {
+      @include input(220px);
+      margin: 0 20px;
+    }
+
+    button {
+      @include button;
+      border: 1px solid $fontColor;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #1d3264;
+      }
+    }
+  }
+}
+
+.update {
+  @include wrapper(600px, 300px);
+
+  .select_space {
+    display: flex;
+
+    select {
+      @include select
+    }
+
+    select::-ms-expand {
+      display: none
+    }
+  }
+
+  .input_space {
+
+    label {
+      width: 100px;
+    }
+
+    input {
+      @include input(220px);
+    }
+  }
+
+  .button_space {
+    button {
+      @include button;
+
+      transition: ease-out 0.5s;
+
+      &:disabled {
+        cursor: default;
+        background-color: #9e9e9e;
+        color: #1e1e1e;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #817a72;
+        color: $fontColor;
+      }
+    }
+  }
+
+}
+
+.info {
+  @include wrapper(416px, 300px);
+
+  .user {
+    display: flex;
+    border-bottom: 1px solid $bgColor-1;
+
+    .ti_icons {
+      padding: 4px;
+    }
+
+    .lane_icons {
+      padding: 4px;
+    }
+
+    img {
+      @include img_size(200px, 200px);
+    }
+  }
+
+  .nickname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 5rem;
+
+    p {
+      font-size: 40px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .info {
+    width: 408px;
+    height: 300px;
+  }
+
+  .user {
+    display: flex;
+    border-bottom: 1px solid $bgColor-1;
+
+    .ti_icons {
+      padding: 2px;
+    }
+
+    .lane_icons {
+      padding: 2px;
+    }
+
+    img {
+      @include img_size(125px, 125px);
+    }
+  }
+
+  .nickname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 5rem;
+
+    p {
+      font-size: 20px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info {
+    width: 208px;
+    height: 1800px;
+  }
+
+  .user {
+    display: flex;
+    border-bottom: 1px solid $bgColor-1;
+
+    .ti_icons {
+      padding: 2px;
+    }
+
+    .lane_icons {
+      padding: 2px;
+    }
+
+    img {
+      @include img_size(50px, 50px);
+    }
+  }
+
+  .nickname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 5rem;
+
+    p {
+      font-size: 20px;
+    }
+
+  }
+}
