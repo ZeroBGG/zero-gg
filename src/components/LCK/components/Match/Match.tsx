@@ -1,14 +1,20 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './Match.module.scss';
-import Months from './Months/Month';
-import { collection, doc, getDoc, onSnapshot, query } from 'firebase/firestore';
+import Schedule from './Schedule/Schedule';
 const Match = () => {
+  const [isHover, setIsHover] = useState<boolean>(false);
+  const handleClick = () => {
+    setIsHover((prev) => !prev);
+  };
   return (
     <section className={styles.container}>
       <header className={styles.header}>
         <h1 className={styles.title}>경기 일정</h1>
+        <button type="button" onClick={handleClick} className={styles.filter_btn}>
+          필터
+        </button>
       </header>
-      <Months />
+      <Schedule isHover={isHover} />
     </section>
   );
 };

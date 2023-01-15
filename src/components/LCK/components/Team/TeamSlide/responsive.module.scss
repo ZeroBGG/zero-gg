@@ -5,6 +5,7 @@
       height: 80px;
       .wrapper {
         overflow-x: scroll;
+        overflow-y: hidden;
         display: flex;
         justify-content: center;
         width: 100%;

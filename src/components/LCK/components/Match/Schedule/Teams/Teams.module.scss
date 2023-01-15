@@ -1,0 +1,26 @@
+.logo_wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1px 0;
+  margin: 1px;
+  gap: 5px;
+  .logo_item {
+    width: 70px;
+    height: 50px;
+    background-color: var(--gray-color-30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    .logo_img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .logo_item:hover {
+    background-color: var(--gray-color-10);
+    transform: scale(1.1);
+  }
+}

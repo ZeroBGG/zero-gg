@@ -1,5 +1,5 @@
 import { teamType } from '@/components/LCK/typings';
-import styles from './Schedule.module.scss';
+import styles from './Item.module.scss';
 
 type ItemType = {
   time: string;
