@@ -1,0 +1,48 @@
+.toggle {
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  height: 50px;
+  animation: toggle 0.7s ease;
+  height: auto;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    .title {
+      font-size: 1.3em;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .click_btn {
+      display: flex;
+      margin-left: auto;
+      border: 0;
+      outline: none;
+      background-color: inherit;
+      color: #fff;
+      font-size: 1.5em;
+    }
+  }
+  .wrapper:hover {
+    background-color: #4a4a4a;
+  }
+  .content_wrapper {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+    .content1 {
+      padding: 3px 1px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .month_wrapper {
+        display: grid;
+        gap: 5px;
+        padding: 1px 0;
+        margin: 1px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

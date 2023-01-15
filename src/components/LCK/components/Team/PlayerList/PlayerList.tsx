@@ -4,12 +4,12 @@ import List from './List';
 
 import { dbService } from 'src/firebase';
 import { collection, doc, getDoc, onSnapshot, query } from 'firebase/firestore';
-interface Props {
-  id: string;
-}
+import { useParams } from 'react-router';
 
-const PlayerList = ({ id }: Props) => {
+const PlayerList = () => {
   const [teams, setTeam] = useState<any[]>([]);
+  const id = useParams();
+
   useEffect(() => {
     const lckTeam = query(collection(dbService, 'lck_teamSquad'));
     onSnapshot(lckTeam, (querySnapshot) => {
@@ -20,11 +20,11 @@ const PlayerList = ({ id }: Props) => {
       setTeam(info);
     });
   }, []);
+  console.log(id.team);
   return (
     <div className={styles.list_container}>
       {teams.map((team) => {
-        console.log(team.id);
-        if (id !== team.id) {
+        if (id.team !== team.id) {
           return <></>;
         } else {
           return (

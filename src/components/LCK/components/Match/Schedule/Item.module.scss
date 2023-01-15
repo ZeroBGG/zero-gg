@@ -1,0 +1,55 @@
+.match_info {
+  width: 100%;
+  max-width: 350px;
+  .time {
+    font-size: 20px;
+    margin: 0px 10px;
+    padding: 10px;
+  }
+  .stadium {
+    margin: 10px;
+    white-space: nowrap;
+  }
+  .state {
+    margin-left: 10px;
+    width: 100px;
+  }
+}
+.team_info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  .team {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    .img_logo {
+      width: 60px;
+      height: 60px;
+      display: flex;
+    }
+    .img_logo[alt='blue_logo'] {
+      margin-left: auto;
+    }
+    .img_logo[alt='red_logo'] {
+      margin-right: auto;
+    }
+    .initial {
+      white-space: nowrap;
+      letter-spacing: -1px;
+      margin: 10px;
+    }
+  }
+  .win {
+    margin: 0 10px;
+  }
+  .verse {
+    width: 50px;
+    margin: 0 20px;
+    text-align: center;
+  }
+}
