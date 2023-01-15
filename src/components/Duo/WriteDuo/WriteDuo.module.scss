@@ -1,1 +1,103 @@
+@import "../common.scss";
+
 /* WriteDuo.module.scss */
+
+$white: #f5f5f5;
+$gray: #e7e7e7;
+$fontColor: #f0f0f0;
+$bgColor-1: #31313c;
+$bgColor-2: #282830;
+
+/* WriteDuo section */
+.section {
+  margin: auto;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+/* write 버튼 */
+.write_button {
+  @include button;
+  transition: ease 0.4s;
+
+  &:hover {
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #3c303a;
+  }
+}
+
+/* form 영역 */
+.form {
+  width: 44vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  background-color: $bgColor-1;
+  font-size: 11px;
+  color: $fontColor;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin: 20px 0 10px 0;
+  }
+
+  .label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  select {
+    @include select
+  }
+
+  .input_text {
+    @include input(220px)
+  }
+
+  .input_memo {
+    @include input(445px)
+  }
+}
+
+.user_wrapper {
+  display: flex;
+  width: 450px;
+  justify-content: left;
+}
+
+.submit {
+  display: flex;
+  width: 450px;
+  justify-content: right;
+
+  button {
+    @include button;
+    transition: ease 0.4s;
+
+    &:disabled {
+      cursor: default;
+      background-color: #9e9e9e;
+      color: #1e1e1e;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #3c303a;
+      color: $fontColor;
+    }
+
+  }
+
+
+
+}
