@@ -18,9 +18,9 @@ const Schedule = ({ isHover }: hoverType) => {
   const [team, setTeam] = useState<any[]>([]);
   const param = useParams<any>();
 
-  useMemo(async () => {
+  useEffect(() => {
     const lckTeam = query(collection(dbService, 'lck_matches'));
-    const fetchData = await onSnapshot(lckTeam, (querySnapshot) => {
+    const fetchData = onSnapshot(lckTeam, (querySnapshot) => {
       try {
         const info = querySnapshot.docs.map((docs) => ({
           id: docs.id,
