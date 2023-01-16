@@ -12,4 +12,8 @@ export type DuoType = {
   mostChamp: string;
 };
 
-export type FindDuoType = Pick<DuoType, 'queue' | 'tier' | 'position'>;
+export interface FilterType {
+  queue: [];
+  tier: [];
+  position: [];
+}
