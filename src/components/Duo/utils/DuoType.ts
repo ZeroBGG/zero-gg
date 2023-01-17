@@ -13,7 +13,5 @@ export type DuoType = {
 };
 
 export interface FilterType {
-  queue: [];
-  tier: [];
-  position: [];
+  [key: string]: string;
 }

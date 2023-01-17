@@ -9,10 +9,10 @@ import styles from './Duo.module.scss';
 const Duo = () => {
   const [lolInfo, setLolInfo] = useState<any[]>([]);
   const [lolInfoFilterList, setLolInfoFilterList] = useState<any[]>([]);
-  const [selectvalue, setSelectValue] = useState<FilterType>({
-    queue: [],
-    tier: [],
-    position: [],
+  const [selectValue, setSelectValue] = useState<FilterType>({
+    queue: '',
+    tier: '',
+    position: '',
   });
 
   const getDuoData = useCallback(() => {
@@ -31,13 +31,13 @@ const Duo = () => {
   }, []);
 
   const FilterDuoData = () => {
-    if (selectvalue.position && selectvalue.queue && selectvalue.tier === undefined) {
+    if (selectValue.position && selectValue.queue && selectValue.tier === undefined) {
       setLolInfoFilterList(lolInfo);
     } else {
       const filteredList = lolInfo.reduce((acc, cur) => {
-        const positionCondition = selectvalue.position ? cur.position === selectvalue.position : true;
-        const queueCondition = selectvalue.queue ? cur.queue === selectvalue.queue : true;
-        const tierCondition = selectvalue.tier ? cur.tier === selectvalue.tier : true;
+        const positionCondition = selectValue.position ? cur.position === selectValue.position : true;
+        const queueCondition = selectValue.queue ? cur.queue === selectValue.queue : true;
+        const tierCondition = selectValue.tier ? cur.tier === selectValue.tier : true;
 
         if (positionCondition && queueCondition && tierCondition) {
           acc.push(cur);
@@ -50,21 +50,24 @@ const Duo = () => {
     }
   };
 
+  const onFilterChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { value, name },
+      } = e;
+      console.log(selectValue);
+      setSelectValue({ ...selectValue, [name]: value });
+    },
+    [selectValue, setSelectValue],
+  );
+
   useEffect(() => {
     getDuoData();
   }, []);
 
   useEffect(() => {
     FilterDuoData();
-  }, [lolInfo, selectvalue.position, selectvalue.queue, selectvalue.tier]);
-
-  const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { value, name },
-    } = e;
-    setSelectValue({ ...selectvalue, [name]: value });
-    console.log(selectvalue);
-  }, []);
+  }, [lolInfo, selectValue.position, selectValue.queue, selectValue.tier]);
 
   return (
     <>
@@ -74,60 +77,81 @@ const Duo = () => {
           <div className={styles.wrapper}>
             <div className={styles.select_queue}>
               <h2>Queue 선택</h2>
-              <input type="radio" id="Duo" name="queue" value="Duo" onChange={onChange} />
+              <input type="radio" id="Duo" onChange={onFilterChange} name="queue" value="Duo" />
               <label htmlFor="Duo">듀오랭크</label>
-              <input type="radio" id="Free" name="queue" value="Free" onChange={onChange} />
+              <input type="radio" id="Free" onChange={onFilterChange} name="queue" value="Free" />
               <label htmlFor="Free">자유랭크</label>
-              <input type="radio" id="Narak" name="queue" value="Narak" onChange={onChange} />
+              <input type="radio" id="Narak" onChange={onFilterChange} name="queue" value="Narak" />
               <label htmlFor="Narak">칼바람 나락</label>
             </div>
             <div className={styles.select_tier}>
-              <h2>Rank 선택</h2>
-              <input type="radio" id="Iron" name="rank" value="Iron" className={styles.iron} onChange={onChange} />
+              <h2>Tier 선택</h2>
+              <input
+                type="radio"
+                id="Iron"
+                name="tier"
+                value="Iron"
+                className={styles.iron}
+                onChange={onFilterChange}
+              />
               <label htmlFor="Iron">아이언</label>
               <input
                 type="radio"
                 id="Bronze"
-                name="rank"
+                name="tier"
                 value="Bronze"
                 className={styles.bronze}
-                onChange={onChange}
+                onChange={onFilterChange}
               />
               <label htmlFor="Bronze">브론즈</label>
               <input
                 type="radio"
                 id="Silver"
-                name="rank"
+                name="tier"
                 value="Silver"
                 className={styles.silver}
-                onChange={onChange}
+                onChange={onFilterChange}
               />
               <label htmlFor="Silver">실버</label>
-              <input type="radio" id="Gold" name="rank" value="Gold" className={styles.gold} onChange={onChange} />
+              <input
+                type="radio"
+                id="Gold"
+                name="tier"
+                value="Gold"
+                className={styles.gold}
+                onChange={onFilterChange}
+              />
               <label htmlFor="Gold">골드</label>
               <input
                 type="radio"
                 id="Platinum"
-                name="rank"
+                name="tier"
                 value="Platinum"
                 className={styles.platinum}
-                onChange={onChange}
+                onChange={onFilterChange}
               />
               <label htmlFor="Platinum">플레티넘</label>
-              <input type="radio" id="Diamond" name="rank" value="Diamond" className={styles.dia} onChange={onChange} />
+              <input
+                type="radio"
+                id="Diamond"
+                name="tier"
+                value="Diamond"
+                className={styles.dia}
+                onChange={onFilterChange}
+              />
               <label htmlFor="Diamond">다이아</label>
             </div>
             <div className={styles.select_position}>
               <h2>Position 선택</h2>
-              <input type="radio" id="Top" name="position" value="Top" onChange={onChange} />
+              <input type="radio" id="Top" name="position" value="Top" onChange={onFilterChange} />
               <label htmlFor="Top">탑</label>
-              <input type="radio" id="Jug" name="position" value="Jungle" onChange={onChange} />
+              <input type="radio" id="Jug" name="position" value="Jungle" onChange={onFilterChange} />
               <label htmlFor="Jug">정글</label>
-              <input type="radio" id="Mid" name="position" value="Mid" onChange={onChange} />
+              <input type="radio" id="Mid" name="position" value="Mid" onChange={onFilterChange} />
               <label htmlFor="Mid">미드</label>
-              <input type="radio" id="AD" name="position" value="AD" onChange={onChange} />
+              <input type="radio" id="AD" name="position" value="AD" onChange={onFilterChange} />
               <label htmlFor="AD">바텀(원딜)</label>
-              <input type="radio" id="Sup" name="position" value="Sup" onChange={onChange} />
+              <input type="radio" id="Sup" name="position" value="Sup" onChange={onFilterChange} />
               <label htmlFor="Sup">서포터</label>
             </div>
           </div>
