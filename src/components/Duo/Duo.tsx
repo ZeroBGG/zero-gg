@@ -34,17 +34,20 @@ const Duo = () => {
     if (selectValue.position && selectValue.queue && selectValue.tier === undefined) {
       setLolInfoFilterList(lolInfo);
     } else {
-      const filteredList = lolInfo.reduce((acc, cur) => {
-        const positionCondition = selectValue.position ? cur.position === selectValue.position : true;
-        const queueCondition = selectValue.queue ? cur.queue === selectValue.queue : true;
-        const tierCondition = selectValue.tier ? cur.tier === selectValue.tier : true;
+      const filteredList = lolInfo.reduce(
+        (acc, cur) => {
+          const positionCondition = selectValue.position ? cur.position === selectValue.position : true;
+          const queueCondition = selectValue.queue ? cur.queue === selectValue.queue : true;
+          const tierCondition = selectValue.tier ? cur.tier === selectValue.tier : true;
 
-        if (positionCondition && queueCondition && tierCondition) {
-          acc.push(cur);
-        }
+          if (positionCondition && queueCondition && tierCondition) {
+            acc.push(cur);
+          }
 
-        return acc;
-      }, []);
+          return acc;
+        },
+        [selectValue],
+      );
 
       setLolInfoFilterList(filteredList);
     }
