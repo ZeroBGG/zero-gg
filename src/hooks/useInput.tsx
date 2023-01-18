@@ -5,7 +5,9 @@ const useInput = (initialstate: string) => {
   const onChange = useCallback((e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
     setValue(e.currentTarget.value);
   }, []);
-  return { value, setValue, onChange };
+
+  const reset = useCallback(() => setValue(initialstate), [initialstate]);
+  return { value, setValue, onChange, reset };
 };
 
 export default useInput;
