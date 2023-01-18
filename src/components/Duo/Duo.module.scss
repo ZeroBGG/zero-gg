@@ -27,7 +27,7 @@ main {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  margin-bottom: 5vh;
+  min-height: calc(100vh - 200px);
 
   .div_card {
     width: 99vw;

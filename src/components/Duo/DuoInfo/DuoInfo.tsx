@@ -58,19 +58,19 @@ const DuoInfo = () => {
   });
 
   // 업데이트 변경에 필요한 상태 onClick
-  const onClick = () => {
+  const onClickAuth = () => {
     if (userId === submitId.value && userPassword === submitPass.value) {
       setUpdate((e) => !e);
-      submitId.setValue('');
-      submitPass.setValue('');
+      submitId.reset;
+      submitPass.reset;
     } else {
       window.alert('아이디와 비밀번호가 틀렸습니다.');
-      submitId.setValue('');
-      submitPass.setValue('');
+      submitId.reset;
+      submitPass.reset;
     }
   };
 
-  const toggleCancel = () => {
+  const onToggleClick = () => {
     setUpdate((e) => !e);
   };
 
@@ -79,7 +79,6 @@ const DuoInfo = () => {
   };
 
   // 업데이트 및 삭제에 필요한 클릭이벤트
-  const toggleUpdateClick = () => setUpdate((e) => !e);
   const onDeleteClick = async () => {
     const ok = window.confirm('지우겠습니까?');
 
@@ -108,7 +107,7 @@ const DuoInfo = () => {
           <div className={styles.checkuser}>
             <input type="text" {...submitId} placeholder="ID" />
             <input type="password" {...submitPass} placeholder="PASSWORD" />
-            <button onClick={onClick}>수정 및 삭제하기</button>
+            <button onClick={onClickAuth}>수정 및 삭제하기</button>
           </div>
         </form>
         {update ? (
@@ -176,7 +175,7 @@ const DuoInfo = () => {
                 <div className={styles.button_space}>
                   <button
                     type="submit"
-                    onClick={toggleUpdateClick}
+                    onClick={onToggleClick}
                     disabled={
                       !inputQueue.value ||
                       !inputTier.value ||
@@ -191,7 +190,7 @@ const DuoInfo = () => {
                   <button type="submit" onClick={onDeleteClick}>
                     <span>삭제</span>
                   </button>
-                  <button type="button" onClick={toggleCancel}>
+                  <button type="button" onClick={onToggleClick}>
                     <span>취소</span>
                   </button>
                 </div>

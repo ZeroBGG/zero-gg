@@ -41,38 +41,38 @@ const WriteDuo = () => {
     };
 
     await addDoc(collection(dbService, 'myLOLInfo'), myLOLInfo);
-    inputId.setValue('');
-    inputPass.setValue('');
-    inputQueue.setValue('');
-    inputTier.setValue('');
-    inputPosition.setValue('');
-    inputTitle.setValue('');
-    inputMemo.setValue('');
-    inputNickName.setValue('');
-    inputMostChamp.setValue('');
+    inputId.reset;
+    inputPass.reset;
+    inputQueue.reset;
+    inputTier.reset;
+    inputPosition.reset;
+    inputTitle.reset;
+    inputMemo.reset;
+    inputNickName.reset;
+    inputMostChamp.reset;
 
     setWrite((e) => !e);
   };
 
-  const onClick = () => setWrite((e) => !e);
+  const onToggleClick = () => setWrite((e) => !e);
 
   const cancleValue = () => {
-    inputId.setValue('');
-    inputPass.setValue('');
-    inputQueue.setValue('');
-    inputTier.setValue('');
-    inputPosition.setValue('');
-    inputTitle.setValue('');
-    inputMemo.setValue('');
-    inputNickName.setValue('');
-    inputMostChamp.setValue('');
+    inputId.reset;
+    inputPass.reset;
+    inputQueue.reset;
+    inputTier.reset;
+    inputPosition.reset;
+    inputTitle.reset;
+    inputMemo.reset;
+    inputNickName.reset;
+    inputMostChamp.reset;
   };
 
   return (
     <>
       <section className={styles.section}>
         <div className={styles.wrapper}>
-          <button onClick={onClick} className={styles.write_button}>
+          <button onClick={onToggleClick} className={styles.write_button}>
             글 쓰기
           </button>
         </div>
@@ -101,7 +101,7 @@ const WriteDuo = () => {
                     <label htmlFor="queue" className={styles.label}>
                       Queue
                     </label>
-                    <select name="queue" id="queue"{...inputQueue}>
+                    <select name="queue" id="queue" {...inputQueue}>
                       {queueArr.map((item, idx) => {
                         return (
                           <>
