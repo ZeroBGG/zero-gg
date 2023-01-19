@@ -74,7 +74,7 @@ const DuoInfo = () => {
     setUpdate((e) => !e);
   };
 
-  const onSubmit = (e: FormEvent) => {
+  const onEditSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
 
@@ -103,7 +103,7 @@ const DuoInfo = () => {
   return (
     <>
       <section className={styles.wrapper}>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onEditSubmit}>
           <div className={styles.checkuser}>
             <input type="text" {...submitId} placeholder="ID" />
             <input type="password" {...submitPass} placeholder="PASSWORD" />
