@@ -1,10 +1,11 @@
-import { FormEvent, useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useRef, useState } from 'react';
 import styles from './WriteDuo.module.scss';
 import { dbService } from 'src/firebase';
 import { DuoType } from '../utils/DuoType';
 import { addDoc, collection } from 'firebase/firestore';
 import { queueArr, tierArr, positionArr } from '../utils/DuoArr';
 import useInput from '@/hooks/useInput';
+import InputText from '../Common/InputText';
 
 const WriteDuo = () => {
   const [write, setWrite] = useState(false);
@@ -18,6 +19,18 @@ const WriteDuo = () => {
   const inputMemo = useInput('');
   const inputNickName = useInput('');
   const inputMostChamp = useInput('');
+
+  const reset = () => {
+    inputId.reset();
+    inputPass.reset();
+    inputQueue.reset();
+    inputTier.reset();
+    inputPosition.reset();
+    inputTitle.reset();
+    inputMemo.reset();
+    inputNickName.reset();
+    inputMostChamp.reset();
+  };
 
   const date = new Date();
   const hours = String(date.getHours());
@@ -41,15 +54,7 @@ const WriteDuo = () => {
     };
 
     await addDoc(collection(dbService, 'myLOLInfo'), myLOLInfo);
-    inputId.reset;
-    inputPass.reset;
-    inputQueue.reset;
-    inputTier.reset;
-    inputPosition.reset;
-    inputTitle.reset;
-    inputMemo.reset;
-    inputNickName.reset;
-    inputMostChamp.reset;
+    reset();
 
     setWrite((e) => !e);
   };
@@ -57,15 +62,7 @@ const WriteDuo = () => {
   const onToggleClick = () => setWrite((e) => !e);
 
   const cancleValue = () => {
-    inputId.reset;
-    inputPass.reset;
-    inputQueue.reset;
-    inputTier.reset;
-    inputPosition.reset;
-    inputTitle.reset;
-    inputMemo.reset;
-    inputNickName.reset;
-    inputMostChamp.reset;
+    reset();
   };
 
   return (
@@ -83,16 +80,10 @@ const WriteDuo = () => {
                 <h2>소환사 등록하기</h2>
                 <div className={styles.user_wrapper}>
                   <div>
-                    <label htmlFor="userid" className={styles.label}>
-                      ID
-                    </label>
-                    <input type="text" name="userid" id="userid" className={styles.input_text} {...inputId} />
+                    <InputText type="text" {...inputId} name="userid" id="userid" inLabelText="ID" />
                   </div>
                   <div>
-                    <label htmlFor="userpass" className={styles.label}>
-                      Password
-                    </label>
-                    <input type="password" name="userpass" id="userpass" className={styles.input_text} {...inputPass} />
+                    <InputText type="password" {...inputPass} name="userpass" id="userpass" inLabelText="Password" />
                   </div>
                 </div>
 
@@ -219,4 +210,4 @@ const WriteDuo = () => {
   );
 };
 
-export default WriteDuo;
+export default React.memo(WriteDuo);

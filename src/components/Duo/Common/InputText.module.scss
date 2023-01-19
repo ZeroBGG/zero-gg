@@ -1,0 +1,18 @@
+@import "../common.scss";
+
+.label {
+  display: block;
+  margin-top: 10px;
+}
+
+select {
+  @include select
+}
+
+.input_text {
+  @include input(220px)
+}
+
+.input_memo {
+  @include input(445px)
+}

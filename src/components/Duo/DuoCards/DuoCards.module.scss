@@ -50,22 +50,24 @@ $fontColor-2: #c0c0c0;
     .title {
       padding: 0 0 0 5px;
       width: 20vw;
-      text-overflow: ellipsis;
+      overflow: hidden;
 
       h3 {
         font-size: 23px;
         color: $fontColor-1;
+        text-overflow: ellipsis;
       }
     }
 
     .memo {
       padding: 0 1px;
       width: 18vw;
-      text-overflow: ellipsis;
+      overflow: hidden;
 
       p {
         font-size: 14px;
         color: $fontColor-2;
+        text-overflow: ellipsis;
       }
     }
 
