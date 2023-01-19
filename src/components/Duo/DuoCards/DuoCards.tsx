@@ -5,7 +5,8 @@ import styles from './DuoCards.module.scss';
 import { LANE_ICONS_URL, TIER_IMG_URL } from '../Constants/constant';
 import { positions, tiers } from '../utils/DuoArr';
 
-const DuoCards = ({ duoObj, key }: { duoObj: DuoType; key: string }) => {
+const DuoCards = ({ duoObj }: { duoObj: DuoType }) => {
+  const UNIQUE_KEY = duoObj.userId + duoObj.timeSet;
   const lane = positions.map((item) => {
     if (item.lane === duoObj.position) {
       return (
@@ -29,7 +30,7 @@ const DuoCards = ({ duoObj, key }: { duoObj: DuoType; key: string }) => {
   return (
     <>
       <Link to={`${duoObj.userId}`} state={{ duoObj }}>
-        <li className={styles.list}>
+        <li className={styles.list} key={UNIQUE_KEY}>
           <div className={styles.wrapper}>
             <div className={styles.icons}>{ti}</div>
             <div className={styles.icons}>{lane}</div>

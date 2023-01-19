@@ -1,8 +1,8 @@
-import React, { FormEvent, useEffect, useRef, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import styles from './WriteDuo.module.scss';
 import { dbService } from 'src/firebase';
 import { DuoType } from '../utils/DuoType';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { queueArr, tierArr, positionArr } from '../utils/DuoArr';
 import useInput from '@/hooks/useInput';
 import InputText from '../Common/InputText';
@@ -33,9 +33,11 @@ const WriteDuo = () => {
   };
 
   const date = new Date();
-  const hours = String(date.getHours());
-  const min = String(date.getMinutes());
-  const sec = String(date.getSeconds());
+  const year = String(date.getFullYear());
+  const month = String(('0' + (date.getMonth() + 1)).slice(-2));
+  const day = String(('0' + date.getDate()).slice(-2));
+
+  const dateString = year + '-' + month + '-' + day;
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -46,11 +48,13 @@ const WriteDuo = () => {
 
       userId: inputId.value,
       userPassword: inputPass.value,
-      timeSet: `${hours} : ${min} : ${sec}`,
+      timeSet: dateString,
       title: inputTitle.value,
       memo: inputMemo.value,
       nickName: inputNickName.value,
       mostChamp: inputMostChamp.value,
+
+      createdAt: Date.now(),
     };
 
     await addDoc(collection(dbService, 'myLOLInfo'), myLOLInfo);

@@ -1,6 +1,6 @@
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { dbService } from 'src/firebase';
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 import DuoCards from './DuoCards/DuoCards';
 import WriteDuo from './WriteDuo/WriteDuo';
 import { DuoType, FilterType } from './utils/DuoType';
@@ -17,7 +17,7 @@ const Duo = () => {
 
   const getDuoData = useCallback(() => {
     try {
-      const q = query(collection(dbService, 'myLOLInfo'));
+      const q = query(collection(dbService, 'myLOLInfo'), orderBy('createdAt', 'desc'));
       onSnapshot(q, (querySnapshot) => {
         const myLol = querySnapshot.docs.map((docs) => ({
           id: docs?.id,
@@ -167,10 +167,11 @@ const Duo = () => {
             <div className={styles.div_card}>
               <ul className={styles.ul_card}>
                 {lolInfoFilterList.map((item: DuoType, idx: number) => {
+                  const UNIQUE_KEY = item.userId + idx.toString();
                   if (item.position && item.queue && item.tier !== null) {
                     return (
                       <>
-                        <DuoCards key={`${item.userId}_${idx}`} duoObj={item} />
+                        <DuoCards key={UNIQUE_KEY} duoObj={item} />
                       </>
                     );
                   }
