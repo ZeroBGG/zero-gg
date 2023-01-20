@@ -27,6 +27,7 @@ export default function InputID() {
           value={name}
           onChange={handleChange}
           placeholder="소환사명"
+          autoComplete="off"
         />
         <button className={styles.button}>
           <GoSearch size="18" color="red" className={styles.svg} />
