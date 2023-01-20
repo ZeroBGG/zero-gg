@@ -1,0 +1,28 @@
+@import "../../common.scss";
+
+$blue: #1b76d8;
+$black: #141618;
+$dark: #333;
+$indigo: #4b0082;
+$white: #fff;
+$iron: #696b5e;
+$bronze: #624637;
+$silver: #c0c0c0;
+$gold: #ffd700;
+$platinum: #20b2aa;
+$dia: #4169e1;
+$bgColor-1: #1c1c1f;
+$bgColor-2: #282830;
+$bgColor-3: #f1f5f7;
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]+label {
+  @include radio($dark, $white)
+}
+
+input[type=radio]:checked+label {
+  @include radio_checked($dark, $white)
+}

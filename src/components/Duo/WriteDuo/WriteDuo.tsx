@@ -5,7 +5,7 @@ import { DuoType } from '../utils/DuoType';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { queueArr, tierArr, positionArr } from '../utils/DuoArr';
 import useInput from '@/hooks/useInput';
-import InputText from '../Common/InputText';
+import InputText from '../Common/InputText/InputText';
 
 const WriteDuo = () => {
   const [write, setWrite] = useState(false);

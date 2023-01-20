@@ -3,8 +3,10 @@ import { dbService } from 'src/firebase';
 import { collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 import DuoCards from './DuoCards/DuoCards';
 import WriteDuo from './WriteDuo/WriteDuo';
+import FilterRadio from './Common/Filter/FilterRadio';
 import { DuoType, FilterType } from './utils/DuoType';
 import styles from './Duo.module.scss';
+import Radio from './Common/InputRadio/Radio';
 
 const Duo = () => {
   const [lolInfo, setLolInfo] = useState<any[]>([]);
@@ -84,8 +86,16 @@ const Duo = () => {
             <div className={styles.wrapper}>
               <div className={styles.select_queue}>
                 <h2>Queue 선택</h2>
-                <input type="radio" id="Duo" onChange={onFilterChange} name="queue" value="Duo" />
-                <label htmlFor="Duo">듀오랭크</label>
+                <Radio
+                  type="radio"
+                  id="Duo"
+                  onChange={onFilterChange}
+                  name="queue"
+                  value="Duo"
+                  inLabelText="듀오랭크"
+                />
+                {/* <input type="radio" id="Duo" onChange={onFilterChange} name="queue" value="Duo" />
+                <label htmlFor="Duo">듀오랭크</label> */}
                 <input type="radio" id="Free" onChange={onFilterChange} name="queue" value="Free" />
                 <label htmlFor="Free">자유랭크</label>
                 <input type="radio" id="Narak" onChange={onFilterChange} name="queue" value="Narak" />
