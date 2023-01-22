@@ -1,4 +1,4 @@
-@import "./common.scss";
+@import './common.scss';
 
 /* Duo.Module.scss */
 
@@ -18,12 +18,11 @@ $bgColor-2: #282830;
 $bgColor-3: #f1f5f7;
 
 main {
-  background-color: $bgColor-1;
+  // background-color: $bgColor-1;
   height: 100%;
 }
 
 .duo_article {
-
   height: 100%;
 }
 
@@ -51,94 +50,92 @@ main {
   padding: auto;
   margin: 15px auto;
   background-color: $bgColor-3;
-
 }
 
 .select_queue {
   padding: 15px 10px;
 
-  input[type=radio] {
+  input[type='radio'] {
     display: none;
-
   }
 
-  input[type=radio]+label {
-    @include radio($dark, $white)
+  input[type='radio'] + label {
+    @include radio($dark, $white);
   }
 
-  input[type=radio]:checked+label {
-    @include radio_checked($dark, $white)
+  input[type='radio']:checked + label {
+    @include radio_checked($dark, $white);
   }
 }
 
 .select_tier {
   padding: 15px 10px;
 
-  input[type=radio] {
+  input[type='radio'] {
     display: none;
   }
 
-  .iron+label {
-    @include radio($iron, $white)
+  .iron + label {
+    @include radio($iron, $white);
   }
 
-  .iron:checked+label {
-    @include radio_checked($iron, $white)
+  .iron:checked + label {
+    @include radio_checked($iron, $white);
   }
 
-  .bronze+label {
-    @include radio($bronze, $white)
+  .bronze + label {
+    @include radio($bronze, $white);
   }
 
-  .bronze:checked+label {
-    @include radio_checked($bronze, $white)
+  .bronze:checked + label {
+    @include radio_checked($bronze, $white);
   }
 
-  .silver+label {
-    @include radio($silver, $white)
+  .silver + label {
+    @include radio($silver, $white);
   }
 
-  .silver:checked+label {
-    @include radio_checked($silver, $white)
+  .silver:checked + label {
+    @include radio_checked($silver, $white);
   }
 
-  .gold+label {
-    @include radio($gold, $white)
+  .gold + label {
+    @include radio($gold, $white);
   }
 
-  .gold:checked+label {
-    @include radio_checked($gold, $black)
+  .gold:checked + label {
+    @include radio_checked($gold, $black);
   }
 
-  .platinum+label {
-    @include radio($platinum, $white)
+  .platinum + label {
+    @include radio($platinum, $white);
   }
 
-  .platinum:checked+label {
-    @include radio_checked($platinum, $white)
+  .platinum:checked + label {
+    @include radio_checked($platinum, $white);
   }
 
-  .dia+label {
-    @include radio($dia, $white)
+  .dia + label {
+    @include radio($dia, $white);
   }
 
-  .dia:checked+label {
-    @include radio_checked($dia, $white)
+  .dia:checked + label {
+    @include radio_checked($dia, $white);
   }
 }
 
 .select_position {
   padding: 15px 10px;
 
-  input[type=radio] {
+  input[type='radio'] {
     display: none;
   }
 
-  input[type=radio]+label {
-    @include radio($indigo, $white)
+  input[type='radio'] + label {
+    @include radio($indigo, $white);
   }
 
-  input[type=radio]:checked+label {
-    @include radio_checked($indigo, $white)
+  input[type='radio']:checked + label {
+    @include radio_checked($indigo, $white);
   }
 }

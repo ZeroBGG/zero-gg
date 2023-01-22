@@ -6,6 +6,7 @@ import { TypeSummoner, TypeSummonerRank } from '@/components/Record/types/type';
 import styles from './Record.module.scss';
 import SummonerInfo from './SummonerInfo/SummonerInfo';
 import SummonerRank from './SummonerRank/SummonerRank';
+import SummonerMatch from './SummonerMatch/SummonerMatch';
 
 export default function Record() {
   const { summonerId } = useParams<{ summonerId: string }>();
@@ -21,9 +22,13 @@ export default function Record() {
     try {
       if (summonerId) {
         const res = await getSummonerInfo(summonerId);
-        setInfo(res);
+        console.log(res);
+        if (res) {
+          setInfo(res);
+        }
       }
     } catch (err) {
+      setInfo(null);
       console.log(err);
     }
   };
@@ -68,9 +73,12 @@ export default function Record() {
   {
     return summonerId && info ? (
       <main className={styles.main}>
-        <article className={styles.article}>{info && <SummonerInfo info={info} handleClick={handleClick} />}</article>
+        <article className={styles.article}>{<SummonerInfo info={info} handleClick={handleClick} />}</article>
         <article className={styles.article}>
           {summonerRankInfo && <SummonerRank summonerRankInfo={summonerRankInfo} />}
+        </article>
+        <article className={styles.article}>
+          <SummonerMatch puuid={info.puuid} />
         </article>
       </main>
     ) : (
