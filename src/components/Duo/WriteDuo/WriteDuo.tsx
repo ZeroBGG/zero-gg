@@ -143,44 +143,36 @@ const WriteDuo = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="title" className={styles.label}>
-                    Title
-                  </label>
-                  <input
+                  <InputText
                     type="text"
-                    id="title"
-                    className={styles.input_text}
-                    placeholder="소통해요!!"
                     {...inputTitle}
+                    name="title"
+                    id="title"
+                    inLabelText="Title"
+                    placeholder="소통해요!!"
                   />
-                  <label htmlFor="memo" className={styles.label}>
-                    Memo
-                  </label>
-                  <input
+                  <InputText
                     type="text"
-                    id="memo"
-                    className={styles.input_memo}
-                    placeholder="바텀, 사랑에 빠지다."
                     {...inputMemo}
+                    name="memo"
+                    id="memo"
+                    inLabelText="Memo"
+                    placeholder="바텀, 사랑에 빠지다."
+                    className={styles.input_memo}
                   />
                 </div>
                 <div className={styles.user_wrapper}>
                   <div>
-                    <label htmlFor="nick" className={styles.label}>
-                      Nickname
-                    </label>
-                    <input type="text" id="nick" className={styles.input_text} {...inputNickName} />
+                    <InputText type="text" {...inputNickName} name="nick" id="nick" inLabelText="Nickname" />
                   </div>
                   <div>
-                    <label htmlFor="most" className={styles.label}>
-                      MostChamp
-                    </label>
-                    <input
+                    <InputText
                       type="text"
-                      id="most"
-                      className={styles.input_text}
-                      placeholder="2가지만"
                       {...inputMostChamp}
+                      name="most"
+                      id="most"
+                      inLabelText="MostChampion"
+                      placeholder="2가지만"
                     />
                   </div>
                 </div>

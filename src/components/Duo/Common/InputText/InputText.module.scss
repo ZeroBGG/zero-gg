@@ -9,7 +9,7 @@ select {
   @include select
 }
 
-.input_text {
+input {
   @include input(220px)
 }
 

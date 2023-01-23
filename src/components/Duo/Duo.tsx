@@ -6,7 +6,7 @@ import WriteDuo from './WriteDuo/WriteDuo';
 import FilterRadio from './Common/Filter/FilterRadio';
 import { DuoType, FilterType } from './utils/DuoType';
 import styles from './Duo.module.scss';
-import Radio from './Common/InputRadio/Radio';
+import InputRadio from './Common/InputRadio/InputRadio';
 
 const Duo = () => {
   const [lolInfo, setLolInfo] = useState<any[]>([]);
@@ -86,7 +86,7 @@ const Duo = () => {
             <div className={styles.wrapper}>
               <div className={styles.select_queue}>
                 <h2>Queue 선택</h2>
-                <Radio
+                <InputRadio
                   type="radio"
                   id="Duo"
                   onChange={onFilterChange}
@@ -94,82 +94,122 @@ const Duo = () => {
                   value="Duo"
                   inLabelText="듀오랭크"
                 />
-                {/* <input type="radio" id="Duo" onChange={onFilterChange} name="queue" value="Duo" />
-                <label htmlFor="Duo">듀오랭크</label> */}
-                <input type="radio" id="Free" onChange={onFilterChange} name="queue" value="Free" />
-                <label htmlFor="Free">자유랭크</label>
-                <input type="radio" id="Narak" onChange={onFilterChange} name="queue" value="Narak" />
-                <label htmlFor="Narak">칼바람 나락</label>
+                <InputRadio
+                  type="radio"
+                  id="Free"
+                  onChange={onFilterChange}
+                  name="queue"
+                  value="Free"
+                  inLabelText="자유랭크"
+                />
+                <InputRadio
+                  type="radio"
+                  id="Narak"
+                  onChange={onFilterChange}
+                  name="queue"
+                  value="Narak"
+                  inLabelText="칼바람 나락"
+                />
               </div>
               <div className={styles.select_tier}>
                 <h2>Tier 선택</h2>
-                <input
+                <InputRadio
                   type="radio"
                   id="Iron"
+                  onChange={onFilterChange}
                   name="tier"
                   value="Iron"
+                  inLabelText="아이언"
                   className={styles.iron}
-                  onChange={onFilterChange}
                 />
-                <label htmlFor="Iron">아이언</label>
-                <input
+                <InputRadio
                   type="radio"
                   id="Bronze"
+                  onChange={onFilterChange}
                   name="tier"
                   value="Bronze"
+                  inLabelText="브론즈"
                   className={styles.bronze}
-                  onChange={onFilterChange}
                 />
-                <label htmlFor="Bronze">브론즈</label>
-                <input
+                <InputRadio
                   type="radio"
                   id="Silver"
+                  onChange={onFilterChange}
                   name="tier"
                   value="Silver"
+                  inLabelText="실버"
                   className={styles.silver}
-                  onChange={onFilterChange}
                 />
-                <label htmlFor="Silver">실버</label>
-                <input
+                <InputRadio
                   type="radio"
                   id="Gold"
+                  onChange={onFilterChange}
                   name="tier"
                   value="Gold"
+                  inLabelText="골드"
                   className={styles.gold}
-                  onChange={onFilterChange}
                 />
-                <label htmlFor="Gold">골드</label>
-                <input
+                <InputRadio
                   type="radio"
                   id="Platinum"
+                  onChange={onFilterChange}
                   name="tier"
                   value="Platinum"
+                  inLabelText="플래티넘"
                   className={styles.platinum}
-                  onChange={onFilterChange}
                 />
-                <label htmlFor="Platinum">플레티넘</label>
-                <input
+                <InputRadio
                   type="radio"
                   id="Diamond"
+                  onChange={onFilterChange}
                   name="tier"
                   value="Diamond"
+                  inLabelText="다이아"
                   className={styles.dia}
-                  onChange={onFilterChange}
                 />
-                <label htmlFor="Diamond">다이아</label>
               </div>
               <div className={styles.select_position}>
                 <h2>Position 선택</h2>
-                <input type="radio" id="Top" name="position" value="Top" onChange={onFilterChange} />
-                <label htmlFor="Top">탑</label>
-                <input type="radio" id="Jug" name="position" value="Jungle" onChange={onFilterChange} />
-                <label htmlFor="Jug">정글</label>
-                <input type="radio" id="Mid" name="position" value="Mid" onChange={onFilterChange} />
-                <label htmlFor="Mid">미드</label>
-                <input type="radio" id="AD" name="position" value="AD" onChange={onFilterChange} />
-                <label htmlFor="AD">바텀(원딜)</label>
-                <input type="radio" id="Sup" name="position" value="Sup" onChange={onFilterChange} />
-                <label htmlFor="Sup">서포터</label>
+                <InputRadio
+                  type="radio"
+                  id="Top"
+                  onChange={onFilterChange}
+                  name="position"
+                  value="Top"
+                  inLabelText="탑"
+                />
+                <InputRadio
+                  type="radio"
+                  id="Jug"
+                  onChange={onFilterChange}
+                  name="position"
+                  value="Jug"
+                  inLabelText="정글"
+                />
+                <InputRadio
+                  type="radio"
+                  id="Mid"
+                  onChange={onFilterChange}
+                  name="position"
+                  value="Mid"
+                  inLabelText="미드"
+                />
+                <InputRadio
+                  type="radio"
+                  id="AD"
+                  onChange={onFilterChange}
+                  name="position"
+                  value="AD"
+                  inLabelText="바텀(원딜)"
+                />
+                <InputRadio
+                  type="radio"
+                  id="Sup"
+                  onChange={onFilterChange}
+                  name="position"
+                  value="Sup"
+                  inLabelText="서포터"
+                />
               </div>
             </div>
           </section>

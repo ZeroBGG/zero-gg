@@ -28,9 +28,9 @@ const InputText = (inputProps: InputType) => {
       <label htmlFor={id} className={styles.label}>
         {inLabelText}
       </label>
-      <input type={type} name={name} id={id} className={styles.input_text} {...props} />
+      <input type={type} name={name} id={id} className={className} placeholder={placeholder} {...props} />
     </>
   );
 };
 
-export default InputText;
+export default React.memo(InputText);

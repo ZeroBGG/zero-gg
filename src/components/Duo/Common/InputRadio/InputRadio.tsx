@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import './Radio.module.scss';
+import styles from './InputRadio.module.scss';
 
 interface InputType {
   type: string;
@@ -11,7 +11,7 @@ interface InputType {
   inLabelText: string;
 }
 
-const Radio = (inputProps: InputType) => {
+const InputRadio = (inputProps: InputType) => {
   const {
     type = inputProps.type,
     name = inputProps.name,
@@ -23,10 +23,10 @@ const Radio = (inputProps: InputType) => {
   } = inputProps;
   return (
     <>
-      <input type={type} id={id} name={name} value={value} {...props} />
+      <input type={type} id={id} name={name} value={value} className={className} {...props} />
       <label htmlFor={id}>{inLabelText}</label>
     </>
   );
 };
 
-export default Radio;
+export default InputRadio;
