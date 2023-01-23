@@ -23,7 +23,7 @@ main {
 }
 
 .duo_article {
-  height: 100%;
+  min-height: calc(100vh - 200px);
 }
 
 /* 듀오 카드 */
@@ -31,16 +31,15 @@ main {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
-  min-height: calc(100vh - 200px);
+  height: 200vh;
 
   .div_card {
     width: 99vw;
-    height: 99vh;
 
     .ul_card {
       background-color: $bgColor-2;
       padding: 20px 30px;
+      min-height: calc(99vh - 400px);
     }
   }
 }

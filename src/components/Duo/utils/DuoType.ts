@@ -1,3 +1,5 @@
+import { Timestamp } from 'firebase/firestore';
+
 export type DuoType = {
   queue: string;
   tier: string;
@@ -10,6 +12,8 @@ export type DuoType = {
   memo: string;
   nickName: string;
   mostChamp: string;
+
+  createdAt?: Timestamp | number;
 };
 
 export interface FilterType {

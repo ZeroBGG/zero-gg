@@ -1,13 +1,13 @@
-import React, { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { dbService } from 'src/firebase';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { positionArr, queueArr, tierArr } from '../utils/DuoArr';
-import useInput from '@/hooks/useInput';
-import styles from './DuoInfo.module.scss';
-import { LANE_ICONS_URL, TIER_IMG_URL } from '../Constants/constant';
-import { positions, tiers } from '../utils/DuoArr';
+import { positionArr, queueArr, tierArr, positions, tiers } from '../utils/DuoArr';
 import { DuoType } from '../utils/DuoType';
+import { LANE_ICONS_URL, TIER_IMG_URL } from '../Constants/constant';
+import useInput from '@/hooks/useInput';
+import InputText from '../Common/InputText/InputText';
+import styles from './DuoInfo.module.scss';
 
 const DuoInfo = () => {
   // DuoCards의 값을 가져오기
@@ -98,6 +98,8 @@ const DuoInfo = () => {
       memo: inputMemo.value,
       nickName: inputNickName.value,
     });
+    setUpdate(false);
+    navigate('/Duo');
   };
 
   return (
@@ -105,9 +107,9 @@ const DuoInfo = () => {
       <section className={styles.wrapper}>
         <form onSubmit={onEditSubmit}>
           <div className={styles.checkuser}>
-            <input type="text" {...submitId} placeholder="ID" />
-            <input type="password" {...submitPass} placeholder="PASSWORD" />
-            <button onClick={onClickAuth}>수정 및 삭제하기</button>
+            <InputText type="text" placeholder="ID" className={styles.input_text} {...submitId} />
+            <InputText type="password" placeholder="PASSWORD" className={styles.input_text} {...submitPass} />
+            <button onClick={onClickAuth}>수정 / 삭제</button>
           </div>
         </form>
         {update ? (
@@ -160,22 +162,39 @@ const DuoInfo = () => {
                 </div>
                 <div className={styles.input_space}>
                   <div>
-                    <label htmlFor="title"> Title </label>
-                    <input type="text" id="title" {...inputTitle} />
+                    <InputText
+                      type="text"
+                      name="title"
+                      id="title"
+                      inLabelText="Title"
+                      className={styles.input_text}
+                      {...inputTitle}
+                    />
                   </div>
                   <div>
-                    <label htmlFor="memo"> Memo </label>
-                    <input type="text" id="memo" {...inputMemo} />
+                    <InputText
+                      type="text"
+                      name="memo"
+                      id="memo"
+                      inLabelText="Memo"
+                      className={styles.input_memo}
+                      {...inputMemo}
+                    />
                   </div>
                   <div>
-                    <label htmlFor="nick"> Nick name </label>
-                    <input type="text" id="nick" {...inputNickName} />
+                    <InputText
+                      type="text"
+                      name="nick"
+                      id="nick"
+                      inLabelText="Nickname"
+                      className={styles.input_text}
+                      {...inputNickName}
+                    />
                   </div>
                 </div>
                 <div className={styles.button_space}>
                   <button
                     type="submit"
-                    onClick={onToggleClick}
                     disabled={
                       !inputQueue.value ||
                       !inputTier.value ||

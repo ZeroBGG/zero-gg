@@ -1,11 +1,11 @@
-import React, { FormEvent, useEffect, useRef, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import styles from './WriteDuo.module.scss';
 import { dbService } from 'src/firebase';
 import { DuoType } from '../utils/DuoType';
 import { addDoc, collection } from 'firebase/firestore';
 import { queueArr, tierArr, positionArr } from '../utils/DuoArr';
 import useInput from '@/hooks/useInput';
-import InputText from '../Common/InputText';
+import InputText from '../Common/InputText/InputText';
 
 const WriteDuo = () => {
   const [write, setWrite] = useState(false);
@@ -33,9 +33,11 @@ const WriteDuo = () => {
   };
 
   const date = new Date();
-  const hours = String(date.getHours());
-  const min = String(date.getMinutes());
-  const sec = String(date.getSeconds());
+  const year = String(date.getFullYear());
+  const month = String(('0' + (date.getMonth() + 1)).slice(-2));
+  const day = String(('0' + date.getDate()).slice(-2));
+
+  const dateString = year + '-' + month + '-' + day;
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -46,16 +48,17 @@ const WriteDuo = () => {
 
       userId: inputId.value,
       userPassword: inputPass.value,
-      timeSet: `${hours} : ${min} : ${sec}`,
+      timeSet: dateString,
       title: inputTitle.value,
       memo: inputMemo.value,
       nickName: inputNickName.value,
       mostChamp: inputMostChamp.value,
+
+      createdAt: Date.now(),
     };
 
     await addDoc(collection(dbService, 'myLOLInfo'), myLOLInfo);
     reset();
-
     setWrite((e) => !e);
   };
 
@@ -80,10 +83,24 @@ const WriteDuo = () => {
                 <h2>소환사 등록하기</h2>
                 <div className={styles.user_wrapper}>
                   <div>
-                    <InputText type="text" {...inputId} name="userid" id="userid" inLabelText="ID" />
+                    <InputText
+                      type="text"
+                      {...inputId}
+                      name="userid"
+                      id="userid"
+                      inLabelText="ID"
+                      className={styles.input_text}
+                    />
                   </div>
                   <div>
-                    <InputText type="password" {...inputPass} name="userpass" id="userpass" inLabelText="Password" />
+                    <InputText
+                      type="password"
+                      {...inputPass}
+                      name="userpass"
+                      id="userpass"
+                      inLabelText="Password"
+                      className={styles.input_text}
+                    />
                   </div>
                 </div>
 
@@ -139,44 +156,45 @@ const WriteDuo = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="title" className={styles.label}>
-                    Title
-                  </label>
-                  <input
+                  <InputText
                     type="text"
-                    id="title"
-                    className={styles.input_text}
-                    placeholder="소통해요!!"
                     {...inputTitle}
+                    name="title"
+                    id="title"
+                    inLabelText="Title"
+                    placeholder="소통해요!!"
+                    className={styles.input_text}
                   />
-                  <label htmlFor="memo" className={styles.label}>
-                    Memo
-                  </label>
-                  <input
+                  <InputText
                     type="text"
-                    id="memo"
-                    className={styles.input_memo}
-                    placeholder="바텀, 사랑에 빠지다."
                     {...inputMemo}
+                    name="memo"
+                    id="memo"
+                    inLabelText="Memo"
+                    placeholder="바텀, 사랑에 빠지다."
+                    className={styles.input_memo}
                   />
                 </div>
                 <div className={styles.user_wrapper}>
                   <div>
-                    <label htmlFor="nick" className={styles.label}>
-                      Nickname
-                    </label>
-                    <input type="text" id="nick" className={styles.input_text} {...inputNickName} />
+                    <InputText
+                      type="text"
+                      {...inputNickName}
+                      name="nick"
+                      id="nick"
+                      inLabelText="Nickname"
+                      className={styles.input_text}
+                    />
                   </div>
                   <div>
-                    <label htmlFor="most" className={styles.label}>
-                      MostChamp
-                    </label>
-                    <input
+                    <InputText
                       type="text"
-                      id="most"
-                      className={styles.input_text}
-                      placeholder="2가지만"
                       {...inputMostChamp}
+                      name="most"
+                      id="most"
+                      inLabelText="MostChampion"
+                      placeholder="2가지만"
+                      className={styles.input_text}
                     />
                   </div>
                 </div>
