@@ -109,7 +109,7 @@ const DuoInfo = () => {
           <div className={styles.checkuser}>
             <InputText type="text" placeholder="ID" className={styles.input_text} {...submitId} />
             <InputText type="password" placeholder="PASSWORD" className={styles.input_text} {...submitPass} />
-            <button onClick={onClickAuth}>수정 및 삭제하기</button>
+            <button onClick={onClickAuth}>수정 / 삭제</button>
           </div>
         </form>
         {update ? (
