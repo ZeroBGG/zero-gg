@@ -1,26 +1,32 @@
 .container {
   width: 100%;
   height: 100vh;
-  background-color: rgb(40, 40, 40);
+  background-color: #000;
   color: #fff;
-  padding: 20px;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
   .header {
     width: 100%;
-    margin-bottom: 30px;
-    padding: 10px 30px;
+    padding: 20px 30px;
     display: flex;
+    background-color: #2e2e2e;
+
+    border-bottom: 2px solid #434343;
     .filter_btn {
       outline: 0;
       border: 0;
       width: 100px;
       border-radius: 10px;
       margin-left: auto;
-      background-color: var(--gray-color-30);
+      background-color: #777777;
       color: #eaeaea;
     }
     .title {
       font-size: 3em;
+      font-weight: bolder;
     }
   }
 }

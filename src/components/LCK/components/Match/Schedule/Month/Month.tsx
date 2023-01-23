@@ -1,18 +1,36 @@
+import { FILTER_CATEGORYS } from '@/data/filterCategory';
+
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Month.module.scss';
 
-const Month = () => {
-  const array = Array.from({ length: 12 }, (v, i) => i + 1);
+interface Props {
+  onClick: (month: string) => void;
+}
 
+const Month = (props: Props) => {
+  const array = Array.from({ length: 12 }, (v, i) => `${i + 1}`);
+  const [month, setMonth] = useState<any[]>([]);
+  const monthArr = FILTER_CATEGORYS;
+  useEffect(() => {
+    setMonth(monthArr);
+  }, []);
+  const handleClick = (event: React.MouseEvent<HTMLLIElement>) => {
+    props.onClick(event.currentTarget.id);
+  };
   return (
     <>
-      {array.map((item, idx) => (
-        <Link to={`${item}`} className={styles.item} key={idx}>
-          <div className={styles.month} id={`${item}월`}>
-            <span>{item}월</span>
-          </div>
-        </Link>
-      ))}
+      {month.map((m, idx) =>
+        m.contents.map((item: string, idx: number) => (
+          <li className={styles.item} onClick={handleClick} id={item} key={idx}>
+            <Link to={item} style={{ color: '#fff' }}>
+              <div className={styles.month}>
+                <span>{item}</span>
+              </div>
+            </Link>
+          </li>
+        )),
+      )}
     </>
   );
 };

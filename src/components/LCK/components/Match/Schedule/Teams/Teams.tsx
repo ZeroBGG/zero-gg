@@ -1,55 +1,39 @@
-import { matchProps, teamType } from '@/components/LCK/typings';
-import { collection, doc, getDoc, onSnapshot, query } from 'firebase/firestore';
-import { useMemo, useState } from 'react';
-import { dbService } from 'src/firebase';
+import { TEAM_CATEGORYS } from '@/data/filterCategory';
+import useFilterValueStore from '@/hooks/useStore';
+import React, { ReactNode, useEffect, useMemo, useState } from 'react';
+
 import styles from './Teams.module.scss';
 
-type TeamType = {
-  id: string;
-  logo: string;
-}[];
-interface ClickProps {
-  onChange: (event: React.MouseEvent) => void;
+interface Props {
+  onClick: (team: string) => void;
 }
-
-const Teams = ({ onChange }: ClickProps) => {
-  const [logos, setLogos] = useState<TeamType>([]);
-  const [checked, setChecked] = useState<boolean>(false);
-  useMemo(() => {
-    const lckTeam = query(collection(dbService, 'lck_teamSquad'));
-    onSnapshot(lckTeam, (querySnapshot) => {
-      try {
-        const info: any = querySnapshot.docs.map((docs) => ({
-          id: docs.id,
-          ...docs.data(),
-        }));
-        setLogos(info);
-      } catch (e) {
-        console.log(e);
-      }
-    });
+const Teams = (props: Props) => {
+  const [team, setTeam] = useState<any[]>([]);
+  const [value, setValue] = useState<string>('');
+  const teams = TEAM_CATEGORYS;
+  useEffect(() => {
+    setTeam(teams);
   }, []);
 
+  const handleClick = (event: React.MouseEvent) => {
+    props.onClick(event.currentTarget.id);
+  };
   return (
-    <div className={styles.logo_wrapper}>
-      <div className={styles.logo_item} id={'all'}>
-        전체
-      </div>
-      {logos.map((logo) => (
-        <div
-          className={styles.logo_item}
-          key={logo.id}
-          onClick={onChange}
-          id={logo.id}
-          style={{
-            backgroundImage: `url(${logo.logo})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'contain',
-          }}
-        ></div>
+    <li className={styles.logo_wrapper}>
+      {team.map((t) => (
+        <button type="button" onClick={handleClick} id={t.id} key={t.id}>
+          <div
+            className={styles.logo_item}
+            style={{
+              backgroundImage: `url(${t.url})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+            }}
+          ></div>
+        </button>
       ))}
-    </div>
+    </li>
   );
 };
 

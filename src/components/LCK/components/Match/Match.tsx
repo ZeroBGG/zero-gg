@@ -9,7 +9,7 @@ const Match = () => {
   return (
     <section className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>경기 일정</h1>
+        <h1 className={styles.title}> LCK 경기 일정</h1>
         <button type="button" onClick={handleClick} className={styles.filter_btn}>
           필터
         </button>

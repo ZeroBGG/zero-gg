@@ -24,7 +24,7 @@
     }
   }
   .wrapper:hover {
-    background-color: #4a4a4a;
+    background-color: #242424;
   }
   .content_wrapper {
     height: 0;
@@ -37,6 +37,7 @@
       justify-content: center;
 
       .month_wrapper {
+        list-style: none;
         display: grid;
         gap: 5px;
         padding: 1px 0;
