@@ -5,14 +5,17 @@ import Teams from '../Teams/Teams';
 import styles from './Accordion.module.scss';
 interface Props {
   title: string;
-  handleChange: (event: React.MouseEvent) => void;
+  handleMonthClick: (month: string) => void;
+  handleTeamClick: (team: string) => void;
 }
 
-const Accordian = ({ title, handleChange }: Props) => {
+const Accordian = ({ title, handleTeamClick, handleMonthClick }: Props) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const childRef = useRef<HTMLDivElement>(null);
 
   const handletoggle = useToggle({ parentRef, childRef });
+
+  const sendData = () => {};
   return (
     <div className={styles.toggle}>
       <div className={styles.wrapper} onClick={handletoggle}>
@@ -23,11 +26,11 @@ const Accordian = ({ title, handleChange }: Props) => {
         <div className={styles.content1} ref={childRef}>
           {title === 'TEAM' ? (
             <div className={styles.teams_wrapper}>
-              <Teams onChange={handleChange} />
+              <Teams onClick={handleTeamClick} />
             </div>
           ) : (
             <div className={styles.month_wrapper}>
-              <Month />
+              <Month onClick={handleMonthClick} />
             </div>
           )}
         </div>

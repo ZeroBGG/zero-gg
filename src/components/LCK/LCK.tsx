@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 export default function LCK() {
-  const [isHover, setIsHover] = useState(false);
-  const [isHoverTeam, setIsHoverTeam] = useState(false);
-
   return (
     <section className={styles.container}>
       <nav className={styles.lck_nav}>

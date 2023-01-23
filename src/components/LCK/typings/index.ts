@@ -1,10 +1,10 @@
 export interface PlayersType {
-  name: string;
-  position: string;
-  summoner: string;
-  image: string;
-  engName: string;
-  logo: string;
+  readonly name: string;
+  readonly position: string;
+  readonly summoner: string;
+  readonly image: string;
+  readonly engName: string;
+  readonly logo: string;
 }
 
 export interface PlayerListType {
@@ -26,25 +26,30 @@ export interface ListProps {
 
 //#### MATCH 타입 #######
 
-export interface matchProps {
+export interface matchListProps {
   id: string;
   day: string;
+  filtering: {
+    match1: {
+      home: string;
+      away: string;
+    };
+    match2: {
+      home: string;
+      away: string;
+    };
+  };
   month: string;
-  week: number;
-  matches: matchTeamType;
+  date: string;
+  matches: matchTeamType[];
 }
 
 export interface matchTeamType {
-  matchName: string;
+  first: boolean;
   time: string;
   state: string;
-  date: string;
-  first: boolean;
-  teams: {
-    time: string;
-    blue: teamType;
-    red: teamType;
-  };
+  home: teamType;
+  away: teamType;
 }
 
 export interface teamType {
@@ -52,5 +57,5 @@ export interface teamType {
   logoUrl: string;
   name: string;
   initial: string;
-  win: string;
+  win: number;
 }
