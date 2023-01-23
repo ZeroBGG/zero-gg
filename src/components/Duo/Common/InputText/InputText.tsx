@@ -3,13 +3,13 @@ import styles from './InputText.module.scss';
 
 interface InputType {
   type: string;
-  name: string;
-  id: string;
+  name?: string;
+  id?: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   reset: () => void;
   placeholder?: string;
   className?: string;
-  inLabelText: string;
+  inLabelText?: string;
 }
 
 const InputText = (inputProps: InputType) => {

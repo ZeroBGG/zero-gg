@@ -84,10 +84,24 @@ const WriteDuo = () => {
                 <h2>소환사 등록하기</h2>
                 <div className={styles.user_wrapper}>
                   <div>
-                    <InputText type="text" {...inputId} name="userid" id="userid" inLabelText="ID" />
+                    <InputText
+                      type="text"
+                      {...inputId}
+                      name="userid"
+                      id="userid"
+                      inLabelText="ID"
+                      className={styles.input_text}
+                    />
                   </div>
                   <div>
-                    <InputText type="password" {...inputPass} name="userpass" id="userpass" inLabelText="Password" />
+                    <InputText
+                      type="password"
+                      {...inputPass}
+                      name="userpass"
+                      id="userpass"
+                      inLabelText="Password"
+                      className={styles.input_text}
+                    />
                   </div>
                 </div>
 
@@ -150,6 +164,7 @@ const WriteDuo = () => {
                     id="title"
                     inLabelText="Title"
                     placeholder="소통해요!!"
+                    className={styles.input_text}
                   />
                   <InputText
                     type="text"
@@ -163,7 +178,14 @@ const WriteDuo = () => {
                 </div>
                 <div className={styles.user_wrapper}>
                   <div>
-                    <InputText type="text" {...inputNickName} name="nick" id="nick" inLabelText="Nickname" />
+                    <InputText
+                      type="text"
+                      {...inputNickName}
+                      name="nick"
+                      id="nick"
+                      inLabelText="Nickname"
+                      className={styles.input_text}
+                    />
                   </div>
                   <div>
                     <InputText
@@ -173,6 +195,7 @@ const WriteDuo = () => {
                       id="most"
                       inLabelText="MostChampion"
                       placeholder="2가지만"
+                      className={styles.input_text}
                     />
                   </div>
                 </div>

@@ -29,4 +29,4 @@ const InputRadio = (inputProps: InputType) => {
   );
 };
 
-export default InputRadio;
+export default React.memo(InputRadio);
