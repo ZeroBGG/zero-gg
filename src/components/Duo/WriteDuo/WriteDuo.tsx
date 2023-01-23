@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from 'react';
 import styles from './WriteDuo.module.scss';
 import { dbService } from 'src/firebase';
 import { DuoType } from '../utils/DuoType';
-import { addDoc, collection, Timestamp } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 import { queueArr, tierArr, positionArr } from '../utils/DuoArr';
 import useInput from '@/hooks/useInput';
 import InputText from '../Common/InputText/InputText';
@@ -59,7 +59,6 @@ const WriteDuo = () => {
 
     await addDoc(collection(dbService, 'myLOLInfo'), myLOLInfo);
     reset();
-
     setWrite((e) => !e);
   };
 

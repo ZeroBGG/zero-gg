@@ -1,5 +1,4 @@
 import React, { ChangeEvent } from 'react';
-import styles from './InputRadio.module.scss';
 
 interface InputType {
   type: string;

@@ -2,13 +2,12 @@ import { FormEvent, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { dbService } from 'src/firebase';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { positionArr, queueArr, tierArr } from '../utils/DuoArr';
-import useInput from '@/hooks/useInput';
-import styles from './DuoInfo.module.scss';
-import { LANE_ICONS_URL, TIER_IMG_URL } from '../Constants/constant';
-import { positions, tiers } from '../utils/DuoArr';
+import { positionArr, queueArr, tierArr, positions, tiers } from '../utils/DuoArr';
 import { DuoType } from '../utils/DuoType';
+import { LANE_ICONS_URL, TIER_IMG_URL } from '../Constants/constant';
+import useInput from '@/hooks/useInput';
 import InputText from '../Common/InputText/InputText';
+import styles from './DuoInfo.module.scss';
 
 const DuoInfo = () => {
   // DuoCards의 값을 가져오기
@@ -108,8 +107,8 @@ const DuoInfo = () => {
       <section className={styles.wrapper}>
         <form onSubmit={onEditSubmit}>
           <div className={styles.checkuser}>
-            <InputText type="text" placeholder="ID" {...submitId} />
-            <InputText type="password" placeholder="PASSWORD" {...submitPass} />
+            <InputText type="text" placeholder="ID" className={styles.input_text} {...submitId} />
+            <InputText type="password" placeholder="PASSWORD" className={styles.input_text} {...submitPass} />
             <button onClick={onClickAuth}>수정 및 삭제하기</button>
           </div>
         </form>

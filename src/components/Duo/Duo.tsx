@@ -1,12 +1,11 @@
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { dbService } from 'src/firebase';
-import { collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { DuoType, FilterType } from './utils/DuoType';
 import DuoCards from './DuoCards/DuoCards';
 import WriteDuo from './WriteDuo/WriteDuo';
-import FilterRadio from './Common/Filter/FilterRadio';
-import { DuoType, FilterType } from './utils/DuoType';
-import styles from './Duo.module.scss';
 import InputRadio from './Common/InputRadio/InputRadio';
+import styles from './Duo.module.scss';
 
 const Duo = () => {
   const [lolInfo, setLolInfo] = useState<any[]>([]);

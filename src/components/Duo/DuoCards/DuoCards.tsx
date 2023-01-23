@@ -1,9 +1,8 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { DuoType } from '../utils/DuoType';
-import styles from './DuoCards.module.scss';
-import { LANE_ICONS_URL, TIER_IMG_URL } from '../Constants/constant';
 import { positions, tiers } from '../utils/DuoArr';
+import { LANE_ICONS_URL, TIER_IMG_URL } from '../Constants/constant';
+import styles from './DuoCards.module.scss';
 
 const DuoCards = ({ duoObj }: { duoObj: DuoType }) => {
   const UNIQUE_KEY = duoObj.userId + duoObj.timeSet;
