@@ -60,7 +60,7 @@ export default function SummonerRank({ summonerRankInfo }: { summonerRankInfo: T
     if (freeRankData) {
       setFreeRank(freeRankData[0]);
     }
-  });
+  }, [summonerRankInfo]);
 
   return (
     <section className={styles.section}>
