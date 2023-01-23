@@ -21,7 +21,7 @@ $fontColor: #f0f0f0;
     border-bottom: 1px solid white;
     padding: 1rem 0;
 
-    input {
+    .input_text {
       @include input(220px);
       margin: 0 20px;
     }
@@ -39,7 +39,7 @@ $fontColor: #f0f0f0;
 }
 
 .update {
-  @include wrapper(600px, 300px);
+  @include wrapper(600px, 325px);
 
   .select_space {
     display: flex;
@@ -59,8 +59,12 @@ $fontColor: #f0f0f0;
       width: 100px;
     }
 
-    input {
+    .input_text {
       @include input(220px);
+    }
+
+    .input_memo {
+      @include input(440px);
     }
   }
 
