@@ -1,5 +1,6 @@
 .schedule_container {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   .schedule_list {
@@ -7,40 +8,45 @@
     max-width: 100vw;
     display: flex;
     flex-direction: column;
-    .schedule_item {
+    margin: 0;
+    animation: fade 0.6s ease-in;
+    .schedules_item {
+      margin-top: 10px;
       width: 100%;
-      display: flex;
-      .item_container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 20px;
-        .match_day {
-          background: rgb(45, 45, 45);
-          display: flex;
-          padding: 10px;
-          font-size: 1.3em;
-          font-weight: bolder;
-          .date {
-            display: block;
-            margin-right: 10px;
-          }
-          .day {
-            display: block;
-          }
+      background-color: #222222;
+      .date_info {
+        background: #3f3e3e;
+        padding: 10px 30px 10px;
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 1px solid #565656;
+        .date {
+          margin-right: 20px;
         }
-        .match {
+      }
+      .item {
+        width: 100%;
+        background-color: #2d2d2d;
+        box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+
+        .matches {
           display: flex;
-          align-items: center;
           flex-direction: column;
-          .game {
-            width: 100%;
-            height: 10vh;
+          .match_card {
             display: flex;
             align-items: center;
-            border-top: 1px solid #fff;
-            border-bottom: 1px solid #fff;
-            flex-direction: row;
+            margin: auto;
+            padding: 10px 0;
+            width: 100%;
+            border-bottom: 1px solid #777777;
+          }
+        }
+        @keyframes fade {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
           }
         }
       }

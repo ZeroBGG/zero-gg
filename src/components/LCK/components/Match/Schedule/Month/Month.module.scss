@@ -1,5 +1,6 @@
 .item {
   color: #fff;
+  transition: all 0.5s ease-in-out;
   .month {
     display: flex;
     justify-content: center;
@@ -10,12 +11,9 @@
     height: 50px;
 
     background-color: var(--gray-color-30);
-
-    transition: all 0.5s ease-in-out;
   }
-
-  .month:hover {
-    background-color: var(--gray-color-10);
-    transform: scale((1.1));
-  }
+}
+.item:hover {
+  background-color: var(--gray-color-10);
+  transform: scale((1.1));
 }
