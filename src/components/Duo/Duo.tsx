@@ -1,35 +1,55 @@
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import { dbService } from 'src/firebase';
-import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { collection, onSnapshot, orderBy, query, startAt, limit, getDocs } from 'firebase/firestore';
 import { DuoType, FilterType } from './utils/DuoType';
 import DuoCards from './DuoCards/DuoCards';
 import WriteDuo from './WriteDuo/WriteDuo';
 import InputRadio from './Common/InputRadio/InputRadio';
+import { BiChevronsDown } from 'react-icons/bi';
 import styles from './Duo.module.scss';
 
 const Duo = () => {
   const [lolInfo, setLolInfo] = useState<any[]>([]);
   const [lolInfoFilterList, setLolInfoFilterList] = useState<any[]>([]);
+  const [key, setKey] = useState<any>(null);
   const [selectValue, setSelectValue] = useState<FilterType>({
     queue: '',
     tier: '',
     position: '',
   });
 
-  const getDuoData = useCallback(() => {
+  const getDuoData = useCallback(async () => {
+    const queryRef = query(collection(dbService, 'myLOLInfo'), orderBy('createdAt', 'desc'), limit(5));
     try {
-      const q = query(collection(dbService, 'myLOLInfo'), orderBy('createdAt', 'desc'));
-      onSnapshot(q, (querySnapshot) => {
-        const myLol = querySnapshot.docs.map((docs) => ({
-          id: docs?.id,
-          ...docs.data(),
+      onSnapshot(queryRef, async (snapshot) => {
+        const myLolArr = snapshot.docs.map((dosc) => ({
+          id: dosc.id,
+          ...dosc.data(),
         }));
-        setLolInfo(myLol);
+        setLolInfo(myLolArr);
+        const snap = await getDocs(queryRef);
+        setKey(snap.docs[snap.docs.length - 1]); // 해당 키 배열의 위치를 실시간 업데이트
       });
     } catch (e) {
       console.error(e);
     }
   }, []);
+
+  const onNextScroll = async () => {
+    const queryRef = query(collection(dbService, 'myLOLInfo'), orderBy('createdAt', 'desc'), startAt(key), limit(6));
+    try {
+      const snap = await getDocs(queryRef);
+      setKey(snap.docs[snap.docs.length - 1]); // 실시간 업데이트를 통해 배열의 키 위치 조정
+      const docsArray = snap.docs.map((docs) => ({ id: docs.id, ...docs.data() }));
+      if (docsArray.length === 1) {
+        window.alert('더이상 없습니다');
+      } else {
+        setLolInfo([...lolInfo, ...docsArray.splice(1, 5)]); // splice 안하면 마지막 배열이 다시 나옴
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const FilterDuoData = () => {
     const selectPosition = selectValue.position;
@@ -225,6 +245,11 @@ const Duo = () => {
                     );
                   }
                 })}
+                <div className={styles.next_button}>
+                  <button onClick={onNextScroll}>
+                    <BiChevronsDown className={styles.button_svg} />
+                  </button>
+                </div>
               </ul>
             </div>
           </section>

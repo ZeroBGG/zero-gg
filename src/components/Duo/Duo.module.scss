@@ -17,12 +17,8 @@ $bgColor-1: #1c1c1f;
 $bgColor-2: #282830;
 $bgColor-3: #f1f5f7;
 
-main {
-  // background-color: $bgColor-1;
-  height: 100%;
-}
-
 .duo_article {
+  background-color: $bgColor-1;
   min-height: calc(100vh - 200px);
 }
 
@@ -31,7 +27,6 @@ main {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 200vh;
 
   .div_card {
     width: 99vw;
@@ -41,6 +36,25 @@ main {
       padding: 20px 30px;
       min-height: calc(99vh - 400px);
     }
+  }
+}
+
+.next_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+  button {
+    border: 0;
+    background-color: inherit;
+
+  }
+
+  .button_svg {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
   }
 }
 
@@ -58,11 +72,11 @@ main {
     display: none;
   }
 
-  input[type='radio'] + label {
+  input[type='radio']+label {
     @include radio($dark, $white);
   }
 
-  input[type='radio']:checked + label {
+  input[type='radio']:checked+label {
     @include radio_checked($dark, $white);
   }
 }
@@ -74,51 +88,51 @@ main {
     display: none;
   }
 
-  .iron + label {
+  .iron+label {
     @include radio($iron, $white);
   }
 
-  .iron:checked + label {
+  .iron:checked+label {
     @include radio_checked($iron, $white);
   }
 
-  .bronze + label {
+  .bronze+label {
     @include radio($bronze, $white);
   }
 
-  .bronze:checked + label {
+  .bronze:checked+label {
     @include radio_checked($bronze, $white);
   }
 
-  .silver + label {
+  .silver+label {
     @include radio($silver, $white);
   }
 
-  .silver:checked + label {
+  .silver:checked+label {
     @include radio_checked($silver, $white);
   }
 
-  .gold + label {
+  .gold+label {
     @include radio($gold, $white);
   }
 
-  .gold:checked + label {
+  .gold:checked+label {
     @include radio_checked($gold, $black);
   }
 
-  .platinum + label {
+  .platinum+label {
     @include radio($platinum, $white);
   }
 
-  .platinum:checked + label {
+  .platinum:checked+label {
     @include radio_checked($platinum, $white);
   }
 
-  .dia + label {
+  .dia+label {
     @include radio($dia, $white);
   }
 
-  .dia:checked + label {
+  .dia:checked+label {
     @include radio_checked($dia, $white);
   }
 }
@@ -130,11 +144,11 @@ main {
     display: none;
   }
 
-  input[type='radio'] + label {
+  input[type='radio']+label {
     @include radio($indigo, $white);
   }
 
-  input[type='radio']:checked + label {
+  input[type='radio']:checked+label {
     @include radio_checked($indigo, $white);
   }
 }
