@@ -28,23 +28,23 @@ const Duo = () => {
         }));
         setLolInfo(myLolArr);
         const snap = await getDocs(queryRef);
-        setKey(snap.docs[snap.docs.length - 1]);
+        setKey(snap.docs[snap.docs.length - 1]); // 해당 키 배열의 위치를 실시간 업데이트
       });
     } catch (e) {
       console.error(e);
     }
   }, []);
 
-  const onNextPage = async () => {
+  const onNextScroll = async () => {
     const queryRef = query(collection(dbService, 'myLOLInfo'), orderBy('createdAt', 'desc'), startAt(key), limit(6));
     try {
       const snap = await getDocs(queryRef);
-      setKey(snap.docs[snap.docs.length - 1]);
+      setKey(snap.docs[snap.docs.length - 1]); // 실시간 업데이트를 통해 배열의 키 위치 조정
       const docsArray = snap.docs.map((docs) => ({ id: docs.id, ...docs.data() }));
       if (docsArray.length === 1) {
         window.alert('더이상 없습니다');
       } else {
-        setLolInfo([...lolInfo, ...docsArray.splice(1, 5)]);
+        setLolInfo([...lolInfo, ...docsArray.splice(1, 5)]); // splice 안하면 마지막 배열이 다시 나옴
       }
     } catch (e) {
       console.error(e);
@@ -246,7 +246,7 @@ const Duo = () => {
                   }
                 })}
                 <div className={styles.next_button}>
-                  <button onClick={onNextPage}>
+                  <button onClick={onNextScroll}>
                     <BiChevronsDown className={styles.button_svg} />
                   </button>
                 </div>
