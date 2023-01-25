@@ -5,11 +5,9 @@ import Teams from '../Teams/Teams';
 import styles from './Accordion.module.scss';
 interface Props {
   title: string;
-  handleMonthClick: (month: string) => void;
-  handleTeamClick: (team: string) => void;
 }
 
-const Accordian = ({ title, handleTeamClick, handleMonthClick }: Props) => {
+const Accordian = ({ title }: Props) => {
   const parentRef = useRef<HTMLDivElement>(null);
   const childRef = useRef<HTMLDivElement>(null);
 
@@ -18,7 +16,7 @@ const Accordian = ({ title, handleTeamClick, handleMonthClick }: Props) => {
   const sendData = () => {};
   return (
     <div className={styles.toggle}>
-      <div className={styles.wrapper} onClick={handletoggle}>
+      <div className={styles.header} onClick={handletoggle}>
         <h2 className={styles.title}>{title}</h2>
         <span className={styles.click_btn}>▾</span>
       </div>
@@ -26,11 +24,11 @@ const Accordian = ({ title, handleTeamClick, handleMonthClick }: Props) => {
         <div className={styles.content1} ref={childRef}>
           {title === 'TEAM' ? (
             <div className={styles.teams_wrapper}>
-              <Teams onClick={handleTeamClick} />
+              <Teams />
             </div>
           ) : (
             <div className={styles.month_wrapper}>
-              <Month onClick={handleMonthClick} />
+              <Month />
             </div>
           )}
         </div>

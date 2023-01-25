@@ -5,16 +5,19 @@ import { matchListProps, matchTeamType } from '@/components/LCK/typings';
 import styles from './Schedule.module.scss';
 import Item from './Item';
 import SideBar from './SideBar';
+import { useParams } from 'react-router';
+import useStore from '@/hooks/useStore';
+import myMonth from '@/components/LCK/Zustand/myMonth';
 type hoverType = {
   isHover: boolean;
 };
 
-const Schedule = ({ isHover }: hoverType) => {
+const Schedule = React.memo(({ isHover }: hoverType) => {
   const [list, setList] = useState<matchListProps[]>([]);
   const [filterList, setFilterList] = useState<matchListProps[]>([]);
-  const [monthKeyword, setMonthKeyword] = useState('');
-  const [TeamKeyword, setTeamKeyword] = useState('');
-
+  const Params: any = useParams().month;
+  const { id } = useStore();
+  const { mon } = myMonth();
   // data 불러오기
   const fetchData = useCallback(() => {
     const lckTeam = query(collection(dbService, 'lck_matches'));
@@ -34,27 +37,37 @@ const Schedule = ({ isHover }: hoverType) => {
   useEffect(() => {
     fetchData();
   }, []);
-  const MonthFun = (month: string) => {
-    setMonthKeyword(month);
-  };
-  const TeamFun = (team: string) => {
-    setTeamKeyword(team);
+  // 새로고침시 값을 유지
+  // useEffect(() => {
+  //   localStorage.setItem('month', Params);
+  //   localStorage.setItem('team', TeamKeyword);
+  //   const saveMonth = localStorage.getItem('month');
+  //   const saveTeam = localStorage.getItem('team');
+  //   if (saveMonth && saveTeam !== null) {
+  //     setMonthKeyword(saveMonth);
+  //     setTeamKeyword(saveTeam);
+  //   } else {
+  //     setMonthKeyword('1월');
+  //     setTeamKeyword('');
+  //   }
+  // }, [monthKeyword]);
+  /// 키워드값 받아오는 함수
+  const Split = (text: string) => {
+    return text.split('요일')[0];
   };
 
   /// 데이터 필터링
-  console.log(TeamKeyword);
   const filterData = () => {
-    if (monthKeyword === '' && TeamKeyword === '') {
+    if (mon === '1월' && id === '') {
       setFilterList(list);
-      console.log(list);
     } else {
       const Filter = list.reduce((acc: any, el: any) => {
-        const DateCodition = monthKeyword ? el.month === monthKeyword : true;
+        const DateCodition = mon ? el.month === mon : true;
 
-        const TeamCondition1 = TeamKeyword ? el.matches[0].matchOne.home.id.includes(TeamKeyword) : true;
-        const TeamCondition2 = TeamKeyword ? el.matches[0].matchOne.away.id.includes(TeamKeyword) : true;
-        const TeamCondition3 = TeamKeyword ? el.matches[0].matchTwo.home.id.includes(TeamKeyword) : true;
-        const TeamCondition4 = TeamKeyword ? el.matches[0].matchTwo.away.id.includes(TeamKeyword) : true;
+        const TeamCondition1 = id ? el.matches[0].matchOne.home.id.includes(id) : true;
+        const TeamCondition2 = id ? el.matches[0].matchOne.away.id.includes(id) : true;
+        const TeamCondition3 = id ? el.matches[0].matchTwo.home.id.includes(id) : true;
+        const TeamCondition4 = id ? el.matches[0].matchTwo.away.id.includes(id) : true;
 
         const Condition = TeamCondition1 || TeamCondition2 || TeamCondition3 || TeamCondition4;
         if (DateCodition && Condition) {
@@ -68,24 +81,24 @@ const Schedule = ({ isHover }: hoverType) => {
   };
   useEffect(() => {
     filterData();
-  }, [list, monthKeyword, TeamKeyword]);
+  }, [list, mon, id]);
 
   return (
     <section className={styles.schedule_container}>
       <ul className={styles.schedule_list}>
         {filterList.map((lst: any) => {
           return (
-            <li className={styles.schedules_item}>
+            <li className={styles.schedules_item} key={lst.id}>
               <div className={styles.date_info}>
                 <span className={styles.date}>{lst.date}</span>
-                <span className={styles.day}>{lst.day}</span>
+                <span className={styles.day}>({Split(lst.day)})</span>
               </div>
               <div className={styles.item}>
                 <div className={styles.matches}>
                   {lst.matches.map((match: any) => {
                     const { matchOne, matchTwo } = match;
                     // matches가 두경기 다 포함하고 있기에 조건문을 통해서 조금 유형별로 데이터가 표시되는 방법을 다르게 만들었습니다.
-                    if (monthKeyword === '' && TeamKeyword === '') {
+                    if (mon === '' && id === '') {
                       return (
                         <>
                           <div className={styles.match_card}>
@@ -97,7 +110,7 @@ const Schedule = ({ isHover }: hoverType) => {
                         </>
                       );
                     }
-                    if (monthKeyword && TeamKeyword === '') {
+                    if (mon && id === '') {
                       return (
                         <>
                           <div className={styles.match_card}>
@@ -109,21 +122,17 @@ const Schedule = ({ isHover }: hoverType) => {
                         </>
                       );
                     }
-                    if (matchOne.home.id.includes(TeamKeyword) || matchOne.away.id.includes(TeamKeyword)) {
+                    if (matchOne.home.id.includes(id) || matchOne.away.id.includes(id)) {
                       return (
-                        <>
-                          <div className={styles.match_card}>
-                            <Item matchType={matchOne} />
-                          </div>
-                        </>
+                        <div className={styles.match_card}>
+                          <Item matchType={matchOne} />
+                        </div>
                       );
                     } else {
                       return (
-                        <>
-                          <div className={styles.match_card}>
-                            <Item matchType={matchTwo} />
-                          </div>
-                        </>
+                        <div className={styles.match_card}>
+                          <Item matchType={matchTwo} />
+                        </div>
                       );
                     }
                   })}
@@ -134,10 +143,10 @@ const Schedule = ({ isHover }: hoverType) => {
         })}
       </ul>
 
-      {isHover ? <SideBar handleMonth={MonthFun} handleTeam={TeamFun} /> : null}
+      {isHover ? <SideBar /> : null}
     </section>
   );
-};
+});
 export default Schedule;
 
 // error 1 ==> 필터를 돌릴때 두번째 경기가 첫번째 경기로 나옴
