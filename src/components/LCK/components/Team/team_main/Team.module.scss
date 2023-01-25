@@ -4,17 +4,47 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(90deg, #042431, #042432, #323131, #04141d, #04141f);
-  flex-direction: row;
+  background: #222222;
+  flex-direction: column;
   overflow-y: scroll;
+  font-family: 'Roboto', sans-serif;
+
+  .Lck_bg::before {
+    content: '';
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, #000 0%, #00000000 100%);
+    position: absolute;
+  }
+  .Lck_bg {
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+    .title {
+      display: flex;
+      width: 100%;
+      margin-top: auto;
+      padding: 0 0.5em;
+      color: #fff;
+      font-weight: boler;
+      font-size: 5em;
+    }
+  }
   .slide {
     display: flex;
-    width: 200px;
-    height: 100%;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
   }
+
   .player_list {
-    margin: 50px 3em;
-    width: 90%;
+    width: 100%;
+    .list_wrapper {
+      width: 100%;
+    }
   }
 }
 .container::-webkit-scrollbar {

@@ -11,7 +11,7 @@ export const TEAM_CATEGORYS = [
     url: 'https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1655210113163_GenG_logo_200407-05.png',
   },
   {
-    id: 'skt1',
+    id: 't1',
     url: 'https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1631819523085_t1-2021-worlds.png',
   },
   {

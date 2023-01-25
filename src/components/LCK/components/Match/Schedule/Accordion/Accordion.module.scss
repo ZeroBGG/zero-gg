@@ -5,10 +5,13 @@
   height: 50px;
   animation: toggle 0.7s ease;
   height: auto;
-  .wrapper {
+  .header {
     display: flex;
     align-items: center;
+    box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.9);
     .title {
+      display: flex;
+      align-items: center;
       font-size: 1.3em;
       font-weight: bold;
       padding: 10px;
@@ -30,18 +33,26 @@
     height: 0;
     overflow: hidden;
     transition: height 0.35s ease;
+    margin: 5px;
     .content1 {
       padding: 3px 1px;
       width: 100%;
       display: flex;
       justify-content: center;
-
       .month_wrapper {
         list-style: none;
         display: grid;
         gap: 5px;
         padding: 1px 0;
-        margin: 1px;
+        margin: 0;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .teams_wrapper {
+        list-style: none;
+        display: grid;
+        gap: 5px;
+        padding: 1px 0;
+        margin: 0;
         grid-template-columns: repeat(3, 1fr);
       }
     }

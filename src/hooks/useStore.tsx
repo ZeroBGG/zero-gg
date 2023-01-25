@@ -6,7 +6,7 @@ interface ID {
 }
 const useStore = create<ID>((set) => ({
   id: '',
-  getId: (id) => set((state) => ({ id: id })),
+  getId: (id) => set(() => ({ id: id })),
 }));
 
 export default useStore;

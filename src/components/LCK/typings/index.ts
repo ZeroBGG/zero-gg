@@ -5,16 +5,18 @@ export interface PlayersType {
   readonly image: string;
   readonly engName: string;
   readonly logo: string;
+  readonly captain: boolean;
 }
 
 export interface PlayerListType {
-  id: number;
-  name: string;
-  korName: string;
-  position: string;
-  summoner: string;
-  image: string;
-  logo: string;
+  readonly captain: boolean;
+  readonly id: number;
+  readonly name: string;
+  readonly korName: string;
+  readonly position: string;
+  readonly summoner: string;
+  readonly image: string;
+  readonly logo: string;
 }
 
 export interface ListProps {

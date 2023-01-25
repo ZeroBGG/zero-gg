@@ -4,48 +4,40 @@
   font-family: 'IBM Plex Sans KR', sans-serif;
   font-family: 'Roboto', sans-serif;
   width: 100%;
-  height: auto;
-  overflow: hidden;
-  .list {
-    width: 100%;
-    margin-left: 50px;
-    .team_info {
+  height: 100%;
+  .list_wrapper {
+    display: flex;
+    justify-content: center;
+    .list {
+      width: 70%;
       height: 100%;
-      width: 100%;
+      margin-left: 50px;
+    }
+    .info_container {
+      max-width: 300px;
+      height: 100%;
       display: flex;
-      flex-direction: column;
-      color: #fff;
-      .team_name {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        .logo {
-          width: 80px;
-          height: 80px;
-          .logo_img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .team_name {
-          margin-left: 10px;
-          font-size: 2em;
-          font-weight: bolder;
-          color: #fff;
-        }
-      }
-      .player_list {
-        padding: 10px 20px 30px;
-        margin: 0.5em 0em;
+      .wrapper {
         width: 100%;
-        height: 900px;
-        display: grid;
-        gap: 5px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 300px);
-        .card {
-          width: 100%;
-          height: 300px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .team_info {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          .logo {
+            max-width: 85px;
+            max-height: 85px;
+            .logo_img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .name {
+            font-weight: bold;
+            font-size: 1.5rem;
+          }
         }
       }
     }
