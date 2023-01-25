@@ -3,16 +3,11 @@ import useToggle from '../hook/useToggle';
 import Accordian from './Accordion/Accordion';
 import styles from './SideBar.module.scss';
 
-interface Props {
-  handleMonth: (month: string) => void;
-  handleTeam: (team: string) => void;
-}
-
-const SideBar = ({ handleMonth, handleTeam }: Props) => {
+const SideBar = () => {
   return (
     <aside className={styles.sidebar_container}>
-      <Accordian title={'MONTH'} handleMonthClick={handleMonth} handleTeamClick={() => {}} />
-      <Accordian title={'TEAM'} handleMonthClick={() => {}} handleTeamClick={handleTeam} />
+      <Accordian title={'MONTH'} />
+      <Accordian title={'TEAM'} />
     </aside>
   );
 };

@@ -1,32 +1,48 @@
 @import './responsive.module.scss';
 .slider_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0px 1px 1px rgba(51, 51, 51, 0.6);
   .wrapper {
-    width: 100%;
-    height: 100%;
-    background-color: #2f3a52;
+    width: 80%;
+    background-color: #222222;
     display: flex;
     justify-content: center;
     padding: 3px 15px;
     .team_slide {
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      width: 5em;
-      height: 5em;
+      flex-direction: row;
+      padding: 10px 0;
       .team_logo {
         display: flex;
         justify-content: center;
         width: 100%;
         height: 100%;
-        margin-top: 20px;
+        align-items: center;
+        margin: auto 5px;
         transition: all 0.5s ease;
+        border: 2px solid #2f2f2f;
+        padding: 5px;
+        box-shadow: 2px 3px 2px rbga(0, 0, 0, 0.5);
         cursor: pointer;
-        img {
-          width: 100%;
-          height: 100%;
+        .img {
+          width: 60px;
+          height: 60px;
+        }
+        .teamName {
+          color: #fff;
+          font-size: 5px;
         }
       }
       .team_logo:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+        background-color: #eaeaea;
+        .teamName {
+          color: #222222;
+          font-weight: 600;
+        }
       }
     }
   }

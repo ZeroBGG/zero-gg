@@ -10,7 +10,6 @@ import DuoInfo from './components/Duo/DuoInfo/DuoInfo';
 
 import Team from '@/components/LCK/components/Team/team_main/Team';
 import Match from '@/components/LCK/components/Match/Match';
-
 import PlayerList from './components/LCK/components/Team/PlayerList/PlayerList';
 import Schedule from './components/LCK/components/Match/Schedule/Schedule';
 

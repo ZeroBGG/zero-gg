@@ -63,7 +63,7 @@ const Item = ({ matchType }: ItemType) => {
             <Button
               onMouseOut={handleLiveMouseOut}
               onMouseOver={handleLiveMouseOver}
-              ishovering={isHovering}
+              ishovering={liveHovering}
               content={'중계 보기'}
             />
           </div>
