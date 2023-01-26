@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { collection, getDocs, onSnapshot, query } from 'firebase/firestore';
 import { dbService } from 'src/firebase';
-import { matchListProps, matchTeamType } from '@/components/LCK/typings';
+import { matchesType, matchListProps, matchTeamType } from '@/components/LCK/typings';
 import styles from './Schedule.module.scss';
 import Item from './Item';
 import SideBar from './SideBar';
@@ -15,7 +15,6 @@ type hoverType = {
 const Schedule = React.memo(({ isHover }: hoverType) => {
   const [list, setList] = useState<matchListProps[]>([]);
   const [filterList, setFilterList] = useState<matchListProps[]>([]);
-  const Params: any = useParams().month;
   const { id } = useStore();
   const { mon } = myMonth();
   // data 불러오기
@@ -37,21 +36,6 @@ const Schedule = React.memo(({ isHover }: hoverType) => {
   useEffect(() => {
     fetchData();
   }, []);
-  // 새로고침시 값을 유지
-  // useEffect(() => {
-  //   localStorage.setItem('month', Params);
-  //   localStorage.setItem('team', TeamKeyword);
-  //   const saveMonth = localStorage.getItem('month');
-  //   const saveTeam = localStorage.getItem('team');
-  //   if (saveMonth && saveTeam !== null) {
-  //     setMonthKeyword(saveMonth);
-  //     setTeamKeyword(saveTeam);
-  //   } else {
-  //     setMonthKeyword('1월');
-  //     setTeamKeyword('');
-  //   }
-  // }, [monthKeyword]);
-  /// 키워드값 받아오는 함수
   const Split = (text: string) => {
     return text.split('요일')[0];
   };
@@ -61,7 +45,7 @@ const Schedule = React.memo(({ isHover }: hoverType) => {
     if (mon === '1월' && id === '') {
       setFilterList(list);
     } else {
-      const Filter = list.reduce((acc: any, el: any) => {
+      const Filter = list.reduce((acc: matchListProps[], el: matchListProps) => {
         const DateCodition = mon ? el.month === mon : true;
 
         const TeamCondition1 = id ? el.matches[0].matchOne.home.id.includes(id) : true;
@@ -86,7 +70,7 @@ const Schedule = React.memo(({ isHover }: hoverType) => {
   return (
     <section className={styles.schedule_container}>
       <ul className={styles.schedule_list}>
-        {filterList.map((lst: any) => {
+        {filterList.map((lst: matchListProps) => {
           return (
             <li className={styles.schedules_item} key={lst.id}>
               <div className={styles.date_info}>
@@ -95,7 +79,7 @@ const Schedule = React.memo(({ isHover }: hoverType) => {
               </div>
               <div className={styles.item}>
                 <div className={styles.matches}>
-                  {lst.matches.map((match: any) => {
+                  {lst.matches.map((match: matchesType) => {
                     const { matchOne, matchTwo } = match;
                     // matches가 두경기 다 포함하고 있기에 조건문을 통해서 조금 유형별로 데이터가 표시되는 방법을 다르게 만들었습니다.
                     if (mon === '' && id === '') {

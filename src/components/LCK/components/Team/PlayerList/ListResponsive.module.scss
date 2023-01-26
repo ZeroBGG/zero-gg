@@ -1,0 +1,19 @@
+@mixin ListResponsive {
+  @media only screen and (min-width: 300px) and (max-width: 800px) {
+    .team_info {
+      width: 100%;
+      display: flex;
+      padding: 0;
+      .team_info_list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(360px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+        .card {
+          width: 100%;
+          height: 200px;
+        }
+      }
+    }
+  }
+}

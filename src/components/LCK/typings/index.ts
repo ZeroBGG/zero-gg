@@ -1,13 +1,3 @@
-export interface PlayersType {
-  readonly name: string;
-  readonly position: string;
-  readonly summoner: string;
-  readonly image: string;
-  readonly engName: string;
-  readonly logo: string;
-  readonly captain: boolean;
-}
-
 export interface PlayerListType {
   readonly captain: boolean;
   readonly id: number;
@@ -18,46 +8,51 @@ export interface PlayerListType {
   readonly image: string;
   readonly logo: string;
 }
+export interface SliceType {
+  readonly id: string;
+  readonly teamName: string;
+  readonly logo: string;
+}
 
 export interface ListProps {
-  logo: string;
-  teamName: string;
-  id: string;
+  readonly logo: string;
+  readonly teamName: string;
+  readonly id: string;
   players: PlayerListType[];
 }
 
 //#### MATCH 타입 #######
 
 export interface matchListProps {
-  id: string;
-  day: string;
-  filtering: {
-    match1: {
-      home: string;
-      away: string;
-    };
-    match2: {
-      home: string;
-      away: string;
-    };
-  };
-  month: string;
-  date: string;
-  matches: matchTeamType[];
+  readonly id: string;
+  readonly month: string;
+  readonly date: string;
+  readonly day: string;
+  matches: matchesType[];
+}
+
+export interface matchesType {
+  matchOne: matchTeamType;
+  matchTwo: matchTeamType;
 }
 
 export interface matchTeamType {
   first: boolean;
-  time: string;
-  state: string;
+  readonly time: string;
+  readonly state: string;
   home: teamType;
   away: teamType;
 }
 
 export interface teamType {
   id: string;
-  logoUrl: string;
-  name: string;
-  initial: string;
+  readonly name: string;
+  readonly initial: string;
   win: number;
+  logoUrl: string;
 }
+
+export type CategoryType = {
+  id: string;
+  url: string;
+}[];

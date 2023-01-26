@@ -1,3 +1,5 @@
+@import './SkeletonResponsive.module.scss';
+
 .skeleton_container {
   font-family: 'IBM Plex Sans KR', sans-serif;
   font-family: 'Roboto', sans-serif;
@@ -60,3 +62,4 @@
     }
   }
 }
+@include skletonResponsive;
