@@ -309,3 +309,8 @@ $bgColor-3: #f1f5f7;
   }
 }
 
+@media screen and (min-width: 1025px) {
+  .wrapper {
+    min-width: 648px;
+  }
+}

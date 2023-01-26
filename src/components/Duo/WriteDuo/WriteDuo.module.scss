@@ -161,11 +161,13 @@ $bgColor-2: #282830;
 @media screen and (min-width: 391px) and (max-width: 515px) {
   .form {
     width: 88vw;
+    max-width: 518px;
   }
 
   .user_wrapper {
     display: flex;
     width: 88vw;
+    max-width: 518px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -178,6 +180,7 @@ $bgColor-2: #282830;
   .memo_wrapper {
     display: flex;
     width: 88vw;
+    max-width: 518px;
     flex-direction: column;
     justify-content: center;
     align-items: center;

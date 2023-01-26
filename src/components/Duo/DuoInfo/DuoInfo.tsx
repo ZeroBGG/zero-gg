@@ -35,6 +35,15 @@ const DuoInfo = () => {
   const inputMemo = useInput('');
   const inputNickName = useInput('');
 
+  const reset = () => {
+    inputQueue.reset();
+    inputTier.reset();
+    inputPosition.reset();
+    inputTitle.reset();
+    inputMemo.reset();
+    inputNickName.reset();
+  };
+
   // img
 
   const lane = positions.map((item) => {
@@ -61,16 +70,17 @@ const DuoInfo = () => {
   const onClickAuth = () => {
     if (userId === submitId.value && userPassword === submitPass.value) {
       setUpdate((e) => !e);
-      submitId.reset;
-      submitPass.reset;
+      submitId.reset();
+      submitPass.reset();
     } else {
       window.alert('아이디와 비밀번호가 틀렸습니다.');
-      submitId.reset;
-      submitPass.reset;
+      submitId.reset();
+      submitPass.reset();
     }
   };
 
   const onToggleClick = () => {
+    reset();
     setUpdate((e) => !e);
   };
 
