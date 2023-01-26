@@ -15,7 +15,7 @@ $fontColor-2: #c0c0c0;
   margin-top: 10px;
 
   .wrapper {
-    width: 75vw;
+    width: 76vw;
     height: 10vh;
     display: flex;
     text-align: left;
@@ -89,7 +89,126 @@ $fontColor-2: #c0c0c0;
         color: $blue;
       }
     }
+  }
+}
 
+@media screen and (max-width: 515px) {
+  .list {
+    .wrapper {
+      .user {
+        width: 200px;
+        padding: 0 10px;
+        text-align: center;
+        border: none;
 
+        p {
+          font-size: 24px;
+        }
+      }
+
+      .title {
+        width: 1px;
+        visibility: hidden;
+      }
+
+      .memo {
+        width: 1px;
+        visibility: hidden;
+      }
+
+      .champ {
+        width: 1px;
+        visibility: hidden;
+      }
+
+      .time {
+        width: 1px;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:516px) and (max-width: 786px) {
+  .list {
+    .wrapper {
+      .user {
+        width: 200px;
+        padding: 0 10px;
+        text-align: center;
+        border: none;
+
+        p {
+          font-size: 24px;
+        }
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .memo {
+        width: 1px;
+        visibility: hidden;
+      }
+
+      .champ {
+        width: 1px;
+        visibility: hidden;
+      }
+
+      .time {
+        width: 1px;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:787px) and (max-width: 1024px) {
+  .list {
+    .wrapper {
+
+      .time {
+        width: 1px;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .list {
+    .wrapper {
+      .user {
+        p {
+          font-size: 24px;
+        }
+      }
+
+      .title {
+        h3 {
+          font-size: 42px;
+        }
+      }
+
+      .memo {
+        p {
+          font-size: 28px;
+        }
+      }
+
+      .champ {
+        p {
+          font-size: 28px;
+        }
+      }
+
+      .time {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

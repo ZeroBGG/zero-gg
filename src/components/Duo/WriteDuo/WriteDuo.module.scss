@@ -34,7 +34,7 @@ $bgColor-2: #282830;
 
 /* form 영역 */
 .form {
-  width: 44vw;
+  width: 45vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,6 +50,14 @@ $bgColor-2: #282830;
     line-height: 2rem;
     margin: 20px 0 10px 0;
   }
+
+
+}
+
+.user_wrapper {
+  display: flex;
+  width: 450px;
+  justify-content: left;
 
   .label {
     display: block;
@@ -69,10 +77,26 @@ $bgColor-2: #282830;
   }
 }
 
-.user_wrapper {
-  display: flex;
+.memo_wrapper {
   width: 450px;
   justify-content: left;
+
+  .label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  select {
+    @include select
+  }
+
+  .input_text {
+    @include input(220px)
+  }
+
+  .input_memo {
+    @include input(445px)
+  }
 }
 
 .submit {
@@ -95,9 +119,93 @@ $bgColor-2: #282830;
       background-color: #3c303a;
       color: $fontColor;
     }
+  }
+}
 
+@media screen and (max-width: 390px) {
+  .form {
+    width: 88vw;
   }
 
+  label {
+    font-size: 20px;
+  }
 
+  .user_wrapper {
+    display: flex;
+    width: 88vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .memo_wrapper {
+    display: flex;
+    width: 88vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .input_memo {
+      @include input(220px);
+    }
+  }
+
+  .submit {
+    display: flex;
+    width: 88vw;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 391px) and (max-width: 515px) {
+  .form {
+    width: 88vw;
+  }
+
+  .user_wrapper {
+    display: flex;
+    width: 88vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .input_text {
+      @include input(70vw)
+    }
+  }
+
+  .memo_wrapper {
+    display: flex;
+    width: 88vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .input_text {
+      @include input(70vw)
+    }
+
+    .input_memo {
+      @include input(70vw);
+    }
+  }
+
+  .submit {
+    display: flex;
+    width: 88vw;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 516px) and (max-width: 786px) {
+  .form {
+    width: 92vw;
+  }
+}
+
+@media screen and (min-width: 787px) and (max-width: 1024px) {
+  .form {
+    width: 66vw;
+  }
 }
