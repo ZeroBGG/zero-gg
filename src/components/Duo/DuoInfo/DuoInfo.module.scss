@@ -123,74 +123,82 @@ $fontColor: #f0f0f0;
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 390px) {
+  .checkuser {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .update {
+    padding-top: 15px;
+    @include wrapper(300px, 480px);
+
+    .select_space {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input_space {
+      .input_memo {
+        @include input(220px);
+      }
+    }
+
+    .button_space {
+      margin-top: 10px;
+    }
+  }
+
   .info {
-    width: 408px;
-    height: 300px;
-  }
+    width: 280px;
+    height: 240px;
+    margin-top: 100px;
 
-  .user {
-    display: flex;
-    border-bottom: 1px solid $bgColor-1;
+    .user {
+      .ti_icons {
+        img {
+          width: 130px;
+          height: 130px;
+        }
+      }
 
-    .ti_icons {
-      padding: 2px;
+      .lane_icons {
+        img {
+          width: 130px;
+          height: 130px;
+        }
+      }
     }
-
-    .lane_icons {
-      padding: 2px;
-    }
-
-    img {
-      @include img_size(125px, 125px);
-    }
-  }
-
-  .nickname {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 5rem;
-
-    p {
-      font-size: 20px;
-    }
-
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 391px) and (max-width: 786px) {
+  .checkuser {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .update {
+    padding-top: 15px;
+    @include wrapper(300px, 480px);
+
+    .select_space {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input_space {
+      .input_memo {
+        @include input(220px);
+      }
+    }
+
+    .button_space {
+      margin-top: 10px;
+    }
+  }
+
   .info {
-    width: 208px;
-    height: 1800px;
-  }
-
-  .user {
-    display: flex;
-    border-bottom: 1px solid $bgColor-1;
-
-    .ti_icons {
-      padding: 2px;
-    }
-
-    .lane_icons {
-      padding: 2px;
-    }
-
-    img {
-      @include img_size(50px, 50px);
-    }
-  }
-
-  .nickname {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 5rem;
-
-    p {
-      font-size: 20px;
-    }
-
+    margin-top: 120px;
   }
 }
