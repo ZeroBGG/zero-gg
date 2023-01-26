@@ -8,12 +8,9 @@ interface SkeletonType {
   url: string;
 }
 
-const lck_logo = '../src/assets/icons/logo_lck.svg';
-
 const SkeletonProfile = () => {
   const [skeleton, useSkeleton] = useState<SkeletonType[]>(SKELTON_DATA);
 
-  console.log(skeleton);
   return (
     <div className={styles.skeleton_container}>
       {skeleton.map((ske) => {

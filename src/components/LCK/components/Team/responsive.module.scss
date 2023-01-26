@@ -2,20 +2,41 @@
 @mixin responsive-main-page {
   @media only screen and (min-width: 400px) and (max-width: 800px) {
     .container {
-      .card_container {
+      display: flex;
+      height: 80vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: baseline;
+      .wrapper {
         display: flex;
         flex-direction: column;
-        justify-content: baseline;
-        .team_container {
-          height: 300px;
-          .link_team_page {
-            .lck_team {
-              width: 100%;
+        .border_gradient {
+          display: flex;
+          flex-direction: column;
+          .lck_side {
+            display: none;
+          }
+          .card_container {
+            margin: auto;
+            display: grid;
+            background-color: #1c1c1c;
+            margin-right: 15px;
+            width: 100%;
+            border-radius: 6px;
+            grid-template-columns: repeat(1, minmax(300px, 1fr));
+            grid-template-rows: repeat(3, minmax(100px, 1fr));
+            justify-content: baseline;
+            .team_container {
+              .link_team_page {
+                .lck_team {
+                  width: 100%;
+                }
+              }
+            }
+            .match_container {
+              height: 190px;
             }
           }
-        }
-        .match_container {
-          height: 300px;
         }
       }
     }

@@ -1,3 +1,4 @@
+@import './ListResponsive.module.scss';
 .team_info {
   height: 100%;
   width: 100%;
@@ -23,7 +24,7 @@
       color: #fff;
     }
   }
-  .player_list {
+  .team_info_list {
     padding: 10px 20px;
     width: 100%;
     height: auto;
@@ -37,3 +38,5 @@
     }
   }
 }
+
+@include ListResponsive;

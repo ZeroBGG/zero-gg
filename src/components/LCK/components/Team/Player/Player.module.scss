@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap');
 
 @import './responsive.module.scss';
+@import './common.module.scss';
 .player::before {
   content: '';
   position: absolute;
@@ -28,64 +29,13 @@
       display: flex;
       padding: 10px;
       // ################ 캡틴 마크 ###########
-      .captain_mark {
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        background-color: #fb4b4bc4;
-        padding: 3px;
-        text-align: center;
-        font-weight: bold;
-        border-bottom-left-radius: 60%;
-        z-index: 1;
-        border: 1px solid #525252;
-        border-right: 1px solid #525252;
-        .cap {
-          vertical-align: middle;
-          font-size: 20px;
-        }
-      }
+      @include captain;
       .HC_mark {
         font-weight: bolder;
         font-size: 30px;
       }
       //################# 이름,소환사명, 포지션#####################
-      .names {
-        width: 100%;
-        font-weight: bold;
-        display: flex;
-        flex-direction: column;
-        transition: top 0.5s ease-in;
-        .summoner {
-          z-index: 9999;
-          visibility: visible;
-          font-size: 2em;
-        }
-        &:hover {
-          animation: fadeout 3s;
-        }
-        @keyframes fadeout {
-          0% {
-            transform: translateY(20%);
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0%);
-          }
-        }
-        .name {
-          font-size: 30px;
-          text-align: left;
-          visibility: hidden;
-          // z-index: 9999;
-          .eng_name {
-            font-size: 15px;
-          }
-        }
-      }
+      @include names;
       .position {
         z-index: 9999;
         margin-left: auto;
