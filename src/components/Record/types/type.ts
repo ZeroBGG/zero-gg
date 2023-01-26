@@ -75,6 +75,9 @@ export type TypeParticipants = {
   item3: number;
   item4: number;
   item5: number;
+  totalMinionsKilled: number;
+  neutralMinionsKilled: number;
+  summonerName: string;
 };
 
 // 1게임 info 정보
