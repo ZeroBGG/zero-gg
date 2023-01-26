@@ -8,6 +8,8 @@ import SummonerInfo from './SummonerInfo/SummonerInfo';
 import SummonerRank from './SummonerRank/SummonerRank';
 import SummonerMatch from './SummonerMatch/SummonerMatch';
 
+import classnames from 'classnames';
+
 export default function Record() {
   const { summonerId } = useParams<{ summonerId: string }>();
 
@@ -77,7 +79,7 @@ export default function Record() {
         <article className={styles.article}>
           {summonerRankInfo && <SummonerRank summonerRankInfo={summonerRankInfo} />}
         </article>
-        <article className={styles.article}>
+        <article className={classnames(styles.article, styles.match)}>
           <SummonerMatch puuid={info.puuid} />
         </article>
       </main>

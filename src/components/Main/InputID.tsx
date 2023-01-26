@@ -15,6 +15,7 @@ export default function InputID() {
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
     navigate(`/record/${name}`);
+    setName('');
   };
 
   return (
