@@ -1,0 +1,17 @@
+$border-gray: #424254;
+$bg-gray: #31313c;
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid $border-gray;
+  background-color: $bg-gray;
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px #fff;
+}

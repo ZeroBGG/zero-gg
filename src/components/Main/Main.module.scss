@@ -36,12 +36,14 @@
     align-items: center;
     position: absolute;
     top: 0;
-    margin-top: 20px;
+    margin-top: 80px;
   }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 700px) {
   .main {
-    height: 600px;
+    .wrap {
+      perspective: 400px;
+    }
   }
 }
