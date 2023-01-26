@@ -1,10 +1,10 @@
 import LanePositon from '../LanePostion/LanePositon';
 import styles from './Player.module.scss';
-import { PlayersType } from '../../../typings';
+import { PlayerListType } from '../../../typings';
 import { useState } from 'react';
 import useHover from '@/hooks/useHover';
 
-const Player = ({ name, position, summoner, image, logo, captain, engName }: PlayersType) => {
+const Player = ({ name, position, summoner, image, logo, captain }: PlayerListType) => {
   const [ref, hover] = useHover();
 
   return (
@@ -21,7 +21,7 @@ const Player = ({ name, position, summoner, image, logo, captain, engName }: Pla
       <div className={styles.player_info}>
         <div className={styles.info}>
           <div className={styles.names} ref={ref}>
-            <h3 className={styles.summoner}>{!hover ? summoner : name + engName}</h3>
+            <h3 className={styles.summoner}>{!hover ? summoner : name}</h3>
           </div>
           <div className={styles.position}>
             {captain && (

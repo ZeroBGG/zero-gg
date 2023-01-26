@@ -1,46 +1,35 @@
 @mixin responsive-slider {
   @media only screen and (min-width: 300px) and (max-width: 800px) {
     .slider_container {
-      max-width: 800px;
-      height: 80px;
+      display: flex;
       .wrapper {
-        overflow-x: scroll;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 100%;
-        height: 100%;
-        padding: 5px;
-        background-color: #4a4949;
+        padding: 3px;
         .team_slide {
+          width: 100%;
           display: flex;
           flex-direction: row;
-          width: 100%;
-          height: 100%;
+          padding: 10px 0;
           .team_logo {
-            display: flex;
-            justify-content: center;
-            width: 5em;
-            height: 100%;
-            margin: 10px;
-            transition: all 0.5s ease;
+            padding: 5px;
             cursor: pointer;
-            .logo_img {
-              max-width: 50px;
-              max-height: 50px;
-              width: 100%;
-              height: 100%;
+            .img {
+              width: 70px;
+              height: 70px;
+            }
+            .teamName {
+              color: #fff;
+              font-size: 5px;
             }
           }
           .team_logo:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
+            background-color: #eaeaea;
+            .teamName {
+              font-size: 5px;
+              font-weight: 600;
+            }
           }
-        }
-        .team_slide::-webkit-scrollbar {
-          width: 1px;
-        }
-        .team_slide::-webkit-scrollbar-thumb {
-          background-color: inherit;
         }
       }
     }

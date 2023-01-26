@@ -1,3 +1,4 @@
+import { CategoryType } from '@/components/LCK/typings';
 import { TEAM_CATEGORYS } from '@/data/filterCategory';
 import useStore from '@/hooks/useStore';
 import React, { useEffect, useState } from 'react';
@@ -5,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Teams.module.scss';
 
 const Teams = React.memo(() => {
-  const [team, setTeam] = useState<any[]>([]);
+  const [team, setTeam] = useState<CategoryType>([]);
   const { id, getId } = useStore();
   const teams = TEAM_CATEGORYS;
   useEffect(() => {
