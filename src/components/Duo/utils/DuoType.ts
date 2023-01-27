@@ -1,6 +1,7 @@
 import { Timestamp } from 'firebase/firestore';
 
 export type DuoType = {
+  id?: string;
   queue: string;
   tier: string;
   position: string;
@@ -13,7 +14,7 @@ export type DuoType = {
   nickName: string;
   mostChamp: string;
 
-  createdAt?: Timestamp | number;
+  createdAt: Timestamp | number;
 };
 
 export interface FilterType {
