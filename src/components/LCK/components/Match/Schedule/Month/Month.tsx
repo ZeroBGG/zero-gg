@@ -1,5 +1,5 @@
 import { FILTER_CATEGORYS } from '@/data/filterCategory';
-import myMonth from '@/components/LCK/Zustand/myMonth';
+import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import styles from './Month.module.scss';
 
 const Month = () => {
   const [month, setMonth] = useState<any[]>([]);
-  const { mon, getMonth } = myMonth();
+  const { mon, getMonth } = useDateStore();
   const monthArr = FILTER_CATEGORYS;
   useEffect(() => {
     setMonth(monthArr);

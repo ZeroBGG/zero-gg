@@ -13,7 +13,11 @@ export default function LCK() {
           <div className={styles.card_container}>
             <div className={`${styles.team_container} ${styles.card}`}>
               <Link to={'team'} className={styles.link_team_page}>
-                <span className={styles.title}>ROASTER</span>
+                <span className={styles.title}>
+                  2023
+                  <br />
+                  ROASTER
+                </span>
               </Link>
             </div>
             <div
