@@ -5,13 +5,13 @@ import List from './List';
 import { dbService } from 'src/firebase';
 import { collection, onSnapshot, query } from 'firebase/firestore';
 
-import myTeam from '@/components/LCK/Zustand/myTeam';
+import { useMyTeam } from '@/components/LCK/Zustand/useMyTeam';
 import SkeletonProfile from '../../Skeleton/SkeletonProfile';
 import { ListProps } from '@/components/LCK/typings';
 
 const PlayerList = () => {
   const [teams, setTeam] = useState<ListProps[]>();
-  const { myteam } = myTeam();
+  const { myteam, getTeam } = useMyTeam();
   const fetchData = useCallback(() => {
     const lckTeam = query(collection(dbService, 'lck_teamSquad'));
     onSnapshot(lckTeam, (querySnapshot) => {
@@ -31,6 +31,16 @@ const PlayerList = () => {
     setTimeout(() => {
       fetchData();
     }, 5000);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('Roaster', myteam);
+
+    let saved = localStorage.getItem('Roaster');
+
+    if (saved !== null) {
+      getTeam(saved);
+    }
   }, []);
 
   return (

@@ -29,7 +29,7 @@
     z-index: -1;
     width: calc(100% + var(--border-width) * 2);
     height: calc(100% + var(--border-width) * 2);
-    background: linear-gradient(60deg, hsl(181, 65%, 58%), hsl(133, 69%, 56%), hsl(134, 85%, 66%), hsl(179, 85%, 66%));
+    background: linear-gradient(60deg, #6efdff, #6effc5, #75ff6e, #41dc63, #5eff81, #5ff281, #5ff2f0);
     background-size: 300% 300%;
     background-position: 0 50%;
     border-radius: calc(2 * var(--border-width));
