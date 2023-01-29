@@ -15,7 +15,7 @@ const Accordian = ({ title }: Props) => {
 
   const sendData = () => {};
   return (
-    <div className={styles.toggle}>
+    <div className={styles.accordian}>
       <div className={styles.header} onClick={handletoggle}>
         <h2 className={styles.title}>{title}</h2>
         <span className={styles.click_btn}>▾</span>
@@ -23,11 +23,11 @@ const Accordian = ({ title }: Props) => {
       <div className={styles.content_wrapper} ref={parentRef}>
         <div className={styles.content1} ref={childRef}>
           {title === 'TEAM' ? (
-            <div className={styles.teams_wrapper}>
+            <div className={styles.icons_wrapper}>
               <Teams />
             </div>
           ) : (
-            <div className={styles.month_wrapper}>
+            <div className={styles.icons_wrapper}>
               <Month />
             </div>
           )}

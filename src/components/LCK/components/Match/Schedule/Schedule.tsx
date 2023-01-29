@@ -1,14 +1,14 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { collection, getDocs, onSnapshot, query } from 'firebase/firestore';
 import { dbService } from 'src/firebase';
-import { matchesType, matchListProps, matchTeamType } from '@/components/LCK/typings';
+import { matchesType, matchListProps } from '@/components/LCK/typings';
 import styles from './Schedule.module.scss';
-import Item from './Item';
-import SideBar from './SideBar';
+import Item from './Item/Item';
+import SideBar from './Sidebar/SideBar';
 import { useParams } from 'react-router';
 import useStore from '@/hooks/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
-import { useMyTeam } from '@/components/LCK/Zustand/useTeams';
+import { useTeams } from '@/components/LCK/Zustand/useTeams';
 type hoverType = {
   isHover: boolean;
 };
@@ -18,10 +18,9 @@ const Schedule = ({ isHover }: hoverType) => {
   const [filterList, setFilterList] = useState<matchListProps[]>([]);
   const { id } = useStore();
   const { mon, getMonth } = useDateStore();
-
-  const { info } = useMyTeam();
-  console.log(info);
+  const { info } = useTeams();
   let params: any = useParams();
+
   // data 불러오기
   const fetchData = useCallback(() => {
     const lckTeam = query(collection(dbService, 'lck_matches'));
@@ -38,20 +37,22 @@ const Schedule = ({ isHover }: hoverType) => {
     });
   }, []);
 
+  // data 불러오기
   useEffect(() => {
     fetchData();
   }, []);
 
+  // 월별 필터후 새로고침시 유지
   useEffect(() => {
-    localStorage.setItem('date', params.month);
-
-    let saved = localStorage.getItem('date');
-
+    let saved = localStorage.getItem('monthstorage');
     if (saved !== null) {
       getMonth(params.month);
+    } else {
+      getMonth('');
     }
   }, []);
 
+  // 뒤에 요일 자름
   const Split = (text: string) => {
     return text.split('요일')[0];
   };
@@ -78,6 +79,7 @@ const Schedule = ({ isHover }: hoverType) => {
       setFilterList(Filter);
     }
   };
+  // 필터링
   useEffect(() => {
     filterData();
   }, [list, mon, id]);
@@ -97,7 +99,7 @@ const Schedule = ({ isHover }: hoverType) => {
                   {lst.matches.map((match: matchesType) => {
                     const { matchOne, matchTwo } = match;
                     // matches가 두경기 다 포함하고 있기에 조건문을 통해서 조금 유형별로 데이터가 표시되는 방법을 다르게 만들었습니다.
-                    if (mon === '' && id === '') {
+                    if (mon === undefined && id === '') {
                       return (
                         <div className={styles.match_card} key={`${matchOne.home.id}_${matchOne.home.initial}`}>
                           <Item matchType={matchOne} />
@@ -105,25 +107,17 @@ const Schedule = ({ isHover }: hoverType) => {
                         </div>
                       );
                     }
-                    if (mon && id === '') {
-                      return (
-                        <>
-                          <div className={styles.match_card} key={`${matchTwo.home.id}_${matchTwo.away.id}`}>
-                            <Item matchType={matchOne} />
-                            <Item matchType={matchTwo} />
-                          </div>
-                        </>
-                      );
-                    }
                     if (matchOne.home.id.includes(id) || matchOne.away.id.includes(id)) {
                       return (
                         <div className={styles.match_card} key={`${matchOne.home.id}_${matchTwo.away.id}`}>
                           <Item matchType={matchOne} />
+                          <Item matchType={matchTwo} />
                         </div>
                       );
                     } else {
                       return (
                         <div className={styles.match_card} key={`${matchOne.away.id}_${matchTwo.away.id}`}>
+                          <Item matchType={matchOne} />
                           <Item matchType={matchTwo} />
                         </div>
                       );

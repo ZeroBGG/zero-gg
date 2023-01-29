@@ -4,10 +4,12 @@ import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Month.module.scss';
+import { useTeams } from '@/components/LCK/Zustand/useTeams';
 
 const Month = () => {
   const [month, setMonth] = useState<any[]>([]);
   const { mon, getMonth } = useDateStore();
+  const { info, getDate } = useTeams();
   const monthArr = FILTER_CATEGORYS;
   useEffect(() => {
     setMonth(monthArr);
@@ -16,6 +18,7 @@ const Month = () => {
   const onClick = useCallback(
     (event: React.MouseEvent<HTMLLIElement>) => {
       getMonth(event.currentTarget.id);
+      getDate(event.currentTarget.id);
     },
     [month],
   );

@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
-@import './common.scss';
+@import './Lck_card_design.module.scss';
+@import '../../styles/global.scss';
 @import '../LCK/components/Team/responsive.module.scss';
 /* LCK.Module.scss */
 
 // https://walkthinksleep.tistory.com/entry/css-border-animation => border gradient
+
 .container {
   @include container;
   .wrapper {
     @include gradient-wrapper;
     .border_gradient {
-      background-color: #000000;
+      background-color: var(--bg-color);
       border-radius: var(--border-width);
       display: flex;
       flex-direction: row;
@@ -20,104 +22,40 @@
         height: 100%;
         padding: 15px;
         .lck2023 {
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
           width: 100%;
           height: 100%;
         }
       }
       .card_container {
         @include card-container;
-        background-color: #1c1c1c;
-        .team_container {
-          margin: 0 auto;
-          transition: all 0.5s ease;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: #525252;
-          .link_team_page {
-            text-decoration: none;
-            transition: all 0.6s ease-in-out;
-            .title {
-              font-stretch: 100%;
-              letter-spacing: 2px;
-              font-weight: bolder;
-              font-size: x-large;
-              display: flex;
-              color: #fffff9;
-              margin-left: auto;
-              margin: auto;
-            }
-          }
-          &:hover {
-            background: #161616;
-          }
-        }
+        background-color: inherit;
 
-        .link_match_page::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 20px;
-          background: linear-gradient(to top, #151515, rgba(0, 0, 0, 0));
-        }
-        .link_match_page::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          width: 20px;
-          height: 100%;
-          background: linear-gradient(to left, #000000, rgba(0, 0, 0, 0));
-        }
-        .match_container {
-          position: relative;
-          background: #fff;
-          transition: all 0.5s ease;
-        }
-        .link_match_page {
-          display: flex;
-          width: 100%;
-          border-radius: 3px;
-          transition: all 0.6s ease-in-out;
-          .title {
-            font-stretch: 100%;
-            letter-spacing: 2px;
-            font-weight: bolder;
-            font-size: x-large;
-            display: flex;
-            color: #fffff9;
-            margin-left: auto;
-            margin: auto;
-          }
-          .logo {
+        .card {
+          @include cardLayout;
+          .link_page {
+            transition: all 0.5s ease;
             width: 100%;
-            height: 250px;
-          }
-          &:hover {
-            background: #161616;
-          }
-        }
-        .riot_container {
-          display: flex;
-          background-color: #fff;
-          transition: all 0.6s ease-in-out;
-          .riot_link {
-            width: 100%;
-            .riot {
-              height: 100%;
-              width: 100%;
+            text-decoration: none;
+            color: var(--font-color);
+            .title {
+              font-weight: bolder;
+              font-size: 40px;
+              display: flex;
+              margin-left: 30px;
+            }
+            &:hover {
+              transform: translateX(10%);
             }
           }
+          .riot_page {
+            width: 100%;
+            height: 100%;
+          }
           &:hover {
-            background: #161616;
             transform: scale(1.1);
           }
-        }
-        .card {
-          display: flex;
-          margin: 5px;
         }
       }
     }

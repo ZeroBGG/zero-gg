@@ -19,7 +19,7 @@
           .card_container {
             margin: auto;
             display: grid;
-            background-color: #1c1c1c;
+            background: var(--bg-color);
             margin-right: 15px;
             width: 100%;
             border-radius: 6px;
@@ -27,7 +27,7 @@
             grid-template-rows: repeat(3, minmax(100px, 1fr));
             justify-content: baseline;
             .team_container {
-              .link_team_page {
+              .link_page {
                 .lck_team {
                   width: 100%;
                 }

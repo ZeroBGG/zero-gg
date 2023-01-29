@@ -32,3 +32,13 @@
     }
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .container {
+    .header {
+      .filter_btn {
+        display: none;
+      }
+    }
+  }
+}

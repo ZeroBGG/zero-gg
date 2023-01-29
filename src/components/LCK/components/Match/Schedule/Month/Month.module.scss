@@ -3,16 +3,18 @@
   font-weight: bolder;
   transition: all 0.5s ease-in-out;
   .month {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
     width: 70px;
     height: 50px;
-    background-color: #373636;
-    box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.7);
+    display: flex;
+    justify-content: center;
+    background: var(--item-color);
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
   }
 }
 .item:hover {
-  transform: scale((1.1));
+  border-radius: 10px;
+  background-color: var(--hover-tab-color);
+  transform: scale(1.1);
 }

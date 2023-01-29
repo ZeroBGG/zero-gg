@@ -3,14 +3,14 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 
 type State = {
   info: string;
-  getTeam: (t: string) => void;
+  getDate: (info: string) => void;
 };
 
-export const useMyTeam = create<any>(
+export const useTeams = create<any>(
   persist(
     (set) => ({
       info: null,
-      getTeam: (info: any) => set({ info }),
+      getDate: (info: any) => set({ info }),
     }),
     {
       name: 'monthstorage', // name of the item in the storage (must be unique)
