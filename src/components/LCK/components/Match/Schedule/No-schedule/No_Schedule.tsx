@@ -2,7 +2,7 @@ import styles from 'No_schedules.module.scss';
 
 const No_Schedule = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.no_schedule}>
       <article className={styles.article}>
         <img src="" alt="" />
         <span>일정이 없습니다.</span>

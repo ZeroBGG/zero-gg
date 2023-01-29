@@ -1,12 +1,12 @@
+@import 'src/styles/global.scss';
 .logo_wrapper {
   width: 100%;
-
   .logo_item {
     width: 70px;
     height: 50px;
-    background-color: var(--gray-color-30);
     display: flex;
     justify-content: center;
+    background: var(--item-color);
     align-items: center;
     border-radius: 10px;
     transition: all 0.5s ease-in-out;
@@ -16,7 +16,8 @@
     }
   }
   .logo_item:hover {
-    background-color: var(--gray-color-10);
+    border-radius: 10px;
+    background-color: var(--hover-tab-color);
     transform: scale(1.1);
   }
 }

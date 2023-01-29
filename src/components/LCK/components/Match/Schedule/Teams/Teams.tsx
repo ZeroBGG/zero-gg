@@ -1,5 +1,4 @@
 import { CategoryType } from '@/components/LCK/typings';
-import { useMyTeam } from '@/components/LCK/Zustand/useTeams';
 import { TEAM_CATEGORYS } from '@/data/filterCategory';
 import useStore from '@/hooks/useStore';
 import React, { useEffect, useState } from 'react';
@@ -9,7 +8,6 @@ import styles from './Teams.module.scss';
 const Teams = React.memo(() => {
   const [team, setTeam] = useState<CategoryType>([]);
   const { id, getId } = useStore();
-  const { info, getTeam } = useMyTeam();
   const teams = TEAM_CATEGORYS;
   useEffect(() => {
     setTeam(teams);
@@ -17,7 +15,6 @@ const Teams = React.memo(() => {
 
   const onClick = (event: React.MouseEvent) => {
     getId(event.currentTarget.id);
-    getTeam(event.currentTarget.id);
   };
   return (
     <>

@@ -1,4 +1,4 @@
-import styles from '../Item.module.scss';
+import styles from '../Item/Item.module.scss';
 
 const LCK_LIVE = 'https://game.naver.com/esports/League_of_Legends/schedule/lck';
 
@@ -13,7 +13,7 @@ const Button = ({ content, ishovering, onMouseOver, onMouseOut }: ButtonProps) =
   return (
     <>
       <a
-        className={ishovering ? `${styles.live_btn} ` : `${styles.replay_btn}`}
+        className={`${styles.btn} ${ishovering ? `${styles.live_btn} ` : `${styles.replay_btn}`}`}
         href={LCK_LIVE}
         onMouseOver={onMouseOver}
         onMouseOut={onMouseOut}
