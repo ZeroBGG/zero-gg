@@ -155,25 +155,29 @@ const WriteDuo = () => {
                   </div>
                 </div>
 
-                <div>
-                  <InputText
-                    type="text"
-                    {...inputTitle}
-                    name="title"
-                    id="title"
-                    inLabelText="Title"
-                    placeholder="소통해요!!"
-                    className={styles.input_text}
-                  />
-                  <InputText
-                    type="text"
-                    {...inputMemo}
-                    name="memo"
-                    id="memo"
-                    inLabelText="Memo"
-                    placeholder="바텀, 사랑에 빠지다."
-                    className={styles.input_memo}
-                  />
+                <div className={styles.memo_wrapper}>
+                  <div>
+                    <InputText
+                      type="text"
+                      {...inputTitle}
+                      name="title"
+                      id="title"
+                      inLabelText="Title"
+                      placeholder="소통해요!!"
+                      className={styles.input_text}
+                    />
+                  </div>
+                  <div>
+                    <InputText
+                      type="text"
+                      {...inputMemo}
+                      name="memo"
+                      id="memo"
+                      inLabelText="Memo"
+                      placeholder="바텀, 사랑에 빠지다."
+                      className={styles.input_memo}
+                    />
+                  </div>
                 </div>
                 <div className={styles.user_wrapper}>
                   <div>

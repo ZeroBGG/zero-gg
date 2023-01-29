@@ -2,7 +2,7 @@ import styles from './SummonerMatch.module.scss';
 import { useEffect, useState } from 'react';
 
 import { getMatchApi, getDetailMatchApi } from '@/api/matchAPi';
-import MatchInfo from './MatchInfo';
+import MatchInfo from './MatchInfo/MatchInfo';
 
 import { TypeMatch } from '@/components/Record/types/type';
 
@@ -14,7 +14,6 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
   const fnMatchData = async () => {
     try {
       const res = await getMatchApi(puuid, start);
-      // console.log(res);
       setDataSet(res);
     } catch (err) {
       console.log(err);
@@ -28,10 +27,13 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
   useEffect(() => {
     setStart(0);
     setMatchData([]);
+    fnMatchData();
   }, [puuid]);
 
   useEffect(() => {
-    fnMatchData();
+    if (start > 0) {
+      fnMatchData();
+    }
   }, [start]);
 
   useEffect(() => {
@@ -77,7 +79,11 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
             {matchData.map((data: TypeMatch) => (
               <MatchInfo matchData={data} puuid={puuid} key={data.metadata.matchId} />
             ))}
-            {matchData.length < 20 && <button onClick={handleClick}>더보기</button>}
+            {matchData.length < 20 && (
+              <div className={styles.btn} onClick={handleClick} role="button">
+                더보기
+              </div>
+            )}
           </>
         ) : (
           <div>전적 기록이 없습니다.</div>

@@ -23,7 +23,7 @@ const Duo = () => {
     try {
       onSnapshot(queryRef, async (snapshot) => {
         const myLolArr = snapshot.docs.map((dosc) => ({
-          id: dosc.id,
+          id: dosc?.id,
           ...dosc.data(),
         }));
         setLolInfo(myLolArr);
@@ -40,7 +40,7 @@ const Duo = () => {
     try {
       const snap = await getDocs(queryRef);
       setKey(snap.docs[snap.docs.length - 1]); // 실시간 업데이트를 통해 배열의 키 위치 조정
-      const docsArray = snap.docs.map((docs) => ({ id: docs.id, ...docs.data() }));
+      const docsArray = snap.docs.map((docs) => ({ id: docs?.id, ...docs.data() }));
       if (docsArray.length === 1) {
         window.alert('더이상 없습니다');
       } else {
@@ -236,7 +236,7 @@ const Duo = () => {
             <div className={styles.div_card}>
               <ul className={styles.ul_card}>
                 {lolInfoFilterList.map((item: DuoType, idx: number) => {
-                  const UNIQUE_KEY = item.userId + idx.toString();
+                  const UNIQUE_KEY = item.userId + item.createdAt + idx.toString();
                   if (item.position && item.queue && item.tier !== null) {
                     return (
                       <>
