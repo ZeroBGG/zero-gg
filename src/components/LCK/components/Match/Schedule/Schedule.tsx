@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { collection, getDocs, onSnapshot, query } from 'firebase/firestore';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import { dbService } from 'src/firebase';
 import { matchesType, matchListProps } from '@/components/LCK/typings';
 import styles from './Schedule.module.scss';
@@ -9,7 +9,7 @@ import { useParams } from 'react-router';
 import useStore from '@/hooks/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import { useTeams } from '@/components/LCK/Zustand/useTeams';
-import Month from './Month/Month';
+
 type hoverType = {
   isHover: boolean;
 };
