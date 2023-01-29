@@ -6,18 +6,17 @@
       .skeleton_wrapper {
         width: 100%;
         min-height: 170px;
-
         .header {
           display: flex;
           z-index: 1;
           margin-top: 10px;
           .unknown {
-            color: #fff;
+            color: var(--font-color);
             font-size: 30px;
             font-weight: bolder;
           }
           .question {
-            color: #b7b684;
+            color: var(--gold-color);
             margin-left: auto;
             margin-right: 10px;
             font-size: 40px;

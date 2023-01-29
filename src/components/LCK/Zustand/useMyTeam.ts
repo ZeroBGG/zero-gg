@@ -5,6 +5,6 @@ interface Team {
   getTeam: (myteam: string) => void;
 }
 export const useMyTeam = create<Team>((set) => ({
-  myteam: 'geng',
+  myteam: '',
   getTeam: (myteam) => set(() => ({ myteam: myteam })),
 }));
