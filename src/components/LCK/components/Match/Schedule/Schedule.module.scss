@@ -34,8 +34,8 @@
           flex-direction: column;
           .match_card {
             display: flex;
-            align-items: center;
-            margin: auto;
+            flex-direction: column;
+            margin: 0;
             padding: 10px 0;
             width: 100%;
             border-bottom: 1px solid #777777;

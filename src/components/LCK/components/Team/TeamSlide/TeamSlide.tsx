@@ -1,5 +1,5 @@
 import data from '@/data/teamSquad.json';
-import myTeam from '@/components/LCK/Zustand/myTeam';
+import { useMyTeam } from '@/components/LCK/Zustand/useMyTeam';
 import React, { useEffect, useState } from 'react';
 import styles from './TeamSlide.module.scss';
 import useHover from '@/hooks/useHover';
@@ -8,7 +8,7 @@ import Logos from './Logos';
 const TeamSlide = () => {
   const [teams, setTeams] = useState<any[]>([]);
   const [ref, hover] = useHover();
-  const { myteam, getTeam } = myTeam();
+  const { myteam, getTeam } = useMyTeam();
 
   useEffect(() => {
     setTeams(data);
