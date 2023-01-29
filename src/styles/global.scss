@@ -16,12 +16,16 @@ body {
 
   --font-color: #fef4f4;
   --bg-color: #313131;
-  --player-color: #222222;
+  --player-color: #111111;
 
+  // 리스트 항목 카드 컬러
   --main-tab-color: #383838;
   --tab-color: #3a3a3a;
   --tab-border-color: #5a5a5a;
 
   --hover-tab-color: #2a2a2a;
-  --item-color: #525252;
+
+  --item-color: #525252; // 팀,월 필터링 아이콘 배경
+
+  --gold-color: #b7b684;
 }

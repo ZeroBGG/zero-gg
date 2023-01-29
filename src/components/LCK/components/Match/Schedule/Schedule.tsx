@@ -9,6 +9,7 @@ import { useParams } from 'react-router';
 import useStore from '@/hooks/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import { useTeams } from '@/components/LCK/Zustand/useTeams';
+import Month from './Month/Month';
 type hoverType = {
   isHover: boolean;
 };
@@ -79,6 +80,7 @@ const Schedule = ({ isHover }: hoverType) => {
       setFilterList(Filter);
     }
   };
+  console.log(id);
   // 필터링
   useEffect(() => {
     filterData();
@@ -107,17 +109,23 @@ const Schedule = ({ isHover }: hoverType) => {
                         </div>
                       );
                     }
+                    if (mon === params.month && id == '') {
+                      return (
+                        <div className={styles.match_card} key={`${matchOne.home.id}_${matchOne.home.initial}`}>
+                          <Item matchType={matchOne} />
+                          <Item matchType={matchTwo} />
+                        </div>
+                      );
+                    }
                     if (matchOne.home.id.includes(id) || matchOne.away.id.includes(id)) {
                       return (
                         <div className={styles.match_card} key={`${matchOne.home.id}_${matchTwo.away.id}`}>
                           <Item matchType={matchOne} />
-                          <Item matchType={matchTwo} />
                         </div>
                       );
                     } else {
                       return (
                         <div className={styles.match_card} key={`${matchOne.away.id}_${matchTwo.away.id}`}>
-                          <Item matchType={matchOne} />
                           <Item matchType={matchTwo} />
                         </div>
                       );
