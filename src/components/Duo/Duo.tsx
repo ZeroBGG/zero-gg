@@ -8,6 +8,8 @@ import InputRadio from './Common/InputRadio/InputRadio';
 import { BiChevronsDown } from 'react-icons/bi';
 import styles from './Duo.module.scss';
 
+// import FilterStore from './Common/Filter/FilterRadio';
+
 const Duo = () => {
   const [lolInfo, setLolInfo] = useState<any[]>([]);
   const [lolInfoFilterList, setLolInfoFilterList] = useState<any[]>([]);
@@ -17,6 +19,8 @@ const Duo = () => {
     tier: '',
     position: '',
   });
+
+  // const { queueFilter, tierFilter, positionFilter } = FilterStore();
 
   const getDuoData = useCallback(async () => {
     const queryRef = query(collection(dbService, 'myLOLInfo'), orderBy('createdAt', 'desc'), limit(5));

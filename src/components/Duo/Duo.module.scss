@@ -68,6 +68,10 @@ $bgColor-3: #f1f5f7;
 .select_queue {
   padding: 15px 10px;
 
+  h2 {
+    color: $black;
+  }
+
   input[type='radio'] {
     display: none;
   }
@@ -83,6 +87,10 @@ $bgColor-3: #f1f5f7;
 
 .select_tier {
   padding: 15px 10px;
+
+  h2 {
+    color: $black;
+  }
 
   input[type='radio'] {
     display: none;
@@ -139,6 +147,10 @@ $bgColor-3: #f1f5f7;
 
 .select_position {
   padding: 15px 10px;
+
+  h2 {
+    color: $black;
+  }
 
   input[type='radio'] {
     display: none;

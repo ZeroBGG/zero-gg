@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getFirestore, addDoc, collection } from 'firebase/firestore';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getMessaging, getToken, onMessage } from 'firebase/messaging';
 
 // Your web app's Firebase configuration
 const {
@@ -13,6 +12,7 @@ const {
   VITE_FIREBASE_SENDER_ID,
   VITE_FIREBASE_APP_ID,
   VITE_FIREBASE_DATABASE_URL,
+  VITE_FIREBASE_VAPID_KEY,
 } = import.meta.env;
 
 const firebaseConfig = {
@@ -23,10 +23,35 @@ const firebaseConfig = {
   messagingSenderId: VITE_FIREBASE_SENDER_ID,
   appId: VITE_FIREBASE_APP_ID,
   databaseURL: VITE_FIREBASE_DATABASE_URL,
+  vapidKey: VITE_FIREBASE_VAPID_KEY,
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const dbService = getFirestore();
-export const dbAddDoc = addDoc;
-export const dbCollection = collection;
+
+const messaging = getMessaging(app);
+
+const requestPermisstion = async () => {
+  console.log('권한 요청중...');
+  const permission = await Notification.requestPermission();
+  if (permission === 'denied') {
+    console.log('권한 허용 안됨..');
+    return;
+  }
+
+  console.log('권한 요청 허용됨');
+
+  const token = await getToken(messaging, {
+    vapidKey: VITE_FIREBASE_VAPID_KEY,
+  });
+
+  if (token) console.log('token: ', token);
+  else console.log('토큰 ㅇㄷ?');
+
+  onMessage(messaging, (payload) => {
+    console.log('메세지 도착: ', payload);
+  });
+};
+
+requestPermisstion();
