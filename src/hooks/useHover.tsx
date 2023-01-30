@@ -15,14 +15,14 @@ const useHover = () => {
     const element = ref.current;
     if (!element) return;
 
-    element.addEventListener('mouseover', handleMouseOver);
-    element.addEventListener('mouseout', handleMouseOut);
+    element.addEventListener('mouseenter', handleMouseOver);
+    element.addEventListener('mouseleave', handleMouseOut);
 
     // useEffect에서 이벤트를 등록할 때는
     // 꼭 정리(clean-up)를 해줘야한다.
     return () => {
-      element.removeEventListener('mouseover', handleMouseOver);
-      element.removeEventListener('mouseout', handleMouseOut);
+      element.removeEventListener('mouseenter', handleMouseOver);
+      element.removeEventListener('mouseleave', handleMouseOut);
     };
   }, [ref, handleMouseOver, handleMouseOut]);
 
