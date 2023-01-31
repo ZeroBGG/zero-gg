@@ -4,7 +4,7 @@ import { dbService } from 'src/firebase';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { positionArr, queueArr, tierArr, positions, tiers } from '../utils/DuoArr';
 import { DuoType } from '../utils/DuoType';
-import { LANE_ICONS_URL, TIER_IMG_URL } from '@/components/Duo/constants/constant';
+import { LANE_ICONS_URL, TIER_IMG_URL } from '@/components/Duo/Constants/constant';
 import useInput from '@/hooks/useInput';
 import InputText from '../Common/InputText/InputText';
 import styles from './DuoInfo.module.scss';
