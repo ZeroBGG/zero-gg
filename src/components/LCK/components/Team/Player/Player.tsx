@@ -20,7 +20,7 @@ const Player = ({ name, position, summoner, image, logo, captain }: PlayerListTy
     >
       <div className={styles.player_info}>
         <div className={styles.info}>
-          <div className={styles.names} ref={ref}>
+          <div className={styles.names} ref={ref as React.RefObject<HTMLDivElement>}>
             <h3 className={styles.summoner}>{!hover ? summoner : name}</h3>
           </div>
           <div className={styles.position}>

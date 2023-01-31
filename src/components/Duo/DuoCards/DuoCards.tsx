@@ -41,7 +41,7 @@ const DuoCards = ({ duoObj }: { duoObj: DuoType }) => {
 
   return (
     <>
-      <Link to={`${duoObj.userId}`} state={{ duoObj }}>
+      <Link to={`${duoObj.userId}`} state={{ duoObj }} key={UNIQUE_KEY}>
         <li className={styles.list} key={UNIQUE_KEY}>
           <div className={styles.wrapper}>
             <div className={styles.icons}>{ti}</div>
