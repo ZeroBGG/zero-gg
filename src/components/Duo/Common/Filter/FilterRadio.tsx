@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
 import { create } from 'zustand';
-import { DuoType, FilterType } from '../../utils/DuoType';
 
-const FilterRadio = (lolInfo: any) => {
-  const [lolInfoFilterList, setLolInfoFilterList] = useState<any[]>([]);
-  const [selectValue, setSelectValue] = useState<FilterType>({
-    queue: '',
-    tier: '',
-    position: '',
-  });
+interface Filter {
+  queue: string;
+  tier: string;
+  position: string;
+  queueFilter: (queue: string) => void;
+  tierFilter: (queue: string) => void;
+  positionFilter: (queue: string) => void;
+}
 
-  const useStore = create((set) => {});
+const FilterStore = create<Filter>((set) => ({
+  queue: '',
+  tier: '',
+  position: '',
+  queueFilter: (input) => {
+    set(() => ({ queue: input }));
+  },
+  tierFilter: (input) => {
+    set(() => ({ tier: input }));
+  },
+  positionFilter: (input) => {
+    set(() => ({ position: input }));
+  },
+}));
 
-  return <></>;
-};
-
-export default FilterRadio;
+export default FilterStore;
