@@ -77,6 +77,11 @@ const Duo = () => {
         },
         [selectValue],
       );
+
+      if (filteredList.length === 0) {
+        setLolInfoFilterList([]);
+      }
+
       filteredList.splice(0, 1);
       setLolInfoFilterList(filteredList);
     }
@@ -239,16 +244,24 @@ const Duo = () => {
           <section className={styles.section_card}>
             <div className={styles.div_card}>
               <ul className={styles.ul_card}>
-                {lolInfoFilterList.map((item: DuoType, idx: number) => {
-                  const UNIQUE_KEY = item.userId + item.createdAt + idx.toString();
-                  if (item.position && item.queue && item.tier !== null) {
-                    return (
-                      <>
-                        <DuoCards key={UNIQUE_KEY} duoObj={item} />
-                      </>
-                    );
-                  }
-                })}
+                {lolInfoFilterList.length !== 0 ? (
+                  lolInfoFilterList.map((item: DuoType, idx: number) => {
+                    const UNIQUE_KEY = item.userId + item.createdAt + idx.toString();
+                    if (item.position && item.queue && item.tier !== null) {
+                      return (
+                        <>
+                          <DuoCards key={UNIQUE_KEY} duoObj={item} />
+                        </>
+                      );
+                    }
+                  })
+                ) : (
+                  <>
+                    <li className={styles.li_card}>
+                      <h2>존재하는 소환사가 없습니다.</h2>
+                    </li>
+                  </>
+                )}
                 <div className={styles.next_button}>
                   <button onClick={onNextScroll}>
                     <BiChevronsDown className={styles.button_svg} />

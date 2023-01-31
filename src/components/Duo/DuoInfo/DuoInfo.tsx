@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useCallback, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { dbService } from 'src/firebase';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
@@ -28,12 +28,12 @@ const DuoInfo = () => {
   const submitPass = useInput('');
 
   // 업데이트 할 상태값들
-  const inputQueue = useInput('');
-  const inputTier = useInput('');
-  const inputPosition = useInput('');
-  const inputTitle = useInput('');
-  const inputMemo = useInput('');
-  const inputNickName = useInput('');
+  const inputQueue = useInput(queue);
+  const inputTier = useInput(tier);
+  const inputPosition = useInput(position);
+  const inputTitle = useInput(title);
+  const inputMemo = useInput(memo);
+  const inputNickName = useInput(nickName);
 
   const reset = () => {
     inputQueue.reset();
@@ -98,19 +98,23 @@ const DuoInfo = () => {
     }
   };
 
-  const onUpdateSubmit = async (e: FormEvent) => {
+  const onUpdateSubmit = useCallback(async (e: FormEvent) => {
     e.preventDefault();
-    await updateDoc(ChangeDuoInfo, {
-      queue: inputQueue.value,
-      tier: inputTier.value,
-      position: inputPosition.value,
-      title: inputTitle.value,
-      memo: inputMemo.value,
-      nickName: inputNickName.value,
-    });
-    setUpdate(false);
-    navigate('/Duo');
-  };
+    try {
+      await updateDoc(ChangeDuoInfo, {
+        queue: inputQueue.value,
+        tier: inputTier.value,
+        position: inputPosition.value,
+        title: inputTitle.value,
+        memo: inputMemo.value,
+        nickName: inputNickName.value,
+      });
+      setUpdate(false);
+      navigate('/Duo');
+    } catch (e) {
+      console.error(e);
+    }
+  }, []);
 
   return (
     <>

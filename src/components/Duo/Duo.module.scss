@@ -35,6 +35,10 @@ $bgColor-3: #f1f5f7;
       background-color: $bgColor-2;
       padding: 20px 30px;
       min-height: calc(99vh - 400px);
+
+      .li_card {
+        text-align: center;
+      }
     }
   }
 }

@@ -26,7 +26,7 @@ const DuoCards = ({ duoObj }: { duoObj: DuoType }) => {
     }
   });
 
-  console.log(duoObj.userId);
+  // console.log(duoObj.userId);
 
   if (duoObj.userId === null) {
     console.log('존재하지 않습니다.');
