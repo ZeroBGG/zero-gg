@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { DuoType } from '../utils/DuoType';
 import { positions, tiers } from '../utils/DuoArr';
-import { LANE_ICONS_URL, TIER_IMG_URL } from '../constants/constant';
+import { LANE_ICONS_URL, TIER_IMG_URL } from '@/components/Duo/constants/constant';
 import styles from './DuoCards.module.scss';
 
 const DuoCards = ({ duoObj }: { duoObj: DuoType }) => {
