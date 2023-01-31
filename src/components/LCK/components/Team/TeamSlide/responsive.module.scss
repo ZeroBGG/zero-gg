@@ -2,14 +2,15 @@
   @media only screen and (min-width: 300px) and (max-width: 800px) {
     .slider_container {
       display: flex;
+      align-items: center;
       .wrapper {
         width: 100%;
+        height: 100%;
         padding: 3px;
         .team_slide {
           width: 100%;
           display: flex;
           flex-direction: row;
-          padding: 10px 0;
           .team_logo {
             padding: 5px;
             cursor: pointer;
