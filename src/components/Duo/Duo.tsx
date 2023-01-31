@@ -258,7 +258,7 @@ const Duo = () => {
                 ) : (
                   <>
                     <li className={styles.li_card}>
-                      <h2>존재하는 소환사가 없습니다.</h2>
+                      <h2>존재하는 소환사가 없습니다.!</h2>
                     </li>
                   </>
                 )}
