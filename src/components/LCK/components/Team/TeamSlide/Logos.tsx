@@ -1,5 +1,5 @@
 import useHover from '@/hooks/useHover';
-import React, { RefObject } from 'react';
+import React from 'react';
 import styles from './TeamSlide.module.scss';
 interface LogosType {
   logo: string;
@@ -17,11 +17,24 @@ const Logos = (props: LogosType) => {
       id={props.id}
       onClick={props.onClick}
     >
-      {!hover ? (
-        <img src={props.logo} id={props.id} alt="props" className={styles.img} />
-      ) : (
-        <p className={styles.teamName}>{props.teamName}</p>
-      )}
+
+      <div
+        id={props.id}
+        className={styles.img}
+        style={
+          !hover
+            ? {
+                backgroundImage: `url(${props.logo})`,
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '100%',
+              }
+            : { backgroundImage: '' }
+        }
+      >
+        {!hover ? '' : <p className={styles.teamName}>{props.teamName}</p>}
+      </div>
+
     </div>
   );
 };

@@ -1,13 +1,3 @@
-export interface PlayerListType {
-  readonly captain: boolean;
-  readonly id: number;
-  readonly name: string;
-  readonly korName: string;
-  readonly position: string;
-  readonly summoner: string;
-  readonly image: string;
-  readonly logo: string;
-}
 export interface SliceType {
   readonly id: string;
   readonly teamName: string;
@@ -18,9 +8,18 @@ export interface ListProps {
   readonly logo: string;
   readonly teamName: string;
   readonly id: string;
-  players: PlayerListType[];
+  players: PlayerListType;
 }
-
+export interface PlayerListType {
+  readonly captain: boolean;
+  readonly id: number;
+  readonly name: string;
+  readonly korName: string;
+  readonly position: string;
+  readonly summoner: string;
+  readonly image: string;
+  readonly logo: string;
+}
 //#### MATCH 타입 #######
 
 export interface matchListProps {

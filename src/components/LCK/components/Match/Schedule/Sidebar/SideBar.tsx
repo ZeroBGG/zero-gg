@@ -1,6 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
-import useToggle from '../hook/useToggle';
-import Accordian from './Accordion/Accordion';
+import Accordian from '../Accordion/Accordion';
 import styles from './SideBar.module.scss';
 
 const SideBar = () => {

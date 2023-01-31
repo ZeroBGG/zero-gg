@@ -3,43 +3,16 @@
 .list_container {
   font-family: 'IBM Plex Sans KR', sans-serif;
   font-family: 'Roboto', sans-serif;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 400px;
   .list_wrapper {
+    width: 100vw;
+    height: 100%;
     display: flex;
     justify-content: center;
     .list {
-      width: 70%;
+      width: 80%;
       height: 100%;
-      margin-left: 50px;
-    }
-    .info_container {
-      max-width: 300px;
-      height: 100%;
-      display: flex;
-      .wrapper {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        .team_info {
-          color: #fff;
-          display: flex;
-          align-items: center;
-          .logo {
-            max-width: 85px;
-            max-height: 85px;
-            .logo_img {
-              width: 100%;
-              height: 100%;
-            }
-          }
-          .name {
-            font-weight: bold;
-            font-size: 1.5rem;
-          }
-        }
-      }
     }
   }
 }

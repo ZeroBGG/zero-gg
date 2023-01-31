@@ -21,9 +21,7 @@ const Team = () => {
         <TeamSlide />
       </article>
       <article className={styles.player_list}>
-        <div className={styles.list_wrapper}>
-          <PlayerList />
-        </div>
+        <PlayerList />
       </article>
     </section>
   );

@@ -1,4 +1,4 @@
-.toggle {
+.accordian {
   cursor: pointer;
   width: 100%;
   margin-top: 15px;
@@ -22,7 +22,7 @@
       border: 0;
       outline: none;
       background-color: inherit;
-      color: #fff;
+      color: var(--font-color);
       font-size: 1.5em;
     }
   }
@@ -39,15 +39,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      .month_wrapper {
-        list-style: none;
-        display: grid;
-        gap: 5px;
-        padding: 1px 0;
-        margin: 0;
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .teams_wrapper {
+      .icons_wrapper {
         list-style: none;
         display: grid;
         gap: 5px;

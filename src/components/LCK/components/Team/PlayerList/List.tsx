@@ -1,38 +1,44 @@
-import { motion } from 'framer-motion';
 import { ListProps, PlayerListType } from '../../../typings';
 import Player from '../Player/Player';
-import { LeftToRightMotion } from './varients';
 import styles from './List.module.scss';
+import { useMyTeam } from '@/components/LCK/Zustand/useMyTeam';
+import SkeletonProfile from '../../Skeleton/SkeletonProfile';
 
-const List = ({ logo, teamName, id, players }: ListProps) => {
+interface ListType {
+  isLoading: boolean;
+  teams: ListProps[];
+}
+
+const List = ({ isLoading, teams }: ListType) => {
+  const { myteam, getTeam } = useMyTeam();
   return (
     <>
       <div className={styles.team_info}>
-        <motion.div
-          className={styles.team_info_list}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={LeftToRightMotion}
-        >
-          {players?.map((player: PlayerListType, idx: number) => {
-            const { korName, summoner, image, position, captain } = player;
-            return (
-              <div className={styles.card} key={`${player.id}_${idx}a`}>
-                <Player
-                  name={korName}
-                  summoner={summoner}
-                  image={image}
-                  position={position}
-                  logo={logo}
-                  captain={captain}
-                  id={0}
-                  korName={korName}
-                />
-              </div>
-            );
-          })}
-        </motion.div>
+        <div className={styles.team_info_list}>
+          {isLoading
+            ? new Array(6).fill(1).map((_, i) => {
+                return <SkeletonProfile key={i} />;
+              })
+            : teams?.map((team: ListProps | any) =>
+                team.players?.map((player: PlayerListType, idx: number) => {
+                  if (team.id === myteam)
+                    return (
+                      <div className={styles.card} key={`${player.id}_${idx}a`}>
+                        <Player
+                          name={player.korName}
+                          summoner={player.summoner}
+                          image={player.image}
+                          position={player.position}
+                          logo={team.logo}
+                          captain={player.captain}
+                          Loading={isLoading}
+                          KorName={player.korName}
+                        />
+                      </div>
+                    );
+                }),
+              )}
+        </div>
       </div>
     </>
   );

@@ -5,20 +5,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #191919;
+  background: var(--bg-color);
   text-decoration: none;
   text-decoration: none;
-  color: #fff;
+  color: var(--font-color);
 }
 
 @mixin gradient-wrapper {
-  --border-width: 6px;
   display: flex;
   margin: 0 auto;
   max-width: 100%;
   height: 600px;
   border-radius: 5px;
-  background: #222;
+  background: var(--tab-border);
   position: relative;
   z-index: 1;
   &::after {
@@ -29,7 +28,7 @@
     z-index: -1;
     width: calc(100% + var(--border-width) * 2);
     height: calc(100% + var(--border-width) * 2);
-    background: linear-gradient(60deg, hsl(181, 65%, 58%), hsl(133, 69%, 56%), hsl(134, 85%, 66%), hsl(179, 85%, 66%));
+    background: linear-gradient(60deg, #6efdff, #6effc5, #75ff6e, #eaea00, #ffff7e, #41dc63, #5eff81, #5ff281, #5ff2f0);
     background-size: 300% 300%;
     background-position: 0 50%;
     border-radius: calc(2 * var(--border-width));
@@ -43,9 +42,23 @@
 }
 @mixin card-container {
   display: grid;
-  background-color: #1c1c1c;
+  background-color: var(--tab-border);
   margin-right: 15px;
   width: 50%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  height: 580px;
   grid-template-columns: repeat(1, minmax(280px, 1fr));
   grid-template-rows: repeat(3, minmax(183px, 1fr));
+}
+
+@mixin cardLayout {
+  transition: all 0.5s ease;
+  border: 1px solid var(--tab-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--main-tab-color);
+  border-top-right-radius: 6px;
+  margin: 5px;
 }

@@ -1,0 +1,17 @@
+@mixin shimmer {
+  .shimmer {
+    animation: shimmer 6s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(to left, #353535 5%, #454545 25%, #555555 30%, #656565 35%);
+    background-size: 1300px 100%;
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: -1000px 0;
+    }
+    to {
+      background-position: 1000px 0;
+    }
+  }
+}

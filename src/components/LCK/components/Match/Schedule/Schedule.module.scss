@@ -28,14 +28,14 @@
         width: 100%;
         background-color: #2d2d2d;
         box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
-
         .matches {
           display: flex;
+          margin: auto;
           flex-direction: column;
           .match_card {
             display: flex;
-            align-items: center;
-            margin: auto;
+            flex-direction: column;
+            margin: 0;
             padding: 10px 0;
             width: 100%;
             border-bottom: 1px solid #777777;

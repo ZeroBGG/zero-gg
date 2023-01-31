@@ -1,10 +1,13 @@
+@import './ItenResponsive.module.scss';
+
 .item_container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 900px;
   display: flex;
   flex-direction: row;
   align-items: center;
   .match_container {
+    margin: auto;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -29,7 +32,6 @@
       display: flex;
       flex-direction: row;
       width: 100%;
-
       .team_wrapper {
         display: flex;
         align-items: center;
@@ -85,102 +87,22 @@
           width: auto;
           padding: 10px;
           border-radius: 5px;
-          color: #ffffff;
+          color: var(--font-color);
           border: 1px solid #eaeaea;
-
           transition: all 0.2s ease-in-out;
         }
         .live_btn {
-          margin: 0;
-          width: auto;
-          padding: 10px;
-          border-radius: 5px;
           background-color: #fa6161;
-          color: #ffffff;
+          color: var(--font-color);
           border: 1px solid #fa6161;
-
-          transition: all 0.2s ease-in-out;
         }
         .replay_btn {
-          margin: 0;
-          width: auto;
-          padding: 10px;
-          border-radius: 5px;
           background-color: #5c6fef;
-          color: #ffffff;
+          color: var(--font-color);
           border: 1px solid #5c6fef;
-
-          transition: all 0.2s ease-in-out;
         }
       }
     }
   }
 }
-@media only screen and (min-width: 300px) and (max-width: 800px) {
-  .item_container {
-    width: 100%;
-    .match_container {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      .match_info {
-        display: flex;
-        .time {
-          font-size: 15px;
-          margin: 0px;
-          padding: 10px;
-        }
-        .stadium {
-          display: none;
-        }
-        .state {
-          display: none;
-        }
-      }
-      .play_team_container {
-        .team_wrapper {
-          display: flex;
-          .card {
-            font-size: 15px;
-            display: flex;
-            margin: 0;
-            .img_logo {
-              width: 30px;
-              height: 30px;
-              display: flex;
-            }
-            .img_logo[alt='home'] {
-              margin-left: auto;
-            }
-            .img_logo[alt='away'] {
-              margin-right: auto;
-            }
-            .team_initial {
-              font-size: 15px;
-              white-space: nowrap;
-              letter-spacing: -1px;
-              margin-left: 10px;
-              width: 20px;
-            }
-          }
-          .score {
-            display: flex;
-            width: 30px;
-            .win {
-              margin: 0;
-            }
-            .verse {
-              margin: 0 3px;
-              text-align: center;
-            }
-          }
-        }
-      }
-      .lck_btn_container {
-        display: none;
-        align-items: center;
-        text-decoration: none;
-      }
-    }
-  }
-}
+@include responsive;

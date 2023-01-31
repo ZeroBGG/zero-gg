@@ -1,6 +1,6 @@
 import styles from './LCK.module.scss';
 import { Link } from 'react-router-dom';
-import { LCK_BG_URL, LCK_LOGO, RIOT, RIOT_LOGO } from './components/Constant/constant';
+import { LCK_LOGO, RIOT, RIOT_LOGO } from './components/Constant/constant';
 
 export default function LCK() {
   return (
@@ -12,8 +12,12 @@ export default function LCK() {
           </div>
           <div className={styles.card_container}>
             <div className={`${styles.team_container} ${styles.card}`}>
-              <Link to={'team'} className={styles.link_team_page}>
-                <span className={styles.title}>ROASTER</span>
+              <Link to={'team'} className={styles.link_page}>
+                <span className={`${styles.title} ${styles.roaster}`}>
+                  2023
+                  <br />
+                  ROASTER
+                </span>
               </Link>
             </div>
             <div
@@ -21,18 +25,24 @@ export default function LCK() {
               style={{
                 backgroundImage: `url(${LCK_LOGO})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '170%, 160%',
-                backgroundPosition: '90% 60%',
+                backgroundSize: '40%',
+                backgroundPosition: '80%',
               }}
             >
-              <Link to={'matches'} className={styles.link_match_page}>
-                <span className={styles.title}>LCK</span>
+              <Link to={'matches'} className={styles.link_page} id={'lck'}>
+                <span className={styles.title}>
+                  2023
+                  <br />
+                  LCK
+                  <br />
+                  SPRING
+                </span>
               </Link>
             </div>
             <div className={`${styles.riot_container} ${styles.card}`}>
               <a
                 href={RIOT}
-                className={styles.riot_link}
+                className={styles.riot_page}
                 style={{
                   backgroundImage: `url(${RIOT_LOGO})`,
                   backgroundRepeat: 'no-repeat',

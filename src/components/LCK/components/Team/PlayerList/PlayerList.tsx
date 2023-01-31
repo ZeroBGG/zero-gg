@@ -1,17 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
 import styles from './PlayerList.module.scss';
 import List from './List';
-
 import { dbService } from 'src/firebase';
 import { collection, onSnapshot, query } from 'firebase/firestore';
-
-import myTeam from '@/components/LCK/Zustand/myTeam';
-import SkeletonProfile from '../../Skeleton/SkeletonProfile';
+import { useMyTeam } from '@/components/LCK/Zustand/useMyTeam';
 import { ListProps } from '@/components/LCK/typings';
 
 const PlayerList = () => {
-  const [teams, setTeam] = useState<ListProps[]>();
-  const { myteam } = myTeam();
+  const [teams, setTeam] = useState<ListProps[]>([]);
+  const { myteam, getTeam } = useMyTeam();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   const fetchData = useCallback(() => {
     const lckTeam = query(collection(dbService, 'lck_teamSquad'));
     onSnapshot(lckTeam, (querySnapshot) => {
@@ -28,31 +27,35 @@ const PlayerList = () => {
   }, []);
 
   useEffect(() => {
-    setTimeout(() => {
+    setIsLoading(true);
+
+    new Promise<void>((res) => {
+      setTimeout(() => {
+        res();
+      }, 1000);
+    }).then(() => {
       fetchData();
-    }, 5000);
+      setTimeout(() => setIsLoading(false), 500);
+    });
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('Roaster', myteam);
+
+    let saved = localStorage.getItem('Roaster');
+
+    if (saved !== null) {
+      getTeam(saved);
+    }
   }, []);
 
   return (
     <div className={styles.list_container}>
-      {teams &&
-        teams.map((team: ListProps) =>
-          myteam !== team.id ? (
-            ''
-          ) : (
-            <div className={styles.list_wrapper} key={team.id}>
-              <div className={styles.list}>
-                <List id={team.id} teamName={team.teamName} logo={team.logo} players={team.players} />
-              </div>
-            </div>
-          ),
-        )}
-
-      {!teams && (
-        <div className={styles.list_wrapper}>
-          <SkeletonProfile />
+      <div className={styles.list_wrapper}>
+        <div className={styles.list}>
+          <List isLoading={isLoading} teams={teams} />
         </div>
-      )}
+      </div>
     </div>
   );
 };

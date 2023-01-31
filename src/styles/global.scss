@@ -9,27 +9,24 @@ body {
       min-width: 280px;
     }
   }
-
-  :root {
-    --black-color: #000;
-    --white-color: #fff;
-
-    --red-color: #ac3d39;
-    --red-color-10: #bf443f;
-    --red-color-20: #c65652;
-    --red-color-30: #cc6965;
-    --red-color-40: #d27c79;
-    --red-color-50: #d98e8c;
-
-    --gray-color-10: #2b2b2b;
-    --gray-color-20: #414141;
-    --gray-color-30: #3e3e3e;
-    --gray-color-40: #717171;
-    --gray-color-50: #7d7d7d;
-    --gray-color-60: #bababa;
-  }
 }
 
-main {
-  background-color: #1c1c1f;
+:root {
+  --border-width: 6px;
+
+  --font-color: #fef4f4;
+  --player-color: #111111;
+  --bg-color: #313131;
+
+  // 리스트 항목 카드 컬러
+  --main-tab-color: #686868;
+  --tab-color: #6a6a6a;
+  --tab-border-color: #5a5a5a;
+  --hover-tab-color: #2a2a2a;
+  --item-color: #525252; // 팀,월 필터링 아이콘 배경
+  --gold-color: #b7b684;
+
+  /// 스켈레톤
+
+  --skeleton-name: #909090;
 }

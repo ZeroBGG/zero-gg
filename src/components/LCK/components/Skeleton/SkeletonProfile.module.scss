@@ -1,65 +1,59 @@
 @import './SkeletonResponsive.module.scss';
-
 .skeleton_container {
   font-family: 'IBM Plex Sans KR', sans-serif;
   font-family: 'Roboto', sans-serif;
   display: grid;
-  margin-top: 10px;
-  width: 70%;
+  width: 100%;
+  height: 400px;
   gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   .skeleton_wrapper {
+    border-radius: 10px;
     width: 100%;
-    min-height: 300px;
-    background: #0a0a0a;
-    border: 1px solid #626161;
+    min-height: 400px;
+    background: var(--player-color);
+    border: 1px solid var(--tab-border-color);
     display: flex;
+    margin: auto;
     flex-direction: column;
-    position: relative;
-    .header {
-      display: flex;
-      .unknown {
-        color: #fff;
-        font-size: 30px;
-        font-weight: bolder;
-      }
-      .question {
-        color: #b7b684;
-        margin-left: auto;
-        font-size: 30px;
-        font-weight: bolder;
-      }
+    .spinner {
+      width: 80px;
+      height: 80px;
+      margin: auto;
+      border: 3px solid #eaeaea;
+      border-radius: 50%;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      -webkit-animation: spin 1000ms infinite linear;
+      -moz-animation: spin 1000ms infinite linear;
+      -ms-animation: spin 1000ms infinite linear;
+      animation: spin 1000ms infinite linear;
     }
-    .skeleton_img {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left: auto;
-      background-image: url('src/assets/icons/logo_lck.svg');
-      .img {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 250px;
-        height: 250px;
-      }
-    }
-  }
-  .shimmer {
-    animation: shimmer 6s;
-    animation-iteration-count: infinite;
-    background: linear-gradient(to left, #212121 5%, #040404 25%, #0a0a0a 30%, #232320 35%);
-    background-size: 1300px 100%;
-  }
 
-  @keyframes shimmer {
-    from {
-      background-position: -1000px 0;
+    @-webkit-keyframes spin {
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
     }
-    to {
-      background-position: 1000px 0;
+    @-moz-keyframes spin {
+      100% {
+        -moz-transform: rotate(360deg);
+      }
+    }
+    @-ms-keyframes spin {
+      100% {
+        -ms-transform: rotate(360deg);
+      }
+    }
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .loading {
+      text-align: center;
     }
   }
+  // @include shimmer;
 }
 @include skletonResponsive;

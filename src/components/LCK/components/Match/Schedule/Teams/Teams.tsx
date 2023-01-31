@@ -19,7 +19,7 @@ const Teams = React.memo(() => {
   return (
     <>
       {team.map((t) => (
-        <li className={styles.logo_wrapper}>
+        <li className={styles.logo_wrapper} key={t.id}>
           <button className={styles.logo_item} type="button" onClick={onClick} id={t.id} key={t.id}>
             <div
               className={styles.logo}

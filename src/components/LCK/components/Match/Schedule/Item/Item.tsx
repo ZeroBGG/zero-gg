@@ -1,6 +1,5 @@
-import { matchTeamType, teamType } from '@/components/LCK/typings';
 import { useState } from 'react';
-import Button from './common/Button';
+import Button from '../common/Button';
 import styles from './Item.module.scss';
 
 type ItemType = {
@@ -27,7 +26,7 @@ const Item = ({ matchType }: ItemType) => {
   };
 
   return (
-    <article className={styles.item_container}>
+    <div className={styles.item_container}>
       {/* 경기 정보 (시간,장소,경기내용) */}
       <div className={styles.match_container}>
         <div className={styles.match_info}>
@@ -77,7 +76,7 @@ const Item = ({ matchType }: ItemType) => {
           </div>
         </div>
       </div>
-    </article>
+    </div>
   );
 };
 
