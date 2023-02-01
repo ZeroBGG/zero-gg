@@ -5,3 +5,4 @@ export const NONE_PLAYER =
 export const RIOT = 'https://www.riotgames.com/ko';
 export const RIOT_LOGO = 'src/assets/LCK/Riot.svg';
 export const LCK_LOGO = 'src/assets/LCK/logo_lck.svg';
+export const NO_MARK = '/src/assets/LCK/No.png';

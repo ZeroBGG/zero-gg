@@ -9,6 +9,7 @@ import { useParams } from 'react-router';
 import useStore from '@/hooks/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import { useTeams } from '@/components/LCK/Zustand/useTeams';
+import No_Schedule from './Noschedule/NoSchedule';
 
 type hoverType = {
   isHover: boolean;
@@ -80,62 +81,67 @@ const Schedule = ({ isHover }: hoverType) => {
       setFilterList(Filter);
     }
   };
-  console.log(id);
   // 필터링
   useEffect(() => {
     filterData();
   }, [list, mon, id]);
-
+  console.log(filterList.length);
   return (
     <section className={styles.schedule_container}>
       <ul className={styles.schedule_list}>
-        {filterList.map((lst: matchListProps) => {
-          return (
-            <li className={styles.schedules_item} key={lst.id}>
-              <div className={styles.date_info}>
-                <span className={styles.date}>{lst.date}</span>
-                <span className={styles.day}>({Split(lst.day)})</span>
-              </div>
-              <div className={styles.item}>
-                <div className={styles.matches}>
-                  {lst.matches.map((match: matchesType) => {
-                    const { matchOne, matchTwo } = match;
-                    // matches가 두경기 다 포함하고 있기에 조건문을 통해서 조금 유형별로 데이터가 표시되는 방법을 다르게 만들었습니다.
-                    if (mon === undefined && id === '') {
-                      return (
-                        <div className={styles.match_card} key={`${matchOne.home.id}_${matchOne.home.initial}`}>
-                          <Item matchType={matchOne} />
-                          <Item matchType={matchTwo} />
-                        </div>
-                      );
-                    }
-                    if (mon === params.month && id == '') {
-                      return (
-                        <div className={styles.match_card} key={`${matchOne.home.id}_${matchOne.home.initial}`}>
-                          <Item matchType={matchOne} />
-                          <Item matchType={matchTwo} />
-                        </div>
-                      );
-                    }
-                    if (matchOne.home.id.includes(id) || matchOne.away.id.includes(id)) {
-                      return (
-                        <div className={styles.match_card} key={`${matchOne.home.id}_${matchTwo.away.id}`}>
-                          <Item matchType={matchOne} />
-                        </div>
-                      );
-                    } else {
-                      return (
-                        <div className={styles.match_card} key={`${matchOne.away.id}_${matchTwo.away.id}`}>
-                          <Item matchType={matchTwo} />
-                        </div>
-                      );
-                    }
-                  })}
+        {filterList.length === 0 ? (
+          <>
+            <No_Schedule />
+          </>
+        ) : (
+          filterList.map((lst: matchListProps) => {
+            return (
+              <li className={styles.schedules_item} key={lst.id}>
+                <div className={styles.date_info}>
+                  <span className={styles.date}>{lst.date}</span>
+                  <span className={styles.day}>({Split(lst.day)})</span>
                 </div>
-              </div>
-            </li>
-          );
-        })}
+                <div className={styles.item}>
+                  <div className={styles.matches}>
+                    {lst.matches.map((match: matchesType) => {
+                      const { matchOne, matchTwo } = match;
+                      // matches가 두경기 다 포함하고 있기에 조건문을 통해서 조금 유형별로 데이터가 표시되는 방법을 다르게 만들었습니다.
+                      if (mon === undefined && id === '') {
+                        return (
+                          <div className={styles.match_card} key={`${matchOne.home.id}_${matchOne.home.initial}`}>
+                            <Item matchType={matchOne} />
+                            <Item matchType={matchTwo} />
+                          </div>
+                        );
+                      }
+                      if (mon === params.month && id == '') {
+                        return (
+                          <div className={styles.match_card} key={`${matchOne.home.id}_${matchOne.home.initial}`}>
+                            <Item matchType={matchOne} />
+                            <Item matchType={matchTwo} />
+                          </div>
+                        );
+                      }
+                      if (matchOne.home.id.includes(id) || matchOne.away.id.includes(id)) {
+                        return (
+                          <div className={styles.match_card} key={`${matchOne.home.id}_${matchTwo.away.id}`}>
+                            <Item matchType={matchOne} />
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div className={styles.match_card} key={`${matchOne.away.id}_${matchTwo.away.id}`}>
+                            <Item matchType={matchTwo} />
+                          </div>
+                        );
+                      }
+                    })}
+                  </div>
+                </div>
+              </li>
+            );
+          })
+        )}
       </ul>
 
       {isHover ? <SideBar /> : null}
