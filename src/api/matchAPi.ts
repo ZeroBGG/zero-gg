@@ -15,9 +15,6 @@ const getMatch = async (puuid: string, start: number = 0, count: number = 5) => 
       },
     });
 
-    console.log('getMatch');
-    console.log(res.data);
-
     return res.data.result;
   } catch (err) {
     throw err;
@@ -32,8 +29,6 @@ const getDetailMatch = async (data: string) => {
       },
     });
 
-    console.log('getDetailMatch');
-    console.log(res.data);
     return res.data.result;
   } catch (err) {
     throw err;
