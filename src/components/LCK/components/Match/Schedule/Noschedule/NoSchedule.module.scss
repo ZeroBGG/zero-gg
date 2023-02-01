@@ -1,0 +1,19 @@
+.no_schedule {
+  display: flex;
+  width: 100%;
+  .wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+    flex-direction: column;
+    .noImg {
+      width: 300px;
+    }
+    .content {
+      text-align: center;
+      font-weight: bold;
+      font-size: 70px;
+    }
+  }
+}
