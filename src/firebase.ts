@@ -1,8 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore, addDoc, collection } from 'firebase/firestore';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const {
@@ -15,7 +13,17 @@ const {
   VITE_FIREBASE_DATABASE_URL,
 } = import.meta.env;
 
-const firebaseConfig = {
+type FirebaseType = {
+  readonly apiKey: string;
+  readonly authDomain: string;
+  readonly projectId: string;
+  readonly storageBucket: string;
+  readonly messagingSenderId: string;
+  readonly appId: string;
+  readonly databaseURL: string;
+};
+
+const firebaseConfig: FirebaseType = {
   apiKey: VITE_FIREBASE_API_KEY,
   authDomain: VITE_FIREBASE_AUTH_DOMAIN,
   projectId: VITE_FIREBASE_PROJECT_ID,
@@ -28,5 +36,3 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const dbService = getFirestore();
-export const dbAddDoc = addDoc;
-export const dbCollection = collection;

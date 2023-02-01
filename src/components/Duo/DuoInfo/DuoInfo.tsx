@@ -1,10 +1,10 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useCallback, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { dbService } from 'src/firebase';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { positionArr, queueArr, tierArr, positions, tiers } from '../utils/DuoArr';
 import { DuoType } from '../utils/DuoType';
-import { LANE_ICONS_URL, TIER_IMG_URL } from '../Constants/constant';
+import { LANE_ICONS_URL, TIER_IMG_URL } from '@/components/Duo/Constants/constant';
 import useInput from '@/hooks/useInput';
 import InputText from '../Common/InputText/InputText';
 import styles from './DuoInfo.module.scss';
@@ -28,12 +28,12 @@ const DuoInfo = () => {
   const submitPass = useInput('');
 
   // 업데이트 할 상태값들
-  const inputQueue = useInput('');
-  const inputTier = useInput('');
-  const inputPosition = useInput('');
-  const inputTitle = useInput('');
-  const inputMemo = useInput('');
-  const inputNickName = useInput('');
+  const inputQueue = useInput(queue);
+  const inputTier = useInput(tier);
+  const inputPosition = useInput(position);
+  const inputTitle = useInput(title);
+  const inputMemo = useInput(memo);
+  const inputNickName = useInput(nickName);
 
   const reset = () => {
     inputQueue.reset();
@@ -100,16 +100,20 @@ const DuoInfo = () => {
 
   const onUpdateSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    await updateDoc(ChangeDuoInfo, {
-      queue: inputQueue.value,
-      tier: inputTier.value,
-      position: inputPosition.value,
-      title: inputTitle.value,
-      memo: inputMemo.value,
-      nickName: inputNickName.value,
-    });
-    setUpdate(false);
-    navigate('/Duo');
+    try {
+      await updateDoc(ChangeDuoInfo, {
+        queue: inputQueue.value,
+        tier: inputTier.value,
+        position: inputPosition.value,
+        title: inputTitle.value,
+        memo: inputMemo.value,
+        nickName: inputNickName.value,
+      });
+      setUpdate(false);
+      navigate('/Duo');
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   return (
