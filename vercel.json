@@ -1,0 +1,25 @@
+{
+  "rewrites": [{ "source": "/[(.*)]", "destination": "/index.html" }],
+  "functions": {
+    "api/getDetailMatch.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    },
+    "api/getMatch.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    },
+    "api/getRotationChampion.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    },
+    "api/getSummonerEntries.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    },
+    "api/getSummonerInfo.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    }
+  }
+}

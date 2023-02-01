@@ -17,6 +17,7 @@ const Logos = (props: LogosType) => {
       id={props.id}
       onClick={props.onClick}
     >
+
       <div
         id={props.id}
         className={styles.img}
@@ -33,6 +34,7 @@ const Logos = (props: LogosType) => {
       >
         {!hover ? '' : <p className={styles.teamName}>{props.teamName}</p>}
       </div>
+
     </div>
   );
 };

@@ -2,7 +2,7 @@ import styles from './Main.module.scss';
 import InputID from './InputID';
 import Circle from './Circle';
 
-import bg from '@/assets/images/Main/bg.mp4';
+import bg from '/assets/images/Main/bg.mp4';
 
 export default function Main() {
   return (

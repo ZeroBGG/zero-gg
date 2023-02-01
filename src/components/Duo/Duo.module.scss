@@ -35,6 +35,10 @@ $bgColor-3: #f1f5f7;
       background-color: $bgColor-2;
       padding: 20px 30px;
       min-height: calc(99vh - 400px);
+
+      .li_card {
+        text-align: center;
+      }
     }
   }
 }
@@ -68,6 +72,10 @@ $bgColor-3: #f1f5f7;
 .select_queue {
   padding: 15px 10px;
 
+  h2 {
+    color: $black;
+  }
+
   input[type='radio'] {
     display: none;
   }
@@ -83,6 +91,10 @@ $bgColor-3: #f1f5f7;
 
 .select_tier {
   padding: 15px 10px;
+
+  h2 {
+    color: $black;
+  }
 
   input[type='radio'] {
     display: none;
@@ -139,6 +151,10 @@ $bgColor-3: #f1f5f7;
 
 .select_position {
   padding: 15px 10px;
+
+  h2 {
+    color: $black;
+  }
 
   input[type='radio'] {
     display: none;
