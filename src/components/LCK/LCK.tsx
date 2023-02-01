@@ -8,7 +8,7 @@ export default function LCK() {
       <div className={styles.wrapper}>
         <div className={styles.border_gradient}>
           <div className={styles.lck_side}>
-            <img src="src/assets/LCK/LCK2003.jpeg" alt="2023LCK" className={styles.lck2023} />
+            <img src="/assets/LCK/LCK2003.jpeg" alt="2023LCK" className={styles.lck2023} />
           </div>
           <div className={styles.card_container}>
             <div className={`${styles.team_container} ${styles.card}`}>

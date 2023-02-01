@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import InputID from '@/components/Main/InputID';
 import styles from './Header.module.scss';
 
 export default function Header() {
   const [url, setUrl] = useState('');
-  const location = useLocation();
+  // const location = useLocation();
+  const navigate = useNavigate();
 
   const menus = [
     { title: '홈', src: '/' },
@@ -13,13 +14,19 @@ export default function Header() {
     { title: 'LCK', src: '/LCK' },
   ];
 
-  useEffect(() => {
-    setUrl(location.pathname);
-  });
+  const handleClick = () => {
+    navigate('/');
+  };
+
+  // useEffect(() => {
+  //   setUrl(location.pathname);
+  // });
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.h1}>Zero.GG</h1>
+      <h1 className={styles.h1} onClick={handleClick}>
+        Zero.GG
+      </h1>
 
       <nav className={styles.nav}>
         <ul className={styles.ul}>

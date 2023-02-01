@@ -2,7 +2,7 @@ import styles from './SummonerRank.module.scss';
 import { useState, useEffect } from 'react';
 import { TypeSummonerRank, StringRank } from '@/components/Record/types/type';
 
-const TIER_EMBLEMS = '/src/assets/images/Record/emblems';
+const TIER_EMBLEMS = '/assets/images/Record/emblems';
 
 export default function SummonerRank({ summonerRankInfo }: { summonerRankInfo: TypeSummonerRank[] }) {
   const [soloRank, setSoloRank] = useState<TypeSummonerRank>();

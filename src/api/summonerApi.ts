@@ -1,12 +1,15 @@
 import axios from 'axios';
 import { URL_LOL, URL_RIOT } from '@/constants/url';
 
-const KEY = `api_key=${import.meta.env.VITE_RIOT_API_KEY}`;
-
 const getSummonerInfo = async (name: string) => {
   try {
-    const res = await axios.get(`${URL_RIOT}/lol/summoner/v4/summoners/by-name/${name}?${KEY}`);
-    return res.data;
+    const res = await axios.post('/api/getSummonerInfo', {
+      data: {
+        name,
+      },
+    });
+
+    return res.data.result;
   } catch (err) {
     throw err;
   }
@@ -14,8 +17,13 @@ const getSummonerInfo = async (name: string) => {
 
 const getSummonerEntries = async (id: string) => {
   try {
-    const res = await axios.get(`${URL_RIOT}/lol/league/v4/entries/by-summoner/${id}?${KEY}`);
-    return res.data;
+    const res = await axios.post('/api/getSummonerEntries', {
+      data: {
+        id,
+      },
+    });
+
+    return res.data.result;
   } catch (err) {
     throw err;
   }
