@@ -9,11 +9,7 @@ import { useParams } from 'react-router';
 import useStore from '@/hooks/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import { useTeams } from '@/components/LCK/Zustand/useTeams';
-<<<<<<< Updated upstream
 import No_Schedule from './Noschedule/NoSchedule';
-=======
-import { useIsMatchLoaded } from '@/hooks/useIsMatchLoaded';
->>>>>>> Stashed changes
 
 type hoverType = {
   isHover: boolean;
@@ -88,10 +84,6 @@ const Schedule = ({ isHover }: hoverType) => {
       setFilterList(Filter);
     }
   };
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
   // 필터링
   useEffect(() => {
     filterData();
