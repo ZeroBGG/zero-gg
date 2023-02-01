@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 
 export default function Header() {
   const [url, setUrl] = useState('');
-  // const location = useLocation();
+  const location = useLocation();
   const navigate = useNavigate();
 
   const menus = [
@@ -18,9 +18,9 @@ export default function Header() {
     navigate('/');
   };
 
-  // useEffect(() => {
-  //   setUrl(location.pathname);
-  // });
+  useEffect(() => {
+    setUrl(location.pathname);
+  });
 
   return (
     <header className={styles.header}>
