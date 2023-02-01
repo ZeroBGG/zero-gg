@@ -15,6 +15,7 @@ const Button = ({ content, ishovering, onMouseOver, onMouseOut }: ButtonProps) =
       <a
         className={`${styles.btn} ${ishovering ? `${styles.live_btn} ` : `${styles.replay_btn}`}`}
         href={LCK_LIVE}
+        target={'_blank'}
         onMouseOver={onMouseOver}
         onMouseOut={onMouseOut}
       >

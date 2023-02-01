@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { lazy, useCallback, useEffect, useState } from 'react';
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { dbService } from 'src/firebase';
 import { matchesType, matchListProps } from '@/components/LCK/typings';
@@ -9,7 +9,11 @@ import { useParams } from 'react-router';
 import useStore from '@/hooks/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import { useTeams } from '@/components/LCK/Zustand/useTeams';
+<<<<<<< Updated upstream
 import No_Schedule from './Noschedule/NoSchedule';
+=======
+import { useIsMatchLoaded } from '@/hooks/useIsMatchLoaded';
+>>>>>>> Stashed changes
 
 type hoverType = {
   isHover: boolean;
@@ -21,6 +25,9 @@ const Schedule = ({ isHover }: hoverType) => {
   const { id } = useStore();
   const { mon, getMonth } = useDateStore();
   const { info } = useTeams();
+  const [isShow, setIsShow] = useState(false);
+  // const Item = lazy(() => import('./Item/Item'));
+
   let params: any = useParams();
 
   // data 불러오기
@@ -61,7 +68,7 @@ const Schedule = ({ isHover }: hoverType) => {
 
   /// 데이터 필터링
   const filterData = () => {
-    if (mon === '1월' && id === '') {
+    if (mon === '' && id === '') {
       setFilterList(list);
     } else {
       const Filter = list.reduce((acc: matchListProps[], el: matchListProps) => {
@@ -81,6 +88,10 @@ const Schedule = ({ isHover }: hoverType) => {
       setFilterList(Filter);
     }
   };
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
   // 필터링
   useEffect(() => {
     filterData();
@@ -143,7 +154,6 @@ const Schedule = ({ isHover }: hoverType) => {
           })
         )}
       </ul>
-
       {isHover ? <SideBar /> : null}
     </section>
   );

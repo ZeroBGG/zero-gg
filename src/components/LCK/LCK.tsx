@@ -42,6 +42,7 @@ export default function LCK() {
             <div className={`${styles.riot_container} ${styles.card}`}>
               <a
                 href={RIOT}
+                target={'_blank'}
                 className={styles.riot_page}
                 style={{
                   backgroundImage: `url(${RIOT_LOGO})`,
