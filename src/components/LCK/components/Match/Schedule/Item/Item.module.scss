@@ -2,18 +2,19 @@
 
 .item_container {
   width: 100%;
-  max-width: 900px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: space-between;
   .match_container {
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: row;
-    width: 100%;
+
     .match_info {
       display: flex;
       align-items: center;
+
       .time {
         font-size: 20px;
         margin: 0px 10px;
@@ -33,15 +34,15 @@
       flex-direction: row;
       width: 100%;
       .team_wrapper {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
         .card {
           font-size: 25px;
           display: flex;
           align-items: center;
-          margin: 0 10px;
+          margin: 10px;
           .img_logo {
             width: 60px;
             height: 60px;
