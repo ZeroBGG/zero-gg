@@ -98,7 +98,7 @@ const DuoInfo = () => {
     }
   };
 
-  const onUpdateSubmit = useCallback(async (e: FormEvent) => {
+  const onUpdateSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
       await updateDoc(ChangeDuoInfo, {
@@ -114,7 +114,7 @@ const DuoInfo = () => {
     } catch (e) {
       console.error(e);
     }
-  }, []);
+  };
 
   return (
     <>
