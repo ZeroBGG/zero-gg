@@ -12,11 +12,8 @@ const getChampion = async () => {
 
 const getRotationChampion = async () => {
   try {
-    const res = await axios.get(
-      `${URL_RIOT}/lol/platform/v3/champion-rotations?api_key=${import.meta.env.VITE_RIOT_API_KEY}`,
-    );
-
-    return res.data;
+    const res = await axios.get('api/getRotationChampion');
+    return res.data.result;
   } catch (err) {
     console.log(err);
   }

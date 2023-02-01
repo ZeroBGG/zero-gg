@@ -60,7 +60,7 @@ const Player = ({ name, position, summoner, image, logo, captain, Loading }: Pla
           {image !== '' ? (
             <img className={styles.image} src={image} alt="player_img" />
           ) : (
-            <img src="/src/assets/images/Team/none.png" alt="nonePlayer" />
+            <img src="/assets/images/Team/none.png" alt="nonePlayer" />
           )}
         </motion.div>
       </motion.div>

@@ -1,7 +1,7 @@
 import styles from './SummonerMatch.module.scss';
 import { useEffect, useState } from 'react';
 
-import { getMatchApi, getDetailMatchApi } from '@/api/matchAPi';
+import { getMatch, getDetailMatch } from '@/api/matchAPi';
 import MatchInfo from './MatchInfo/MatchInfo';
 
 import { TypeMatch } from '@/components/Record/types/type';
@@ -13,7 +13,7 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
 
   const fnMatchData = async () => {
     try {
-      const res = await getMatchApi(puuid, start);
+      const res = await getMatch(puuid, start);
       setDataSet(res);
     } catch (err) {
       console.log(err);
@@ -39,7 +39,7 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
   useEffect(() => {
     const matchDetailData = async (data: string) => {
       try {
-        const res = await getDetailMatchApi(data);
+        const res = await getDetailMatch(data);
         // console.log(res);
 
         // setMatchData((matchData) => [...matchData, res]);
