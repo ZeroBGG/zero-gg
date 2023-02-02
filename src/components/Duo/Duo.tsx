@@ -107,7 +107,7 @@ const Duo = () => {
 
   return (
     <>
-      <main>
+      <section>
         <article className={styles.duo_article}>
           <WriteDuo />
           <section>
@@ -271,7 +271,7 @@ const Duo = () => {
             </div>
           </section>
         </article>
-      </main>
+      </section>
     </>
   );
 };

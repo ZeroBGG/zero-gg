@@ -1,6 +1,6 @@
 $bg-gray: #30333a;
 
-.main {
+.section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +16,7 @@ $bg-gray: #30333a;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  min-height: calc(100vh - 200px);
   background-color: rgba($bg-gray, 0.5);
 
   .title {

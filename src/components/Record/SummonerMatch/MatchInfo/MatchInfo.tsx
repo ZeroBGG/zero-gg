@@ -41,34 +41,26 @@ export default function MatchInfo({ matchData, puuid }: { matchData: TypeMatch; 
 
     let time: string;
 
-    // 연도가 같으면 월을 비교
-    if (start.getFullYear() === end.getFullYear()) {
-      // 월이 같으면 일을 비교
-      if (start.getMonth() === end.getMonth()) {
-        // 일이 같으면 시간을 비교
-        if (start.getDate() === end.getDate()) {
-          // 시간이 같으면 분을 비교
-          if (start.getHours() === end.getHours()) {
-            if (start.getMinutes() === end.getMinutes()) {
-              time = '1분 ';
-            } else {
-              time = `${start.getMinutes() - end.getMinutes()} 분`;
-            }
-          } else {
-            time = `${start.getHours() - end.getHours()}시간`;
-          }
-        } else {
-          time = `${start.getDate() - end.getDate()}일`;
-        }
-      } else {
-        time = `${start.getMonth() - end.getMonth()}달`;
-      }
+    // 1초
+    let diff = Math.round((start.getTime() - end.getTime()) / 1000);
+
+    if (Math.round((start.getTime() - end.getTime()) / (1000 * 60)) < 60) {
+      diff = Math.round((start.getTime() - end.getTime()) / (1000 * 60));
+      time = `${diff}분`;
+    } else if (Math.round((start.getTime() - end.getTime()) / (1000 * 60 * 60)) < 24) {
+      diff = Math.round((start.getTime() - end.getTime()) / (1000 * 60 * 60));
+      time = `${diff}시간`;
+    } else if (Math.round((start.getTime() - end.getTime()) / (1000 * 60 * 60 * 24)) < 30) {
+      diff = Math.round((start.getTime() - end.getTime()) / (1000 * 60 * 60 * 24));
+      time = `${diff}일`;
+    } else if (Math.round((start.getTime() - end.getTime()) / (1000 * 60 * 60 * 24 * 30)) < 12) {
+      diff = Math.round((start.getTime() - end.getTime()) / (1000 * 60 * 60 * 24 * 30));
+      time = `${diff}달`;
+    } else if (Math.round((start.getTime() - end.getTime()) / (1000 * 60 * 60 * 24 * 30 * 12)) >= 1) {
+      diff = Math.round((start.getTime() - end.getTime()) / (1000 * 60 * 60 * 24 * 30 * 12));
+      time = `${diff}년`;
     } else {
-      if (start.getMonth() < end.getMonth()) {
-        time = `${start.getMonth() - end.getMonth() + 12}달`;
-      } else {
-        time = `${start.getFullYear() - end.getFullYear()}년`;
-      }
+      time = `${diff}초`;
     }
 
     return `${time} 전`;

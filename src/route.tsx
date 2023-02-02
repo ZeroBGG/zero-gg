@@ -13,9 +13,11 @@ import Match from '@/components/LCK/components/Match/Match';
 import PlayerList from './components/LCK/components/Team/PlayerList/PlayerList';
 import Schedule from './components/LCK/components/Match/Schedule/Schedule';
 
+import styles from './route.module.scss';
+
 export default function route() {
   return (
-    <div>
+    <main className={styles.main}>
       <Routes>
         <Route path={'/'} element={<Main />} />
 
@@ -35,6 +37,6 @@ export default function route() {
 
         <Route path={'*'} element={<NotFound />} />
       </Routes>
-    </div>
+    </main>
   );
 }

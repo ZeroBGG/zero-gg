@@ -1,5 +1,5 @@
 {
-  "rewrites": [{ "source": "/[(.*)]", "destination": "/index.html" }],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "functions": {
     "api/getDetailMatch.ts": {
       "memory": 3008,

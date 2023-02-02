@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap');
 
-$bg-color: #313131;
-
 body {
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -11,10 +9,6 @@ body {
       min-width: 280px;
     }
   }
-}
-
-main {
-  background-color: $bg-color;
 }
 
 :root {
