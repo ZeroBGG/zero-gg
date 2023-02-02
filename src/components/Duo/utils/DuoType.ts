@@ -20,3 +20,13 @@ export type DuoType = {
 export interface FilterType {
   [key: string]: string;
 }
+
+interface ArrType {
+  readonly tier: string;
+  readonly lane: string;
+  url: string;
+}
+
+export type LaneType = Pick<ArrType, 'lane' | 'url'>;
+
+export type TierType = Pick<ArrType, 'tier' | 'url'>;

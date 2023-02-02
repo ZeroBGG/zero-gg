@@ -23,7 +23,7 @@ export default function route() {
         <Route path={'/Duo'} element={<Duo />} />
 
         <Route path={'/Duo'} element={<Duo />} />
-        <Route path={'/Duo/:id'} element={<DuoInfo />} />
+        <Route path={'/Duo/:userId'} element={<DuoInfo />} />
 
         <Route path={'/lck'} element={<LCK />} />
         <Route path={'lck/team/'} element={<Team />}>

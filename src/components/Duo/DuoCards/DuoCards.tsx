@@ -1,29 +1,30 @@
 import { Link } from 'react-router-dom';
-import { DuoType } from '../utils/DuoType';
+import { DuoType, LaneType, TierType } from '../utils/DuoType';
 import { positions, tiers } from '../utils/DuoArr';
 import { LANE_ICONS_URL, TIER_IMG_URL } from '@/components/Duo/Constants/constant';
 import styles from './DuoCards.module.scss';
 
 const DuoCards = ({ duoObj }: { duoObj: DuoType }) => {
   const UNIQUE_KEY = duoObj.userId + duoObj.timeSet;
-  const lane = positions.map((item) => {
+  const lane = positions.map((item: LaneType, idx: number) => {
     if (item.lane === duoObj.position) {
       return (
-        <>
+        <div key={`${item.lane}_${idx}`}>
           <img src={`${LANE_ICONS_URL}/${item.url}`} />
-        </>
+        </div>
       );
     }
   });
 
-  const ti = tiers.map((item) => {
+  const ti = tiers.map((item: TierType, idx: number) => {
     if (item.tier === duoObj.tier) {
       return (
-        <>
+        <div key={`${item.tier}_${idx}`}>
           <img src={`${TIER_IMG_URL}/${item.url}`} />
-        </>
+        </div>
       );
     }
+    <></>;
   });
 
   // console.log(duoObj.userId);
@@ -40,31 +41,29 @@ const DuoCards = ({ duoObj }: { duoObj: DuoType }) => {
   }
 
   return (
-    <>
-      <Link to={`${duoObj.userId}`} state={{ duoObj }} key={UNIQUE_KEY}>
-        <li className={styles.list} key={UNIQUE_KEY}>
-          <div className={styles.wrapper}>
-            <div className={styles.icons}>{ti}</div>
-            <div className={styles.icons}>{lane}</div>
-            <div className={styles.user}>
-              <p>{duoObj.nickName}</p>
-            </div>
-            <div className={styles.title}>
-              <h3>{duoObj.title}</h3>
-            </div>
-            <div className={styles.memo}>
-              <p>{duoObj.memo}</p>
-            </div>
-            <div className={styles.champ}>
-              <p>{duoObj.mostChamp}</p>
-            </div>
-            <div className={styles.time}>
-              <p>{duoObj.timeSet}</p>
-            </div>
+    <Link to={`${duoObj.userId}` + `${duoObj.id}`} state={{ duoObj }} key={UNIQUE_KEY}>
+      <li className={styles.list} key={UNIQUE_KEY}>
+        <div className={styles.wrapper}>
+          <div className={styles.icons}>{ti}</div>
+          <div className={styles.icons}>{lane}</div>
+          <div className={styles.user}>
+            <p>{duoObj.nickName}</p>
           </div>
-        </li>
-      </Link>
-    </>
+          <div className={styles.title}>
+            <h3>{duoObj.title}</h3>
+          </div>
+          <div className={styles.memo}>
+            <p>{duoObj.memo}</p>
+          </div>
+          <div className={styles.champ}>
+            <p>{duoObj.mostChamp}</p>
+          </div>
+          <div className={styles.time}>
+            <p>{duoObj.timeSet}</p>
+          </div>
+        </div>
+      </li>
+    </Link>
   );
 };
 

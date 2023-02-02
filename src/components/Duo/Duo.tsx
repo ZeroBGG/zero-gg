@@ -249,9 +249,9 @@ const Duo = () => {
                     const UNIQUE_KEY = item.userId + item.createdAt + idx.toString();
                     if (item.position && item.queue && item.tier !== null) {
                       return (
-                        <>
+                        <div key={UNIQUE_KEY}>
                           <DuoCards key={UNIQUE_KEY} duoObj={item} />
-                        </>
+                        </div>
                       );
                     }
                   })
