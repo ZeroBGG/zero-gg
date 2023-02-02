@@ -74,7 +74,7 @@ export default function Record() {
 
   {
     return summonerId && info ? (
-      <main className={styles.main}>
+      <section className={styles.section}>
         <article className={styles.article}>{<SummonerInfo info={info} handleClick={handleClick} />}</article>
         <article className={styles.article}>
           {summonerRankInfo && <SummonerRank summonerRankInfo={summonerRankInfo} />}
@@ -82,13 +82,13 @@ export default function Record() {
         <article className={classnames(styles.article, styles.match)}>
           <SummonerMatch puuid={info.puuid} />
         </article>
-      </main>
+      </section>
     ) : (
-      <main className={styles.error}>
+      <section className={styles.error}>
         <p className={styles.title}>
           <strong className={styles.strong}>{summonerId}</strong> 일치하는 소환사님을 찾을 수 없습니다.
         </p>
-      </main>
+      </section>
     );
   }
 }

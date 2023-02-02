@@ -9,7 +9,7 @@ $fontColor: #f0f0f0;
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background-color: $bgColor-1;
+  // background-color: $bgColor-1;
   color: $fontColor;
 
   .checkuser {
@@ -45,16 +45,15 @@ $fontColor: #f0f0f0;
     display: flex;
 
     select {
-      @include select
+      @include select;
     }
 
     select::-ms-expand {
-      display: none
+      display: none;
     }
   }
 
   .input_space {
-
     label {
       width: 100px;
     }
@@ -87,7 +86,6 @@ $fontColor: #f0f0f0;
       }
     }
   }
-
 }
 
 .info {
@@ -119,7 +117,6 @@ $fontColor: #f0f0f0;
     p {
       font-size: 40px;
     }
-
   }
 }
 

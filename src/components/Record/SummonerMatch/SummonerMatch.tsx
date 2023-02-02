@@ -40,10 +40,6 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
     const matchDetailData = async (data: string) => {
       try {
         const res = await getDetailMatch(data);
-        // console.log(res);
-
-        // setMatchData((matchData) => [...matchData, res]);
-        // return new Promise((resolve) => resolve);
         return res;
       } catch (err) {
         console.log(err);
@@ -74,12 +70,12 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
   {
     return (
       <>
-        {matchData ? (
+        {matchData.length > 0 ? (
           <>
             {matchData.map((data: TypeMatch) => (
               <MatchInfo matchData={data} puuid={puuid} key={data.metadata.matchId} />
             ))}
-            {matchData.length < 20 && (
+            {matchData.length < 20 && matchData.length % 5 === 0 && (
               <div className={styles.btn} onClick={handleClick} role="button">
                 더보기
               </div>

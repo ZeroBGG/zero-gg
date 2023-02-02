@@ -17,11 +17,6 @@ $bgColor-1: #1c1c1f;
 $bgColor-2: #282830;
 $bgColor-3: #f1f5f7;
 
-.duo_article {
-  background-color: $bgColor-1;
-  min-height: calc(100vh - 200px);
-}
-
 /* 듀오 카드 */
 .section_card {
   display: flex;
@@ -34,7 +29,7 @@ $bgColor-3: #f1f5f7;
     .ul_card {
       background-color: $bgColor-2;
       padding: 20px 30px;
-      min-height: calc(99vh - 400px);
+      // min-height: calc(99vh - 400px);
 
       .li_card {
         text-align: center;
@@ -52,7 +47,6 @@ $bgColor-3: #f1f5f7;
   button {
     border: 0;
     background-color: inherit;
-
   }
 
   .button_svg {
@@ -80,11 +74,11 @@ $bgColor-3: #f1f5f7;
     display: none;
   }
 
-  input[type='radio']+label {
+  input[type='radio'] + label {
     @include radio($dark, $white);
   }
 
-  input[type='radio']:checked+label {
+  input[type='radio']:checked + label {
     @include radio_checked($dark, $white);
   }
 }
@@ -100,51 +94,51 @@ $bgColor-3: #f1f5f7;
     display: none;
   }
 
-  .iron+label {
+  .iron + label {
     @include radio($iron, $white);
   }
 
-  .iron:checked+label {
+  .iron:checked + label {
     @include radio_checked($iron, $white);
   }
 
-  .bronze+label {
+  .bronze + label {
     @include radio($bronze, $white);
   }
 
-  .bronze:checked+label {
+  .bronze:checked + label {
     @include radio_checked($bronze, $white);
   }
 
-  .silver+label {
+  .silver + label {
     @include radio($silver, $white);
   }
 
-  .silver:checked+label {
+  .silver:checked + label {
     @include radio_checked($silver, $white);
   }
 
-  .gold+label {
+  .gold + label {
     @include radio($gold, $white);
   }
 
-  .gold:checked+label {
+  .gold:checked + label {
     @include radio_checked($gold, $black);
   }
 
-  .platinum+label {
+  .platinum + label {
     @include radio($platinum, $white);
   }
 
-  .platinum:checked+label {
+  .platinum:checked + label {
     @include radio_checked($platinum, $white);
   }
 
-  .dia+label {
+  .dia + label {
     @include radio($dia, $white);
   }
 
-  .dia:checked+label {
+  .dia:checked + label {
     @include radio_checked($dia, $white);
   }
 }
@@ -160,11 +154,11 @@ $bgColor-3: #f1f5f7;
     display: none;
   }
 
-  input[type='radio']+label {
+  input[type='radio'] + label {
     @include radio($indigo, $white);
   }
 
-  input[type='radio']:checked+label {
+  input[type='radio']:checked + label {
     @include radio_checked($indigo, $white);
   }
 }
@@ -178,7 +172,7 @@ $bgColor-3: #f1f5f7;
   .select_queue {
     padding: 3px 3px 0 0;
 
-    input[type='radio']+label {
+    input[type='radio'] + label {
       @include radio($dark, $white);
       margin: 3px;
     }
@@ -187,32 +181,32 @@ $bgColor-3: #f1f5f7;
   .select_tier {
     padding: 3px 3px 0 0;
 
-    .iron+label {
+    .iron + label {
       @include radio($iron, $white);
       margin: 3px;
     }
 
-    .bronze+label {
+    .bronze + label {
       @include radio($bronze, $white);
       margin: 3px;
     }
 
-    .silver+label {
+    .silver + label {
       @include radio($silver, $white);
       margin: 3px;
     }
 
-    .gold+label {
+    .gold + label {
       @include radio($gold, $white);
       margin: 3px;
     }
 
-    .platinum+label {
+    .platinum + label {
       @include radio($platinum, $white);
       margin: 3px;
     }
 
-    .dia+label {
+    .dia + label {
       @include radio($dia, $white);
       margin: 3px;
     }
@@ -221,7 +215,7 @@ $bgColor-3: #f1f5f7;
   .select_position {
     padding: 3px 3px 0 0;
 
-    input[type='radio']+label {
+    input[type='radio'] + label {
       @include radio($indigo, $white);
       margin: 3px;
     }
@@ -237,7 +231,7 @@ $bgColor-3: #f1f5f7;
   .select_queue {
     padding: 3px;
 
-    input[type='radio']+label {
+    input[type='radio'] + label {
       @include radio($dark, $white);
       width: 100px;
       height: 32px;
@@ -250,7 +244,7 @@ $bgColor-3: #f1f5f7;
   .select_tier {
     padding: 3px;
 
-    .iron+label {
+    .iron + label {
       @include radio($iron, $white);
       width: 100px;
       height: 32px;
@@ -259,7 +253,7 @@ $bgColor-3: #f1f5f7;
       margin: 3px;
     }
 
-    .bronze+label {
+    .bronze + label {
       @include radio($bronze, $white);
       width: 100px;
       height: 32px;
@@ -268,7 +262,7 @@ $bgColor-3: #f1f5f7;
       margin: 3px;
     }
 
-    .silver+label {
+    .silver + label {
       @include radio($silver, $white);
       width: 100px;
       height: 32px;
@@ -277,7 +271,7 @@ $bgColor-3: #f1f5f7;
       margin: 3px;
     }
 
-    .gold+label {
+    .gold + label {
       @include radio($gold, $white);
       width: 100px;
       height: 32px;
@@ -286,7 +280,7 @@ $bgColor-3: #f1f5f7;
       margin: 3px;
     }
 
-    .platinum+label {
+    .platinum + label {
       @include radio($platinum, $white);
       width: 100px;
       height: 32px;
@@ -295,7 +289,7 @@ $bgColor-3: #f1f5f7;
       margin: 3px;
     }
 
-    .dia+label {
+    .dia + label {
       @include radio($dia, $white);
       width: 100px;
       height: 32px;
@@ -308,7 +302,7 @@ $bgColor-3: #f1f5f7;
   .select_position {
     padding: 3px;
 
-    input[type='radio']+label {
+    input[type='radio'] + label {
       @include radio($indigo, $white);
       width: 100px;
       height: 32px;
