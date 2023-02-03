@@ -16,7 +16,7 @@ const Match = () => {
         </button>
       </header>
       <div className={styles.lck_schedule}>
-        <Schedule isHover={isHover} />
+        <Schedule isHover={isHover} limitCount={10} collectionName={'lck_matches'} />
       </div>
     </section>
   );

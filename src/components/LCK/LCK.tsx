@@ -58,5 +58,3 @@ export default function LCK() {
     </section>
   );
 }
-const teamBg =
-  'https://static.wixstatic.com/media/a3bed3_eba1fcc056034f1aa354812281e38284.jpg/v1/fill/w_600,h_286,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/a3bed3_eba1fcc056034f1aa354812281e38284.jpg';
