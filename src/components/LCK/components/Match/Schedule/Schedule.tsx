@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { QuerySnapshot, collection, getDocs, limit, onSnapshot, orderBy, query, startAfter } from 'firebase/firestore';
+import { useCallback, useEffect, useState } from 'react';
+import { collection, getDocs, limit, orderBy, query, startAfter } from 'firebase/firestore';
 import { dbService } from 'src/firebase';
 import { matchesType, matchListProps } from '@/components/LCK/typings';
 import styles from './Schedule.module.scss';
@@ -11,8 +11,6 @@ import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import { useTeams } from '@/components/LCK/Zustand/useTeams';
 import No_Schedule from './Noschedule/NoSchedule';
 import { useInView } from 'react-intersection-observer';
-import { motion, useAnimation, useMotionValue, useScroll, useTransform } from 'framer-motion';
-import { liVarients } from '../../Varients/variants';
 import Loading from '../../Loading/Loading';
 
 type hoverType = {
@@ -83,15 +81,6 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
     fetchData();
   }, [fetchData]);
 
-  // 월별 필터후 새로고침시 유지
-  useEffect(() => {
-    let saved = localStorage.getItem('monthstorage');
-    if (saved !== null) {
-      getMonth(params.month);
-    } else {
-      getMonth('');
-    }
-  }, []);
   // 무한스크롤 로딩
   useEffect(() => {
     if (inView) {
@@ -125,7 +114,15 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   useEffect(() => {
     filterData();
   }, [list, mon, id]);
-
+  // 월별 필터후 새로고침시 유지
+  useEffect(() => {
+    let saved = localStorage.getItem('monthstorage');
+    if (saved !== null) {
+      getMonth(params.month);
+    } else {
+      getMonth('');
+    }
+  }, []);
   // 뒤에 요일 자름
   const Split = (text: string) => {
     return text.split('요일')[0];
