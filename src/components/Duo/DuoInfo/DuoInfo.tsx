@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { dbService } from 'src/firebase';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { positionArr, queueArr, tierArr, positions, tiers } from '../utils/DuoArr';
-import { DuoType } from '../utils/DuoType';
+import { DuoType, LaneType, TierType } from '../utils/DuoType';
 import { LANE_ICONS_URL, TIER_IMG_URL } from '@/components/Duo/Constants/constant';
 import useInput from '@/hooks/useInput';
 import InputText from '../Common/InputText/InputText';
@@ -46,22 +46,22 @@ const DuoInfo = () => {
 
   // img
 
-  const lane = positions.map((item) => {
+  const lane = positions.map((item: LaneType, idx: number) => {
     if (item.lane === position) {
       return (
-        <>
+        <div key={`${item.lane}_${idx}`}>
           <img src={`${LANE_ICONS_URL}/${item.url}`} />
-        </>
+        </div>
       );
     }
   });
 
-  const ti = tiers.map((item) => {
+  const ti = tiers.map((item: TierType, idx: number) => {
     if (item.tier === tier) {
       return (
-        <>
+        <div key={`${item.tier}_${idx}`}>
           <img src={`${TIER_IMG_URL}/${item.url}`} />
-        </>
+        </div>
       );
     }
   });
@@ -117,134 +117,132 @@ const DuoInfo = () => {
   };
 
   return (
-    <>
-      <section className={styles.wrapper}>
-        <form onSubmit={onEditSubmit}>
-          <div className={styles.checkuser}>
-            <InputText type="text" placeholder="ID" className={styles.input_text} {...submitId} />
-            <InputText type="password" placeholder="PASSWORD" className={styles.input_text} {...submitPass} />
-            <button onClick={onClickAuth}>수정 / 삭제</button>
-          </div>
-        </form>
-        {update ? (
-          <>
-            <form onSubmit={onUpdateSubmit}>
-              <div className={styles.update}>
-                <div className={styles.select_space}>
-                  <div>
-                    <label htmlFor="queue"> Queue : </label>
-                    <select name="queue" id="queue" {...inputQueue}>
-                      {queueArr.map((item, idx) => {
-                        return (
-                          <>
-                            <option value={item} key={`${item}_${idx}`}>
-                              {item}
-                            </option>
-                          </>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="tier"> Tier : </label>
-                    <select name="tier" id="tier" {...inputTier}>
-                      {tierArr.map((item, idx) => {
-                        return (
-                          <>
-                            <option value={item} key={`${item}_${idx}`}>
-                              {item}
-                            </option>
-                          </>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="position"> Position : </label>
-                    <select name="position" id="position" {...inputPosition}>
-                      {positionArr.map((item, idx) => {
-                        return (
-                          <>
-                            <option value={item} key={`${item}_${idx}`}>
-                              {item}
-                            </option>
-                          </>
-                        );
-                      })}
-                    </select>
-                  </div>
+    <section className={styles.wrapper}>
+      <form onSubmit={onEditSubmit}>
+        <div className={styles.checkuser}>
+          <InputText type="text" placeholder="ID" className={styles.input_text} {...submitId} />
+          <InputText type="password" placeholder="PASSWORD" className={styles.input_text} {...submitPass} />
+          <button onClick={onClickAuth}>수정 / 삭제</button>
+        </div>
+      </form>
+      {update ? (
+        <>
+          <form onSubmit={onUpdateSubmit}>
+            <div className={styles.update}>
+              <div className={styles.select_space}>
+                <div>
+                  <label htmlFor="queue"> Queue : </label>
+                  <select name="queue" id="queue" {...inputQueue}>
+                    {queueArr.map((item, idx) => {
+                      return (
+                        <>
+                          <option value={item} key={`${item}_${idx}`}>
+                            {item}
+                          </option>
+                        </>
+                      );
+                    })}
+                  </select>
                 </div>
-                <div className={styles.input_space}>
-                  <div>
-                    <InputText
-                      type="text"
-                      name="title"
-                      id="title"
-                      inLabelText="Title"
-                      className={styles.input_text}
-                      {...inputTitle}
-                    />
-                  </div>
-                  <div>
-                    <InputText
-                      type="text"
-                      name="memo"
-                      id="memo"
-                      inLabelText="Memo"
-                      className={styles.input_memo}
-                      {...inputMemo}
-                    />
-                  </div>
-                  <div>
-                    <InputText
-                      type="text"
-                      name="nick"
-                      id="nick"
-                      inLabelText="Nickname"
-                      className={styles.input_text}
-                      {...inputNickName}
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="tier"> Tier : </label>
+                  <select name="tier" id="tier" {...inputTier}>
+                    {tierArr.map((item, idx) => {
+                      return (
+                        <>
+                          <option value={item} key={`${item}_${idx}`}>
+                            {item}
+                          </option>
+                        </>
+                      );
+                    })}
+                  </select>
                 </div>
-                <div className={styles.button_space}>
-                  <button
-                    type="submit"
-                    disabled={
-                      !inputQueue.value ||
-                      !inputTier.value ||
-                      !inputPosition.value ||
-                      !inputMemo.value ||
-                      !inputTitle.value ||
-                      !inputNickName.value
-                    }
-                  >
-                    <span>수정</span>
-                  </button>
-                  <button type="submit" onClick={onDeleteClick}>
-                    <span>삭제</span>
-                  </button>
-                  <button type="button" onClick={onToggleClick}>
-                    <span>취소</span>
-                  </button>
+                <div>
+                  <label htmlFor="position"> Position : </label>
+                  <select name="position" id="position" {...inputPosition}>
+                    {positionArr.map((item, idx) => {
+                      return (
+                        <>
+                          <option value={item} key={`${item}_${idx}`}>
+                            {item}
+                          </option>
+                        </>
+                      );
+                    })}
+                  </select>
                 </div>
               </div>
-            </form>
-          </>
-        ) : (
-          <>
-            <div className={styles.info}>
-              <div className={styles.user}>
-                <div className={styles.ti_icons}>{ti}</div>
-                <div className={styles.lane_icons}>{lane}</div>
+              <div className={styles.input_space}>
+                <div>
+                  <InputText
+                    type="text"
+                    name="title"
+                    id="title"
+                    inLabelText="Title"
+                    className={styles.input_text}
+                    {...inputTitle}
+                  />
+                </div>
+                <div>
+                  <InputText
+                    type="text"
+                    name="memo"
+                    id="memo"
+                    inLabelText="Memo"
+                    className={styles.input_memo}
+                    {...inputMemo}
+                  />
+                </div>
+                <div>
+                  <InputText
+                    type="text"
+                    name="nick"
+                    id="nick"
+                    inLabelText="Nickname"
+                    className={styles.input_text}
+                    {...inputNickName}
+                  />
+                </div>
               </div>
-              <div className={styles.nickname}>
-                <p>{nickName}</p>
+              <div className={styles.button_space}>
+                <button
+                  type="submit"
+                  disabled={
+                    !inputQueue.value ||
+                    !inputTier.value ||
+                    !inputPosition.value ||
+                    !inputMemo.value ||
+                    !inputTitle.value ||
+                    !inputNickName.value
+                  }
+                >
+                  <span>수정</span>
+                </button>
+                <button type="submit" onClick={onDeleteClick}>
+                  <span>삭제</span>
+                </button>
+                <button type="button" onClick={onToggleClick}>
+                  <span>취소</span>
+                </button>
               </div>
             </div>
-          </>
-        )}
-      </section>
-    </>
+          </form>
+        </>
+      ) : (
+        <>
+          <div className={styles.info}>
+            <div className={styles.user}>
+              <div className={styles.ti_icons}>{ti}</div>
+              <div className={styles.lane_icons}>{lane}</div>
+            </div>
+            <div className={styles.nickname}>
+              <p>{nickName}</p>
+            </div>
+          </div>
+        </>
+      )}
+    </section>
   );
 };
 

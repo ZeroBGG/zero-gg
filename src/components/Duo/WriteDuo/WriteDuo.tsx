@@ -69,166 +69,164 @@ const WriteDuo = () => {
   };
 
   return (
-    <>
-      <section className={styles.section}>
-        <div className={styles.wrapper}>
-          <button onClick={onToggleClick} className={styles.write_button}>
-            글 쓰기
-          </button>
-        </div>
-        <div className={styles.wrapper}>
-          {write ? (
-            <>
-              <form onSubmit={onSubmit} className={styles.form}>
-                <h2>소환사 등록하기</h2>
-                <div className={styles.user_wrapper}>
-                  <div>
-                    <InputText
-                      type="text"
-                      {...inputId}
-                      name="userid"
-                      id="userid"
-                      inLabelText="ID"
-                      className={styles.input_text}
-                    />
-                  </div>
-                  <div>
-                    <InputText
-                      type="password"
-                      {...inputPass}
-                      name="userpass"
-                      id="userpass"
-                      inLabelText="Password"
-                      className={styles.input_text}
-                    />
-                  </div>
+    <section className={styles.section}>
+      <div className={styles.wrapper}>
+        <button onClick={onToggleClick} className={styles.write_button}>
+          글 쓰기
+        </button>
+      </div>
+      <div className={styles.wrapper}>
+        {write ? (
+          <>
+            <form onSubmit={onSubmit} className={styles.form}>
+              <h2>소환사 등록하기</h2>
+              <div className={styles.user_wrapper}>
+                <div>
+                  <InputText
+                    type="text"
+                    {...inputId}
+                    name="userid"
+                    id="userid"
+                    inLabelText="ID"
+                    className={styles.input_text}
+                  />
                 </div>
+                <div>
+                  <InputText
+                    type="password"
+                    {...inputPass}
+                    name="userpass"
+                    id="userpass"
+                    inLabelText="Password"
+                    className={styles.input_text}
+                  />
+                </div>
+              </div>
 
-                <div className={styles.user_wrapper}>
-                  <div>
-                    <label htmlFor="queue" className={styles.label}>
-                      Queue
-                    </label>
-                    <select name="queue" id="queue" {...inputQueue}>
-                      {queueArr.map((item, idx) => {
-                        return (
-                          <>
-                            <option value={item} key={idx}>
-                              {item}
-                            </option>
-                          </>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="tier" className={styles.label}>
-                      Tier
-                    </label>
-                    <select name="tier" id="tier" {...inputTier}>
-                      {tierArr.map((item, idx) => {
-                        return (
-                          <>
-                            <option value={item} key={idx}>
-                              {item}
-                            </option>
-                          </>
-                        );
-                      })}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="position" className={styles.label}>
-                      Position
-                    </label>
-                    <select name="position" id="position" {...inputPosition}>
-                      {positionArr.map((item, idx) => {
-                        return (
-                          <>
-                            <option value={item} key={idx}>
-                              {item}
-                            </option>
-                          </>
-                        );
-                      })}
-                    </select>
-                  </div>
+              <div className={styles.user_wrapper}>
+                <div>
+                  <label htmlFor="queue" className={styles.label}>
+                    Queue
+                  </label>
+                  <select name="queue" id="queue" {...inputQueue}>
+                    {queueArr.map((item, idx) => {
+                      return (
+                        <>
+                          <option value={item} key={idx}>
+                            {item}
+                          </option>
+                        </>
+                      );
+                    })}
+                  </select>
                 </div>
+                <div>
+                  <label htmlFor="tier" className={styles.label}>
+                    Tier
+                  </label>
+                  <select name="tier" id="tier" {...inputTier}>
+                    {tierArr.map((item, idx) => {
+                      return (
+                        <>
+                          <option value={item} key={idx}>
+                            {item}
+                          </option>
+                        </>
+                      );
+                    })}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="position" className={styles.label}>
+                    Position
+                  </label>
+                  <select name="position" id="position" {...inputPosition}>
+                    {positionArr.map((item, idx) => {
+                      return (
+                        <>
+                          <option value={item} key={idx}>
+                            {item}
+                          </option>
+                        </>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
 
-                <div className={styles.memo_wrapper}>
-                  <div>
-                    <InputText
-                      type="text"
-                      {...inputTitle}
-                      name="title"
-                      id="title"
-                      inLabelText="Title"
-                      placeholder="소통해요!!"
-                      className={styles.input_text}
-                    />
-                  </div>
-                  <div>
-                    <InputText
-                      type="text"
-                      {...inputMemo}
-                      name="memo"
-                      id="memo"
-                      inLabelText="Memo"
-                      placeholder="바텀, 사랑에 빠지다."
-                      className={styles.input_memo}
-                    />
-                  </div>
+              <div className={styles.memo_wrapper}>
+                <div>
+                  <InputText
+                    type="text"
+                    {...inputTitle}
+                    name="title"
+                    id="title"
+                    inLabelText="Title"
+                    placeholder="소통해요!!"
+                    className={styles.input_text}
+                  />
                 </div>
-                <div className={styles.user_wrapper}>
-                  <div>
-                    <InputText
-                      type="text"
-                      {...inputNickName}
-                      name="nick"
-                      id="nick"
-                      inLabelText="Nickname"
-                      className={styles.input_text}
-                    />
-                  </div>
-                  <div>
-                    <InputText
-                      type="text"
-                      {...inputMostChamp}
-                      name="most"
-                      id="most"
-                      inLabelText="MostChampion"
-                      placeholder="2가지만"
-                      className={styles.input_text}
-                    />
-                  </div>
+                <div>
+                  <InputText
+                    type="text"
+                    {...inputMemo}
+                    name="memo"
+                    id="memo"
+                    inLabelText="Memo"
+                    placeholder="바텀, 사랑에 빠지다."
+                    className={styles.input_memo}
+                  />
                 </div>
-                <div className={styles.submit}>
-                  <button
-                    type="submit"
-                    disabled={
-                      !inputId.value ||
-                      !inputPass.value ||
-                      !inputTier.value ||
-                      !inputQueue.value ||
-                      !inputPosition.value ||
-                      !inputTitle.value ||
-                      !inputNickName.value
-                    }
-                  >
-                    <span>확인</span>
-                  </button>
-                  <button type="button" onClick={cancleValue}>
-                    <span>취소</span>
-                  </button>
+              </div>
+              <div className={styles.user_wrapper}>
+                <div>
+                  <InputText
+                    type="text"
+                    {...inputNickName}
+                    name="nick"
+                    id="nick"
+                    inLabelText="Nickname"
+                    className={styles.input_text}
+                  />
                 </div>
-              </form>
-            </>
-          ) : (
-            <></>
-          )}
-        </div>
-      </section>
-    </>
+                <div>
+                  <InputText
+                    type="text"
+                    {...inputMostChamp}
+                    name="most"
+                    id="most"
+                    inLabelText="MostChampion"
+                    placeholder="2가지만"
+                    className={styles.input_text}
+                  />
+                </div>
+              </div>
+              <div className={styles.submit}>
+                <button
+                  type="submit"
+                  disabled={
+                    !inputId.value ||
+                    !inputPass.value ||
+                    !inputTier.value ||
+                    !inputQueue.value ||
+                    !inputPosition.value ||
+                    !inputTitle.value ||
+                    !inputNickName.value
+                  }
+                >
+                  <span>확인</span>
+                </button>
+                <button type="button" onClick={cancleValue}>
+                  <span>취소</span>
+                </button>
+              </div>
+            </form>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
+    </section>
   );
 };
 
