@@ -13,9 +13,7 @@
             margin: 0px;
             padding: 10px;
           }
-          .stadium {
-            display: none;
-          }
+
           .state {
             display: none;
           }
@@ -65,6 +63,9 @@
           text-decoration: none;
         }
       }
+    }
+    .stadium {
+      display: none;
     }
   }
 }

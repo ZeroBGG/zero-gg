@@ -1,23 +1,28 @@
 .schedule_container {
   display: flex;
   width: 100vw;
-  align-items: baseline;
+  min-height: 20vh;
   justify-content: center;
   transition: all 0.56s ease-in;
+  background-color: #222222;
   margin: 0;
+  overflow-y: scroll;
   .schedule_list {
     width: 100%;
-    overflow: scroll;
+    height: auto;
     display: flex;
     flex-direction: column;
     margin: 0;
     animation: fade 0.6s ease-in;
     .schedules_item {
-      background-color: var(--main-tab-color);
+      margin: 20px 0;
       .date_info {
         width: 100%;
-        background: var(--item-color);
-        padding: 10px 5em 10px;
+        background: #000;
+        display: flex;
+        padding: 15px;
+        padding-left: 10%;
+        justify-content: baseline;
         font-size: 20px;
         font-weight: bold;
         box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
@@ -28,10 +33,12 @@
       .item {
         width: 100%;
         display: flex;
-        justify-content: center;
+        padding-left: 10%;
+        justify-content: baseline;
         background-color: #2d2d2d;
-        box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.5);
         .matches {
+          height: auto;
           display: flex;
           flex-direction: column;
           .match_card {
@@ -51,6 +58,14 @@
           }
         }
       }
+    }
+    .nomore {
+      display: flex;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 20px 0;
+      background-color: #525252;
     }
   }
 }

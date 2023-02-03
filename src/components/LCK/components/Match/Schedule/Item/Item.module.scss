@@ -5,28 +5,30 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   .match_container {
     width: 100%;
-    margin: auto;
+    margin: 5px auto;
     display: flex;
     flex-direction: row;
-
+    align-items: center;
     .match_info {
+      height: 100%;
       display: flex;
       align-items: center;
-
       .time {
-        font-size: 20px;
+        font-size: 25px;
         margin: 0px 10px;
         padding: 10px;
+        font-weight: bolder;
       }
-      .stadium {
-        margin: 10px;
-        white-space: nowrap;
-      }
+
       .state {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bolder;
         margin-left: 10px;
-        width: 100px;
+        width: 160px;
       }
     }
     .play_team_container {
@@ -40,6 +42,7 @@
         justify-content: center;
         .card {
           font-size: 25px;
+          font-weight: bolder;
           display: flex;
           align-items: center;
           margin: 10px;
@@ -50,25 +53,41 @@
           }
           .img_logo[alt='home'] {
             margin-left: auto;
+            margin-left: 40px;
           }
           .img_logo[alt='away'] {
             margin-right: auto;
+            margin-left: 40px;
           }
           .team_initial {
             white-space: nowrap;
             letter-spacing: -1px;
             margin-left: 10px;
-            width: 50px;
+            width: 100px;
           }
         }
         .score {
           display: flex;
-          width: 100px;
+          width: 150px;
+          align-items: center;
           margin: 0 30px;
           .win {
+            width: 40px;
+            border-radius: 5px;
+            padding: 3px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
             margin: 0 5px;
           }
+          #home {
+            background: #fa6161;
+          }
+          #away {
+            background: #5c6fef;
+          }
           .verse {
+            font-size: 30px;
             width: 50px;
             margin: 0 10px;
             text-align: center;
@@ -77,12 +96,13 @@
       }
     }
     .lck_btn_container {
+      width: 100%;
       display: flex;
       align-items: center;
       text-decoration: none;
       .btnLayOut {
         text-align: center;
-        width: 150px;
+        width: 160px;
         .btn {
           margin: 0;
           width: auto;
@@ -93,16 +113,21 @@
           transition: all 0.2s ease-in-out;
         }
         .live_btn {
-          background-color: #fa6161;
           color: var(--font-color);
+          background-color: #fa6161;
           border: 1px solid #fa6161;
         }
         .replay_btn {
-          background-color: #5c6fef;
           color: var(--font-color);
+          background-color: #5c6fef;
           border: 1px solid #5c6fef;
         }
       }
+    }
+    .stadium {
+      margin: 10px 20px;
+      font-size: 20px;
+      white-space: nowrap;
     }
   }
 }

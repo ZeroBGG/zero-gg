@@ -6,7 +6,7 @@ type ItemType = {
   matchType: any;
 };
 
-const Item = ({ matchType }: ItemType) => {
+const Item = ({ matchType }: ItemType, index: number) => {
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const [liveHovering, setLiveHovering] = useState<boolean>(false);
 
@@ -31,11 +31,6 @@ const Item = ({ matchType }: ItemType) => {
       <div className={styles.match_container}>
         <div className={styles.match_info}>
           <span className={styles.time}>{matchType.time}</span>
-          <span className={styles.stadium}>
-            서울
-            <br />
-            LOL Park
-          </span>
           <span className={styles.state}>{matchType.state}</span>
         </div>
         <div className={styles.play_team_container}>
@@ -45,9 +40,13 @@ const Item = ({ matchType }: ItemType) => {
               <span className={styles.team_initial}>{matchType.home.initial}</span>
             </div>
             <div className={styles.score}>
-              <span className={styles.win}>{matchType.home.win}</span>
-              <span className={styles.verse}> VS </span>
-              <span className={styles.win}>{matchType.away.win}</span>
+              <span className={styles.win} id={styles.home}>
+                {matchType.home.win}
+              </span>
+              <span className={styles.verse}> - </span>
+              <span className={styles.win} id={styles.away}>
+                {matchType.away.win}
+              </span>
             </div>
             <div className={styles.team}>
               <div className={`${styles.away} ${styles.card}`}>
@@ -75,6 +74,11 @@ const Item = ({ matchType }: ItemType) => {
             />
           </div>
         </div>
+        <span className={styles.stadium}>
+          SEOUL
+          <br />
+          LOL Park
+        </span>
       </div>
     </div>
   );

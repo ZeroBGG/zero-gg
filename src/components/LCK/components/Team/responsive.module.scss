@@ -1,9 +1,9 @@
 // ############### LCK 페이지 ###############
 @mixin responsive-main-page {
-  @media only screen and (min-width: 400px) and (max-width: 800px) {
+  @media only screen and (min-width: 300px) and (max-width: 800px) {
     .container {
       display: flex;
-      height: 80vh;
+      height: 100vh;
       flex-direction: column;
       align-items: center;
       justify-content: baseline;
