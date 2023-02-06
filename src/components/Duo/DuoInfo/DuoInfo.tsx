@@ -50,7 +50,7 @@ const DuoInfo = () => {
     if (item.lane === position) {
       return (
         <div key={`${item.lane}_${idx}`}>
-          <img src={`${LANE_ICONS_URL}/${item.url}`} />
+          <img src={`${LANE_ICONS_URL}/${item.url}`} alt="라인 이미지" />
         </div>
       );
     }
@@ -60,7 +60,7 @@ const DuoInfo = () => {
     if (item.tier === tier) {
       return (
         <div key={`${item.tier}_${idx}`}>
-          <img src={`${TIER_IMG_URL}/${item.url}`} />
+          <img src={`${TIER_IMG_URL}/${item.url}`} alt="티어 이미지" />
         </div>
       );
     }
