@@ -250,7 +250,7 @@ const Duo = () => {
                     if (item.position && item.queue && item.tier !== null) {
                       return (
                         <div key={UNIQUE_KEY}>
-                          <DuoCards key={UNIQUE_KEY} duoObj={item} />
+                          <DuoCards duoObj={item} />
                         </div>
                       );
                     }
