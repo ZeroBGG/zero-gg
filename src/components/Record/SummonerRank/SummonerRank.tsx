@@ -41,13 +41,13 @@ export default function SummonerRank({ summonerRankInfo }: { summonerRankInfo: T
   };
 
   useEffect(() => {
-    const soloRankData = summonerRankInfo.map((info) => {
+    const soloRankData = summonerRankInfo.filter((info) => {
       if (info.queueType === 'RANKED_SOLO_5x5') {
         return info;
       }
     });
 
-    const freeRankData = summonerRankInfo.map((info) => {
+    const freeRankData = summonerRankInfo.filter((info) => {
       if (info.queueType === 'RANKED_FLEX_SR') {
         return info;
       }

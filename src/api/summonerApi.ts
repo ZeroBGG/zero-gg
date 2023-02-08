@@ -9,6 +9,10 @@ const getSummonerInfo = async (name: string) => {
       },
     });
 
+    if (res.data.result.status?.status_code) {
+      throw new Error(res.data.result.status.message);
+    }
+
     return res.data.result;
   } catch (err) {
     throw err;
@@ -22,6 +26,10 @@ const getSummonerEntries = async (id: string) => {
         id,
       },
     });
+
+    if (res.data.result.status?.status_code) {
+      throw new Error(res.data.result.status.message);
+    }
 
     return res.data.result;
   } catch (err) {

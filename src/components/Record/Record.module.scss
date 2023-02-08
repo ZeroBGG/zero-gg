@@ -17,14 +17,19 @@ $bg-gray: #30333a;
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 200px);
-  background-color: rgba($bg-gray, 0.5);
 
   .title {
-    font-size: 14px;
-    color: white;
+    // display: block;
+    background-color: rgba($bg-gray, 0.5);
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+    padding: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     .strong {
-      font-size: 18px;
+      font-size: 1.5rem;
       font-weight: bold;
       color: lightcyan;
       text-shadow: 0px 0px 10px aqua;
@@ -33,7 +38,7 @@ $bg-gray: #30333a;
 }
 
 @media screen and (max-width: 800px) {
-  .main {
+  .section {
     // align-items: flex-start;
 
     .article {
@@ -41,7 +46,7 @@ $bg-gray: #30333a;
     }
 
     .match {
-      // width: 800px;
+      width: 100%;
     }
   }
 }

@@ -15,6 +15,10 @@ const getMatch = async (puuid: string, start: number = 0, count: number = 5) => 
       },
     });
 
+    if (res.data.result.status?.status_code) {
+      throw new Error(res.data.result.status.message);
+    }
+
     return res.data.result;
   } catch (err) {
     throw err;
@@ -28,6 +32,10 @@ const getDetailMatch = async (data: string) => {
         data,
       },
     });
+
+    if (res.data.result.status?.status_code) {
+      throw new Error(res.data.result.status.message);
+    }
 
     return res.data.result;
   } catch (err) {

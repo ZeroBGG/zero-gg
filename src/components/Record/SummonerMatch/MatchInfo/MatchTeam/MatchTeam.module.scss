@@ -27,6 +27,8 @@
         color: #fff;
         text-decoration: none;
         outline: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         &:hover,
         &:active {
