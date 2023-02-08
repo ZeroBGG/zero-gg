@@ -1,5 +1,5 @@
-import React from "react";
+import Root from '@/components/Common/NotFound/NotFound';
 
 export default function NotFound() {
-  return <div>NotFound</div>;
+  return <Root />;
 }

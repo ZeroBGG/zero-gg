@@ -63,10 +63,6 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
     feactData();
   }, [dataSet]);
 
-  useEffect(() => {
-    console.log(matchData);
-  }, [matchData]);
-
   {
     return (
       <>
@@ -82,7 +78,7 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
             )}
           </>
         ) : (
-          <div>전적 기록이 없습니다.</div>
+          <p className={styles.noMatchData}>전적 기록이 없습니다.</p>
         )}
       </>
     );

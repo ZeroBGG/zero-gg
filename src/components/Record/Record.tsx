@@ -13,7 +13,7 @@ import classnames from 'classnames';
 export default function Record() {
   const { summonerId } = useParams<{ summonerId: string }>();
 
-  const [info, setInfo] = useState<TypeSummoner | null>(null);
+  const [info, setInfo] = useState<TypeSummoner>();
   const [summonerRankInfo, setSummonerRankInfo] = useState<TypeSummonerRank[]>([]);
   const [timer, setTimer] = useState(0); // 디바운싱 타이머
 
@@ -21,17 +21,16 @@ export default function Record() {
 
   // 소환사 데이터 조회 함수 (고유 id, 닉네임, 프로필 사진 번호, 소환사 레벨 등)
   const getSummonerData = async () => {
-    try {
-      if (summonerId) {
+    if (summonerId) {
+      try {
         const res = await getSummonerInfo(summonerId);
-        console.log(res);
         if (res) {
           setInfo(res);
         }
+      } catch (err) {
+        setInfo(undefined);
+        console.log(err);
       }
-    } catch (err) {
-      setInfo(null);
-      console.log(err);
     }
   };
 
@@ -73,7 +72,7 @@ export default function Record() {
   }, [info]);
 
   {
-    return summonerId && info ? (
+    return summonerId && info?.puuid ? (
       <section className={styles.section}>
         <article className={styles.article}>{<SummonerInfo info={info} handleClick={handleClick} />}</article>
         <article className={styles.article}>
@@ -86,7 +85,7 @@ export default function Record() {
     ) : (
       <section className={styles.error}>
         <p className={styles.title}>
-          <strong className={styles.strong}>{summonerId}</strong> 일치하는 소환사님을 찾을 수 없습니다.
+          <strong className={styles.strong}>{summonerId}</strong> &nbsp; 일치하는 소환사님을 찾을 수 없습니다.
         </p>
       </section>
     );

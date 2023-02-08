@@ -1,0 +1,11 @@
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: lightcyan;
+  text-shadow: 0px 0px 10px aqua;
+}

@@ -13,6 +13,11 @@ const getChampion = async () => {
 const getRotationChampion = async () => {
   try {
     const res = await axios.get('api/getRotationChampion');
+
+    if (res.data.result.status?.status_code) {
+      throw new Error(res.data.result.status.message);
+    }
+
     return res.data.result;
   } catch (err) {
     console.log(err);

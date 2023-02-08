@@ -15,3 +15,13 @@ $bg-gray: #31313c;
   border-radius: 4px;
   box-shadow: 0px 0px 6px #fff;
 }
+
+.noMatchData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 0px 10px aqua;
+  font-size: 1.4rem;
+  height: 200px;
+  font-weight: bold;
+}
