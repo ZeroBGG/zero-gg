@@ -1,7 +1,16 @@
 export const FILTER_CATEGORYS = [
-  {
-    contents: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-  },
+  { month: '1월', id: '1' },
+  { month: '2월', id: '2' },
+  { month: '3월', id: '3' },
+  { month: '4월', id: '4' },
+  { month: '5월', id: '5' },
+  { month: '6월', id: '6' },
+  { month: '7월', id: '7' },
+  { month: '8월', id: '8' },
+  { month: '9월', id: '9' },
+  { month: '10월', id: '10' },
+  { month: '11월', id: '11' },
+  { month: '12월', id: '12' },
 ];
 export const TEAM_CATEGORYS = [
   {

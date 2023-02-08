@@ -32,7 +32,10 @@ export default function route() {
           <Route path={':team'} element={<PlayerList />} />
         </Route>
         <Route path={'lck/matches/'} element={<Match />}>
-          <Route path={':month'} element={<Schedule isHover={false} limitCount={7} collectionName={'lck_matches'} />} />
+          <Route
+            path={':month'}
+            element={<Schedule isHover={false} limitCount={10} collectionName={'lck_matches'} />}
+          />
         </Route>
 
         <Route path={'*'} element={<NotFound />} />

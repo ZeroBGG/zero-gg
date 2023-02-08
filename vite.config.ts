@@ -9,4 +9,12 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1600,
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://zero-gg.vercel.app/',
+        changeOrigin: true,
+      },
+    },
+  },
 });

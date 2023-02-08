@@ -1,11 +1,10 @@
 @import './ItenResponsive.module.scss';
 
 .item_container {
-  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
   .match_container {
     width: 100%;
     margin: 5px auto;
@@ -34,7 +33,6 @@
     .play_team_container {
       display: flex;
       flex-direction: row;
-      width: 100%;
       .team_wrapper {
         width: 100%;
         display: flex;
@@ -124,11 +122,7 @@
         }
       }
     }
-    .stadium {
-      margin: 10px 20px;
-      font-size: 20px;
-      white-space: nowrap;
-    }
   }
 }
+@include md-responsive;
 @include responsive;

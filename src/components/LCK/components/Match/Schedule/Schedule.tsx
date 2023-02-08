@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { collection, getDocs, limit, orderBy, query, startAfter } from 'firebase/firestore';
 import { dbService } from 'src/firebase';
 import { matchesType, matchListProps } from '@/components/LCK/typings';
@@ -8,10 +8,10 @@ import SideBar from './Sidebar/SideBar';
 import { useParams } from 'react-router';
 import useStore from '@/hooks/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
-import { useTeams } from '@/components/LCK/Zustand/useTeams';
 import No_Schedule from './Noschedule/NoSchedule';
 import { useInView } from 'react-intersection-observer';
 import Loading from '../../Loading/Loading';
+import { motion } from 'framer-motion';
 
 type hoverType = {
   isHover: boolean;
@@ -26,7 +26,6 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   const [noMore, setNoMore] = useState(false);
   const { id } = useStore();
   const { mon, getMonth } = useDateStore();
-  const { info } = useTeams();
   const [ref, inView] = useInView();
   let params: any = useParams();
 
@@ -84,7 +83,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   // 무한스크롤 로딩
   useEffect(() => {
     if (inView) {
-      loadMore(7);
+      loadMore(15);
     }
   }, [inView]);
 
@@ -123,21 +122,31 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
       getMonth('');
     }
   }, []);
+  console.log(loading, noMore);
   // 뒤에 요일 자름
   const Split = (text: string) => {
     return text.split('요일')[0];
   };
-  console.log(loading, inView, list.length);
+  const noMonth = (month: string) => {
+    if (month === undefined) {
+      return 0;
+    } else {
+      return Number(month);
+    }
+  };
+  console.log(params.month, mon);
   return (
     <section className={styles.schedule_container}>
       <ul className={styles.schedule_list}>
-        {filterList.length === 0 ? (
-          <>
-            <No_Schedule />
-          </>
-        ) : (
+        {Number(mon) < 4 || params.month === undefined ? (
           filterList.map((lst: matchListProps, idx: number) => (
-            <li className={styles.schedules_item} key={lst.id}>
+            <motion.li
+              className={styles.schedules_item}
+              key={lst.id}
+              initial={{ x: -500 }}
+              layout
+              animate={{ x: 0, transition: { duration: 0.8 } }}
+            >
               <div className={styles.date_info}>
                 <span className={styles.date}>{lst.date}</span>
                 <span className={styles.day}>({Split(lst.day)})</span>
@@ -146,29 +155,34 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
                 <div className={styles.matches}>
                   {lst.matches.map((match: matchesType, idx: number) => {
                     const { matchOne, matchTwo } = match;
+                    const TeamCondition = matchOne.home.id.includes(id) || matchOne.away.id.includes(id);
+                    const TeamCondition2 = matchTwo.home.id.includes(id) || matchTwo.away.id.includes(id);
                     const UNIQUE_KEY = matchOne.state + idx.toString();
                     // matches가 두경기 다 포함하고 있기에 조건문을 통해서 조금 유형별로 데이터가 표시되는 방법을 다르게 만들었습니다.
-                    if (mon === undefined && id === '') {
+                    if (mon === '' && id === '') {
                       return (
                         <div className={styles.match_card} key={UNIQUE_KEY}>
                           <Item matchType={matchOne} />
                           <Item matchType={matchTwo} />
                         </div>
                       );
-                    } else if (mon === params.month && id == '') {
+                    }
+                    if (mon === params.month && id == '') {
                       return (
                         <div className={styles.match_card} key={UNIQUE_KEY}>
                           <Item matchType={matchOne} />
                           <Item matchType={matchTwo} />
                         </div>
                       );
-                    } else if (matchOne.home.id.includes(id) || matchOne.away.id.includes(id)) {
+                    }
+                    if (mon === params.month && TeamCondition) {
                       return (
                         <div className={styles.match_card} key={UNIQUE_KEY}>
                           <Item matchType={matchOne} />
                         </div>
                       );
-                    } else {
+                    }
+                    if (mon === params.month && TeamCondition2) {
                       return (
                         <div className={styles.match_card} key={UNIQUE_KEY}>
                           <Item matchType={matchTwo} />
@@ -178,9 +192,14 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
                   })}
                 </div>
               </div>
-            </li>
+            </motion.li>
           ))
+        ) : (
+          <>
+            <No_Schedule />
+          </>
         )}
+
         <div ref={ref} />
         {list.length > 0 && list.length < 44 ? (
           <>
@@ -193,14 +212,14 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
             )}
           </>
         ) : (
-          <>{!noMore ? <div className={styles.nomore}>더이상 불러올 경기가 없어요</div> : ''}</>
+          <>{!noMore ? <div className={styles.nomore}></div> : ''}</>
         )}
       </ul>
       {isHover ? <SideBar /> : null}
     </section>
   );
 };
-export default Schedule;
+export default memo(Schedule);
 
 // error 1 ==> 필터를 돌릴때 두번째 경기가 첫번째 경기로 나옴
 // solution ==> json안에 first항목에 boolean 값 유무에 따라서 필터를 하게끔 했습니다.
