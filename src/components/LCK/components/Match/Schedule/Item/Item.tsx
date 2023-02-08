@@ -48,11 +48,9 @@ const Item = ({ matchType }: ItemType, index: number) => {
                 {matchType.away.win}
               </span>
             </div>
-            <div className={styles.team}>
-              <div className={`${styles.away} ${styles.card}`}>
-                <img src={matchType.away.logoUrl} alt="away" className={styles.img_logo} />
-                <span className={styles.team_initial}>{matchType.away.initial}</span>
-              </div>
+            <div className={`${styles.away} ${styles.card}`}>
+              <img src={matchType.away.logoUrl} alt="away" className={styles.img_logo} />
+              <span className={styles.team_initial}>{matchType.away.initial}</span>
             </div>
           </div>
         </div>
@@ -74,11 +72,6 @@ const Item = ({ matchType }: ItemType, index: number) => {
             />
           </div>
         </div>
-        <span className={styles.stadium}>
-          SEOUL
-          <br />
-          LOL Park
-        </span>
       </div>
     </div>
   );

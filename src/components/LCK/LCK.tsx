@@ -1,12 +1,13 @@
 import styles from './LCK.module.scss';
 import { Link } from 'react-router-dom';
 import { LCK_LOGO, RIOT, RIOT_LOGO } from './components/Constant/constant';
-
+import { motion } from 'framer-motion';
+import { boxVarients, wrapperVariants } from '@/components/LCK/varients/variants';
 export default function LCK() {
   return (
     <section className={styles.container}>
-      <div className={styles.wrapper}>
-        <div className={styles.border_gradient}>
+      <motion.div className={styles.wrapper} initial="out" animate="in" variants={boxVarients}>
+        <motion.div className={styles.border_gradient} layout variants={wrapperVariants}>
           <div className={styles.lck_side}>
             <img src="/assets/LCK/LCK2003.jpeg" alt="2023LCK" className={styles.lck2023} />
           </div>
@@ -53,8 +54,8 @@ export default function LCK() {
               ></a>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

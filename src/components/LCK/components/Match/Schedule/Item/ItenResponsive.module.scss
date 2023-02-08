@@ -1,10 +1,11 @@
 @mixin responsive {
-  @media only screen and (min-width: 300px) and (max-width: 800px) {
+  @media only screen and (min-width: 240px) and (max-width: 424px) {
     .item_container {
       width: 100%;
       .match_container {
         display: flex;
         flex-direction: row;
+        justify-content: center;
         width: 100%;
         .match_info {
           display: flex;
@@ -13,7 +14,6 @@
             margin: 0px;
             padding: 10px;
           }
-
           .state {
             display: none;
           }
@@ -64,8 +64,73 @@
         }
       }
     }
-    .stadium {
-      display: none;
+  }
+}
+@mixin md-responsive {
+  @media only screen and (min-width: 424px) and (max-width: 1024px) {
+    .item_container {
+      width: 100%;
+      .match_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        .match_info {
+          display: flex;
+          .time {
+            font-size: 15px;
+            margin: 0px;
+            padding: 10px;
+          }
+          .state {
+            display: none;
+          }
+        }
+        .play_team_container {
+          .team_wrapper {
+            display: flex;
+            .card {
+              font-size: 15px;
+              display: flex;
+              margin: 0;
+              .img_logo {
+                width: 30px;
+                height: 30px;
+                display: flex;
+              }
+              .img_logo[alt='home'] {
+                margin-left: auto;
+              }
+              .img_logo[alt='away'] {
+                margin-right: auto;
+              }
+              .team_initial {
+                font-size: 15px;
+                white-space: nowrap;
+                letter-spacing: -1px;
+                margin-left: 10px;
+                width: 20px;
+              }
+            }
+            .score {
+              display: flex;
+              width: 30px;
+              .win {
+                margin: 0;
+              }
+              .verse {
+                margin: 0 3px;
+                text-align: center;
+              }
+            }
+          }
+        }
+        .lck_btn_container {
+          display: none;
+          align-items: center;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
