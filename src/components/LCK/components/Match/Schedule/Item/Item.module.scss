@@ -2,15 +2,11 @@
 
 .item_container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   margin: 0 auto;
   .match_container {
     width: 100%;
     margin: 5px auto;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     .match_info {
       height: 100%;
       display: flex;
@@ -45,8 +41,8 @@
           align-items: center;
           margin: 10px;
           .img_logo {
-            width: 60px;
-            height: 60px;
+            width: 1.8em;
+            height: 1.8em;
             display: flex;
           }
           .img_logo[alt='home'] {

@@ -1,6 +1,6 @@
 import { CategoryType } from '@/components/LCK/typings';
 import { TEAM_CATEGORYS } from '@/data/filterCategory';
-import useStore from '@/hooks/useStore';
+import useStore from '@/components/LCK/Zustand/useStore';
 import React, { useEffect, useState } from 'react';
 
 import styles from './Teams.module.scss';

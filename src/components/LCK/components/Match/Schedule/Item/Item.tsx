@@ -1,30 +1,13 @@
-import { useState } from 'react';
+import { memo } from 'react';
 import Button from '../common/Button';
 import styles from './Item.module.scss';
+import { matchTeamType } from '@/components/LCK/typings';
 
 type ItemType = {
-  matchType: any;
+  matchType: matchTeamType;
 };
 
-const Item = ({ matchType }: ItemType, index: number) => {
-  const [isHovering, setIsHovering] = useState<boolean>(false);
-  const [liveHovering, setLiveHovering] = useState<boolean>(false);
-
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
-
-  const handleLiveMouseOver = () => {
-    setLiveHovering(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
-  const handleLiveMouseOut = () => {
-    setLiveHovering(false);
-  };
-
+const Item = ({ matchType }: ItemType) => {
   return (
     <div className={styles.item_container}>
       {/* 경기 정보 (시간,장소,경기내용) */}
@@ -56,20 +39,10 @@ const Item = ({ matchType }: ItemType, index: number) => {
         </div>
         <div className={styles.lck_btn_container}>
           <div className={styles.btnLayOut}>
-            <Button
-              onMouseOut={handleLiveMouseOut}
-              onMouseOver={handleLiveMouseOver}
-              ishovering={liveHovering}
-              content={'중계 보기'}
-            />
+            <Button content={'중계 보기'} />
           </div>
           <div className={styles.btnLayOut}>
-            <Button
-              ishovering={isHovering}
-              onMouseOut={handleMouseOut}
-              onMouseOver={handleMouseOver}
-              content={'하이라이트보기'}
-            />
+            <Button content={'하이라이트보기'} />
           </div>
         </div>
       </div>
@@ -77,4 +50,4 @@ const Item = ({ matchType }: ItemType, index: number) => {
   );
 };
 
-export default Item;
+export default memo(Item);
