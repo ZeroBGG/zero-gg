@@ -1,23 +1,31 @@
+import { useState } from 'react';
 import styles from '../Item/Item.module.scss';
 
 const LCK_LIVE = 'https://game.naver.com/esports/League_of_Legends/schedule/lck';
 
-interface ButtonProps {
+type ButtonType = {
   content: string;
-  ishovering: boolean;
-  onMouseOver: () => void;
-  onMouseOut: () => void;
-}
+};
 
-const Button = ({ content, ishovering, onMouseOver, onMouseOut }: ButtonProps) => {
+const Button = ({ content }: ButtonType) => {
+  const [isHovering, setIsHovering] = useState<boolean>(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+
   return (
     <>
       <a
-        className={`${styles.btn} ${ishovering ? `${styles.live_btn} ` : `${styles.replay_btn}`}`}
+        className={`${styles.btn} ${isHovering ? `${styles.live_btn} ` : `${styles.replay_btn}`}`}
         href={LCK_LIVE}
         target={'_blank'}
-        onMouseOver={onMouseOver}
-        onMouseOut={onMouseOut}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
       >
         <span className={styles.content}>{content}</span>
       </a>

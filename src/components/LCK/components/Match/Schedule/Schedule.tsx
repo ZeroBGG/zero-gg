@@ -6,12 +6,11 @@ import styles from './Schedule.module.scss';
 import Item from './Item/Item';
 import SideBar from './Sidebar/SideBar';
 import { useParams } from 'react-router';
-import useStore from '@/hooks/useStore';
+import useStore from '@/components/LCK/Zustand/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import No_Schedule from './Noschedule/NoSchedule';
 import { useInView } from 'react-intersection-observer';
 import Loading from '../../Loading/Loading';
-import { motion } from 'framer-motion';
 
 type hoverType = {
   isHover: boolean;
@@ -115,6 +114,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   }, [list, mon, id]);
   // 월별 필터후 새로고침시 유지
   useEffect(() => {
+    localStorage.setItem('monthstorage', params.month);
     let saved = localStorage.getItem('monthstorage');
     if (saved !== null) {
       getMonth(params.month);
@@ -122,31 +122,16 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
       getMonth('');
     }
   }, []);
-  console.log(loading, noMore);
   // 뒤에 요일 자름
   const Split = (text: string) => {
     return text.split('요일')[0];
   };
-  const noMonth = (month: string) => {
-    if (month === undefined) {
-      return 0;
-    } else {
-      return Number(month);
-    }
-  };
-  console.log(params.month, mon);
   return (
     <section className={styles.schedule_container}>
       <ul className={styles.schedule_list}>
         {Number(mon) < 4 || params.month === undefined ? (
-          filterList.map((lst: matchListProps, idx: number) => (
-            <motion.li
-              className={styles.schedules_item}
-              key={lst.id}
-              initial={{ x: -500 }}
-              layout
-              animate={{ x: 0, transition: { duration: 0.8 } }}
-            >
+          filterList.map((lst: matchListProps) => (
+            <li className={styles.schedules_item} key={lst.id}>
               <div className={styles.date_info}>
                 <span className={styles.date}>{lst.date}</span>
                 <span className={styles.day}>({Split(lst.day)})</span>
@@ -192,7 +177,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
                   })}
                 </div>
               </div>
-            </motion.li>
+            </li>
           ))
         ) : (
           <>

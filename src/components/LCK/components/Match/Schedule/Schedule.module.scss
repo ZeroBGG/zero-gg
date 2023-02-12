@@ -3,21 +3,14 @@
   display: flex;
   justify-content: center;
   transition: all 0.56s ease-in;
-  background-color: #222222;
   margin: 0;
   .schedule_list {
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
     margin: 0;
-    animation: fade 0.6s ease-in;
     .schedules_item {
       margin: 20px 0;
       .date_info {
         width: 100%;
         background: #000;
-        display: flex;
         padding: 20px;
         font-size: 20px;
         font-weight: bolder;
@@ -30,7 +23,6 @@
       }
       .item {
         width: 100%;
-        display: flex;
         border-bottom: 1px solid #ffffff80;
         .matches {
           height: auto;
@@ -44,14 +36,6 @@
             margin: auto;
             padding: 10px 0;
             width: 100%;
-          }
-        }
-        @keyframes fade {
-          0% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
           }
         }
       }
