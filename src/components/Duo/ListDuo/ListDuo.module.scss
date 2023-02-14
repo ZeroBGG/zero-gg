@@ -1,0 +1,326 @@
+@import '../common.scss';
+
+/* Duo.Module.scss */
+
+$blue: #1b76d8;
+$black: #141618;
+$dark: #333;
+$indigo: #4b0082;
+$white: #fff;
+$iron: #696b5e;
+$bronze: #624637;
+$silver: #c0c0c0;
+$gold: #ffd700;
+$platinum: #20b2aa;
+$dia: #4169e1;
+$bgColor-1: #1c1c1f;
+$bgColor-2: #282830;
+$bgColor-3: #f1f5f7;
+
+/* 듀오 카드 */
+.section_card {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  .div_card {
+    width: 99vw;
+
+    .ul_card {
+      background-color: $bgColor-2;
+      padding: 20px 30px;
+      // min-height: calc(99vh - 400px);
+
+      .li_card {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.next_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+  button {
+    border: 0;
+    background-color: inherit;
+  }
+
+  .button_svg {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
+
+.wrapper {
+  width: 45vw;
+  padding: auto;
+  margin: 15px auto;
+  background-color: $bgColor-3;
+}
+
+.select_queue {
+  padding: 15px 10px;
+
+  h2 {
+    color: $black;
+  }
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  input[type='radio']+label {
+    @include radio($dark, $white);
+  }
+
+  input[type='radio']:checked+label {
+    @include radio_checked($dark, $white);
+  }
+}
+
+.select_tier {
+  padding: 15px 10px;
+
+  h2 {
+    color: $black;
+  }
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  .iron+label {
+    @include radio($iron, $white);
+  }
+
+  .iron:checked+label {
+    @include radio_checked($iron, $white);
+  }
+
+  .bronze+label {
+    @include radio($bronze, $white);
+  }
+
+  .bronze:checked+label {
+    @include radio_checked($bronze, $white);
+  }
+
+  .silver+label {
+    @include radio($silver, $white);
+  }
+
+  .silver:checked+label {
+    @include radio_checked($silver, $white);
+  }
+
+  .gold+label {
+    @include radio($gold, $white);
+  }
+
+  .gold:checked+label {
+    @include radio_checked($gold, $black);
+  }
+
+  .platinum+label {
+    @include radio($platinum, $white);
+  }
+
+  .platinum:checked+label {
+    @include radio_checked($platinum, $white);
+  }
+
+  .dia+label {
+    @include radio($dia, $white);
+  }
+
+  .dia:checked+label {
+    @include radio_checked($dia, $white);
+  }
+}
+
+.select_position {
+  padding: 15px 10px;
+
+  h2 {
+    color: $black;
+  }
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  input[type='radio']+label {
+    @include radio($indigo, $white);
+  }
+
+  input[type='radio']:checked+label {
+    @include radio_checked($indigo, $white);
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .wrapper {
+    width: 88vw;
+    padding: 10px;
+  }
+
+  .select_queue {
+    padding: 3px 3px 0 0;
+
+    input[type='radio']+label {
+      @include radio($dark, $white);
+      margin: 3px;
+    }
+  }
+
+  .select_tier {
+    padding: 3px 3px 0 0;
+
+    .iron+label {
+      @include radio($iron, $white);
+      margin: 3px;
+    }
+
+    .bronze+label {
+      @include radio($bronze, $white);
+      margin: 3px;
+    }
+
+    .silver+label {
+      @include radio($silver, $white);
+      margin: 3px;
+    }
+
+    .gold+label {
+      @include radio($gold, $white);
+      margin: 3px;
+    }
+
+    .platinum+label {
+      @include radio($platinum, $white);
+      margin: 3px;
+    }
+
+    .dia+label {
+      @include radio($dia, $white);
+      margin: 3px;
+    }
+  }
+
+  .select_position {
+    padding: 3px 3px 0 0;
+
+    input[type='radio']+label {
+      @include radio($indigo, $white);
+      margin: 3px;
+    }
+  }
+}
+
+@media screen and (min-width: 391px) and (max-width: 786px) {
+  .wrapper {
+    width: 88vw;
+    padding: 10px;
+  }
+
+  .select_queue {
+    padding: 3px;
+
+    input[type='radio']+label {
+      @include radio($dark, $white);
+      width: 100px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      margin: 3px;
+    }
+  }
+
+  .select_tier {
+    padding: 3px;
+
+    .iron+label {
+      @include radio($iron, $white);
+      width: 100px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      margin: 3px;
+    }
+
+    .bronze+label {
+      @include radio($bronze, $white);
+      width: 100px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      margin: 3px;
+    }
+
+    .silver+label {
+      @include radio($silver, $white);
+      width: 100px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      margin: 3px;
+    }
+
+    .gold+label {
+      @include radio($gold, $white);
+      width: 100px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      margin: 3px;
+    }
+
+    .platinum+label {
+      @include radio($platinum, $white);
+      width: 100px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      margin: 3px;
+    }
+
+    .dia+label {
+      @include radio($dia, $white);
+      width: 100px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      margin: 3px;
+    }
+  }
+
+  .select_position {
+    padding: 3px;
+
+    input[type='radio']+label {
+      @include radio($indigo, $white);
+      width: 100px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      margin: 3px;
+    }
+  }
+}
+
+@media screen and (min-width: 787px) and (max-width: 1024px) {
+  .wrapper {
+    width: 67vw;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .wrapper {
+    min-width: 648px;
+  }
+}

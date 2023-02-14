@@ -26,7 +26,7 @@ const InputText = (inputProps: InputType) => {
   } = inputProps;
 
   return (
-    <>
+    <div>
       <label htmlFor={id} className={styles.label}>
         {inLabelText}
       </label>
@@ -47,7 +47,7 @@ const InputText = (inputProps: InputType) => {
           <input type={type} name={name} id={id} className={className} placeholder={placeholder} {...props} />
         </>
       )}
-    </>
+    </div>
   );
 };
 
