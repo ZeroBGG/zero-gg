@@ -10,7 +10,7 @@ import useStore from '@/components/LCK/Zustand/useStore';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
 import No_Schedule from './Noschedule/NoSchedule';
 import { useInView } from 'react-intersection-observer';
-import Loading from '../../Loading/Loading';
+import Loading from '@/components/Common/Loading/Loading';
 
 type hoverType = {
   isHover: boolean;

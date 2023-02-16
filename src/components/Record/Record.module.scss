@@ -9,6 +9,16 @@ $bg-gray: #30333a;
 
   .article {
     width: 800px;
+
+    .noMatchData {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0px 0px 10px aqua;
+      font-size: 1.4rem;
+      height: 200px;
+      font-weight: bold;
+    }
   }
 }
 
