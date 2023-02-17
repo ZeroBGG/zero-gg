@@ -1,8 +1,8 @@
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
-import { dbService } from 'src/firebase';
+import { dbService } from '@/firebase';
 import { collection, onSnapshot, orderBy, query, startAt, limit, getDocs } from 'firebase/firestore';
 import { DuoType, FilterType } from '../utils/DuoType';
-import DuoCards from '../DuoCards/DuoCards';
+import DuoCards from './DuoCards/DuoCards';
 import InputRadio from '../Common/InputRadio/InputRadio';
 import { BiChevronsDown } from 'react-icons/bi';
 import styles from './ListDuo.module.scss';
@@ -29,13 +29,13 @@ const ListDuo = () => {
         const snap = await getDocs(queryRef);
         setKey(snap.docs[snap.docs.length - 1]); // 해당 키 배열의 위치를 실시간 업데이트
       });
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
     }
   }, []);
 
   // 이거는 useCallback시 작동이 멈춤
-  const onNextScroll = async () => {
+  const onClickNextScroll = async () => {
     const queryRef = query(collection(dbService, 'myLOLInfo'), orderBy('createdAt', 'desc'), startAt(key), limit(6));
     try {
       const snap = await getDocs(queryRef);
@@ -46,8 +46,8 @@ const ListDuo = () => {
       } else {
         setLolInfo([...lolInfo, ...docsArray.splice(1, 5)]); // splice 안하면 마지막 배열이 다시 나옴
       }
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -60,7 +60,7 @@ const ListDuo = () => {
       setLolInfoFilterList(lolInfo);
     } else {
       const filteredList = lolInfo.reduce(
-        (acc, cur) => {
+        (acc, cur: FilterType) => {
           const positionCondition = selectPosition ? cur.position === selectPosition : true;
           const queueCondition = selectQueue ? cur.queue === selectQueue : true;
           const tierCondition = selectTier ? cur.tier === selectTier : true;
@@ -249,7 +249,7 @@ const ListDuo = () => {
               </>
             )}
             <div className={styles.next_button}>
-              <button onClick={onNextScroll}>
+              <button onClick={onClickNextScroll}>
                 <BiChevronsDown className={styles.button_svg} />
               </button>
             </div>
