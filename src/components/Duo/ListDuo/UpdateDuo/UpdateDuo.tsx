@@ -1,6 +1,6 @@
 import { FormEvent, useCallback, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { dbService } from 'src/firebase';
+import { dbService } from '@/firebase';
 import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { positionArr, queueArr, tierArr } from '../../utils/DuoArr';
 import { DuoType } from '../../utils/DuoType';

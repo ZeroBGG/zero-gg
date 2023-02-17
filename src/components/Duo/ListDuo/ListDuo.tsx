@@ -1,5 +1,5 @@
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
-import { dbService } from 'src/firebase';
+import { dbService } from '@/firebase';
 import { collection, onSnapshot, orderBy, query, startAt, limit, getDocs } from 'firebase/firestore';
 import { DuoType, FilterType } from '../utils/DuoType';
 import DuoCards from './DuoCards/DuoCards';
