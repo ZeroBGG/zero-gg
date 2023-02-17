@@ -1,12 +1,12 @@
 import { create } from 'zustand';
 
 interface ID {
-  id: string;
-  getId: (id: string) => void;
+  team: string;
+  getId: (team: string) => void;
 }
 const useStore = create<ID>((set) => ({
-  id: '',
-  getId: (id) => set(() => ({ id: id })),
+  team: '',
+  getId: (team) => set(() => ({ team: team })),
 }));
 
 export default useStore;
