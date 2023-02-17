@@ -1,5 +1,5 @@
 import { icons } from '@/data/position';
-import { ICON_URL } from '@/components/LCK/components/Constant/constant';
+import { ICON_URL } from '@/components/LCK/components/constant/constant';
 
 import styles from '../LanePostion/LanePosition.module.scss';
 import { RefObject } from 'react';
@@ -9,11 +9,11 @@ interface PositionType {
 const LanePositon = ({ position }: PositionType) => {
   return (
     <div>
-      {icons.map((p, index) => {
-        if (position === p.name)
+      {icons.map((item, index) => {
+        if (position === item.name)
           return (
-            <div key={`${p.name}_${index}`} className={styles.lane}>
-              <img src={`${ICON_URL}/${p.url}`} alt="position" className={styles.lane_img} />
+            <div key={`${item.name}_${index}`} className={styles.lane}>
+              <img src={`${ICON_URL}/${item.url}`} alt="position" className={styles.lane_img} />
             </div>
           );
       })}

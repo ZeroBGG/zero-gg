@@ -1,12 +1,11 @@
 import Accordian from '../Accordion/Accordion';
-import styles from './SideBar.module.scss';
-
+import { ACCODIAN_CATEGORY } from '@/data/filterCategory';
 const SideBar = () => {
   return (
-    <aside className={styles.sidebar_container}>
-      <Accordian title={'MONTH'} />
-      <Accordian title={'TEAM'} />
-    </aside>
+    <>
+      <Accordian title={ACCODIAN_CATEGORY.MONTH} />
+      <Accordian title={ACCODIAN_CATEGORY.TEAM} />
+    </>
   );
 };
 

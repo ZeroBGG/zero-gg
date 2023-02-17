@@ -1,24 +1,22 @@
-import data from '@/data/teamSquad.json';
+import { TEAM_CATEGORYS } from '@/data/filterCategory';
 import { useLoading, useMyTeam } from '@/components/LCK/Zustand/useMyTeam';
 import React, { useEffect, useState } from 'react';
 import styles from './TeamSlide.module.scss';
-import useHover from '@/hooks/useHover';
 import Logos from './Logos';
 import Skeleton_Logo from '../../Skeleton/logo/Skeleton_Logo';
 
 const TeamSlide = () => {
   const [teams, setTeams] = useState<any[]>([]);
-  const [ref, hover] = useHover();
   const { myteam, getTeam } = useMyTeam();
   const { loading, getLoading } = useLoading();
   useEffect(() => {
     new Promise<void>((res) => {
       setTimeout(() => {
         res();
-      }, 1000);
+      }, 200);
     }).then(() => {
-      setTeams(data);
-      setTimeout(() => getLoading(false), 500);
+      setTeams(TEAM_CATEGORYS);
+      setTimeout(() => getLoading(false), 200);
     });
   }, []);
 
@@ -26,7 +24,6 @@ const TeamSlide = () => {
     getTeam(event.currentTarget.id);
   };
 
-  console.log(loading);
   return (
     <div className={styles.slider_container}>
       <div className={styles.wrapper}>
@@ -37,7 +34,7 @@ const TeamSlide = () => {
               })
             : teams.map((team) => (
                 <Logos
-                  logo={team.logo}
+                  logo={team.url}
                   teamName={team.teamName}
                   id={team.id}
                   onClick={onClick}

@@ -45,9 +45,12 @@
             }
             .score {
               display: flex;
-              width: 30px;
+              width: 15px;
+              margin: 0 10px;
               .win {
+                width: 30px;
                 margin: 0;
+                font-size: 20px;
               }
               .verse {
                 margin: 0 3px;

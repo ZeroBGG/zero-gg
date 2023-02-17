@@ -18,13 +18,13 @@ const Teams = React.memo(() => {
   };
   return (
     <>
-      {team.map((t) => (
-        <li className={styles.logo_wrapper} key={t.id}>
-          <button className={styles.logo_item} type="button" onClick={onClick} id={t.id} key={t.id}>
+      {team.map((item) => (
+        <li className={styles.logo_wrapper} key={item.id}>
+          <button className={styles.logo_item} type="button" onClick={onClick} id={item.id} key={item.id}>
             <div
               className={styles.logo}
               style={{
-                backgroundImage: `url(${t.url})`,
+                backgroundImage: `url(${item.url})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 backgroundSize: 'contain',

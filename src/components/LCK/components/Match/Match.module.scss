@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   height: 100vh;
-  background-color: inherit;
+  background-color: var(--bg-color);
   color: #fff;
   overflow-y: scroll;
 
@@ -19,7 +19,7 @@
       width: 100px;
       border-radius: 10px;
       margin-left: auto;
-      background-color: #777777;
+      background-color: var(--hover-tab-color);
       color: #eaeaea;
       .content {
         font-size: 20px;
@@ -32,7 +32,18 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 424px) {
+  .container {
+    .header {
+      font-size: 10px;
+      width: 100%;
+      .filter_btn {
+        display: none;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 1042px) {
   .container {
     .header {
       width: 100%;

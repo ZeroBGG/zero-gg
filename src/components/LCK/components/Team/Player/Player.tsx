@@ -1,6 +1,5 @@
 import LanePositon from '../LanePostion/LanePositon';
 import styles from './Player.module.scss';
-import useHover from '@/hooks/useHover';
 import SkeletonProfile from '../../Skeleton/SkeletonProfile';
 import { motion } from 'framer-motion';
 
@@ -14,10 +13,14 @@ interface PlayerProps {
   captain: boolean;
   KorName: string;
 }
+const BACKGORUND = {
+  POSITION: '240% 0%',
+  REPEAT: 'no-repeat',
+  SIZE: '80%',
+  ZINDEX: '0',
+} as const;
 
 const Player = ({ name, position, summoner, image, logo, captain, Loading }: PlayerProps) => {
-  const [ref, hover] = useHover();
-
   return Loading ? (
     <SkeletonProfile />
   ) : (
@@ -25,19 +28,18 @@ const Player = ({ name, position, summoner, image, logo, captain, Loading }: Pla
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
         className={styles.player_info}
         style={{
           backgroundImage: `url(${logo})`,
-          backgroundPosition: '240% 0%',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '80%',
-          zIndex: '0',
+          backgroundPosition: BACKGORUND.POSITION,
+          backgroundRepeat: BACKGORUND.REPEAT,
+          backgroundSize: BACKGORUND.SIZE,
+          zIndex: BACKGORUND.ZINDEX,
         }}
       >
         <div className={styles.info}>
-          <div className={styles.names} ref={ref as React.RefObject<HTMLDivElement>}>
-            <h3 className={styles.summoner}>{!hover ? summoner : name}</h3>
+          <div className={styles.names}>
+            <h3 className={styles.summoner}> {summoner} </h3>
           </div>
           <div className={styles.position}>
             {captain && (
@@ -51,12 +53,7 @@ const Player = ({ name, position, summoner, image, logo, captain, Loading }: Pla
           </div>
         </div>
 
-        <motion.div
-          className={styles.player_img}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
+        <motion.div className={styles.player_img} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           {image !== '' ? (
             <img className={styles.image} src={image} alt="player_img" />
           ) : (

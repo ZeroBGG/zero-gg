@@ -1,6 +1,23 @@
 /// ################ 플레이어 리스트 반응형 #####################
-@mixin playerList {
-  @media only screen and (min-width: 300px) and (max-width: 800px) {
+@mixin Responsive-playerList {
+  @media only screen and (min-width: 240px) and (max-width: 424px) {
+    .list_container {
+      .list_wrapper {
+        .list {
+          margin: 5px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}
+/// ################ 플레이어 리스트 반응형 #####################
+@mixin Responsive-playerList-md {
+  @media only screen and (min-width: 424px) and (max-width: 1042px) {
     .list_container {
       .list_wrapper {
         .list {

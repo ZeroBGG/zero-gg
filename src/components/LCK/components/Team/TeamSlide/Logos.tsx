@@ -20,7 +20,7 @@ const Logos = (props: LogosType) => {
 
       <div
         id={props.id}
-        className={styles.img}
+        className={styles.logo}
         style={
           !hover
             ? {
@@ -32,7 +32,7 @@ const Logos = (props: LogosType) => {
             : { backgroundImage: '' }
         }
       >
-        {!hover ? '' : <p className={styles.teamName}>{props.teamName}</p>}
+        {!hover ? <div></div> : <p className={styles.name}>{props.teamName}</p>}
       </div>
 
     </div>

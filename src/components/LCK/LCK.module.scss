@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&display=swap');
 @import './Lck_card_design.module.scss';
 @import '../../styles/global.scss';
-@import '../LCK/components/Team/responsive.module.scss';
+@import './responsive.module.scss';
 /* LCK.Module.scss */
 
 // https://walkthinksleep.tistory.com/entry/css-border-animation => border gradient
@@ -63,3 +63,4 @@
 }
 
 @include responsive-main-page;
+@include responsive-main-page-md;

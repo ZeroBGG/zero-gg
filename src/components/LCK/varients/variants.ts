@@ -14,11 +14,21 @@ export const boxVarients = {
     },
   },
 };
-export const wrapperVariants = {
-  out: {
-    opacity: 0, // translateX(-600)
+
+export const openSideBarVaritent = {
+  initial: {
+    width: 0,
   },
-  in: {
-    opacity: 1,
+  open: {
+    width: 450,
+  },
+};
+
+export const closeSideBarVaritent = {
+  close: {
+    width: 450,
+  },
+  initial: {
+    width: 0,
   },
 };

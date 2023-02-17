@@ -2,63 +2,63 @@
   {
     "id": "geng",
     "teamName": "Gen.G",
-    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1655210113163_GenG_logo_200407-05.png",
+    "logo": "/assets/LCK/TeamLogo/geng.webp",
     "players": []
   },
   {
     "id": "skt1",
     "teamName": "SK T1",
-    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1631819523085_t1-2021-worlds.png",
+    "logo": "/assets/LCK/TeamLogo/skT1.webp",
     "players": []
   },
   {
     "id": "liivsbx",
     "teamName": "Liiv Sandbox",
-    "logo": "https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2Fliiv-sandbox-new.png",
+    "logo": "/assets/LCK/TeamLogo/LiivSbX.webp",
     "players": []
   },
   {
     "id": "dplus",
     "teamName": "Dplus KIA",
-    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1673260049703_DPlusKIALOGO11.png",
+    "logo": "/assets/LCK/TeamLogo/dplusKia.webp",
     "players": []
   },
   {
     "id": "kt",
     "teamName": "KT Rolseter",
-    "logo": "https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2Fkt_darkbackground.png",
+    "logo": "/assets/LCK/TeamLogo/KTRolster.webp",
     "players": []
   },
   {
     "id": "drx",
     "teamName": "DRX",
-    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1672910733664_01.Basic_W.png",
+    "logo": "/assets/LCK/TeamLogo/DRX.webp",
     "players": []
   },
   {
     "id": "freecs",
     "teamName": "Kwangdong Freecs",
-    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1641186009897_KDF_KR_logo.png",
+    "logo": "/assets/LCK/TeamLogo/KDFreecs.webp",
     "players": []
   },
 
   {
     "id": "redforce",
     "teamName": "NS_RedForce",
-    "logo": "https://am-a.akamaihd.net/image?resize=400:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2FNSFullonDark.png",
+    "logo": "/assets/LCK/TeamLogo/Nsredforce.webp",
     "players": []
   },
   {
     "id": "fredit",
     "teamName": "Fredit Brion",
-    "logo": "https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1672911299140_BRIONlogo_profile1.png",
+    "logo": "/assets/LCK/TeamLogo/Brion.webp",
     "players": []
   },
 
   {
     "id": "hanwha",
     "teamName": "Hanwha Life Esports",
-    "logo": "https://am-a.akamaihd.net/image?resize=70:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1631819564399_hle-2021-worlds.png",
+    "logo": "/assets/LCK/TeamLogo/HanHwa.webp",
     "players": []
   }
 ]

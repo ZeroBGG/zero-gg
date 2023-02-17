@@ -4,11 +4,16 @@
   right: 0;
   width: 28%;
   min-height: 100vh;
-  transition: all 0.5s ease;
+  background-color: var(--bg-color);
   box-shadow: 1px 1px 1px rgba(200, 200, 200, 0.6);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 424px) {
+  .sidebar_container {
+    display: none;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 1042px) {
   .sidebar_container {
     display: none;
   }
