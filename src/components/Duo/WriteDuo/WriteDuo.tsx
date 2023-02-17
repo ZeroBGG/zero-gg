@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React, { FormEvent, ForwardedRef } from 'react';
 import styles from './WriteDuo.module.scss';
 import { dbService } from 'src/firebase';
 import { DuoType } from '../utils/DuoType';
@@ -8,10 +8,11 @@ import useInput from '@/hooks/useInput';
 import InputText from '../Common/InputText/InputText';
 
 interface ToggleProps {
+  modalRef: ForwardedRef<HTMLFormElement>;
   onToggleClick: () => void;
 }
 
-const WriteDuo = ({ onToggleClick }: ToggleProps) => {
+const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
   const inputId = useInput('');
   const inputPass = useInput('');
   const inputQueue = useInput('');
@@ -23,7 +24,7 @@ const WriteDuo = ({ onToggleClick }: ToggleProps) => {
   const inputMostChamp = useInput('');
 
   const reset = () => {
-    inputId.reset();
+    inputId.reset;
     inputPass.reset();
     inputQueue.reset();
     inputTier.reset();
@@ -72,7 +73,7 @@ const WriteDuo = ({ onToggleClick }: ToggleProps) => {
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <form onSubmit={onSubmit} className={styles.form}>
+        <form onSubmit={onSubmit} className={styles.form} ref={modalRef}>
           <h2>소환사 등록하기</h2>
           <div className={styles.user_wrapper}>
             <div>
