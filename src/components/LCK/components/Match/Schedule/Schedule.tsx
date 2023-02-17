@@ -1,7 +1,6 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 import { collection, getDocs, limit, orderBy, query, startAfter } from 'firebase/firestore';
 import { Params, useParams } from 'react-router';
-import { useInView } from 'react-intersection-observer';
 
 import { motion } from 'framer-motion';
 import { dbService } from 'src/firebase';
@@ -9,8 +8,9 @@ import { matchListProps } from '@/components/LCK/typings';
 import styles from './Schedule.module.scss';
 import SideBar from './Sidebar/SideBar';
 import No_Schedule from './Noschedule/NoSchedule';
-import Loading from '@/components/LCK/components/Loading/Loading';
+import Loading from '@/components/Common/Loading/Loading';
 import { useDateStore } from '@/components/LCK/Zustand/myMonth';
+import { useInView } from 'react-intersection-observer';
 import { openSideBarVaritent } from '@/components/LCK/varients/variants';
 import Filtering from './Filtering/Filtering';
 import useStore from '@/components/LCK/Zustand/useStore';

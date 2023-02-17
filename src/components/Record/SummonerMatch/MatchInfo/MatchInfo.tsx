@@ -5,17 +5,19 @@ import { useState, useEffect } from 'react';
 import { TypeMatch, TypeMatchInfo, TypeParticipants } from '@/components/Record/types/type';
 
 import { SPELL, PERKS } from '@/constants/data';
-import { VERSION } from '@/constants/url';
+import { storeVersion } from '@/store/store';
 
 import classnames from 'classnames';
-
-const CHAMPION_IMAGE_PATH = `https://ddragon.leagueoflegends.com/cdn/${VERSION}/img/champion`;
-const SPELL_IMAGE_PATH = `https://ddragon.leagueoflegends.com/cdn/${VERSION}/img/spell`;
-const ITEM_IMAGE_PATH = `https://ddragon.leagueoflegends.com/cdn/${VERSION}/img/item`;
 
 export default function MatchInfo({ matchData, puuid }: { matchData: TypeMatch; puuid: string }) {
   const [gameData, setGameData] = useState<TypeMatchInfo>(matchData.info);
   const [myGame, setMyGame] = useState<TypeParticipants>();
+
+  const { version } = storeVersion();
+
+  const CHAMPION_IMAGE_PATH = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion`;
+  const SPELL_IMAGE_PATH = `https://ddragon.leagueoflegends.com/cdn/${version}/img/spell`;
+  const ITEM_IMAGE_PATH = `https://ddragon.leagueoflegends.com/cdn/${version}/img/item`;
 
   // 경기 지속 시간 (분, 초)
   const gameDuration = (time: number) => {

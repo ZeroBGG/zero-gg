@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import InputID from '@/components/Main/InputID';
+import InputID from '@/components/Main/InputID/InputID';
 import styles from './Header.module.scss';
+
+import { storeVersion } from '@/store/store';
+
+import { getVersion } from '@/api/versionApi';
 
 export default function Header() {
   const [url, setUrl] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
+  const { version, updateData } = storeVersion();
 
   const menus = [
     { title: '홈', src: '/' },
@@ -20,7 +25,20 @@ export default function Header() {
 
   useEffect(() => {
     setUrl(location.pathname);
-  });
+
+    if (!version) {
+      const getVersionData = async () => {
+        try {
+          const result = await getVersion();
+          updateData(result[0]);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      getVersionData();
+    }
+  }, [location.pathname]);
 
   return (
     <header className={styles.header}>

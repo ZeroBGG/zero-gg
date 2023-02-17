@@ -2,24 +2,24 @@
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "functions": {
     "api/getDetailMatch.ts": {
-      "memory": 3008,
-      "maxDuration": 60
+      "memory": 1024,
+      "maxDuration": 10
     },
     "api/getMatch.ts": {
-      "memory": 3008,
-      "maxDuration": 60
+      "memory": 1024,
+      "maxDuration": 10
     },
     "api/getRotationChampion.ts": {
-      "memory": 3008,
-      "maxDuration": 60
+      "memory": 1024,
+      "maxDuration": 10
     },
     "api/getSummonerEntries.ts": {
-      "memory": 3008,
-      "maxDuration": 60
+      "memory": 1024,
+      "maxDuration": 10
     },
     "api/getSummonerInfo.ts": {
-      "memory": 3008,
-      "maxDuration": 60
+      "memory": 1024,
+      "maxDuration": 10
     }
   }
 }
