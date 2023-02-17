@@ -24,19 +24,14 @@ const DuoCards = ({ duoObj }: { duoObj: DuoType }) => {
         </div>
       );
     }
-    <></>;
   });
-
-  // console.log(duoObj.userId);
 
   if (duoObj.userId === null) {
     console.log('존재하지 않습니다.');
     return (
-      <>
-        <li>
-          <p>존재하지 않습니다.</p>
-        </li>
-      </>
+      <li>
+        <p>존재하지 않습니다.</p>
+      </li>
     );
   }
 

@@ -11,7 +11,7 @@ import UpdateDuo from '../UpdateDuo/UpdateDuo';
 const DuoInfo = () => {
   // DuoCards의 값을 가져오기
   const location = useLocation();
-  const { userId, memo, nickName, userPassword, position, queue, tier, title }: DuoType = location.state.duoObj;
+  const { userId, nickName, userPassword, position, tier }: DuoType = location.state.duoObj;
 
   const [update, setUpdate] = useState(false);
 

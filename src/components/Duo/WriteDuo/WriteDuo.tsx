@@ -25,14 +25,14 @@ const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
 
   const reset = () => {
     inputId.reset;
-    inputPass.reset();
-    inputQueue.reset();
-    inputTier.reset();
-    inputPosition.reset();
-    inputTitle.reset();
-    inputMemo.reset();
-    inputNickName.reset();
-    inputMostChamp.reset();
+    inputPass.reset;
+    inputQueue.reset;
+    inputTier.reset;
+    inputPosition.reset;
+    inputTitle.reset;
+    inputMemo.reset;
+    inputNickName.reset;
+    inputMostChamp.reset;
   };
 
   const date = new Date();
