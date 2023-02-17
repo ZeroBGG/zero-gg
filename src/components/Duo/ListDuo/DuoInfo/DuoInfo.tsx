@@ -12,7 +12,6 @@ const DuoInfo = () => {
   // DuoCards의 값을 가져오기
   const location = useLocation();
   const { userId, memo, nickName, userPassword, position, queue, tier, title }: DuoType = location.state.duoObj;
-  const { id } = location.state.duoObj;
 
   const [update, setUpdate] = useState(false);
 
