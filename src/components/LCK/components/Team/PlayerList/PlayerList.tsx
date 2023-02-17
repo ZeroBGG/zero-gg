@@ -28,22 +28,13 @@ const PlayerList = () => {
 
   useEffect(() => {
     setIsLoading(true);
-
-    new Promise<void>((res) => {
-      setTimeout(() => {
-        res();
-      }, 1000);
-    }).then(() => {
-      fetchData();
-      setTimeout(() => setIsLoading(false), 500);
-    });
+    fetchData();
+    setTimeout(() => setIsLoading(false), 200);
   }, []);
 
   useEffect(() => {
     localStorage.setItem('Roaster', myteam);
-
     let saved = localStorage.getItem('Roaster');
-
     if (saved !== null) {
       getTeam(saved);
     }

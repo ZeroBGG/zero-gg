@@ -10,7 +10,7 @@ const {
   VITE_FIREBASE_STORAGE_BUCKET,
   VITE_FIREBASE_SENDER_ID,
   VITE_FIREBASE_APP_ID,
-  VITE_FIREBASE_DATABASE_URL,
+
 } = import.meta.env;
 
 type FirebaseType = {
@@ -20,7 +20,6 @@ type FirebaseType = {
   readonly storageBucket: string;
   readonly messagingSenderId: string;
   readonly appId: string;
-  readonly databaseURL: string;
 };
 
 const firebaseConfig: FirebaseType = {
@@ -30,7 +29,6 @@ const firebaseConfig: FirebaseType = {
   storageBucket: VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: VITE_FIREBASE_SENDER_ID,
   appId: VITE_FIREBASE_APP_ID,
-  databaseURL: VITE_FIREBASE_DATABASE_URL,
 };
 
 // Initialize Firebase

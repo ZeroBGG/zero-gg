@@ -16,8 +16,9 @@ export default function Record() {
   const [info, setInfo] = useState<TypeSummoner>(); // 소환사 정보
   const [summonerRankInfo, setSummonerRankInfo] = useState<TypeSummonerRank[]>([]); // 소환사 랭크 정보
   const [timer, setTimer] = useState(0); // 디바운싱 타이머
-  const [btnLoading, setBtnLoading] = useState(true); // 전적 갱신 버튼 로딩
   const [data, setData] = useState<string[]>([]); // 소환사 최근 게임 데이터
+  const [btnLoading, setBtnLoading] = useState(true); // 전적 갱신 버튼 로딩
+  const [infoLoading, setInfoLoading] = useState(false); // 소환사 정보 로딩
   const [loading, setLoading] = useState(false); // 소환사 최근 게임 데이터 로딩
 
   // 소환사 데이터 조회 함수 (고유 id, 닉네임, 프로필 사진 번호, 소환사 레벨 등)
@@ -28,8 +29,10 @@ export default function Record() {
         if (res) {
           setInfo(res);
         }
+        setInfoLoading(true);
       } catch (err) {
         setInfo(undefined);
+        setInfoLoading(true);
         console.log(err);
       }
     }
@@ -115,11 +118,13 @@ export default function Record() {
         )}
       </section>
     ) : (
-      <section className={styles.error}>
-        <p className={styles.title}>
-          <strong className={styles.strong}>{summonerId}</strong> &nbsp; 일치하는 소환사님을 찾을 수 없습니다.
-        </p>
-      </section>
+      infoLoading && (
+        <section className={styles.error}>
+          <p className={styles.title}>
+            <strong className={styles.strong}>{summonerId}</strong> &nbsp; 일치하는 소환사님을 찾을 수 없습니다.
+          </p>
+        </section>
+      )
     );
   }
 }

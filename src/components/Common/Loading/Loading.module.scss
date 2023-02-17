@@ -6,6 +6,7 @@
   font-weight: bolder;
   margin-bottom: 20px;
 }
+
 .loading::after {
   content: '.';
   animation: dots 1s steps(5, end) infinite;

@@ -1,11 +1,56 @@
 @mixin skletonResponsive {
-  @media only screen and (min-width: 300px) and (max-width: 800px) {
+  @media only screen and (min-width: 240px) and (max-width: 424px) {
     .skeleton_container {
       width: 400px;
       margin: 0;
       .skeleton_wrapper {
         width: 100%;
         min-height: 170px;
+        .header {
+          display: flex;
+          z-index: 1;
+          margin-top: 10px;
+          .unknown {
+            color: var(--font-color);
+            font-size: 30px;
+            font-weight: bolder;
+          }
+          .question {
+            color: var(--gold-color);
+            margin-left: auto;
+            margin-right: 10px;
+            font-size: 40px;
+            font-weight: bolder;
+          }
+        }
+        .skeleton_img {
+          .img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 170px;
+            height: 170px;
+            z-index: 0;
+          }
+        }
+      }
+      .shimmer {
+        animation: shimmer 6s;
+        animation-iteration-count: infinite;
+        background: linear-gradient(to left, #212121 5%, #040404 25%, #0a0a0a 30%, #232320 35%);
+        background-size: 1300px 100%;
+      }
+    }
+  }
+}
+@mixin skletonResponsive {
+  @media only screen and (min-width: 425px) and (max-width: 1042px) {
+    .skeleton_container {
+      width: 100%;
+      margin: 0;
+      .skeleton_wrapper {
+        width: 100%;
+        min-height: 100%;
         .header {
           display: flex;
           z-index: 1;

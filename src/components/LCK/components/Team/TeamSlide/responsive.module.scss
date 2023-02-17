@@ -1,5 +1,5 @@
 @mixin responsive-slider {
-  @media only screen and (min-width: 300px) and (max-width: 800px) {
+  @media only screen and (min-width: 240px) and (max-width: 424px) {
     .slider_container {
       display: flex;
       align-items: center;
@@ -7,26 +7,70 @@
         width: 100%;
         height: 100%;
         padding: 3px;
+        display: flex;
+        align-items: center;
         .team_slide {
           width: 100%;
           display: flex;
+          padding: 0;
           flex-direction: row;
           .team_logo {
             padding: 5px;
             cursor: pointer;
-            .img {
+            .logo {
               width: 70px;
               height: 70px;
-            }
-            .teamName {
-              color: #fff;
-              font-size: 5px;
+              .name {
+                color: #fff;
+                font-size: 5px;
+              }
             }
           }
           .team_logo:hover {
             transform: scale(1.1);
-            background-color: #eaeaea;
-            .teamName {
+            background-color: var(--hover-tab-color);
+            .name {
+              font-size: 5px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin responsive-slider {
+  @media only screen and (min-width: 425px) and (max-width: 1059px) {
+    .slider_container {
+      display: flex;
+      align-items: center;
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 3px;
+        display: flex;
+        align-items: center;
+        .team_slide {
+          width: 100%;
+          display: flex;
+          padding: 0;
+          flex-direction: row;
+          .team_logo {
+            padding: 5px;
+            cursor: pointer;
+            .logo {
+              width: 70px;
+              height: 70px;
+              .name {
+                color: #fff;
+                font-size: 5px;
+              }
+            }
+          }
+          .team_logo:hover {
+            transform: scale(1.1);
+            background-color: var(--hover-tab-color);
+            .name {
               font-size: 5px;
               font-weight: 600;
             }

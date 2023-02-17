@@ -2,10 +2,13 @@
 .skeleton_logo {
   display: flex;
   justify-content: center;
-  width: 80%;
-  min-height: 60px;
+  width: 100%;
+  min-height: 80px;
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
   box-shadow: 0px 1px 1px rgba(51, 51, 51, 0.6);
-  .wrapper {
+  .skeleton_wrapper {
     width: 100%;
     height: 100%;
     display: flex;
@@ -15,16 +18,82 @@
       height: 100%;
       display: flex;
       flex-direction: row;
-      padding: 10px 0;
       .skeleton_logo {
-        display: flex;
-        height: 100px;
-        width: 190px;
-        padding: 40px 20px;
+        height: 100%;
+        width: 100%;
+        // padding: 40px 20px;
         background-color: var(--bg-color);
         margin: auto 5px;
       }
       @include shimmer;
+    }
+  }
+}
+@mixin responsive-slider {
+  @media only screen and (min-width: 240px) and (max-width: 424px) {
+    .skeleton_logo {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      min-height: 80px;
+      border-radius: 10px;
+      padding: 0;
+      margin: 0;
+      box-shadow: 0px 1px 1px rgba(51, 51, 51, 0.6);
+      .skeleton_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        .skeleton_slide {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          .skeleton_logo {
+            height: 100%;
+            width: 100%;
+            // padding: 40px 20px;
+            background-color: var(--bg-color);
+            margin: auto 5px;
+          }
+          @include shimmer;
+        }
+      }
+    }
+  }
+}
+@mixin responsive-slider {
+  @media only screen and (min-width: 425px) and (max-width: 1059px) {
+    .skeleton_logo {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      min-height: 80px;
+      border-radius: 10px;
+      padding: 0;
+      margin: 0;
+      box-shadow: 0px 1px 1px rgba(51, 51, 51, 0.6);
+      .skeleton_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        .skeleton_slide {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: row;
+          .skeleton_logo {
+            height: 100%;
+            width: 100%;
+            // padding: 40px 20px;
+            background-color: var(--bg-color);
+            margin: auto 5px;
+          }
+          @include shimmer;
+        }
+      }
     }
   }
 }

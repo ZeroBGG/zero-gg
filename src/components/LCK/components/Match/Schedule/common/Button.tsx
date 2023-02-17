@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import styles from '../Item/Item.module.scss';
-
-const LCK_LIVE = 'https://game.naver.com/esports/League_of_Legends/schedule/lck';
+import { LCK_LIVE } from '@/components/LCK/components/constant/constant';
 
 type ButtonType = {
   content: string;

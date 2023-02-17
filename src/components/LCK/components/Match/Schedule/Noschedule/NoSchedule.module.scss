@@ -1,6 +1,6 @@
 .no_schedule {
   display: flex;
-  width: 100%;
+  width: 100vw;
   .wrapper {
     width: 100%;
     display: flex;
@@ -8,7 +8,7 @@
     margin-top: 10%;
     flex-direction: column;
     .noImg {
-      width: 300px;
+      width: 600px;
     }
     .content {
       text-align: center;

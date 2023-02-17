@@ -1,8 +1,40 @@
 // ################### 팀 메인 페이지 ##############
 @mixin responsive-team {
-  @media screen and (min-width: 300px) and (max-width: 800px) {
+  @media screen and (min-width: 240px) and (max-width: 424px) {
     .container {
       display: block;
+      width: 100%;
+      overflow-x: hidden;
+      .Lck_bg {
+        min-height: 250px;
+        .title {
+          font-size: 50px;
+          padding: 20px;
+        }
+      }
+      .slide {
+        width: 100%;
+        height: 20%;
+        overflow-x: scroll;
+        padding: 0;
+      }
+      .player_list {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+    }
+    .container::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}
+@mixin responsive-team-md {
+  @media screen and (min-width: 425px) and (max-width: 1042px) {
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       overflow-x: hidden;
       .Lck_bg {
@@ -10,8 +42,9 @@
       }
       .slide {
         width: 100%;
-        height: 10%;
+        height: 15%;
         overflow-x: scroll;
+        padding: 0;
       }
       .player_list {
         width: 100%;

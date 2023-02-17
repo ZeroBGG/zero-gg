@@ -1,0 +1,99 @@
+// ############### LCK 페이지 ###############
+@mixin responsive-main-page {
+  @media only screen and (min-width: 240px) and (max-width: 424px) {
+    .container {
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: baseline;
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        .border_gradient {
+          display: flex;
+          flex-direction: column;
+          .lck_side {
+            display: none;
+          }
+          .card_container {
+            margin: auto;
+            display: grid;
+            background: var(--bg-color);
+            width: 100%;
+            grid-template-columns: repeat(1, minmax(300px, 1fr));
+            grid-template-rows: repeat(3, minmax(100px, 1fr));
+            justify-content: baseline;
+            .team_container {
+              margin: 5px 5px 0 5px;
+              border-top-right-radius: 6px;
+              border-top-left-radius: 6px;
+              .link_page {
+                .lck_team {
+                  width: 100%;
+                }
+              }
+            }
+            .match_container {
+              height: 190px;
+              border-radius: 0;
+            }
+
+            .riot_container {
+              border-top-right-radius: 0;
+              border-bottom-left-radius: 6px;
+              border-bottom-right-radius: 6px;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@mixin responsive-main-page-md {
+  @media only screen and (min-width: 425px) and (max-width: 1042px) {
+    .container {
+      display: flex;
+      height: 100vh;
+      .wrapper {
+        width: 90%;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        .border_gradient {
+          height: 100%;
+          display: flex;
+          .lck_side {
+            display: none;
+          }
+          .card_container {
+            margin: 0 auto;
+            display: grid;
+            background: var(--bg-color);
+            margin-right: 0px;
+            width: 100%;
+            height: 100%;
+            grid-template-columns: repeat(1, minmax(300px, 1fr));
+            grid-template-rows: repeat(3, minmax(200px, 1fr));
+            .team_container {
+              margin: 5px 5px 0 5px;
+              .link_page {
+                .lck_team {
+                  width: 100%;
+                }
+              }
+            }
+            .match_container {
+              margin: 5px 5px 0 5px;
+            }
+
+            .riot_container {
+              margin: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
