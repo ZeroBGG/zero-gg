@@ -1,4 +1,3 @@
-import { NONE_PLAYER } from '../constant/constant';
 import styles from './SkeletonProfile.module.scss';
 
 const SkeletonProfile = () => {

@@ -1,10 +1,9 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 import { collection, getDocs, limit, orderBy, query, startAfter } from 'firebase/firestore';
-import { Params, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { useInView } from 'react-intersection-observer';
-
 import { motion } from 'framer-motion';
-import { dbService } from 'src/firebase';
+import { dbService } from 'src/firebase.ts';
 import { matchListProps } from '@/components/LCK/typings';
 import styles from './Schedule.module.scss';
 import SideBar from './Sidebar/SideBar';
@@ -29,10 +28,10 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   const [loading, setLoading] = useState(false);
   const [key, setKey] = useState<any>(null);
   const [noMore, setNoMore] = useState(false);
-  const { id } = useStore();
+  const { team } = useStore();
   const { mon, getMonth } = useDateStore();
   const [ref, inView] = useInView();
-  let params: any = useParams();
+  let { month } = useParams();
 
   /// data 불러오기
   const fetchData = useCallback(async () => {
@@ -95,15 +94,15 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
 
   /// 데이터 필터링
   const filterData = () => {
-    if (mon === '' && id === '') {
+    if (mon === '' && team === '') {
       setFilterList(list);
     } else {
       const Filter = list.reduce((acc: matchListProps[], el: matchListProps) => {
         const DateCodition = mon ? el.month === mon : true;
-        const TeamCondition1 = id ? el.matches[0].matchOne.home.id.includes(id) : true;
-        const TeamCondition2 = id ? el.matches[0].matchOne.away.id.includes(id) : true;
-        const TeamCondition3 = id ? el.matches[0].matchTwo.home.id.includes(id) : true;
-        const TeamCondition4 = id ? el.matches[0].matchTwo.away.id.includes(id) : true;
+        const TeamCondition1 = team ? el.matches[0].matchOne.home.id.includes(team) : true;
+        const TeamCondition2 = team ? el.matches[0].matchOne.away.id.includes(team) : true;
+        const TeamCondition3 = team ? el.matches[0].matchTwo.home.id.includes(team) : true;
+        const TeamCondition4 = team ? el.matches[0].matchTwo.away.id.includes(team) : true;
 
         const Condition = TeamCondition1 || TeamCondition2 || TeamCondition3 || TeamCondition4;
         if (DateCodition && Condition) {
@@ -118,13 +117,13 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   // 필터링
   useEffect(() => {
     filterData();
-  }, [list, mon, id]);
+  }, [list, mon, team]);
   // 월별 필터후 새로고침시 유지
   useEffect(() => {
-    localStorage.setItem('monthstorage', params.month);
+    localStorage.setItem('monthstorage', month);
     let saved = localStorage.getItem('monthstorage');
     if (saved !== null) {
-      getMonth(params.month);
+      getMonth(month);
     } else {
       getMonth('');
     }
@@ -137,7 +136,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   return (
     <section className={styles.schedule_container}>
       <ul className={styles.schedule_list} role="listbox">
-        {Number(mon) < 4 || params.month === undefined ? (
+        {Number(mon) < 4 || month === undefined ? (
           filterList.map((lst: matchListProps) => (
             <li className={styles.schedules_item} key={lst.id} role="none">
               <div className={styles.date_info}>
@@ -146,7 +145,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
               </div>
               <div className={styles.item}>
                 <div className={styles.matches}>
-                  <Filtering list={lst} mon={mon} id={id} />
+                  <Filtering list={lst} mon={mon} id={team} />
                 </div>
               </div>
             </li>

@@ -61,7 +61,7 @@ export const TEAM_CATEGORYS = [
   },
 
   {
-    id: 'hanwha',
+    id: 'hanhwa',
     teamName: 'Hanwha Life Esports',
     url: '/assets/LCK/TeamLogo/HanHwa.webp',
   },

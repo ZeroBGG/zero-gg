@@ -1,6 +1,6 @@
 import styles from './LCK.module.scss';
 import { Link } from 'react-router-dom';
-import { LCK_LOGO, RIOT, RIOT_LOGO } from './components/constant/constant';
+import { LCK_LOGO, RIOT, RIOT_LOGO } from '@/components/LCK/components/constant/constant';
 import { motion } from 'framer-motion';
 import { boxVarients } from '@/components/LCK/varients/variants';
 export default function LCK() {
