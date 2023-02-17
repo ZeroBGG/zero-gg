@@ -3,6 +3,9 @@
   justify-content: center;
   font-size: 30px;
   font-weight: bolder;
+  align-items: center;
+  margin: auto;
+  width: 600px;
 }
 .loading::after {
   content: '.';

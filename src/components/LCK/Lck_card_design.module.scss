@@ -12,6 +12,8 @@
 }
 
 @mixin gradient-wrapper {
+  // 참고 레퍼런스 https://codepen.io/Huhtamaki/pen/GPzwPY
+
   display: flex;
   margin: 0 auto;
   max-width: 100%;
@@ -28,6 +30,8 @@
     z-index: -1;
     width: calc(100% + var(--border-width) * 2);
     height: calc(100% + var(--border-width) * 2);
+
+    // 그라디언트가 무빙할때
     background: linear-gradient(60deg, #6efdff, #6effc5, #75ff6e, #eaea00, #ffff7e, #41dc63, #5eff81, #5ff281, #5ff2f0);
     background-size: 300% 300%;
     background-position: 0 50%;
@@ -45,8 +49,7 @@
   background-color: var(--tab-border);
   margin-right: 15px;
   width: 50%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-radius: 6px;
   height: 580px;
   grid-template-columns: repeat(1, minmax(280px, 1fr));
   grid-template-rows: repeat(3, minmax(183px, 1fr));

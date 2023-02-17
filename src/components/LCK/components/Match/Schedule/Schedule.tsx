@@ -1,22 +1,28 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 import { collection, getDocs, limit, orderBy, query, startAfter } from 'firebase/firestore';
-import { dbService } from 'src/firebase';
-import { matchesType, matchListProps } from '@/components/LCK/typings';
-import styles from './Schedule.module.scss';
-import Item from './Item/Item';
-import SideBar from './Sidebar/SideBar';
-import { useParams } from 'react-router';
-import useStore from '@/components/LCK/Zustand/useStore';
-import { useDateStore } from '@/components/LCK/Zustand/myMonth';
-import No_Schedule from './Noschedule/NoSchedule';
+import { Params, useParams } from 'react-router';
 import { useInView } from 'react-intersection-observer';
-import Loading from '../../Loading/Loading';
+
+import { motion } from 'framer-motion';
+import { dbService } from 'src/firebase';
+import { matchListProps } from '@/components/LCK/typings';
+import styles from './Schedule.module.scss';
+import SideBar from './Sidebar/SideBar';
+import No_Schedule from './Noschedule/NoSchedule';
+import Loading from '@/components/LCK/components/Loading/Loading';
+import { useDateStore } from '@/components/LCK/Zustand/myMonth';
+import { openSideBarVaritent } from '@/components/LCK/varients/variants';
+import Filtering from './Filtering/Filtering';
+import useStore from '@/components/LCK/Zustand/useStore';
 
 type hoverType = {
   isHover: boolean;
   limitCount: number;
   collectionName: string;
 };
+
+const MAX_MATCH_NUMBER = 44;
+
 const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   const [list, setList] = useState<matchListProps[]>([]);
   const [filterList, setFilterList] = useState<matchListProps[]>([]);
@@ -81,6 +87,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
 
   // 무한스크롤 로딩
   useEffect(() => {
+    //inView가 True가 되는 순간 로드데이터를 15개씩 불러옴
     if (inView) {
       loadMore(15);
     }
@@ -126,55 +133,20 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   const Split = (text: string) => {
     return text.split('요일')[0];
   };
+
   return (
     <section className={styles.schedule_container}>
-      <ul className={styles.schedule_list}>
+      <ul className={styles.schedule_list} role="listbox">
         {Number(mon) < 4 || params.month === undefined ? (
           filterList.map((lst: matchListProps) => (
-            <li className={styles.schedules_item} key={lst.id}>
+            <li className={styles.schedules_item} key={lst.id} role="none">
               <div className={styles.date_info}>
                 <span className={styles.date}>{lst.date}</span>
                 <span className={styles.day}>({Split(lst.day)})</span>
               </div>
               <div className={styles.item}>
                 <div className={styles.matches}>
-                  {lst.matches.map((match: matchesType, idx: number) => {
-                    const { matchOne, matchTwo } = match;
-                    const TeamCondition = matchOne.home.id.includes(id) || matchOne.away.id.includes(id);
-                    const TeamCondition2 = matchTwo.home.id.includes(id) || matchTwo.away.id.includes(id);
-                    const UNIQUE_KEY = matchOne.state + idx.toString();
-                    // matches가 두경기 다 포함하고 있기에 조건문을 통해서 조금 유형별로 데이터가 표시되는 방법을 다르게 만들었습니다.
-                    if (mon === '' && id === '') {
-                      return (
-                        <div className={styles.match_card} key={UNIQUE_KEY}>
-                          <Item matchType={matchOne} />
-                          <Item matchType={matchTwo} />
-                        </div>
-                      );
-                    }
-                    if (mon === params.month && id == '') {
-                      return (
-                        <div className={styles.match_card} key={UNIQUE_KEY}>
-                          <Item matchType={matchOne} />
-                          <Item matchType={matchTwo} />
-                        </div>
-                      );
-                    }
-                    if (mon === params.month && TeamCondition) {
-                      return (
-                        <div className={styles.match_card} key={UNIQUE_KEY}>
-                          <Item matchType={matchOne} />
-                        </div>
-                      );
-                    }
-                    if (mon === params.month && TeamCondition2) {
-                      return (
-                        <div className={styles.match_card} key={UNIQUE_KEY}>
-                          <Item matchType={matchTwo} />
-                        </div>
-                      );
-                    }
-                  })}
+                  <Filtering list={lst} mon={mon} id={id} />
                 </div>
               </div>
             </li>
@@ -186,21 +158,37 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
         )}
 
         <div ref={ref} />
-        {list.length > 0 && list.length < 44 ? (
+        {list.length > 0 && list.length < MAX_MATCH_NUMBER ? (
           <>
             {loading ? (
               <>
                 <Loading />
               </>
             ) : (
-              <div>더이상 불러올 피드가 없습니다.</div>
+              <>{!noMore ? <div className={styles.nomore}></div> : ''}</>
             )}
           </>
         ) : (
-          <>{!noMore ? <div className={styles.nomore}></div> : ''}</>
+          ''
         )}
       </ul>
-      {isHover ? <SideBar /> : null}
+      {isHover ? (
+        <motion.aside
+          className={styles.sidebar_container}
+          initial={'initial'}
+          animate={'open'}
+          variants={openSideBarVaritent}
+        >
+          <SideBar />
+        </motion.aside>
+      ) : (
+        <motion.aside
+          className={styles.sidebar_container}
+          initial={'open'}
+          animate={'initial'}
+          variants={openSideBarVaritent}
+        ></motion.aside>
+      )}
     </section>
   );
 };

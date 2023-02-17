@@ -1,5 +1,5 @@
 @mixin ListResponsive {
-  @media only screen and (min-width: 240px) and (max-width: 400px) {
+  @media only screen and (min-width: 240px) and (max-width: 424px) {
     .team_info {
       width: 100%;
       display: flex;
@@ -8,10 +8,27 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(1, minmax(360px, 1fr));
-        grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
         .card {
           width: 100%;
           height: 200px;
+        }
+      }
+    }
+  }
+}
+@mixin ListResponsive {
+  @media only screen and (min-width: 425px) and (max-width: 1042px) {
+    .team_info {
+      width: 100%;
+      display: flex;
+      padding: 0;
+      .team_info_list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(100%, 1fr));
+        .card {
+          width: 100%;
+          height: 350px;
         }
       }
     }
