@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from '../Item/Item.module.scss';
-import { LCK_LIVE } from '@/components/LCK/components/constant/constant';
+import { LCK_LIVE } from '@/components/LCK/components/Constant/constant';
 
 type ButtonType = {
   content: string;

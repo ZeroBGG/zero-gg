@@ -1,6 +1,6 @@
 import styles from './Main.module.scss';
-import InputID from './InputID';
-import Circle from './Circle';
+import InputID from './InputID/InputID';
+import Circle from './Circle/Circle';
 
 import bg from '/assets/images/Main/bg.mp4';
 

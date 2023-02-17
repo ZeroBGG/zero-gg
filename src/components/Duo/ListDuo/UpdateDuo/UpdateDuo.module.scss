@@ -1,0 +1,101 @@
+@import '../../common.scss';
+
+/* UpdateDuo.module.scss */
+
+$bgColor-1: #1c1c1f;
+$bgColor-2: #282830;
+$fontColor: #f0f0f0;
+
+.update {
+  @include wrapper(600px, 325px);
+
+  .select_space {
+    display: flex;
+
+    select {
+      @include select;
+    }
+
+    select::-ms-expand {
+      display: none;
+    }
+  }
+
+  .input_space {
+    label {
+      width: 100px;
+    }
+
+    .input_text {
+      @include input(220px);
+    }
+
+    .input_memo {
+      @include input(440px);
+    }
+  }
+
+  .button_space {
+    button {
+      @include button;
+
+      transition: ease-out 0.5s;
+
+      &:disabled {
+        cursor: default;
+        background-color: #9e9e9e;
+        color: #1e1e1e;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #817a72;
+        color: $fontColor;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .update {
+    padding-top: 15px;
+    @include wrapper(300px, 480px);
+
+    .select_space {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input_space {
+      .input_memo {
+        @include input(220px);
+      }
+    }
+
+    .button_space {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 391px) and (max-width: 786px) {
+  .update {
+    padding-top: 15px;
+    @include wrapper(300px, 480px);
+
+    .select_space {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input_space {
+      .input_memo {
+        @include input(220px);
+      }
+    }
+
+    .button_space {
+      margin-top: 10px;
+    }
+  }
+}

@@ -2,19 +2,22 @@ import styles from './MatchTeam.module.scss';
 import React, { useState, useEffect } from 'react';
 
 import { TypeParticipants } from '@/components/Record/types/type';
-import { VERSION } from '@/constants/url';
+import { storeVersion } from '@/store/store';
 import { Link } from 'react-router-dom';
 
-const CHAMPION_IMAGE_PATH = `https://ddragon.leagueoflegends.com/cdn/${VERSION}/img/champion`;
+const RED_TEAM_NUMBER = 5; // 레드팀 0번~4번 인덱스
+const BLUE_TEAM_NUMBER = 4; // 블루팀 5번~9번 인덱스
 
 export default function MatchTeam({ MatchTeamData }: { MatchTeamData: TypeParticipants[] }) {
   const [teamRed, setTeamRed] = useState<TypeParticipants[]>([]);
   const [teamBlue, setTeamBlue] = useState<TypeParticipants[]>([]);
+  const { version } = storeVersion();
+  const CHAMPION_IMAGE_PATH = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion`;
 
   useEffect(() => {
     const teamRedFilter = () => {
       const red = MatchTeamData.filter((value, index) => {
-        if (index < 5) {
+        if (index < RED_TEAM_NUMBER) {
           return value;
         }
       });
@@ -23,7 +26,7 @@ export default function MatchTeam({ MatchTeamData }: { MatchTeamData: TypePartic
 
     const teamBlueFilter = () => {
       const blue = MatchTeamData.filter((value, index) => {
-        if (index > 4) {
+        if (index > BLUE_TEAM_NUMBER) {
           return value;
         }
       });

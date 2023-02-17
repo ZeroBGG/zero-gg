@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <section className={styles.section}>
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="Zero.GG" />
 
         <article className={styles.copyright}>
           <p>제로베이스 - 프론트엔드 뿌수조</p>

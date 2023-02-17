@@ -6,15 +6,21 @@ import MatchInfo from './MatchInfo/MatchInfo';
 
 import { TypeMatch } from '@/components/Record/types/type';
 
-export default function SummonerMacth({ puuid }: { puuid: string }) {
-  const [dataSet, setDataSet] = useState<string[]>([]);
+import Loading from '@/components/Common/Loading/Loading';
+
+export default function SummonerMacth({ puuid, data }: { puuid: string; data: string[] }) {
+  const [dataSet, setDataSet] = useState<string[]>(data);
   const [matchData, setMatchData] = useState<TypeMatch[]>([]);
   const [start, setStart] = useState<number>(0);
+  const [loading, setLoading] = useState(true);
 
   const fnMatchData = async () => {
     try {
       const res = await getMatch(puuid, start);
       setDataSet(res);
+      if (res.length === 0) {
+        setLoading(false);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -27,7 +33,7 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
   useEffect(() => {
     setStart(0);
     setMatchData([]);
-    fnMatchData();
+    // fnMatchData();
   }, [puuid]);
 
   useEffect(() => {
@@ -47,6 +53,7 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
     };
 
     const feactData = async () => {
+      setLoading(true);
       if (dataSet.length > 0) {
         const res = dataSet.map(async (data) => {
           try {
@@ -56,7 +63,12 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
           }
         });
         // console.log(res);
-        await Promise.all(res).then((res) => setMatchData((prev) => [...prev, ...res]));
+        await Promise.all(res).then((res) => {
+          setMatchData((prev) => [...prev, ...res]);
+          setLoading(false);
+        });
+      } else {
+        setLoading(false);
       }
     };
 
@@ -66,20 +78,19 @@ export default function SummonerMacth({ puuid }: { puuid: string }) {
   {
     return (
       <>
-        {matchData.length > 0 ? (
+        {matchData.length > 0 && (
           <>
             {matchData.map((data: TypeMatch) => (
               <MatchInfo matchData={data} puuid={puuid} key={data.metadata.matchId} />
             ))}
-            {matchData.length < 20 && matchData.length % 5 === 0 && (
+            {matchData.length < 20 && matchData.length % 5 === 0 && !loading && (
               <div className={styles.btn} onClick={handleClick} role="button">
                 더보기
               </div>
             )}
           </>
-        ) : (
-          <p className={styles.noMatchData}>전적 기록이 없습니다.</p>
         )}
+        {loading ? <Loading /> : matchData.length <= 0 && <p className={styles.noMatchData}>전적 기록이 없습니다.</p>}
       </>
     );
   }
