@@ -29,7 +29,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   const [loading, setLoading] = useState(false); //
   const [key, setKey] = useState<any>(null);
   const [noMore, setNoMore] = useState(false);
-  const { team } = useStore();
+  const { teamId } = useStore();
   const { mon, getMonth } = useDateStore();
   const [ref, inView] = useInView();
   let { month } = useParams();
@@ -97,15 +97,15 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
 
   /// 데이터 필터링
   const filterData = () => {
-    if (mon === '' && team === '') {
+    if (mon === '' && teamId === '') {
       setFilterList(list);
     } else {
       const Filter = list.reduce((acc: matchListProps[], el: matchListProps) => {
         const DateCodition = mon ? el.month === mon : true;
-        const TeamCondition1 = team ? el.matches[0].matchOne.home.id.includes(team) : true;
-        const TeamCondition2 = team ? el.matches[0].matchOne.away.id.includes(team) : true;
-        const TeamCondition3 = team ? el.matches[0].matchTwo.home.id.includes(team) : true;
-        const TeamCondition4 = team ? el.matches[0].matchTwo.away.id.includes(team) : true;
+        const TeamCondition1 = teamId ? el.matches[0].matchOne.home.id.includes(teamId) : true;
+        const TeamCondition2 = teamId ? el.matches[0].matchOne.away.id.includes(teamId) : true;
+        const TeamCondition3 = teamId ? el.matches[0].matchTwo.home.id.includes(teamId) : true;
+        const TeamCondition4 = teamId ? el.matches[0].matchTwo.away.id.includes(teamId) : true;
 
         const Condition = TeamCondition1 || TeamCondition2 || TeamCondition3 || TeamCondition4;
         if (DateCodition && Condition) {
@@ -120,7 +120,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   // 필터링
   useEffect(() => {
     filterData();
-  }, [list, mon, team]);
+  }, [list, mon, teamId]);
   // 월별 필터후 새로고침시 유지
   useEffect(() => {
     localStorage.setItem('monthstorage', month);
@@ -148,7 +148,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
               </div>
               <div className={styles.item}>
                 <div className={styles.matches}>
-                  <Filtering list={lst} mon={mon} id={team} />
+                  <Filtering list={lst} mon={mon} id={teamId} />
                 </div>
               </div>
             </li>

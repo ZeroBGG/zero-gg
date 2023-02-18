@@ -7,7 +7,7 @@ import styles from './Teams.module.scss';
 
 const Teams = React.memo(() => {
   const [team, setTeam] = useState<CategoryType>([]);
-  const { id, getId } = useStore();
+  const { teamId, getId } = useStore();
   const teams = TEAM_CATEGORYS;
   useEffect(() => {
     setTeam(teams);
