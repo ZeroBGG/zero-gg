@@ -1,8 +1,10 @@
+@import "../../common.scss";
+
 $bgColor-1: #1c1c1f;
 $bgColor-2: #282830;
 $fontColor: #f0f0f0;
 
-.modal_form {
+.modal_div {
   width: 30vw;
   display: flex;
   flex-direction: column;
@@ -12,11 +14,7 @@ $fontColor: #f0f0f0;
   background-color: #f1f1f1;
   color: $fontColor;
 
-  z-index: 9999;
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @include modal_wrapper(30%, 50%);
 
   h2 {
     font-size: 2rem;
@@ -24,10 +22,5 @@ $fontColor: #f0f0f0;
     line-height: 2rem;
     margin: 20px 0 10px 0;
     color: black;
-  }
-
-  div {
-    display: flex;
-    justify-content: space-around;
   }
 }

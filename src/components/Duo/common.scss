@@ -80,3 +80,11 @@ $bgColor-2: #282830;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin modal_wrapper($top, $left) {
+  z-index: 9999;
+  position: fixed;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}

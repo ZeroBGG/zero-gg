@@ -1,4 +1,4 @@
-import styles from './Modal.module.scss';
+import styles from './DeleteModal.module.scss';
 import { deleteDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { FormEvent } from 'react';
@@ -8,7 +8,7 @@ interface ModalProps {
   onToggleModal: () => void;
 }
 
-const Modal = ({ changeDuoInfo, onToggleModal }: ModalProps) => {
+const DeleteModal = ({ changeDuoInfo, onToggleModal }: ModalProps) => {
   const navigate = useNavigate();
 
   const onSubmit = (e: FormEvent) => {
@@ -36,4 +36,4 @@ const Modal = ({ changeDuoInfo, onToggleModal }: ModalProps) => {
   );
 };
 
-export default Modal;
+export default DeleteModal;
