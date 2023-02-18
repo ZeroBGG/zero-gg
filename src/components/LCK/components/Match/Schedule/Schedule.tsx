@@ -20,12 +20,13 @@ type hoverType = {
   collectionName: string;
 };
 
-const MAX_MATCH_NUMBER = 44;
+const MAX_MATCH_NUMBER = 44; // 지금까지 경기수
+const NO_MATCH_START_MONTH = 4; // 매치가 없는 월
 
 const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
-  const [list, setList] = useState<matchListProps[]>([]);
-  const [filterList, setFilterList] = useState<matchListProps[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [list, setList] = useState<matchListProps[]>([]); /// 기존 리스트
+  const [filterList, setFilterList] = useState<matchListProps[]>([]); // 필터가 된 리스트
+  const [loading, setLoading] = useState(false); //
   const [key, setKey] = useState<any>(null);
   const [noMore, setNoMore] = useState(false);
   const { team } = useStore();
@@ -65,6 +66,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
         const snap: any = await getDocs(queryRef);
         setTimeout(() => {
           snap.empty === 0 ? setNoMore(true) : setKey(snap.docs[snap.docs.length - 1]);
+          // 불러올 데이터가 0이라면 nomore은 true가 됩니다.
           const docsArray = snap.docs.map((doc: any) => ({
             id: doc.id,
             ...doc.data(),
@@ -82,6 +84,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   // data 불러오기
   useEffect(() => {
     fetchData();
+    setLoading(false);
   }, [fetchData]);
 
   // 무한스크롤 로딩
@@ -136,7 +139,7 @@ const Schedule = ({ isHover, limitCount, collectionName }: hoverType) => {
   return (
     <section className={styles.schedule_container}>
       <ul className={styles.schedule_list} role="listbox">
-        {Number(mon) < 4 || month === undefined ? (
+        {Number(mon) < NO_MATCH_START_MONTH || month === undefined ? (
           filterList.map((lst: matchListProps) => (
             <li className={styles.schedules_item} key={lst.id} role="none">
               <div className={styles.date_info}>
