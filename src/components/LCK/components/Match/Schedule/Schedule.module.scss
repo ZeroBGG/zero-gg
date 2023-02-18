@@ -49,6 +49,14 @@
       background-color: var(--bg-color);
     }
   }
+  .sidebar_container {
+    margin: 0;
+    position: sticky;
+    right: 0;
+    width: auto;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+  }
 }
 
 @include responsive;

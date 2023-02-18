@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import useToggle from '../../../../../../hooks/useToggle';
+import { useRef } from 'react';
+import useToggle from '@/hooks/useToggle';
 import Month from '../Month/Month';
 import Teams from '../Teams/Teams';
 import styles from './Accordion.module.scss';

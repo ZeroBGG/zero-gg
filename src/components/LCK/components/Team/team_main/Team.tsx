@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LCK_BG_URL } from '../../constant/constant';
+import { LCK_BG_URL } from '@/components/LCK/components/constant/constant';
 import PlayerList from '../PlayerList/PlayerList';
 import TeamSlide from '../TeamSlide/TeamSlide';
 import styles from './Team.module.scss';
