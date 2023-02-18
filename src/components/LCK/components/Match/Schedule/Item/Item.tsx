@@ -7,6 +7,7 @@ import { LCK_LIVE } from '@/components/LCK/components/constant/constant';
 type ItemType = {
   matchType: matchTeamType;
 };
+const MEDIA_QUERY_MD_WIDTH = 1042;
 
 const Item = ({ matchType }: ItemType) => {
   const [windowSize, setWindowSize] = useState({
@@ -22,7 +23,7 @@ const Item = ({ matchType }: ItemType) => {
           <span className={styles.time}>{matchType.time}</span>
           <span className={styles.state}>{matchType.state}</span>
         </div>
-        {windowSize.width < 1042 ? (
+        {windowSize.width < MEDIA_QUERY_MD_WIDTH ? (
           <>
             <a
               className={styles.play_team_container}
