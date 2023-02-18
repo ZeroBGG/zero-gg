@@ -1,10 +1,11 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import styles from './Match.module.scss';
 import Schedule from './Schedule/Schedule';
 
 const Match = () => {
   const [isHover, setIsHover] = useState<boolean>(false);
+
   const handleClick = () => {
     setIsHover((prev) => !prev);
   };

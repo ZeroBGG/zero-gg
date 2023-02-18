@@ -1,8 +1,7 @@
 import { icons } from '@/data/position';
-import { ICON_URL } from '@/components/LCK/components/constant/constant';
+import { ICON_URL } from '@/components/LCK/components/Constant/constant';
 
 import styles from '../LanePostion/LanePosition.module.scss';
-import { RefObject } from 'react';
 interface PositionType {
   position: string;
 }
