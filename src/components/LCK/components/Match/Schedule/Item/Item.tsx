@@ -2,7 +2,7 @@ import { memo, useEffect, useState } from 'react';
 import Button from '../common/Button';
 import styles from './Item.module.scss';
 import { matchTeamType } from '@/components/LCK/typings';
-import { LCK_LIVE } from '@/components/LCK/components/constant/constant';
+import { LCK_LIVE } from '@/components/LCK/components/Constant/constant';
 
 type ItemType = {
   matchType: matchTeamType;

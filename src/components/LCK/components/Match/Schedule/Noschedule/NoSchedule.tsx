@@ -1,4 +1,4 @@
-import { NO_MARK } from '@/components/LCK/components/constant/constant';
+import { NO_MARK } from '@/components/LCK/components/Constant/constant';
 import styles from './NoSchedule.module.scss';
 
 const NoSchedule = () => {
