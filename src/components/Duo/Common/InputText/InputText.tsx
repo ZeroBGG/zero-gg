@@ -31,21 +31,17 @@ const InputText = (inputProps: InputType) => {
         {inLabelText}
       </label>
       {value !== undefined ? (
-        <>
-          <input
-            type={type}
-            name={name}
-            id={id}
-            className={className}
-            placeholder={placeholder}
-            value={value}
-            {...props}
-          />
-        </>
+        <input
+          type={type}
+          name={name}
+          id={id}
+          className={className}
+          placeholder={placeholder}
+          value={value}
+          {...props}
+        />
       ) : (
-        <>
-          <input type={type} name={name} id={id} className={className} placeholder={placeholder} {...props} />
-        </>
+        <input type={type} name={name} id={id} className={className} placeholder={placeholder} {...props} />
       )}
     </div>
   );

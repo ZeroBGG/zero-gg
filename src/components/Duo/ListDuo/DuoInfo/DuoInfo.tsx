@@ -7,13 +7,17 @@ import useInput from '@/hooks/useInput';
 import InputText from '../../Common/InputText/InputText';
 import styles from './DuoInfo.module.scss';
 import UpdateDuo from '../UpdateDuo/UpdateDuo';
+import CommonModal from '../../Common/Modal/CommonModal';
+import useStore from '../../Zustand/Zustand';
 
 const DuoInfo = () => {
   // DuoCards의 값을 가져오기
   const location = useLocation();
   const { userId, nickName, userPassword, position, tier }: DuoType = location.state.duoObj;
 
-  const [update, setUpdate] = useState(false);
+  const [update, setUpdate] = useState<boolean>(false);
+
+  const { isFailModal, toggleFailModal } = useStore();
 
   const { reset: resetId, ...submitId } = useInput('');
   const { reset: resetPass, ...submitPass } = useInput('');
@@ -49,7 +53,8 @@ const DuoInfo = () => {
       setUpdate((e) => !e);
       reset();
     } else {
-      window.alert('아이디와 비밀번호가 틀렸습니다.');
+      // window.alert('아이디와 비밀번호가 틀렸습니다.');
+      toggleFailModal();
       reset();
     }
   };
@@ -73,6 +78,7 @@ const DuoInfo = () => {
           <button onClick={onClickAuth}>수정 / 삭제</button>
         </div>
       </form>
+      {isFailModal && <CommonModal onClickModal={toggleFailModal} inMessage="아이디와 비밀번호가 틀렸습니다." />}
       {update ? (
         <>
           <UpdateDuo onToggleClick={onToggleClick} />

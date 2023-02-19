@@ -1,4 +1,4 @@
-import styles from './Modal.module.scss';
+import styles from './DeleteModal.module.scss';
 import { deleteDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { FormEvent } from 'react';
@@ -8,7 +8,7 @@ interface ModalProps {
   onToggleModal: () => void;
 }
 
-const Modal = ({ changeDuoInfo, onToggleModal }: ModalProps) => {
+const DeleteModal = ({ changeDuoInfo, onToggleModal }: ModalProps) => {
   const navigate = useNavigate();
 
   const onSubmit = (e: FormEvent) => {
@@ -24,7 +24,7 @@ const Modal = ({ changeDuoInfo, onToggleModal }: ModalProps) => {
   return (
     <form className={styles.modal_form} onSubmit={onSubmit}>
       <h2>삭제하시겠습니까?</h2>
-      <div>
+      <div className={styles.button_div}>
         <button type="submit" onClick={ondeleteClick}>
           삭제
         </button>
@@ -36,4 +36,4 @@ const Modal = ({ changeDuoInfo, onToggleModal }: ModalProps) => {
   );
 };
 
-export default Modal;
+export default DeleteModal;

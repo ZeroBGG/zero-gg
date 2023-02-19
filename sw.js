@@ -12,3 +12,11 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   // console.log('[Service Worker] fetched resource ' + e.request.url);
 });
+
+self.addEventListener('push', (e) => {
+  Notification.requestPermission().then(function (result) {
+    if (result === 'granted') {
+      randomNotification();
+    }
+  });
+});
