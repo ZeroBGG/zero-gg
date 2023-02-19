@@ -7,7 +7,7 @@ import { DuoType } from '../../utils/DuoType';
 import useInput from '@/hooks/useInput';
 import InputText from '../../Common/InputText/InputText';
 import styles from './UpdateDuo.module.scss';
-import Modal from '../../Common/Modal/Modal';
+import DeleteModal from '../../Common/Modal/DeleteModal';
 
 interface ToggleProps {
   onToggleClick: () => void;
@@ -167,7 +167,7 @@ const UpdateDuo = ({ onToggleClick }: ToggleProps) => {
           </div>
         </div>
       </form>
-      {isModal && <Modal changeDuoInfo={ChangeDuoInfo} onToggleModal={onToggleModal} />}
+      {isModal && <DeleteModal changeDuoInfo={ChangeDuoInfo} onToggleModal={onToggleModal} />}
     </section>
   );
 };

@@ -1,11 +1,7 @@
 import { useState, useCallback, ChangeEvent } from 'react';
 
-// interface ResetProps {
-//   reset: (initialstate: string) => void;
-// }
-
 const useInput = (initialstate: string) => {
-  const [value, setValue] = useState<string>(initialstate);
+  const [value, setValue] = useState(initialstate);
   const onChange = useCallback(
     (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
       setValue(e.currentTarget.value);
@@ -15,7 +11,7 @@ const useInput = (initialstate: string) => {
 
   const reset = useCallback(() => setValue(initialstate), [initialstate]);
 
-  return { value, setValue, onChange, reset };
+  return { value, onChange, reset };
 };
 
 export default useInput;

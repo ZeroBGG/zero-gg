@@ -1,13 +1,12 @@
-import { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import useStore from './Zustand/Zustand';
 import WriteDuo from './WriteDuo/WriteDuo';
 import ListDuo from './ListDuo/ListDuo';
 import styles from './Duo.module.scss';
 
 const Duo = () => {
-  const [isModal, setIsModal] = useState<boolean>(false);
   const modalRef = useRef<HTMLFormElement>(null);
-
-  const onToggleClick = useCallback(() => setIsModal((e) => !e), [isModal]);
+  const { isModal, toggleModal } = useStore();
 
   const onScrollToggle = useCallback(() => {
     if (!!isModal) {
@@ -24,7 +23,7 @@ const Duo = () => {
   useEffect(() => {
     const clickOutside = (e: any) => {
       if (isModal && !modalRef.current?.contains(e.target)) {
-        setIsModal(false);
+        toggleModal();
       }
       document.addEventListener('mousedown', clickOutside);
       return () => {
@@ -38,11 +37,11 @@ const Duo = () => {
     <>
       <article className={styles.duo_article}>
         <div className={styles.wrapper}>
-          <button onClick={onToggleClick} className={styles.write_button}>
+          <button onClick={toggleModal} className={styles.write_button}>
             소환사 등록하기
           </button>
         </div>
-        {isModal && <WriteDuo onToggleClick={onToggleClick} modalRef={modalRef} />}
+        {isModal && <WriteDuo onClickModal={toggleModal} modalRef={modalRef} />}
         <ListDuo />
       </article>
     </>

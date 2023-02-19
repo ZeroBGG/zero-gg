@@ -29,11 +29,10 @@ $bgColor-3: #f1f5f7;
 .write_button {
   @include button;
   background-color: #31313c;
-  transition: ease 0.4s;
+  transition: ease .6s;
 
   &:hover {
     cursor: pointer;
-    font-size: 20px;
     background-color: #3c303a;
   }
 }
