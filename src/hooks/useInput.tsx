@@ -15,7 +15,7 @@ const useInput = (initialstate: string) => {
 
   const reset = useCallback(() => setValue(initialstate), [initialstate]);
 
-  return { value, setValue, onChange, reset };
+  return { value, onChange, reset };
 };
 
 export default useInput;

@@ -15,12 +15,12 @@ const DuoInfo = () => {
 
   const [update, setUpdate] = useState(false);
 
-  const submitId = useInput('');
-  const submitPass = useInput('');
+  const { reset: resetId, ...submitId } = useInput('');
+  const { reset: resetPass, ...submitPass } = useInput('');
 
   const reset = () => {
-    submitId.reset();
-    submitPass.reset();
+    resetId();
+    resetPass();
   };
 
   const lane = positions.map((item: LaneType, idx: number) => {

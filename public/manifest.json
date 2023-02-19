@@ -7,7 +7,7 @@
   "background_color": "#F8F7DA",
   "theme_color": "#8C383A",
   "description": "롤에 대한 모든 것?? 아마도!!",
-  "scope": "/",
+  "scope": "http://localhost:5173/",
   "icons": [
     {
       "src": "assets/icons/favicon.ico",

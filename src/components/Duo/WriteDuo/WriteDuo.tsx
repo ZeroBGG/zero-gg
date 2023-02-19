@@ -13,26 +13,26 @@ interface ToggleProps {
 }
 
 const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
-  const inputId = useInput('');
-  const inputPass = useInput('');
-  const inputQueue = useInput('');
-  const inputTier = useInput('');
-  const inputPosition = useInput('');
-  const inputTitle = useInput('');
-  const inputMemo = useInput('');
-  const inputNickName = useInput('');
-  const inputMostChamp = useInput('');
+  const { reset: resetId, ...inputId } = useInput('');
+  const { reset: resetPass, ...inputPass } = useInput('');
+  const { reset: resetQueue, ...inputQueue } = useInput('');
+  const { reset: resetTier, ...inputTier } = useInput('');
+  const { reset: resetPosition, ...inputPosition } = useInput('');
+  const { reset: resetTitle, ...inputTitle } = useInput('');
+  const { reset: resetMemo, ...inputMemo } = useInput('');
+  const { reset: resetNickName, ...inputNickName } = useInput('');
+  const { reset: resetMostChamp, ...inputMostChamp } = useInput('');
 
   const reset = () => {
-    inputId.reset;
-    inputPass.reset;
-    inputQueue.reset;
-    inputTier.reset;
-    inputPosition.reset;
-    inputTitle.reset;
-    inputMemo.reset;
-    inputNickName.reset;
-    inputMostChamp.reset;
+    resetId();
+    resetPass();
+    resetQueue();
+    resetTier();
+    resetPosition();
+    resetTitle();
+    resetMemo();
+    resetNickName();
+    resetMostChamp();
   };
 
   const date = new Date();
