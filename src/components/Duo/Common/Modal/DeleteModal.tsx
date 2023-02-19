@@ -24,7 +24,7 @@ const DeleteModal = ({ changeDuoInfo, onToggleModal }: ModalProps) => {
   return (
     <form className={styles.modal_form} onSubmit={onSubmit}>
       <h2>삭제하시겠습니까?</h2>
-      <div>
+      <div className={styles.button_div}>
         <button type="submit" onClick={ondeleteClick}>
           삭제
         </button>

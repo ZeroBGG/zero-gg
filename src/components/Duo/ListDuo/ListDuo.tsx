@@ -7,6 +7,7 @@ import InputRadio from '../Common/InputRadio/InputRadio';
 import { BiChevronsDown } from 'react-icons/bi';
 import styles from './ListDuo.module.scss';
 import CommonModal from '../Common/Modal/CommonModal';
+import useStore from '../Zustand/Zustand';
 
 const ListDuo = () => {
   const [lolInfo, setLolInfo] = useState<any[]>([]);
@@ -18,11 +19,7 @@ const ListDuo = () => {
     position: '',
   });
 
-  const [isModal, setIsModal] = useState<boolean>(false);
-
-  const onClickModal = () => {
-    setIsModal((e) => !e);
-  };
+  const { isListModal, toggleListModal } = useStore();
 
   const getDuoData = useCallback(async () => {
     const queryRef = query(collection(dbService, 'myLOLInfo'), orderBy('createdAt', 'desc'), limit(5));
@@ -49,7 +46,7 @@ const ListDuo = () => {
       setKey(snap.docs[snap.docs.length - 1]); // 실시간 업데이트를 통해 배열의 키 위치 조정
       const docsArray = snap.docs.map((docs) => ({ id: docs?.id, ...docs.data() }));
       if (docsArray.length === 1) {
-        onClickModal();
+        toggleListModal();
       } else {
         setLolInfo([...lolInfo, ...docsArray.splice(1, 5)]); // splice 안하면 마지막 배열이 다시 나옴
       }
@@ -260,7 +257,7 @@ const ListDuo = () => {
                 <BiChevronsDown className={styles.button_svg} />
               </button>
             </div>
-            {isModal && <CommonModal onClickModal={onClickModal} inMessage="더 이상 존재하지 않습니다." />}
+            {isListModal && <CommonModal onClickModal={toggleListModal} inMessage="더 이상 존재하지 않습니다." />}
           </ul>
         </div>
       </section>

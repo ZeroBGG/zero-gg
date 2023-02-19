@@ -4,23 +4,87 @@ $bgColor-1: #1c1c1f;
 $bgColor-2: #282830;
 $fontColor: #f0f0f0;
 
-.modal_div {
-  width: 30vw;
+.wrapper {
+  width: 40vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2px;
+  padding-bottom: 2px;
   background-color: #f1f1f1;
   color: $fontColor;
+  border: 1px solid $bgColor-2;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
-  @include modal_wrapper(30%, 50%);
+  @include modal_display(35%, 50%);
 
-  h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 2rem;
-    margin: 20px 0 10px 0;
-    color: black;
+  .content_box {
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 500;
+      line-height: 2rem;
+      margin: 20px 0 10px 0;
+      color: black;
+    }
+
+    button {
+      width: 100px;
+      height: 40px;
+      font-size: 25px;
+      margin: 0 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .wrapper {
+    width: 65vw;
+
+    @include modal_display(35%, 50%);
+
+    .content_box {
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      button {
+        width: 80px;
+        height: 30px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 391px) and (max-width: 786px) {
+  .wrapper {
+    width: 65vw;
+
+    @include modal_display(35%, 50%);
+
+    .content_box {
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 787px) and (max-width: 1024px) {
+  .wrapper {
+
+    .content_box {
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
   }
 }

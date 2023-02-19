@@ -9,10 +9,10 @@ import InputText from '../Common/InputText/InputText';
 
 interface ToggleProps {
   modalRef: ForwardedRef<HTMLFormElement>;
-  onToggleClick: () => void;
+  onClickModal: () => void;
 }
 
-const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
+const WriteDuo = ({ onClickModal, modalRef }: ToggleProps) => {
   const inputId = useInput('');
   const inputPass = useInput('');
   const inputQueue = useInput('');
@@ -62,12 +62,12 @@ const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
 
     await addDoc(collection(dbService, 'myLOLInfo'), myLOLInfo);
     reset();
-    onToggleClick();
+    onClickModal();
   };
 
   const cancleValue = () => {
     reset();
-    onToggleClick();
+    onClickModal();
   };
 
   return (
@@ -79,21 +79,21 @@ const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
             <div>
               <InputText
                 type="text"
-                {...inputId}
                 name="userid"
                 id="userid"
                 inLabelText="ID"
                 className={styles.input_text}
+                {...inputId}
               />
             </div>
             <div>
               <InputText
                 type="password"
-                {...inputPass}
                 name="userpass"
                 id="userpass"
                 inLabelText="Password"
                 className={styles.input_text}
+                {...inputPass}
               />
             </div>
           </div>
@@ -147,23 +147,23 @@ const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
             <div>
               <InputText
                 type="text"
-                {...inputTitle}
                 name="title"
                 id="title"
                 inLabelText="Title"
                 placeholder="소통해요!!"
                 className={styles.input_text}
+                {...inputTitle}
               />
             </div>
             <div>
               <InputText
                 type="text"
-                {...inputMemo}
                 name="memo"
                 id="memo"
                 inLabelText="Memo"
                 placeholder="바텀, 사랑에 빠지다."
                 className={styles.input_memo}
+                {...inputMemo}
               />
             </div>
           </div>
@@ -171,22 +171,22 @@ const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
             <div>
               <InputText
                 type="text"
-                {...inputNickName}
                 name="nick"
                 id="nick"
                 inLabelText="Nickname"
                 className={styles.input_text}
+                {...inputNickName}
               />
             </div>
             <div>
               <InputText
                 type="text"
-                {...inputMostChamp}
                 name="most"
                 id="most"
                 inLabelText="MostChampion"
                 placeholder="2가지만"
                 className={styles.input_text}
+                {...inputMostChamp}
               />
             </div>
           </div>
