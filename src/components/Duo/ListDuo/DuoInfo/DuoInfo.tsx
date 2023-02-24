@@ -19,12 +19,12 @@ const DuoInfo = () => {
 
   const { isFailModal, toggleFailModal } = useStore();
 
-  const submitId = useInput('');
-  const submitPass = useInput('');
+  const { reset: resetId, ...submitId } = useInput('');
+  const { reset: resetPass, ...submitPass } = useInput('');
 
   const reset = () => {
-    submitId.reset();
-    submitPass.reset();
+    resetId();
+    resetPass();
   };
 
   const lane = positions.map((item: LaneType, idx: number) => {

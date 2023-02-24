@@ -28,20 +28,20 @@ const UpdateDuo = ({ onToggleClick }: ToggleProps) => {
 
   const [isModal, setIsModal] = useState(false);
 
-  const inputQueue = useInput(queue);
-  const inputTier = useInput(tier);
-  const inputPosition = useInput(position);
-  const inputTitle = useInput(title);
-  const inputMemo = useInput(memo);
-  const inputNickName = useInput(nickName);
+  const { reset: resetQueue, ...inputQueue } = useInput(queue);
+  const { reset: resetTier, ...inputTier } = useInput(tier);
+  const { reset: resetPosition, ...inputPosition } = useInput(position);
+  const { reset: resetTitle, ...inputTitle } = useInput(title);
+  const { reset: resetMemo, ...inputMemo } = useInput(memo);
+  const { reset: resetNickName, ...inputNickName } = useInput(nickName);
 
   const reset = () => {
-    inputQueue.reset();
-    inputTier.reset();
-    inputPosition.reset();
-    inputTitle.reset();
-    inputMemo.reset();
-    inputNickName.reset();
+    resetQueue();
+    resetTier();
+    resetPosition();
+    resetTitle();
+    resetMemo();
+    resetNickName();
   };
 
   const onToggleNavClick = () => {
