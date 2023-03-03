@@ -3,44 +3,52 @@ import { useEffect, useState } from 'react';
 
 import { getMatch, getDetailMatch } from '@/api/matchAPi';
 import MatchInfo from './MatchInfo/MatchInfo';
-
 import { TypeMatch } from '@/components/Record/types/type';
+import { TypeSummonerRank } from '@/components/Record/types/type';
 
 import Loading from '@/components/Common/Loading/Loading';
 
-export default function SummonerMacth({ puuid, data }: { puuid: string; data: string[] }) {
-  const [dataSet, setDataSet] = useState<string[]>(data);
+export default function SummonerMacth({
+  puuid,
+  summonerRankInfo,
+}: {
+  puuid: string;
+  summonerRankInfo: TypeSummonerRank[];
+}) {
+  const [dataSet, setDataSet] = useState<string[]>([]);
   const [matchData, setMatchData] = useState<TypeMatch[]>([]);
-  const [start, setStart] = useState<number>(0);
-  const [loading, setLoading] = useState(true);
+  const [start, setStart] = useState<number>(null);
+  const [loading, setLoading] = useState(true); // 게임 데이터 로딩
 
   const fnMatchData = async () => {
     try {
       const res = await getMatch(puuid, start);
-      setDataSet(res);
       if (res.length === 0) {
         setLoading(false);
+        return;
       }
+      setDataSet(res);
     } catch (err) {
       console.log(err);
     }
   };
 
   const handleClick = () => {
+    setLoading(true);
     setStart(start + 5);
   };
 
   useEffect(() => {
-    setStart(0);
-    setMatchData([]);
-    // fnMatchData();
-  }, [puuid]);
+    if (start === null || loading === false) return;
+
+    fnMatchData();
+  }, [start, loading]);
 
   useEffect(() => {
-    if (start > 0) {
-      fnMatchData();
-    }
-  }, [start]);
+    setLoading(true);
+    setStart(0);
+    setMatchData([]);
+  }, [summonerRankInfo]);
 
   useEffect(() => {
     const matchDetailData = async (data: string) => {
@@ -53,7 +61,6 @@ export default function SummonerMacth({ puuid, data }: { puuid: string; data: st
     };
 
     const feactData = async () => {
-      setLoading(true);
       if (dataSet.length > 0) {
         const res = dataSet.map(async (data) => {
           try {
@@ -67,8 +74,6 @@ export default function SummonerMacth({ puuid, data }: { puuid: string; data: st
           setMatchData((prev) => [...prev, ...res]);
           setLoading(false);
         });
-      } else {
-        setLoading(false);
       }
     };
 

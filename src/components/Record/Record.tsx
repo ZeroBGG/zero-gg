@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSummonerInfo, getSummonerEntries } from '@/api/summonerApi';
-import { getMatch } from '@/api/matchAPi';
 import { TypeSummoner, TypeSummonerRank } from '@/components/Record/types/type';
 
 import styles from './Record.module.scss';
@@ -16,10 +15,8 @@ export default function Record() {
   const [info, setInfo] = useState<TypeSummoner>(); // 소환사 정보
   const [summonerRankInfo, setSummonerRankInfo] = useState<TypeSummonerRank[]>([]); // 소환사 랭크 정보
   const [timer, setTimer] = useState(0); // 디바운싱 타이머
-  const [data, setData] = useState<string[]>([]); // 소환사 최근 게임 데이터
   const [btnLoading, setBtnLoading] = useState(true); // 전적 갱신 버튼 로딩
   const [infoLoading, setInfoLoading] = useState(false); // 소환사 정보 로딩
-  const [loading, setLoading] = useState(false); // 소환사 최근 게임 데이터 로딩
 
   // 소환사 데이터 조회 함수 (고유 id, 닉네임, 프로필 사진 번호, 소환사 레벨 등)
   const getSummonerData = async () => {
@@ -38,15 +35,21 @@ export default function Record() {
     }
   };
 
-  // 소환사 최근 게임 전적 불러오기 (5경기)
-  const fnMatchData = async () => {
-    if (!info?.puuid) return;
-
+  // 소환사의 랭크 정보 확인 (티어, 랭크, 승, 패, 포인트 등)
+  const getSummonerEntriesData = async () => {
     try {
-      const res = await getMatch(info.puuid, 0);
-      setData(res);
-      setLoading(true);
-      setBtnLoading(true);
+      if (info) {
+        const res = await getSummonerEntries(info.id);
+
+        if (summonerRankInfo.length === 0) {
+          setSummonerRankInfo(res);
+        } else {
+          if (JSON.stringify(res) !== JSON.stringify(summonerRankInfo)) {
+            setSummonerRankInfo([]);
+            setSummonerRankInfo(res);
+          }
+        }
+      }
     } catch (err) {
       console.log(err);
     }
@@ -62,7 +65,8 @@ export default function Record() {
     }
     const newTimer = setTimeout(async () => {
       try {
-        fnMatchData();
+        getSummonerEntriesData();
+        setBtnLoading(true);
       } catch (e) {
         console.error('error', e);
       }
@@ -73,26 +77,9 @@ export default function Record() {
 
   useEffect(() => {
     getSummonerData();
-    setLoading(false);
   }, [summonerId]);
 
   useEffect(() => {
-    fnMatchData();
-  }, [summonerRankInfo]);
-
-  useEffect(() => {
-    // 소환사의 랭크 정보 확인 (티어, 랭크, 승, 패, 포인트 등)
-    const getSummonerEntriesData = async () => {
-      try {
-        if (info) {
-          const res = await getSummonerEntries(info.id);
-          setSummonerRankInfo(res);
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
     getSummonerEntriesData();
   }, [info]);
 
@@ -107,13 +94,9 @@ export default function Record() {
           {summonerRankInfo && <SummonerRank summonerRankInfo={summonerRankInfo} />}
         </article>
 
-        {info && info?.puuid && loading && (
+        {info && info?.puuid && summonerRankInfo.length > 0 && (
           <article className={classnames(styles.article, styles.match)}>
-            {data.length > 0 ? (
-              <SummonerMatch puuid={info.puuid} data={data} />
-            ) : (
-              <p className={styles.noMatchData}>전적 기록이 없습니다.</p>
-            )}
+            <SummonerMatch puuid={info.puuid} summonerRankInfo={summonerRankInfo} />
           </article>
         )}
       </section>

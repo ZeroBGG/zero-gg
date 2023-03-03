@@ -12,8 +12,7 @@ interface ToggleProps {
   onClickModal: () => void;
 }
 
-
-const WriteDuo = ({ onToggleClick, modalRef }: ToggleProps) => {
+const WriteDuo = ({ onClickModal, modalRef }: ToggleProps) => {
   const { reset: resetId, ...inputId } = useInput('');
   const { reset: resetPass, ...inputPass } = useInput('');
   const { reset: resetQueue, ...inputQueue } = useInput('');
