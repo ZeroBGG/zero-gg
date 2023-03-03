@@ -206,7 +206,7 @@ export default function MatchInfo({ matchData, puuid }: { matchData: TypeMatch; 
         </article>
       </section>
     ) : (
-      <div>전적을 찾을 수 없습니다</div>
+      <div className={styles.noMatchInfo}>전적을 찾을 수 없습니다</div>
     );
   }
 }

@@ -40,7 +40,8 @@ export default function SummonerRank({ summonerRankInfo }: { summonerRankInfo: T
     );
   };
 
-  useEffect(() => {
+  // 솔로랭크, 자유랭크 분류 함수
+  const RankCategory = () => {
     const soloRankData = summonerRankInfo.filter((info) => {
       if (info.queueType === 'RANKED_SOLO_5x5') {
         return info;
@@ -60,6 +61,10 @@ export default function SummonerRank({ summonerRankInfo }: { summonerRankInfo: T
     if (freeRankData) {
       setFreeRank(freeRankData[0]);
     }
+  };
+
+  useEffect(() => {
+    RankCategory();
   }, [summonerRankInfo]);
 
   return (

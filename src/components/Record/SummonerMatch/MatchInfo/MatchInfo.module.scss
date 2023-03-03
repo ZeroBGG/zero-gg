@@ -2,6 +2,12 @@ $bg-color-win: rgb(119, 127, 247);
 $bg-color-loss: rgb(209, 98, 98);
 $text-color: rgb(53, 57, 80);
 
+.noMatchInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
   display: flex;
   height: 100%;

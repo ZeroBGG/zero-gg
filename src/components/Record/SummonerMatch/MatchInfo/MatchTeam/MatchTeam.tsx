@@ -44,7 +44,9 @@ export default function MatchTeam({ MatchTeamData }: { MatchTeamData: TypePartic
           {teamRed.map((el) => (
             <li key={el.puuid} className={styles.list}>
               <img
-                src={`${CHAMPION_IMAGE_PATH}/${el.championName}.png`}
+                src={`${CHAMPION_IMAGE_PATH}/${
+                  el.championName === 'FiddleSticks' ? (el.championName = 'Fiddlesticks') : el.championName
+                }.png`}
                 alt={el.championName}
                 className={styles.championImg}
               />
@@ -61,7 +63,9 @@ export default function MatchTeam({ MatchTeamData }: { MatchTeamData: TypePartic
           {teamBlue.map((el) => (
             <li key={el.puuid} className={styles.list}>
               <img
-                src={`${CHAMPION_IMAGE_PATH}/${el.championName}.png`}
+                src={`${CHAMPION_IMAGE_PATH}/${
+                  el.championName === 'FiddleSticks' ? (el.championName = 'Fiddlesticks') : el.championName
+                }.png`}
                 alt={el.championName}
                 className={styles.championImg}
               />
