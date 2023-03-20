@@ -31,7 +31,7 @@ export default function InputID() {
           placeholder="소환사명"
           autoComplete="off"
         />
-        <button className={styles.button}>
+        <button className={styles.button} aria-label="button">
           <GoSearch size="18" color="red" className={styles.svg} />
         </button>
       </div>
