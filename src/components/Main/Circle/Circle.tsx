@@ -69,6 +69,8 @@ function Circle() {
                     src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${data.id}_0.jpg`}
                     alt={data.name}
                     className={styles.img}
+                    width="498"
+                    height="294"
                   />
                   <h2 className={styles.name}>{data.name}</h2>
                 </div>
