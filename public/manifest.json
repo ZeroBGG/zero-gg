@@ -2,7 +2,7 @@
   "name": "Zero-GG",
   "short_name": "ZGG",
   "id": "/",
-  "start_url": "https://zero-gg.vercel.app",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#F8F7DA",
   "theme_color": "#8C383A",
