@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://zero-gg.vercel.app//sitemap.xml
