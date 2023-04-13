@@ -7,7 +7,7 @@
   margin: -300px;
   margin-top: -250px;
   transform-style: preserve-3d;
-  animation: ani linear 30s infinite;
+  animation: ani linear 60s infinite;
 
   .face {
     width: 100%;
@@ -48,9 +48,9 @@
       }
     }
 
-    @for $i from 0 through 15 {
+    @for $i from 0 through 20 {
       &.face:nth-of-type(#{$i + 1}) {
-        transform: rotateY(22.5deg * $i) translateZ(-1628px);
+        transform: rotateY(17.14deg * $i) translateZ(-2200px);
       }
     }
   }
