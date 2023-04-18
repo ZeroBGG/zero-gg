@@ -1,5 +1,5 @@
 import styles from './Circle.module.scss';
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { getChampion, getRotationChampion } from '@/api/championApi';
 
 import { storeCircle, storeVersion } from '@/store/store';
@@ -57,12 +57,25 @@ function Circle() {
     filterChampionData();
   }, [version]);
 
+  // rotateY - 원 모양으로 회전시키기 위한 각도
+  // translateZ - <article> 사이의 거리값
+  const value = useMemo(() => {
+    if (!data.length) return;
+    return { rotateY: 360 / data.length, translateZ: -(600 * data.length) / 2 / 3.14 };
+  }, [data]);
+
   return (
     <section id={styles.circle}>
       {data.length > 0 &&
-        data.map((data: TypeCircle) => {
+        data.map((data: TypeCircle, index: number) => {
           return (
-            <article className={styles.face} key={data.key}>
+            <article
+              className={styles.face}
+              key={data.key}
+              style={{
+                transform: `rotateY(${value.rotateY * (index + 1)}deg) translateZ(${value.translateZ - 200}px)`,
+              }}
+            >
               <div className={styles.inner}>
                 <div className={styles.content}>
                   <img
